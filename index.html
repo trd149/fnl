@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fantasy NASCAR League — Standings TEST </title>
+  <style>
+    :root{
+      --bg:#0b0e14;
+      --panel:#111827;
+      --panel2:#0f172a;
+      --line:rgba(255,255,255,.10);
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --accent:#d21404;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 14px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      --gold1:#f59e0b;
+      --gold2:#facc15;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -20%, rgba(210,20,4,.18), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(126,40,17,.18), transparent 55%),
+        linear-gradient(180deg, #06080d, var(--bg));
+      min-height:100vh;
+    }
+    .wrap{
+      max-width:1220px;
+      margin:22px auto 40px;
+      padding:0 14px;
+    }
+    .header{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:12px;
+      flex-wrap:wrap;
+    }
+    .title{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      min-width: 260px;
+    }
+    .title h1{
+      margin:0;
+      font-weight:850;
+      letter-spacing:.2px;
+      font-size:22px;
+      line-height:1.1;
+    }
+    .title .sub{
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(25,28,39,.65);
+      border:1px solid rgba(255,255,255,.08);
+      font-family:var(--mono);
+      font-size:12px;
+      color:#d1d5db;
+    }
+    .pill .dot{
+      width:7px;height:7px;border-radius:99px;background:var(--accent);
+      box-shadow:0 0 0 3px rgba(210,20,4,.15);
+    }
+
+    .controls{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .search{
+      position:relative;
+      width:min(380px, 92vw);
+      flex: 1 1 280px;
+    }
+    .search input{
+      width:100%;
+      padding:10px 12px 10px 36px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(17,24,39,.7);
+      color:var(--text);
+      outline:none;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+    }
+    .search input:focus{
+      border-color: rgba(210,20,4,.55);
+      box-shadow: 0 0 0 4px rgba(210,20,4,.12);
+    }
+    .search svg{
+      position:absolute; left:12px; top:50%;
+      transform:translateY(-50%);
+      opacity:.75;
+    }
+    .btn{
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(17,24,39,.7);
+      color:var(--text);
+      cursor:pointer;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:hover{ border-color: rgba(255,255,255,.18) }
+    .btn:active{ transform: translateY(1px) }
+    .btn.primary{
+      border-color: rgba(210,20,4,.45);
+      background: linear-gradient(180deg, rgba(210,20,4,.30), rgba(126,40,17,.20));
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(17,24,39,.78), rgba(15,23,42,.78));
+      border:1px solid rgba(255,255,255,.09);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    /* Desktop table */
+    table{ width:100%; border-collapse:collapse; }
+    thead th{
+      text-align:left;
+      font-size:12px;
+      color:#cbd5e1;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:12px 14px;
+      border-bottom:1px solid var(--line);
+      background:rgba(0,0,0,.10);
+      position:sticky; top:0; z-index:1;
+      white-space:nowrap;
+    }
+    thead th.sortable{ cursor:pointer; }
+    thead th.sortable:hover{ color:#fff; }
+
+    tbody td{
+      padding:12px 14px;
+      border-bottom:1px solid rgba(255,255,255,.07);
+      font-size:14px;
+      vertical-align:middle;
+      white-space:nowrap;
+    }
+
+    .row{ cursor:pointer; transition: background .15s ease; }
+    .row:hover{ background: rgba(255,255,255,.03); }
+    .row.open{ background: rgba(210,20,4,.06); }
+
+    .rank{ font-family:var(--mono); width:60px; }
+    .name{ font-weight:850; letter-spacing:.2px; }
+    .muted{ color:var(--muted); font-size:12px; }
+    .num{ font-family:var(--mono); text-align:right; }
+    .num.left{ text-align:left; }
+
+    .behind{ font-family:var(--mono); color:#cbd5e1; }
+    .behind.leader{ color:#e5e7eb; }
+    .behind.neg{ color:#fca5a5; }
+
+    .chev{ width:26px; text-align:right; opacity:.8; }
+    .chev span{ display:inline-block; transition: transform .15s ease; color:#cbd5e1; }
+    .row.open .chev span{ transform: rotate(90deg); color:#fff; }
+
+    .detail{ display:none; background: rgba(0,0,0,.12); }
+    .detail.open{ display:table-row; }
+    .detail td{ padding:14px; }
+
+    .detailBox{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: 14px;
+      background: rgba(15,23,42,.55);
+      overflow:hidden;
+    }
+    .detailHead{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:12px 12px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(25,28,39,.55), rgba(15,23,42,.30));
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(210,20,4,.35);
+      background: rgba(210,20,4,.10);
+      font-family:var(--mono);
+      font-size:12px;
+      color:#ffd6d1;
+    }
+    .badge .mini{ width:7px;height:7px;border-radius:99px;background:var(--accent); }
+
+    .kpi{
+      display:flex; gap:8px; flex-wrap:wrap;
+      color:#d1d5db;
+      font-family:var(--mono);
+      font-size:12px;
+    }
+    .kpi .chip{
+      padding:5px 9px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(17,24,39,.55);
+      white-space:nowrap;
+    }
+
+    /* Desktop: detail table scrolls horizontally if needed */
+    .detailScroll{
+      overflow:auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .miniTable thead th{
+      position:unset;
+      background: rgba(0,0,0,.10);
+      padding:10px 12px;
+      font-size:11px;
+      white-space:nowrap;
+    }
+    .miniTable tbody td{
+      padding:10px 12px;
+      font-size:13px;
+      border-bottom:1px solid rgba(255,255,255,.07);
+      white-space:nowrap;
+    }
+
+    /* GOLD WIN STYLE */
+    .winGold{
+      color:#111;
+      font-weight:900;
+      font-family:var(--mono);
+      background:linear-gradient(180deg,var(--gold1),var(--gold2));
+      border:1px solid rgba(250,204,21,.6);
+      box-shadow:0 0 0 3px rgba(250,204,21,.15);
+      border-radius:10px;
+      padding:5px 9px;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+    .winGold .trophy{ font-size:13px; line-height:1; }
+
+    .selection{
+      font-weight:850;
+      letter-spacing:.2px;
+      color:#f1f5f9;
+      white-space:nowrap;
+    }
+
+    .foot{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:12px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    /* ===== Mobile-first improvements =====
+       - Standings become "cards" per row with key stats
+       - Details become vertical cards per race (no squished table)
+    */
+    .mobileOnly{ display:none; }
+    .desktopOnly{ display:table; }
+
+    @media (max-width: 920px){
+      .wrap{ padding:0 12px; }
+      .title h1{ font-size:20px; }
+      .controls{ width:100%; justify-content:flex-start; }
+      .btn{ padding:10px 10px; }
+    }
+
+    @media (max-width: 720px){
+      .desktopOnly{ display:none; }
+      .mobileOnly{ display:block; }
+
+      .card{ border-radius: 16px; }
+
+      /* Standings list (mobile cards) */
+      .list{
+        display:flex;
+        flex-direction:column;
+      }
+      .mRow{
+        padding:12px 12px;
+        border-bottom:1px solid rgba(255,255,255,.07);
+        cursor:pointer;
+        background: rgba(0,0,0,.05);
+      }
+      .mRow:hover{ background: rgba(255,255,255,.03); }
+      .mRow.open{ background: rgba(210,20,4,.08); }
+
+      .mTop{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:10px;
+      }
+      .mLeft{
+        display:flex;
+        align-items:center;
+        gap:10px;
+        min-width:0;
+      }
+      .mRank{
+        font-family:var(--mono);
+        font-weight:800;
+        width:40px;
+        height:32px;
+        display:grid;
+        place-items:center;
+        border-radius:10px;
+        border:1px solid rgba(255,255,255,.10);
+        background: rgba(17,24,39,.55);
+      }
+      .mName{
+        min-width:0;
+      }
+      .mName .name{
+        font-size:15px;
+        line-height:1.1;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        max-width: 210px;
+      }
+      .mName .muted{
+        margin-top:4px;
+        font-size:12px;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+      .mChev{
+        font-size:22px;
+        line-height:1;
+        opacity:.9;
+        transform: rotate(0deg);
+        transition: transform .15s ease;
+      }
+      .mRow.open .mChev{ transform: rotate(90deg); }
+
+      .mStats{
+        margin-top:10px;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap:8px;
+      }
+      .mStat{
+        border:1px solid rgba(255,255,255,.10);
+        background: rgba(17,24,39,.45);
+        border-radius:12px;
+        padding:8px 10px;
+        display:flex;
+        align-items:baseline;
+        justify-content:space-between;
+        gap:10px;
+      }
+      .mStat .k{ color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.08em; }
+      .mStat .v{ font-family:var(--mono); font-weight:800; }
+
+      .mDetail{
+        display:none;
+        margin-top:12px;
+        padding-top:12px;
+        border-top:1px dashed rgba(255,255,255,.14);
+      }
+      .mDetail.open{ display:block; }
+
+      .raceCard{
+        border:1px solid rgba(255,255,255,.10);
+        background: rgba(15,23,42,.55);
+        border-radius:14px;
+        padding:12px;
+        margin-bottom:10px;
+      }
+      .raceHead{
+        display:flex;
+        align-items:flex-start;
+        justify-content:space-between;
+        gap:10px;
+      }
+      .raceTitle{
+        min-width:0;
+      }
+      .raceTitle .track{
+        font-weight:850;
+        font-size:14px;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        max-width: 250px;
+      }
+      .raceTitle .meta{
+        margin-top:4px;
+        color:var(--muted);
+        font-family:var(--mono);
+        font-size:12px;
+      }
+      .pick{
+        margin-top:10px;
+        font-weight:900;
+        letter-spacing:.2px;
+        font-size:14px;
+      }
+      .raceGrid{
+        margin-top:10px;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap:8px;
+      }
+      .raceChip{
+        border:1px solid rgba(255,255,255,.10);
+        background: rgba(17,24,39,.45);
+        border-radius:12px;
+        padding:8px 10px;
+        display:flex;
+        align-items:baseline;
+        justify-content:space-between;
+        gap:10px;
+      }
+      .raceChip .k{ color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.08em; }
+      .raceChip .v{ font-family:var(--mono); font-weight:900; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="title">
+        <h1>Fantasy NASCAR League — Standings</h1>
+        <div class="sub">
+          <span class="pill"><span class="dot"></span> Tap a row to expand selections</span>
+          <span class="pill" id="lastUpdated">Updated: —</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 21l-4.3-4.3m1.3-5.2a7 7 0 11-14 0 7 7 0 0114 0z"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <input id="q" type="text" placeholder="Search fantasy name..." />
+        </div>
+        <button class="btn" id="collapseAll">Collapse all</button>
+        <button class="btn primary" id="expandTop3">Expand top 3</button>
+      </div>
+    </div>
+
+    <!-- DESKTOP TABLE -->
+    <div class="card desktopOnly">
+      <table id="board" aria-label="Standings board">
+        <thead>
+          <tr>
+            <th class="sortable" data-key="RANK">Rank</th>
+            <th class="sortable" data-key="FANTASY_NAME">Fantasy Name</th>
+            <th class="sortable" data-key="STARTS">Starts</th>
+            <th class="sortable" data-key="TOTAL_POINTS_INCLUDING_BONUS">Total Points (Incl. Bonus)</th>
+            <th class="sortable" data-key="POINTS_BEHIND">Points Behind</th>
+            <th class="sortable" data-key="WINS">Wins</th>
+            <th class="sortable" data-key="TOP_5s">Top 5s</th>
+            <th class="sortable" data-key="TOP_10s">Top 10s</th>
+            <th class="sortable" data-key="LED_AT_LEAST_ONE_LAP_IN_RACE">Led ≥1 Lap</th>
+            <th class="sortable" data-key="LED_MOST_LAPS_IN_A_RACE">Led Most Laps</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- MOBILE LIST -->
+    <div class="card mobileOnly">
+      <div id="mList" class="list" aria-label="Standings list"></div>
+    </div>
+
+    <div class="foot">
+      <div>Tip: desktop = sortable table • mobile = card layout</div>
+      <div style="font-family:var(--mono)">HTML + CSS + vanilla JS</div>
+    </div>
+  </div>
+
+<script>
+/** =========================
+ *  STANDINGS (ALL 10)
+ *  ========================= */
+const standings = [
+  { RANK:1,  FANTASY_NAME:"Bill",   STARTS:2, TOTAL_POINTS_INCLUDING_BONUS:107, POINTS_BEHIND:"-",   WINS:1, TOP_5s:2, TOP_10s:2, LED_AT_LEAST_ONE_LAP_IN_RACE:1, LED_MOST_LAPS_IN_A_RACE:1 },
+  { RANK:2,  FANTASY_NAME:"Tayhan", STARTS:2, TOTAL_POINTS_INCLUDING_BONUS:86,  POINTS_BEHIND:"-21", WINS:0, TOP_5s:1, TOP_10s:1, LED_AT_LEAST_ONE_LAP_IN_RACE:2, LED_MOST_LAPS_IN_A_RACE:0 },
+  { RANK:3,  FANTASY_NAME:"Dylan",  STARTS:2, TOTAL_POINTS_INCLUDING_BONUS:75,  POINTS_BEHIND:"-32", WINS:0, TOP_5s:2, TOP_10s:2, LED_AT_LEAST_ONE_LAP_IN_RACE:2, LED_MOST_LAPS_IN_A_RACE:0 },
+  { RANK:4,  FANTASY_NAME:"Hunter", STARTS:2, TOTAL_POINTS_INCLUDING_BONUS:52,  POINTS_BEHIND:"-55", WINS:0, TOP_5s:0, TOP_10s:0, LED_AT_LEAST_ONE_LAP_IN_RACE:2, LED_MOST_LAPS_IN_A_RACE:0 },
+  { RANK:5,  FANTASY_NAME:"Lawson", STARTS:2, TOTAL_POINTS_INCLUDING_BONUS:48,  POINTS_BEHIND:"-59", WINS:0, TOP_5s:0, TOP_10s:0, LED_AT_LEAST_ONE_LAP_IN_RACE:1, LED_MOST_LAPS_IN_A_RACE:0 },
+  { RANK:6,  FANTASY_NAME:"Conlan", STARTS:2, TOTAL_POINTS_INCLUDING_BONUS:39,  POINTS_BEHIND:"-68", WINS:0, TOP_5s:1, TOP_10s:1, LED_AT_LEAST_ONE_LAP_IN_RACE:1, LED_MOST_LAPS_IN_A_RACE:0 },
+  { RANK:7,  FANTASY_NAME:"Ryan",   STARTS:2, TOTAL_POINTS_INCLUDING_BONUS:24,  POINTS_BEHIND:"-83", WINS:0, TOP_5s:0, TOP_10s:0, LED_AT_LEAST_ONE_LAP_IN_RACE:1, LED_MOST_LAPS_IN_A_RACE:0 },
+  { RANK:8,  FANTASY_NAME:"JT",     STARTS:2, TOTAL_POINTS_INCLUDING_BONUS:24,  POINTS_BEHIND:"-83", WINS:0, TOP_5s:0, TOP_10s:0, LED_AT_LEAST_ONE_LAP_IN_RACE:1, LED_MOST_LAPS_IN_A_RACE:0 },
+  { RANK:9,  FANTASY_NAME:"Kevin",  STARTS:2, TOTAL_POINTS_INCLUDING_BONUS:23,  POINTS_BEHIND:"-84", WINS:0, TOP_5s:0, TOP_10s:0, LED_AT_LEAST_ONE_LAP_IN_RACE:1, LED_MOST_LAPS_IN_A_RACE:0 },
+  { RANK:10, FANTASY_NAME:"Chase",  STARTS:2, TOTAL_POINTS_INCLUDING_BONUS:19,  POINTS_BEHIND:"-88", WINS:0, TOP_5s:0, TOP_10s:0, LED_AT_LEAST_ONE_LAP_IN_RACE:2, LED_MOST_LAPS_IN_A_RACE:0 },
+];
+
+/** =========================
+ *  DETAILS WITH SELECTION (ALL 20 rows)
+ *  Columns:
+ *  FantasyName, TrackId, TrackName, Selection, FinishPosition, TotalPointsInclBonus,
+ *  Wins, Top5s, Top10s, LedLap, LedMost
+ * ========================= */
+const detailsRaw = [
+  ["Bill",   5596, "Daytona International Speedway", "Brad Keselowski",        5, 33, 0, 1, 1, 0, 0],
+  ["Chase",  5596, "Daytona International Speedway", "Chase Briscoe",          36, 2, 0, 0, 0, 1, 0],
+  ["Conlan", 5596, "Daytona International Speedway", "Joey Logano",            3, 38, 0, 1, 1, 1, 0],
+  ["Dylan",  5596, "Daytona International Speedway", "Chase Elliott",          4, 35, 0, 1, 1, 1, 0],
+  ["Hunter", 5596, "Daytona International Speedway", "Michael McDowell",       22, 20, 0, 0, 0, 1, 0],
+  ["JT",     5596, "Daytona International Speedway", "Austin Dillon",          37, 1, 0, 0, 0, 0, 0],
+  ["Kevin",  5596, "Daytona International Speedway", "Kyle Larson",            16, 22, 0, 0, 0, 1, 0],
+  ["Lawson", 5596, "Daytona International Speedway", "William Byron",          12, 25, 0, 0, 0, 0, 0],
+  ["Ryan",   5596, "Daytona International Speedway", "Todd Gilliland",         39, 2, 0, 0, 0, 1, 0],
+  ["Tayhan", 5596, "Daytona International Speedway", "Ricky Stenhouse Jr.",    2, 37, 0, 1, 1, 1, 0],
+
+  ["Bill",   5597, "Atlanta Motor Speedway",         "Tyler Reddick",          1, 74, 1, 1, 1, 1, 1],
+  ["Chase",  5597, "Atlanta Motor Speedway",         "Christopher Bell",       21, 17, 0, 0, 0, 1, 0],
+  ["Conlan", 5597, "Atlanta Motor Speedway",         "Ricky Stenhouse Jr.",    36, 1, 0, 0, 0, 0, 0],
+  ["Dylan",  5597, "Atlanta Motor Speedway",         "Carson Hocevar",         4, 40, 0, 1, 1, 1, 0],
+  ["Hunter", 5597, "Atlanta Motor Speedway",         "Ryan Blaney",            10, 32, 0, 0, 0, 1, 0],
+  ["JT",     5597, "Atlanta Motor Speedway",         "Brad Keselowski",        17, 23, 0, 0, 0, 1, 0],
+  ["Kevin",  5597, "Atlanta Motor Speedway",         "Josh Berry",             38, 1, 0, 0, 0, 0, 0],
+  ["Lawson", 5597, "Atlanta Motor Speedway",         "Brad Keselowski",        17, 23, 0, 0, 0, 1, 0],
+  ["Ryan",   5597, "Atlanta Motor Speedway",         "Chris Buescher",         15, 22, 0, 0, 0, 0, 0],
+  ["Tayhan", 5597, "Atlanta Motor Speedway",         "Bubba Wallace",          8, 49, 0, 0, 0, 1, 0],
+];
+
+const details = detailsRaw.map(r => ({
+  FANTASY_NAME: r[0],
+  TRACK_ID: r[1],
+  TRACK_NAME: r[2],
+  SELECTION: r[3],
+  FINISH_POSITION: r[4],
+  POINTS_EARNED: r[5],
+  WIN: r[6],
+  TOP5: r[7],
+  TOP10: r[8],
+  LED_LAP: r[9],
+  LED_MOST: r[10],
+}));
+
+const detailByName = details.reduce((acc, row) => {
+  (acc[row.FANTASY_NAME] ||= []).push(row);
+  return acc;
+}, {});
+
+/** =========================
+ *  UI state
+ * ========================= */
+const tbody = document.getElementById("tbody");
+const mList = document.getElementById("mList");
+const q = document.getElementById("q");
+const lastUpdated = document.getElementById("lastUpdated");
+lastUpdated.textContent = "Updated: " + new Date().toLocaleString();
+
+let state = {
+  sortKey: "RANK",
+  sortDir: "asc",
+  open: new Set(),
+  filter: ""
+};
+
+function toSortableNumber(v){
+  if (v === "-" || v === null || v === undefined) return Number.NEGATIVE_INFINITY;
+  if (typeof v === "number") return v;
+  const s = String(v).trim();
+  const n = Number(s);
+  return Number.isFinite(n) ? n : Number.NEGATIVE_INFINITY;
+}
+
+function cmp(a,b){
+  const k = state.sortKey;
+
+  if (k === "POINTS_BEHIND"){
+    const na = (a.POINTS_BEHIND === "-") ? 0 : Math.abs(toSortableNumber(a.POINTS_BEHIND));
+    const nb = (b.POINTS_BEHIND === "-") ? 0 : Math.abs(toSortableNumber(b.POINTS_BEHIND));
+    return na - nb;
+  }
+
+  const va = a[k];
+  const vb = b[k];
+
+  if (typeof va === "string" || typeof vb === "string"){
+    return String(va).localeCompare(String(vb), undefined, {numeric:true, sensitivity:"base"});
+  }
+  return toSortableNumber(va) - toSortableNumber(vb);
+}
+
+function formatBehind(v){
+  if (v === "-") return { text:"LEADER", cls:"leader" };
+  const n = Math.abs(Number(v));
+  if (!Number.isFinite(n)) return { text:String(v), cls:"" };
+  return { text:`-${n}`, cls:"neg" };
+}
+
+function escapeHtml(str){
+  return String(str)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+function toggle(name){
+  if (state.open.has(name)) state.open.delete(name);
+  else state.open.add(name);
+  render();
+}
+
+function collapseAll(){
+  state.open.clear();
+  render();
+}
+
+function expandTop3(){
+  state.open.clear();
+  standings.slice().sort((a,b)=>a.RANK-b.RANK).slice(0,3)
+    .forEach(r => state.open.add(r.FANTASY_NAME));
+  render();
+}
+
+function getFilteredSortedStandings(){
+  return standings
+    .filter(r => r.FANTASY_NAME.toLowerCase().includes(state.filter.toLowerCase()))
+    .slice()
+    .sort((a,b) => {
+      const d = cmp(a,b);
+      return state.sortDir === "asc" ? d : -d;
+    });
+}
+
+function renderDesktopRows(filtered){
+  tbody.innerHTML = "";
+
+  for (const row of filtered){
+    const isOpen = state.open.has(row.FANTASY_NAME);
+    const behind = formatBehind(row.POINTS_BEHIND);
+
+    const tr = document.createElement("tr");
+    tr.className = "row" + (isOpen ? " open" : "");
+    tr.innerHTML = `
+      <td class="rank">${row.RANK}</td>
+      <td>
+        <div class="name">${escapeHtml(row.FANTASY_NAME)}</div>
+        <div class="muted">Starts: ${row.STARTS} • Wins: ${row.WINS}</div>
+      </td>
+      <td class="num">${row.STARTS}</td>
+      <td class="num">${row.TOTAL_POINTS_INCLUDING_BONUS}</td>
+      <td class="behind ${behind.cls}">${behind.text}</td>
+      <td class="num">${row.WINS}</td>
+      <td class="num">${row.TOP_5s}</td>
+      <td class="num">${row.TOP_10s}</td>
+      <td class="num">${row.LED_AT_LEAST_ONE_LAP_IN_RACE}</td>
+      <td class="num">${row.LED_MOST_LAPS_IN_A_RACE}</td>
+      <td class="chev" aria-hidden="true"><span>›</span></td>
+    `;
+    tr.addEventListener("click", () => toggle(row.FANTASY_NAME));
+    tbody.appendChild(tr);
+
+    const dtr = document.createElement("tr");
+    dtr.className = "detail" + (isOpen ? " open" : "");
+
+    const detailsFor = (detailByName[row.FANTASY_NAME] || []).slice()
+      .sort((a,b)=>a.TRACK_ID - b.TRACK_ID);
+
+    const sum = detailsFor.reduce((acc, x) => {
+      acc.races += 1;
+      acc.points += (Number(x.POINTS_EARNED) || 0);
+      acc.wins  += (Number(x.WIN) || 0);
+      acc.top5  += (Number(x.TOP5) || 0);
+      acc.top10 += (Number(x.TOP10) || 0);
+      acc.ledLap += (Number(x.LED_LAP) || 0);
+      acc.ledMost += (Number(x.LED_MOST) || 0);
+      return acc;
+    }, {races:0, points:0, wins:0, top5:0, top10:0, ledLap:0, ledMost:0});
+
+    dtr.innerHTML = `
+      <td colspan="11">
+        <div class="detailBox">
+          <div class="detailHead">
+            <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+              <span class="badge"><span class="mini"></span> Driver selections</span>
+              <span class="kpi">
+                <span class="chip">Races: ${sum.races}</span>
+                <span class="chip">Points: ${sum.points}</span>
+                <span class="chip">Wins: ${sum.wins}</span>
+                <span class="chip">Top5: ${sum.top5}</span>
+                <span class="chip">Top10: ${sum.top10}</span>
+                <span class="chip">Led Lap: ${sum.ledLap}</span>
+                <span class="chip">Most Led: ${sum.ledMost}</span>
+              </span>
+            </div>
+            <div class="muted">Click again to collapse</div>
+          </div>
+
+          <div class="detailScroll" aria-label="${escapeHtml(row.FANTASY_NAME)} selections scroll">
+            <table class="miniTable" aria-label="${escapeHtml(row.FANTASY_NAME)} selections">
+              <thead>
+                <tr>
+                  <th>Track ID</th>
+                  <th>Track</th>
+                  <th>Selection</th>
+                  <th class="num">Finish</th>
+                  <th class="num">Points (Incl. Bonus)</th>
+                  <th class="num">Win</th>
+                  <th class="num">Top5</th>
+                  <th class="num">Top10</th>
+                  <th class="num">Led Lap</th>
+                  <th class="num">Most Led</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${
+                  detailsFor.length
+                  ? detailsFor.map(x => `
+                      <tr>
+                        <td class="num left">${x.TRACK_ID}</td>
+                        <td>${escapeHtml(x.TRACK_NAME)}</td>
+                        <td><span class="selection">${escapeHtml(x.SELECTION)}</span></td>
+                        <td class="num">${x.FINISH_POSITION}</td>
+                        <td class="num">${x.POINTS_EARNED}</td>
+                        <td class="num">
+                          ${
+                            Number(x.WIN) === 1
+                              ? `<span class="winGold"><span class="trophy">🏆</span>WIN</span>`
+                              : `<span style="font-family:var(--mono);color:var(--muted)">0</span>`
+                          }
+                        </td>
+                        <td class="num">${x.TOP5}</td>
+                        <td class="num">${x.TOP10}</td>
+                        <td class="num">${x.LED_LAP}</td>
+                        <td class="num">${x.LED_MOST}</td>
+                      </tr>
+                    `).join("")
+                  : `<tr><td colspan="10" class="muted">No selections found.</td></tr>`
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </td>
+    `;
+    tbody.appendChild(dtr);
+  }
+}
+
+function renderMobileList(filtered){
+  mList.innerHTML = "";
+
+  for (const row of filtered){
+    const isOpen = state.open.has(row.FANTASY_NAME);
+    const behind = formatBehind(row.POINTS_BEHIND);
+    const detailsFor = (detailByName[row.FANTASY_NAME] || []).slice()
+      .sort((a,b)=>a.TRACK_ID - b.TRACK_ID);
+
+    const container = document.createElement("div");
+    container.className = "mRow" + (isOpen ? " open" : "");
+    container.setAttribute("role","button");
+    container.setAttribute("tabindex","0");
+    container.addEventListener("click", () => toggle(row.FANTASY_NAME));
+    container.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " "){ e.preventDefault(); toggle(row.FANTASY_NAME); }
+    });
+
+    container.innerHTML = `
+      <div class="mTop">
+        <div class="mLeft">
+          <div class="mRank">${row.RANK}</div>
+          <div class="mName">
+            <div class="name">${escapeHtml(row.FANTASY_NAME)}</div>
+            <div class="muted">${behind.text} • Points ${row.TOTAL_POINTS_INCLUDING_BONUS} • Starts ${row.STARTS}</div>
+          </div>
+        </div>
+        <div class="mChev">›</div>
+      </div>
+
+      <div class="mStats">
+        <div class="mStat"><div class="k">Wins</div><div class="v">${row.WINS}</div></div>
+        <div class="mStat"><div class="k">Top 5</div><div class="v">${row.TOP_5s}</div></div>
+        <div class="mStat"><div class="k">Top 10</div><div class="v">${row.TOP_10s}</div></div>
+        <div class="mStat"><div class="k">Led ≥1 Lap</div><div class="v">${row.LED_AT_LEAST_ONE_LAP_IN_RACE}</div></div>
+        <div class="mStat"><div class="k">Most Laps Led</div><div class="v">${row.LED_MOST_LAPS_IN_A_RACE}</div></div>
+        <div class="mStat"><div class="k">Behind</div><div class="v" style="color:${behind.cls==='neg'?'#fca5a5':'#e5e7eb'}">${escapeHtml(behind.text)}</div></div>
+      </div>
+
+      <div class="mDetail ${isOpen ? "open" : ""}">
+        ${detailsFor.map(x => `
+          <div class="raceCard">
+            <div class="raceHead">
+              <div class="raceTitle">
+                <div class="track">${escapeHtml(x.TRACK_NAME)}</div>
+                <div class="meta">Track ID: ${x.TRACK_ID}</div>
+              </div>
+              <div>
+                ${Number(x.WIN) === 1 ? `<span class="winGold"><span class="trophy">🏆</span>WIN</span>` : ``}
+              </div>
+            </div>
+
+            <div class="pick">Selection: <span class="selection">${escapeHtml(x.SELECTION)}</span></div>
+
+            <div class="raceGrid">
+              <div class="raceChip"><div class="k">Finish</div><div class="v">${x.FINISH_POSITION}</div></div>
+              <div class="raceChip"><div class="k">Points</div><div class="v">${x.POINTS_EARNED}</div></div>
+              <div class="raceChip"><div class="k">Top5</div><div class="v">${x.TOP5}</div></div>
+              <div class="raceChip"><div class="k">Top10</div><div class="v">${x.TOP10}</div></div>
+              <div class="raceChip"><div class="k">Led Lap</div><div class="v">${x.LED_LAP}</div></div>
+              <div class="raceChip"><div class="k">Most Led</div><div class="v">${x.LED_MOST}</div></div>
+            </div>
+          </div>
+        `).join("")}
+      </div>
+    `;
+
+    mList.appendChild(container);
+  }
+}
+
+function render(){
+  const filtered = getFilteredSortedStandings();
+  renderDesktopRows(filtered);
+  renderMobileList(filtered);
+}
+
+/** Sorting (desktop headers) */
+document.querySelectorAll("th.sortable").forEach(th => {
+  th.addEventListener("click", () => {
+    const key = th.getAttribute("data-key");
+    if (!key) return;
+    if (state.sortKey === key) state.sortDir = (state.sortDir === "asc" ? "desc" : "asc");
+    else { state.sortKey = key; state.sortDir = "asc"; }
+    render();
+  });
+});
+
+/** Search */
+q.addEventListener("input", (e) => {
+  state.filter = e.target.value || "";
+  render();
+});
+
+/** Buttons */
+document.getElementById("collapseAll").addEventListener("click", (e)=>{ e.stopPropagation(); collapseAll(); });
+document.getElementById("expandTop3").addEventListener("click", (e)=>{ e.stopPropagation(); expandTop3(); });
+
+render();
+</script>
+</body>
+</html>
+
