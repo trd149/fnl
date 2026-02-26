@@ -343,14 +343,17 @@
       .mName{
         min-width:0;
       }
+
+      /* ✅ allow longer names without forcing squeeze */
       .mName .name{
         font-size:15px;
         line-height:1.1;
         white-space:nowrap;
         overflow:hidden;
         text-overflow:ellipsis;
-        max-width: 210px;
+        max-width: min(60vw, 420px);
       }
+
       .mName .muted{
         margin-top:4px;
         font-size:12px;
@@ -410,14 +413,17 @@
       .raceTitle{
         min-width:0;
       }
+
+      /* ✅ allow longer track names without forcing squeeze */
       .raceTitle .track{
         font-weight:850;
         font-size:14px;
         white-space:nowrap;
         overflow:hidden;
         text-overflow:ellipsis;
-        max-width: 250px;
+        max-width: min(65vw, 520px);
       }
+
       .raceTitle .meta{
         margin-top:4px;
         color:var(--muted);
@@ -448,6 +454,30 @@
       }
       .raceChip .k{ color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.08em; }
       .raceChip .v{ font-family:var(--mono); font-weight:900; }
+    }
+
+    /* ✅ When there is more horizontal space (landscape), use 3 columns for stats */
+    @media (max-width: 720px) and (orientation: landscape){
+      .mStats{ grid-template-columns: 1fr 1fr 1fr; }
+      .raceGrid{ grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    /* ✅ Force mobile card mode in short-height landscape (prevents desktop table squeeze) */
+    @media (orientation: landscape) and (max-height: 520px){
+      .desktopOnly{ display:none !important; }
+      .mobileOnly{ display:block !important; }
+
+      /* Make header/controls more compact in short-height landscape */
+      .wrap{ margin:12px auto 18px; }
+      .title h1{ font-size:18px; }
+      .title .sub{ font-size:12px; }
+
+      .search input{ padding:9px 12px 9px 36px; }
+      .btn{ padding:9px 10px; }
+
+      /* Let the name row use more width in landscape */
+      .mName .name{ max-width: 360px; }
+      .raceTitle .track{ max-width: 380px; }
     }
   </style>
 </head>
@@ -504,7 +534,7 @@
     </div>
 
     <div class="foot">
-      <div>Tip: desktop = sortable table • mobile = card layout</div>
+      <div>Tip: desktop = sortable table • mobile = card layout. Version 0.2.1</div>
       <div style="font-family:var(--mono)">HTML + CSS + vanilla JS</div>
     </div>
   </div>
@@ -683,7 +713,7 @@ function renderDesktopRows(filtered){
       <td class="num">${row.TOP_5s}</td>
       <td class="num">${row.TOP_10s}</td>
       <td class="num">${row.LED_AT_LEAST_ONE_LAP_IN_RACE}</td>
-      <td class="num">${row.LED_MOST_LAPS_IN_A_RACE}</td>
+      <td class="num">${row.LED_AT_LEAST_ONE_LAP_IN_RACE}</td>
       <td class="chev" aria-hidden="true"><span>›</span></td>
     `;
     tr.addEventListener("click", () => toggle(row.FANTASY_NAME));
