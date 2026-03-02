@@ -533,20 +533,6 @@
       cursor:pointer;
     }
     .yChip input{ accent-color: var(--accent); }
-    .toggle{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(17,24,39,.70);
-      font-size:13px;
-      cursor:pointer;
-      user-select:none;
-      white-space:nowrap;
-    }
-    .toggle input{ accent-color: var(--accent); }
 
     .tableWrap{
       border:1px solid rgba(255,255,255,.10);
@@ -715,7 +701,7 @@
             <div>
               <div style="font-weight:950;letter-spacing:.2px;font-size:16px">Stats</div>
               <div class="sub" style="margin-top:6px">
-                <span class="pill"><span class="dot"></span> Filter by track type + years</span>
+                <span class="pill"><span class="dot"></span> Grouped by Track Type + Year</span>
               </div>
             </div>
             <div class="miniHint">Sorted by Avg Driver Rating</div>
@@ -725,11 +711,6 @@
             <div class="statsLeft">
               <label class="miniHint" for="trackTypeSel" style="min-width: 86px;">Track type</label>
               <select class="select" id="trackTypeSel"></select>
-
-              <label class="toggle" title="When multiple years selected, show Driver + Year rows">
-                <input type="checkbox" id="groupByYear" />
-                Group by year
-              </label>
             </div>
 
             <div class="statsRight">
@@ -748,8 +729,8 @@
               <table class="tbl" id="statsTable">
                 <thead>
                   <tr>
-                    <th>Driver</th>
-                    <th id="yearColHead" style="display:none;">Year</th>
+                    <th>Track Type</th>
+                    <th>Year</th>
                     <th class="num">Races</th>
                     <th class="num">Avg Rating</th>
                     <th class="num">Avg Finish</th>
@@ -765,13 +746,12 @@
           </div>
 
           <div class="foot">
-            <div>Stats are computed on the client • no backend needed</div>
+            <div>Client-side group by: Track Type + Year</div>
             <div style="font-family:var(--mono)">Filters: Track Type + Years</div>
           </div>
         </div>
       </div>
     </section>
-
   </div>
 
 <script type="module">
@@ -781,7 +761,7 @@
 import { raceStats } from "./stats.js";
 
 /** =========================
- *  DATA
+ *  DATA (standings + details)
  *  ========================= */
 const standings = [
   { RANK:1,  FANTASY_NAME:"Bill",   STARTS:3, TOTAL_POINTS_INCLUDING_BONUS:141, POINTS_BEHIND:"-",    WINS:1, TOP_5s:2, TOP_10s:2, LED_AT_LEAST_ONE_LAP_IN_RACE:2, LED_MOST_LAPS_IN_A_RACE:1 },
@@ -876,7 +856,6 @@ function formatBehind(v){
   return { text:`-${n}`, cls:"neg" };
 }
 function yearFromRaceDate(raceDate){
-  // raceDate is yyyy-mm-dd
   if (!raceDate) return null;
   return String(raceDate).slice(0,4);
 }
@@ -1126,24 +1105,22 @@ $("expandTop3").addEventListener("click", () => {
 });
 
 /** =========================
- *  STATS TAB
+ *  STATS TAB (GROUP BY TRACK TYPE + YEAR)
  *  ========================= */
 const trackTypeSel = $("trackTypeSel");
 const yearChips = $("yearChips");
-const groupByYearToggle = $("groupByYear");
 const statsTbody = $("statsTbody");
 const statsSummary = $("statsSummary");
-const yearColHead = $("yearColHead");
 
 const statsState = {
   trackType: "ALL",
-  years: new Set(),      // selected years (strings)
-  groupByYear: false,
+  years: new Set(), // selected years (strings)
 };
 
 function initStatsUI(){
   // Track types
-  const types = Array.from(new Set(raceStats.map(r => r.TRACK_TYPE).filter(Boolean))).sort((a,b)=>a.localeCompare(b));
+  const types = Array.from(new Set(raceStats.map(r => r.TRACK_TYPE).filter(Boolean)))
+    .sort((a,b)=>a.localeCompare(b));
   trackTypeSel.innerHTML = [
     `<option value="ALL">All track types</option>`,
     ...types.map(t => `<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`)
@@ -1175,34 +1152,19 @@ function initStatsUI(){
   yearChips.addEventListener("change", (e) => {
     const el = e.target;
     if (!(el instanceof HTMLInputElement)) return;
+
     const y = el.value;
     if (el.checked) statsState.years.add(y);
     else statsState.years.delete(y);
 
-    // if user unchecks everything, keep at least 1 (prevent confusing blank)
+    // keep at least 1 year selected
     if (statsState.years.size === 0){
       el.checked = true;
       statsState.years.add(y);
     }
 
-    // If multiple years selected, default groupByYear ON (but don’t force)
-    if (statsState.years.size > 1 && groupByYearToggle.checked === false){
-      groupByYearToggle.checked = true;
-      statsState.groupByYear = true;
-    }
     renderStats();
   });
-
-  groupByYearToggle.addEventListener("change", () => {
-    statsState.groupByYear = !!groupByYearToggle.checked;
-    renderStats();
-  });
-
-  // initial group-by rule:
-  if (statsState.years.size > 1){
-    groupByYearToggle.checked = true;
-    statsState.groupByYear = true;
-  }
 
   renderStats();
 }
@@ -1221,28 +1183,19 @@ function getFilteredStatsRows(){
 
 function renderStats(){
   const rows = getFilteredStatsRows();
-  const selectedYears = Array.from(statsState.years).sort((a,b)=>Number(a)-Number(b));
-  const yearsLabel = selectedYears.join(", ");
-  const trackTypeLabel = statsState.trackType === "ALL" ? "All track types" : statsState.trackType;
 
-  // show/hide Year column
-  const showYearCol = statsState.groupByYear && statsState.years.size > 1;
-  yearColHead.style.display = showYearCol ? "" : "none";
-
-  // Grouping key:
-  // - Always aggregated by driver for the selected track type
-  // - If groupByYear ON and multiple years selected => group by (driver, year) too
+  // GROUP BY track_type, year
   const map = new Map();
 
   for (const r of rows){
-    const driver = r.DRIVER_NAME || "Unknown";
+    const trackType = r.TRACK_TYPE || "Unknown";
     const year = yearFromRaceDate(r.RACE_DATE) || "—";
 
-    const key = showYearCol ? `${driver}||${year}` : `${driver}`;
+    const key = `${trackType}||${year}`;
     let agg = map.get(key);
     if (!agg){
       agg = {
-        DRIVER_NAME: driver,
+        TRACK_TYPE: trackType,
         YEAR: year,
         races: 0,
         ratingSum: 0,
@@ -1276,7 +1229,7 @@ function renderStats(){
   }
 
   let out = Array.from(map.values()).map(a => ({
-    DRIVER_NAME: a.DRIVER_NAME,
+    TRACK_TYPE: a.TRACK_TYPE,
     YEAR: a.YEAR,
     RACES: a.races,
     AVG_RATING: a.ratingN ? (a.ratingSum / a.ratingN) : Number.NEGATIVE_INFINITY,
@@ -1285,29 +1238,29 @@ function renderStats(){
     LAPS_LED: a.lapsLedSum || 0
   }));
 
-  // Sort by Avg Rating desc, then races desc
+  // ORDER BY avg_rating desc, then races desc
   out.sort((a,b) => {
     const d1 = (b.AVG_RATING - a.AVG_RATING);
     if (Math.abs(d1) > 1e-9) return d1;
     return (b.RACES - a.RACES);
   });
 
-  // Summary line
-  const totalRaces = rows.length;
-  const uniqueDrivers = new Set(rows.map(r=>r.DRIVER_NAME).filter(Boolean)).size;
-  statsSummary.textContent =
-    `${trackTypeLabel} • Years: ${yearsLabel} • Rows: ${totalRaces.toLocaleString()} • Drivers: ${uniqueDrivers.toLocaleString()} • Group by year: ${showYearCol ? "ON" : "OFF"}`;
+  const selectedYears = Array.from(statsState.years).sort((a,b)=>Number(a)-Number(b));
+  const yearsLabel = selectedYears.join(", ");
+  const trackTypeLabel = statsState.trackType === "ALL" ? "All track types" : statsState.trackType;
 
-  // Render table
+  statsSummary.textContent =
+    `${trackTypeLabel} • Years: ${yearsLabel} • Groups: ${out.length.toLocaleString()} • Rows: ${rows.length.toLocaleString()} • Group by: Track Type + Year`;
+
   if (out.length === 0){
     statsTbody.innerHTML = `<tr><td colspan="7" class="muted">No rows match that filter.</td></tr>`;
     return;
   }
 
-  statsTbody.innerHTML = out.slice(0, 250).map(r => `
+  statsTbody.innerHTML = out.map(r => `
     <tr>
-      <td>${escapeHtml(r.DRIVER_NAME)}</td>
-      <td style="display:${showYearCol ? "" : "none"}">${escapeHtml(r.YEAR)}</td>
+      <td>${escapeHtml(r.TRACK_TYPE)}</td>
+      <td>${escapeHtml(r.YEAR)}</td>
       <td class="num">${r.RACES}</td>
       <td class="num">${r.AVG_RATING === Number.NEGATIVE_INFINITY ? "—" : fmt2(r.AVG_RATING)}</td>
       <td class="num">${r.AVG_FINISH === Number.POSITIVE_INFINITY ? "—" : fmt2(r.AVG_FINISH)}</td>
