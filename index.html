@@ -289,7 +289,7 @@
     .row.open{ background: rgba(210,20,4,.07); }
     .row.open .chev{ transform: rotate(180deg); }
 
-    /* Expanded panel (like NASCAR stats grid) */
+    /* Expanded panel */
     .exp{
       display:none;
       padding: 0 12px 12px;
@@ -333,7 +333,6 @@
       font-size:12px;
     }
 
-    /* stat grid like nascar.com */
     .statGrid{
       display:grid;
       grid-template-columns: repeat(4, minmax(0,1fr));
@@ -362,7 +361,6 @@
     .leader{ color:#e5e7eb; }
     .neg{ color:#fca5a5; }
 
-    /* selections block */
     .selBox{
       padding:10px 10px 12px;
       border-top:1px solid rgba(255,255,255,.10);
@@ -396,7 +394,6 @@
     }
     .chip strong{ color:#fff; font-weight:900; }
 
-    /* ✅ stacked selections list */
     .selList{
       display:flex;
       flex-direction:column;
@@ -569,7 +566,6 @@
     .muted{ color: var(--muted); }
     .scrollX{ overflow-x:auto; -webkit-overflow-scrolling: touch; }
 
-    /* Responsive tweaks */
     @media (max-width: 520px){
       .listHeader,
       .rowBtn{
@@ -701,7 +697,7 @@
             <div>
               <div style="font-weight:950;letter-spacing:.2px;font-size:16px">Stats</div>
               <div class="sub" style="margin-top:6px">
-                <span class="pill"><span class="dot"></span> Grouped by Track Type + Year</span>
+                <span class="pill"><span class="dot"></span> Grouped by Driver + Track Type + (Selected) Year</span>
               </div>
             </div>
             <div class="miniHint">Sorted by Avg Driver Rating</div>
@@ -729,6 +725,7 @@
               <table class="tbl" id="statsTable">
                 <thead>
                   <tr>
+                    <th>Driver</th>
                     <th>Track Type</th>
                     <th>Year</th>
                     <th class="num">Races</th>
@@ -739,14 +736,14 @@
                   </tr>
                 </thead>
                 <tbody id="statsTbody">
-                  <tr><td colspan="7" class="muted">Loading…</td></tr>
+                  <tr><td colspan="8" class="muted">Loading…</td></tr>
                 </tbody>
               </table>
             </div>
           </div>
 
           <div class="foot">
-            <div>Client-side group by: Track Type + Year</div>
+            <div>Client-side “GROUP BY driver, track_type, year”</div>
             <div style="font-family:var(--mono)">Filters: Track Type + Years</div>
           </div>
         </div>
@@ -756,12 +753,14 @@
 
 <script type="module">
 /** =========================
- *  IMPORT STATS
+ *  IMPORTANT:
+ *  Place stats.js in the same folder as this HTML.
+ *  It must export: export const raceStats = [...]
  *  ========================= */
 import { raceStats } from "./stats.js";
 
 /** =========================
- *  DATA (standings + details)
+ *  DATA (Standings)
  *  ========================= */
 const standings = [
   { RANK:1,  FANTASY_NAME:"Bill",   STARTS:3, TOTAL_POINTS_INCLUDING_BONUS:141, POINTS_BEHIND:"-",    WINS:1, TOP_5s:2, TOP_10s:2, LED_AT_LEAST_ONE_LAP_IN_RACE:2, LED_MOST_LAPS_IN_A_RACE:1 },
@@ -775,60 +774,6 @@ const standings = [
   { RANK:9,  FANTASY_NAME:"Kevin",  STARTS:3, TOTAL_POINTS_INCLUDING_BONUS:50,  POINTS_BEHIND:"-91",  WINS:0, TOP_5s:0, TOP_10s:0, LED_AT_LEAST_ONE_LAP_IN_RACE:2, LED_MOST_LAPS_IN_A_RACE:0 },
   { RANK:10, FANTASY_NAME:"Chase",  STARTS:3, TOTAL_POINTS_INCLUDING_BONUS:33,  POINTS_BEHIND:"-108", WINS:0, TOP_5s:0, TOP_10s:0, LED_AT_LEAST_ONE_LAP_IN_RACE:3, LED_MOST_LAPS_IN_A_RACE:0 },
 ];
-
-const detailsRaw = [
-  ["Bill",   5596, "Daytona International Speedway", "Brad Keselowski",        5, 33, 0, 1, 1, 0, 0],
-  ["Chase",  5596, "Daytona International Speedway", "Chase Briscoe",          36, 2, 0, 0, 0, 1, 0],
-  ["Conlan", 5596, "Daytona International Speedway", "Joey Logano",            3, 38, 0, 1, 1, 1, 0],
-  ["Dylan",  5596, "Daytona International Speedway", "Chase Elliott",          4, 35, 0, 1, 1, 1, 0],
-  ["Hunter", 5596, "Daytona International Speedway", "Michael McDowell",       22, 20, 0, 0, 0, 1, 0],
-  ["JT",     5596, "Daytona International Speedway", "Austin Dillon",          37, 1, 0, 0, 0, 0, 0],
-  ["Kevin",  5596, "Daytona International Speedway", "Kyle Larson",            16, 22, 0, 0, 0, 1, 0],
-  ["Lawson", 5596, "Daytona International Speedway", "William Byron",          12, 25, 0, 0, 0, 0, 0],
-  ["Ryan",   5596, "Daytona International Speedway", "Todd Gilliland",         39, 2, 0, 0, 0, 1, 0],
-  ["Tayhan", 5596, "Daytona International Speedway", "Ricky Stenhouse Jr.",    2, 37, 0, 1, 1, 1, 0],
-
-  ["Bill",   5597, "Atlanta Motor Speedway",         "Tyler Reddick",          1, 74, 1, 1, 1, 1, 1],
-  ["Chase",  5597, "Atlanta Motor Speedway",         "Christopher Bell",       21, 17, 0, 0, 0, 1, 0],
-  ["Conlan", 5597, "Atlanta Motor Speedway",         "Ricky Stenhouse Jr.",    36, 1, 0, 0, 0, 0, 0],
-  ["Dylan",  5597, "Atlanta Motor Speedway",         "Carson Hocevar",         4, 40, 0, 1, 1, 1, 0],
-  ["Hunter", 5597, "Atlanta Motor Speedway",         "Ryan Blaney",            10, 32, 0, 0, 0, 1, 0],
-  ["JT",     5597, "Atlanta Motor Speedway",         "Brad Keselowski",        17, 23, 0, 0, 0, 1, 0],
-  ["Kevin",  5597, "Atlanta Motor Speedway",         "Josh Berry",             38, 1, 0, 0, 0, 0, 0],
-  ["Lawson", 5597, "Atlanta Motor Speedway",         "Brad Keselowski",        17, 23, 0, 0, 0, 1, 0],
-  ["Ryan",   5597, "Atlanta Motor Speedway",         "Chris Buescher",         15, 22, 0, 0, 0, 0, 0],
-  ["Tayhan", 5597, "Atlanta Motor Speedway",         "Bubba Wallace",          8, 49, 0, 0, 0, 1, 0],
-
-  ["Ryan",   5598, "Circuit of The Americas",        "AJ Allmendinger",        9, 44, 0, 0, 0, 1, 0],
-  ["JT",     5598, "Circuit of The Americas",        "Michael McDowell",       5, 42, 0, 1, 1, 1, 0],
-  ["Chase",  5598, "Circuit of The Americas",        "Ross Chastain",          35, 14, 0, 0, 0, 1, 0],
-  ["Dylan",  5598, "Circuit of The Americas",        "Ryan Blaney",            8, 34, 0, 0, 0, 1, 0],
-  ["Bill",   5598, "Circuit of The Americas",        "Ryan Blaney",            8, 34, 0, 0, 0, 1, 0],
-  ["Lawson", 5598, "Circuit of The Americas",        "Chase Elliott",          7, 33, 0, 0, 0, 0, 0],
-  ["Tayhan", 5598, "Circuit of The Americas",        "Chase Elliott",          7, 33, 0, 0, 0, 0, 0],
-  ["Kevin",  5598, "Circuit of The Americas",        "William Byron",          13, 27, 0, 0, 0, 1, 0],
-  ["Conlan", 5598, "Circuit of The Americas",        "Shane van Gisbergen",    2, 47, 0, 1, 1, 1, 0],
-  ["Hunter", 5598, "Circuit of The Americas",        "Connor Zilisch",         14, 23, 0, 0, 0, 0, 0],
-];
-
-const details = detailsRaw.map(r => ({
-  FANTASY_NAME: r[0],
-  TRACK_ID: r[1],
-  TRACK_NAME: r[2],
-  SELECTION: r[3],
-  FINISH_POSITION: r[4],
-  POINTS_EARNED: r[5],
-  WIN: r[6],
-  TOP5: r[7],
-  TOP10: r[8],
-  LED_LAP: r[9],
-  LED_MOST: r[10],
-}));
-
-const detailByName = details.reduce((acc, row) => {
-  (acc[row.FANTASY_NAME] ||= []).push(row);
-  return acc;
-}, {});
 
 /** =========================
  *  HELPERS
@@ -869,14 +814,11 @@ function fmt2(n){
 }
 
 /** =========================
- *  STATE
+ *  STANDINGS UI STATE
  *  ========================= */
 const list = $("list");
 const q = $("q");
-const sortSel = $("sort");
 const lastUpdated = $("lastUpdated");
-
-lastUpdated.textContent = "Updated: " + new Date().toLocaleString();
 
 let state = {
   open: new Set(),
@@ -921,7 +863,7 @@ tabAnalysis.addEventListener("click", () => setTab("analysis"));
 tabStats.addEventListener("click", () => setTab("stats"));
 
 /** =========================
- *  SORT / FILTER
+ *  STANDINGS SORT / FILTER
  *  ========================= */
 function applySortFilter(){
   let rows = standings
@@ -950,32 +892,19 @@ function applySortFilter(){
 function toggleOpen(name){
   if (state.open.has(name)) state.open.delete(name);
   else state.open.add(name);
-  render();
+  renderStandings();
 }
 
 /** =========================
  *  RENDER (STANDINGS)
  *  ========================= */
-function render(){
+function renderStandings(){
   const rows = applySortFilter();
   list.innerHTML = "";
 
   for (const r of rows){
     const isOpen = state.open.has(r.FANTASY_NAME);
     const behind = formatBehind(r.POINTS_BEHIND);
-
-    const d = (detailByName[r.FANTASY_NAME] || []).slice().sort((a,b)=>a.TRACK_ID-b.TRACK_ID);
-
-    const sums = d.reduce((acc, x) => {
-      acc.races += 1;
-      acc.points += (Number(x.POINTS_EARNED) || 0);
-      acc.wins  += (Number(x.WIN) || 0);
-      acc.top5  += (Number(x.TOP5) || 0);
-      acc.top10 += (Number(x.TOP10) || 0);
-      acc.ledLap += (Number(x.LED_LAP) || 0);
-      acc.ledMost += (Number(x.LED_MOST) || 0);
-      return acc;
-    }, {races:0, points:0, wins:0, top5:0, top10:0, ledLap:0, ledMost:0});
 
     const row = document.createElement("div");
     row.className = "row" + (isOpen ? " open" : "");
@@ -1011,41 +940,7 @@ function render(){
             <div class="stat"><div class="k">Top 10's</div><div class="v">${r.TOP_10s}</div></div>
             <div class="stat"><div class="k">Led ≥1 Lap</div><div class="v">${r.LED_AT_LEAST_ONE_LAP_IN_RACE}</div></div>
             <div class="stat"><div class="k">Most Led</div><div class="v">${r.LED_MOST_LAPS_IN_A_RACE}</div></div>
-            <div class="stat"><div class="k">Races Logged</div><div class="v">${sums.races}</div></div>
-          </div>
-
-          <div class="selBox">
-            <div class="selTitle">
-              <div class="t">Selections</div>
-              <div class="chips">
-                <span class="chip">Points (logged): <strong>${sums.points}</strong></span>
-                <span class="chip">Wins (logged): <strong>${sums.wins}</strong></span>
-                <span class="chip">Top10 (logged): <strong>${sums.top10}</strong></span>
-              </div>
-            </div>
-
-            ${
-              d.length
-                ? `
-                  <div class="selList">
-                    ${d.slice().reverse().map(x => `
-                      <div class="selItem">
-                        <div class="selLeft">
-                          <span class="id">${x.TRACK_ID}</span>
-                          <span>•</span>
-                          <span class="driver">${escapeHtml(x.SELECTION)}</span>
-                          <span>•</span>
-                          <span>Pts ${x.POINTS_EARNED}</span>
-                        </div>
-                        <div class="selRight">
-                          ${Number(x.WIN) === 1 ? `<span class="winGold">🏆 WIN</span>` : ``}
-                        </div>
-                      </div>
-                    `).join("")}
-                  </div>
-                `
-                : `<div class="miniHint">No selection rows yet.</div>`
-            }
+            <div class="stat"><div class="k">Races Logged</div><div class="v">${r.STARTS}</div></div>
           </div>
         </div>
       </div>
@@ -1079,33 +974,35 @@ function renderAnalysisKPIs(){
 }
 
 /** =========================
- *  CONTROLS
+ *  CONTROLS (STANDINGS)
  *  ========================= */
 q.addEventListener("input", (e) => {
   state.filter = e.target.value || "";
-  render();
+  renderStandings();
 });
 
 $("sort").addEventListener("change", (e) => {
   const [key, dir] = String(e.target.value).split(":");
   state.sortKey = key;
   state.sortDir = dir;
-  render();
+  renderStandings();
 });
 
 $("collapseAll").addEventListener("click", () => {
   state.open.clear();
-  render();
+  renderStandings();
 });
 
 $("expandTop3").addEventListener("click", () => {
   state.open.clear();
   standings.slice().sort((a,b)=>a.RANK-b.RANK).slice(0,3).forEach(x => state.open.add(x.FANTASY_NAME));
-  render();
+  renderStandings();
 });
 
 /** =========================
- *  STATS TAB (GROUP BY TRACK TYPE + YEAR)
+ *  STATS TAB
+ *  - Filter: Track type + selected years
+ *  - Group By: DRIVER + TRACK_TYPE + YEAR (year is included when selected)
  *  ========================= */
 const trackTypeSel = $("trackTypeSel");
 const yearChips = $("yearChips");
@@ -1126,18 +1023,18 @@ function initStatsUI(){
     ...types.map(t => `<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`)
   ].join("");
 
-  // Years
+  // Years (from race_date yyyy-mm-dd)
   const years = Array.from(new Set(raceStats.map(r => yearFromRaceDate(r.RACE_DATE)).filter(Boolean)))
     .sort((a,b)=>Number(b)-Number(a));
 
   // default: last 4 years if present, else all
-  const defaultYears = years.slice(0,4);
-  defaultYears.forEach(y => statsState.years.add(y));
+  const defaultYears = years.length ? years.slice(0,4) : [];
+  (defaultYears.length ? defaultYears : years).forEach(y => statsState.years.add(y));
 
   yearChips.innerHTML = years.map(y => {
     const checked = statsState.years.has(y) ? "checked" : "";
     return `
-      <label class="yChip">
+      <label class="yChip" title="Selecting a year adds it to the grouping">
         <input type="checkbox" value="${escapeHtml(y)}" ${checked}/>
         ${escapeHtml(y)}
       </label>
@@ -1157,7 +1054,7 @@ function initStatsUI(){
     if (el.checked) statsState.years.add(y);
     else statsState.years.delete(y);
 
-    // keep at least 1 year selected
+    // keep at least 1 year selected (avoids confusing blank)
     if (statsState.years.size === 0){
       el.checked = true;
       statsState.years.add(y);
@@ -1184,17 +1081,20 @@ function getFilteredStatsRows(){
 function renderStats(){
   const rows = getFilteredStatsRows();
 
-  // GROUP BY track_type, year
+  // GROUP BY driver, track_type, year
   const map = new Map();
 
   for (const r of rows){
-    const trackType = r.TRACK_TYPE || "Unknown";
+    const driver = (r.DRIVER_NAME || "Unknown").trim();
+    const trackType = (r.TRACK_TYPE || "Unknown").trim();
     const year = yearFromRaceDate(r.RACE_DATE) || "—";
 
-    const key = `${trackType}||${year}`;
+    const key = `${driver}||${trackType}||${year}`;
+
     let agg = map.get(key);
     if (!agg){
       agg = {
+        DRIVER_NAME: driver,
         TRACK_TYPE: trackType,
         YEAR: year,
         races: 0,
@@ -1229,6 +1129,7 @@ function renderStats(){
   }
 
   let out = Array.from(map.values()).map(a => ({
+    DRIVER_NAME: a.DRIVER_NAME,
     TRACK_TYPE: a.TRACK_TYPE,
     YEAR: a.YEAR,
     RACES: a.races,
@@ -1238,27 +1139,36 @@ function renderStats(){
     LAPS_LED: a.lapsLedSum || 0
   }));
 
-  // ORDER BY avg_rating desc, then races desc
+  // ORDER BY avg_rating desc, then races desc, then name
   out.sort((a,b) => {
-    const d1 = (b.AVG_RATING - a.AVG_RATING);
+    const d1 = b.AVG_RATING - a.AVG_RATING;
     if (Math.abs(d1) > 1e-9) return d1;
-    return (b.RACES - a.RACES);
+    const d2 = b.RACES - a.RACES;
+    if (d2 !== 0) return d2;
+    const d3 = a.DRIVER_NAME.localeCompare(b.DRIVER_NAME, undefined, { sensitivity:"base" });
+    if (d3 !== 0) return d3;
+    const d4 = a.TRACK_TYPE.localeCompare(b.TRACK_TYPE, undefined, { sensitivity:"base" });
+    if (d4 !== 0) return d4;
+    return String(a.YEAR).localeCompare(String(b.YEAR));
   });
 
   const selectedYears = Array.from(statsState.years).sort((a,b)=>Number(a)-Number(b));
   const yearsLabel = selectedYears.join(", ");
   const trackTypeLabel = statsState.trackType === "ALL" ? "All track types" : statsState.trackType;
 
+  const driversCount = new Set(rows.map(r => (r.DRIVER_NAME||"").trim()).filter(Boolean)).size;
+
   statsSummary.textContent =
-    `${trackTypeLabel} • Years: ${yearsLabel} • Groups: ${out.length.toLocaleString()} • Rows: ${rows.length.toLocaleString()} • Group by: Track Type + Year`;
+    `${trackTypeLabel} • Years: ${yearsLabel} • Groups: ${out.length.toLocaleString()} • Rows: ${rows.length.toLocaleString()} • Drivers: ${driversCount.toLocaleString()} • Group By: Driver + Track Type + Year`;
 
   if (out.length === 0){
-    statsTbody.innerHTML = `<tr><td colspan="7" class="muted">No rows match that filter.</td></tr>`;
+    statsTbody.innerHTML = `<tr><td colspan="8" class="muted">No rows match that filter.</td></tr>`;
     return;
   }
 
-  statsTbody.innerHTML = out.map(r => `
+  statsTbody.innerHTML = out.slice(0, 500).map(r => `
     <tr>
+      <td>${escapeHtml(r.DRIVER_NAME)}</td>
       <td>${escapeHtml(r.TRACK_TYPE)}</td>
       <td>${escapeHtml(r.YEAR)}</td>
       <td class="num">${r.RACES}</td>
@@ -1273,8 +1183,8 @@ function renderStats(){
 /** =========================
  *  INIT
  *  ========================= */
-$("lastUpdated").textContent = "Updated: " + new Date().toLocaleString();
-render();
+lastUpdated.textContent = "Updated: " + new Date().toLocaleString();
+renderStandings();
 initStatsUI();
 </script>
 </body>
