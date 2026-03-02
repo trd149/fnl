@@ -488,6 +488,101 @@
       padding: 0 2px;
     }
 
+    /* ===== Stats tab UI ===== */
+    .statsPad{ padding:12px; }
+    .statsControls{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:10px;
+    }
+    .statsLeft{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      min-width: 240px;
+    }
+    .statsRight{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+    }
+    .yearChips{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .yChip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(17,24,39,.45);
+      font-family:var(--mono);
+      font-size:12px;
+      color:#d1d5db;
+      user-select:none;
+      cursor:pointer;
+    }
+    .yChip input{ accent-color: var(--accent); }
+    .toggle{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(17,24,39,.70);
+      font-size:13px;
+      cursor:pointer;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .toggle input{ accent-color: var(--accent); }
+
+    .tableWrap{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: 14px;
+      overflow:hidden;
+      background: rgba(0,0,0,.06);
+    }
+    .tbl{
+      width:100%;
+      border-collapse:collapse;
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+    .tbl thead th{
+      position:sticky;
+      top:0;
+      z-index:1;
+      background: rgba(0,0,0,.18);
+      color:#cbd5e1;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      padding:10px 10px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      text-align:left;
+      white-space:nowrap;
+    }
+    .tbl tbody td{
+      padding:10px 10px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      white-space:nowrap;
+    }
+    .tbl tbody tr:hover{ background: rgba(210,20,4,.06); }
+    .num{ text-align:right; }
+    .muted{ color: var(--muted); }
+    .scrollX{ overflow-x:auto; -webkit-overflow-scrolling: touch; }
+
     /* Responsive tweaks */
     @media (max-width: 520px){
       .listHeader,
@@ -548,6 +643,7 @@
     <div class="tabs" role="tablist" aria-label="Page tabs">
       <button class="tab active" role="tab" aria-selected="true" aria-controls="panel-standings" id="tab-standings">Standings</button>
       <button class="tab" role="tab" aria-selected="false" aria-controls="panel-analysis" id="tab-analysis">Analysis</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel-stats" id="tab-stats">Stats</button>
     </div>
 
     <!-- ===================== STANDINGS ===================== -->
@@ -610,9 +706,80 @@
         </div>
       </div>
     </section>
+
+    <!-- ===================== STATS ===================== -->
+    <section class="tabPanel" id="panel-stats" role="tabpanel" aria-labelledby="tab-stats">
+      <div class="card">
+        <div class="statsPad">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+            <div>
+              <div style="font-weight:950;letter-spacing:.2px;font-size:16px">Stats</div>
+              <div class="sub" style="margin-top:6px">
+                <span class="pill"><span class="dot"></span> Filter by track type + years</span>
+              </div>
+            </div>
+            <div class="miniHint">Sorted by Avg Driver Rating</div>
+          </div>
+
+          <div class="statsControls" style="margin-top:10px">
+            <div class="statsLeft">
+              <label class="miniHint" for="trackTypeSel" style="min-width: 86px;">Track type</label>
+              <select class="select" id="trackTypeSel"></select>
+
+              <label class="toggle" title="When multiple years selected, show Driver + Year rows">
+                <input type="checkbox" id="groupByYear" />
+                Group by year
+              </label>
+            </div>
+
+            <div class="statsRight">
+              <div class="miniHint">Years</div>
+              <div class="yearChips" id="yearChips"></div>
+            </div>
+          </div>
+
+          <div class="kpiCard" style="margin-top:10px">
+            <div class="k">Summary</div>
+            <div style="margin-top:8px;color:var(--muted);line-height:1.5" id="statsSummary">—</div>
+          </div>
+
+          <div class="tableWrap" style="margin-top:10px">
+            <div class="scrollX">
+              <table class="tbl" id="statsTable">
+                <thead>
+                  <tr>
+                    <th>Driver</th>
+                    <th id="yearColHead" style="display:none;">Year</th>
+                    <th class="num">Races</th>
+                    <th class="num">Avg Rating</th>
+                    <th class="num">Avg Finish</th>
+                    <th class="num">Top 15%</th>
+                    <th class="num">Laps Led</th>
+                  </tr>
+                </thead>
+                <tbody id="statsTbody">
+                  <tr><td colspan="7" class="muted">Loading…</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="foot">
+            <div>Stats are computed on the client • no backend needed</div>
+            <div style="font-family:var(--mono)">Filters: Track Type + Years</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </div>
 
-<script>
+<script type="module">
+/** =========================
+ *  IMPORT STATS
+ *  ========================= */
+import { raceStats } from "./stats.js";
+
 /** =========================
  *  DATA
  *  ========================= */
@@ -652,7 +819,6 @@ const detailsRaw = [
   ["Ryan",   5597, "Atlanta Motor Speedway",         "Chris Buescher",         15, 22, 0, 0, 0, 0, 0],
   ["Tayhan", 5597, "Atlanta Motor Speedway",         "Bubba Wallace",          8, 49, 0, 0, 0, 1, 0],
 
-  // --- Added 5598 ---
   ["Ryan",   5598, "Circuit of The Americas",        "AJ Allmendinger",        9, 44, 0, 0, 0, 1, 0],
   ["JT",     5598, "Circuit of The Americas",        "Michael McDowell",       5, 42, 0, 1, 1, 1, 0],
   ["Chase",  5598, "Circuit of The Americas",        "Ross Chastain",          35, 14, 0, 0, 0, 1, 0],
@@ -709,6 +875,19 @@ function formatBehind(v){
   if (!Number.isFinite(n)) return { text:String(v), cls:"" };
   return { text:`-${n}`, cls:"neg" };
 }
+function yearFromRaceDate(raceDate){
+  // raceDate is yyyy-mm-dd
+  if (!raceDate) return null;
+  return String(raceDate).slice(0,4);
+}
+function fmt1(n){
+  if (!Number.isFinite(n)) return "—";
+  return (Math.round(n * 10) / 10).toFixed(1);
+}
+function fmt2(n){
+  if (!Number.isFinite(n)) return "—";
+  return (Math.round(n * 100) / 100).toFixed(2);
+}
 
 /** =========================
  *  STATE
@@ -732,21 +911,35 @@ let state = {
  *  ========================= */
 const tabStandings = $("tab-standings");
 const tabAnalysis  = $("tab-analysis");
+const tabStats     = $("tab-stats");
+
 const panelStandings = $("panel-standings");
 const panelAnalysis  = $("panel-analysis");
+const panelStats     = $("panel-stats");
 
 function setTab(which){
-  const standingsOn = which === "standings";
-  tabStandings.classList.toggle("active", standingsOn);
-  tabStandings.setAttribute("aria-selected", standingsOn ? "true" : "false");
-  tabAnalysis.classList.toggle("active", !standingsOn);
-  tabAnalysis.setAttribute("aria-selected", !standingsOn ? "true" : "false");
-  panelStandings.classList.toggle("active", standingsOn);
-  panelAnalysis.classList.toggle("active", !standingsOn);
+  const onStandings = which === "standings";
+  const onAnalysis  = which === "analysis";
+  const onStats     = which === "stats";
+
+  tabStandings.classList.toggle("active", onStandings);
+  tabStandings.setAttribute("aria-selected", onStandings ? "true" : "false");
+
+  tabAnalysis.classList.toggle("active", onAnalysis);
+  tabAnalysis.setAttribute("aria-selected", onAnalysis ? "true" : "false");
+
+  tabStats.classList.toggle("active", onStats);
+  tabStats.setAttribute("aria-selected", onStats ? "true" : "false");
+
+  panelStandings.classList.toggle("active", onStandings);
+  panelAnalysis.classList.toggle("active", onAnalysis);
+  panelStats.classList.toggle("active", onStats);
+
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 tabStandings.addEventListener("click", () => setTab("standings"));
 tabAnalysis.addEventListener("click", () => setTab("analysis"));
+tabStats.addEventListener("click", () => setTab("stats"));
 
 /** =========================
  *  SORT / FILTER
@@ -782,7 +975,7 @@ function toggleOpen(name){
 }
 
 /** =========================
- *  RENDER
+ *  RENDER (STANDINGS)
  *  ========================= */
 function render(){
   const rows = applySortFilter();
@@ -886,6 +1079,9 @@ function render(){
   renderAnalysisKPIs();
 }
 
+/** =========================
+ *  ANALYSIS KPIS
+ *  ========================= */
 function renderAnalysisKPIs(){
   const leader = standings.slice().sort((a,b)=>b.TOTAL_POINTS_INCLUDING_BONUS-a.TOTAL_POINTS_INCLUDING_BONUS)[0];
   $("kpiLeader").textContent = leader ? `${leader.FANTASY_NAME} (${leader.TOTAL_POINTS_INCLUDING_BONUS})` : "—";
@@ -930,10 +1126,203 @@ $("expandTop3").addEventListener("click", () => {
 });
 
 /** =========================
+ *  STATS TAB
+ *  ========================= */
+const trackTypeSel = $("trackTypeSel");
+const yearChips = $("yearChips");
+const groupByYearToggle = $("groupByYear");
+const statsTbody = $("statsTbody");
+const statsSummary = $("statsSummary");
+const yearColHead = $("yearColHead");
+
+const statsState = {
+  trackType: "ALL",
+  years: new Set(),      // selected years (strings)
+  groupByYear: false,
+};
+
+function initStatsUI(){
+  // Track types
+  const types = Array.from(new Set(raceStats.map(r => r.TRACK_TYPE).filter(Boolean))).sort((a,b)=>a.localeCompare(b));
+  trackTypeSel.innerHTML = [
+    `<option value="ALL">All track types</option>`,
+    ...types.map(t => `<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`)
+  ].join("");
+
+  // Years
+  const years = Array.from(new Set(raceStats.map(r => yearFromRaceDate(r.RACE_DATE)).filter(Boolean)))
+    .sort((a,b)=>Number(b)-Number(a));
+
+  // default: last 4 years if present, else all
+  const defaultYears = years.slice(0,4);
+  defaultYears.forEach(y => statsState.years.add(y));
+
+  yearChips.innerHTML = years.map(y => {
+    const checked = statsState.years.has(y) ? "checked" : "";
+    return `
+      <label class="yChip">
+        <input type="checkbox" value="${escapeHtml(y)}" ${checked}/>
+        ${escapeHtml(y)}
+      </label>
+    `;
+  }).join("");
+
+  trackTypeSel.addEventListener("change", () => {
+    statsState.trackType = trackTypeSel.value;
+    renderStats();
+  });
+
+  yearChips.addEventListener("change", (e) => {
+    const el = e.target;
+    if (!(el instanceof HTMLInputElement)) return;
+    const y = el.value;
+    if (el.checked) statsState.years.add(y);
+    else statsState.years.delete(y);
+
+    // if user unchecks everything, keep at least 1 (prevent confusing blank)
+    if (statsState.years.size === 0){
+      el.checked = true;
+      statsState.years.add(y);
+    }
+
+    // If multiple years selected, default groupByYear ON (but don’t force)
+    if (statsState.years.size > 1 && groupByYearToggle.checked === false){
+      groupByYearToggle.checked = true;
+      statsState.groupByYear = true;
+    }
+    renderStats();
+  });
+
+  groupByYearToggle.addEventListener("change", () => {
+    statsState.groupByYear = !!groupByYearToggle.checked;
+    renderStats();
+  });
+
+  // initial group-by rule:
+  if (statsState.years.size > 1){
+    groupByYearToggle.checked = true;
+    statsState.groupByYear = true;
+  }
+
+  renderStats();
+}
+
+function getFilteredStatsRows(){
+  const years = statsState.years;
+  const t = statsState.trackType;
+
+  return raceStats.filter(r => {
+    const y = yearFromRaceDate(r.RACE_DATE);
+    if (!y || !years.has(y)) return false;
+    if (t !== "ALL" && r.TRACK_TYPE !== t) return false;
+    return true;
+  });
+}
+
+function renderStats(){
+  const rows = getFilteredStatsRows();
+  const selectedYears = Array.from(statsState.years).sort((a,b)=>Number(a)-Number(b));
+  const yearsLabel = selectedYears.join(", ");
+  const trackTypeLabel = statsState.trackType === "ALL" ? "All track types" : statsState.trackType;
+
+  // show/hide Year column
+  const showYearCol = statsState.groupByYear && statsState.years.size > 1;
+  yearColHead.style.display = showYearCol ? "" : "none";
+
+  // Grouping key:
+  // - Always aggregated by driver for the selected track type
+  // - If groupByYear ON and multiple years selected => group by (driver, year) too
+  const map = new Map();
+
+  for (const r of rows){
+    const driver = r.DRIVER_NAME || "Unknown";
+    const year = yearFromRaceDate(r.RACE_DATE) || "—";
+
+    const key = showYearCol ? `${driver}||${year}` : `${driver}`;
+    let agg = map.get(key);
+    if (!agg){
+      agg = {
+        DRIVER_NAME: driver,
+        YEAR: year,
+        races: 0,
+        ratingSum: 0,
+        ratingN: 0,
+        finishSum: 0,
+        finishN: 0,
+        top15PctSum: 0,
+        top15PctN: 0,
+        lapsLedSum: 0,
+      };
+      map.set(key, agg);
+    }
+
+    agg.races += 1;
+
+    if (Number.isFinite(r.RATING)){
+      agg.ratingSum += r.RATING;
+      agg.ratingN += 1;
+    }
+    if (Number.isFinite(r.FINISH)){
+      agg.finishSum += r.FINISH;
+      agg.finishN += 1;
+    }
+    if (Number.isFinite(r.PCT_TOP_15_LAPS)){
+      agg.top15PctSum += r.PCT_TOP_15_LAPS;
+      agg.top15PctN += 1;
+    }
+    if (Number.isFinite(r.LAPS_LED)){
+      agg.lapsLedSum += r.LAPS_LED;
+    }
+  }
+
+  let out = Array.from(map.values()).map(a => ({
+    DRIVER_NAME: a.DRIVER_NAME,
+    YEAR: a.YEAR,
+    RACES: a.races,
+    AVG_RATING: a.ratingN ? (a.ratingSum / a.ratingN) : Number.NEGATIVE_INFINITY,
+    AVG_FINISH: a.finishN ? (a.finishSum / a.finishN) : Number.POSITIVE_INFINITY,
+    TOP15_PCT: a.top15PctN ? (a.top15PctSum / a.top15PctN) : Number.NEGATIVE_INFINITY,
+    LAPS_LED: a.lapsLedSum || 0
+  }));
+
+  // Sort by Avg Rating desc, then races desc
+  out.sort((a,b) => {
+    const d1 = (b.AVG_RATING - a.AVG_RATING);
+    if (Math.abs(d1) > 1e-9) return d1;
+    return (b.RACES - a.RACES);
+  });
+
+  // Summary line
+  const totalRaces = rows.length;
+  const uniqueDrivers = new Set(rows.map(r=>r.DRIVER_NAME).filter(Boolean)).size;
+  statsSummary.textContent =
+    `${trackTypeLabel} • Years: ${yearsLabel} • Rows: ${totalRaces.toLocaleString()} • Drivers: ${uniqueDrivers.toLocaleString()} • Group by year: ${showYearCol ? "ON" : "OFF"}`;
+
+  // Render table
+  if (out.length === 0){
+    statsTbody.innerHTML = `<tr><td colspan="7" class="muted">No rows match that filter.</td></tr>`;
+    return;
+  }
+
+  statsTbody.innerHTML = out.slice(0, 250).map(r => `
+    <tr>
+      <td>${escapeHtml(r.DRIVER_NAME)}</td>
+      <td style="display:${showYearCol ? "" : "none"}">${escapeHtml(r.YEAR)}</td>
+      <td class="num">${r.RACES}</td>
+      <td class="num">${r.AVG_RATING === Number.NEGATIVE_INFINITY ? "—" : fmt2(r.AVG_RATING)}</td>
+      <td class="num">${r.AVG_FINISH === Number.POSITIVE_INFINITY ? "—" : fmt2(r.AVG_FINISH)}</td>
+      <td class="num">${r.TOP15_PCT === Number.NEGATIVE_INFINITY ? "—" : fmt1(r.TOP15_PCT)}%</td>
+      <td class="num">${Number(r.LAPS_LED || 0).toLocaleString()}</td>
+    </tr>
+  `).join("");
+}
+
+/** =========================
  *  INIT
  *  ========================= */
 $("lastUpdated").textContent = "Updated: " + new Date().toLocaleString();
 render();
+initStatsUI();
 </script>
 </body>
 </html>
