@@ -488,6 +488,88 @@
       padding: 0 2px;
     }
 
+
+
+    /* Running order tab */
+    .runTop{
+      padding:12px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .runTitle{
+      font-weight:950;
+      letter-spacing:.2px;
+      font-size:16px;
+    }
+    .runHeader,
+    .runRow{
+      display:grid;
+      grid-template-columns: 64px 1fr 1fr 94px;
+      gap:10px;
+      align-items:center;
+    }
+    .runHeader{
+      padding:12px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.12);
+      color:#cbd5e1;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .runRow{
+      padding:12px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.04);
+    }
+    .runRow:nth-child(even){ background: rgba(255,255,255,.025); }
+    .runPos{
+      font-family:var(--mono);
+      font-weight:950;
+      font-size:18px;
+    }
+    .runBlock{
+      min-width:0;
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+    .runBlock .main{
+      font-weight:950;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .runBlock .small{
+      color:var(--muted);
+      font-size:12px;
+      font-family:var(--mono);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .runRight{
+      text-align:right;
+      font-family:var(--mono);
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .statusBadge{
+      display:inline-flex;
+      padding:5px 8px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(17,24,39,.45);
+      color:#d1d5db;
+      font-size:12px;
+      font-family:var(--mono);
+      white-space:nowrap;
+    }
+
     /* Responsive tweaks */
     @media (max-width: 520px){
       .listHeader,
@@ -500,6 +582,16 @@
       .statGrid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
       .stat:nth-child(4n){ border-right:1px solid rgba(255,255,255,.08); }
       .stat:nth-child(2n){ border-right:0; }
+
+      .runHeader,
+      .runRow{
+        grid-template-columns: 48px 1fr 1fr 70px;
+        gap:8px;
+      }
+      .runHeader{ font-size:10px; }
+      .runPos{ font-size:16px; }
+      .runBlock .main{ font-size:13px; }
+      .runBlock .small{ font-size:11px; }
     }
 
     @media (orientation: landscape) and (max-height: 520px){
@@ -519,6 +611,7 @@
         <div class="sub">
           <span class="pill"><span class="dot"></span> Tap a row to expand</span>
           <span class="pill" id="lastUpdated">Updated: —</span>
+          <span class="pill" id="raceProgress">Race Status: —</span>
         </div>
       </div>
 
@@ -547,6 +640,7 @@
 
     <div class="tabs" role="tablist" aria-label="Page tabs">
       <button class="tab active" role="tab" aria-selected="true" aria-controls="panel-standings" id="tab-standings">Standings</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel-running" id="tab-running">Running Order</button>
       <button class="tab" role="tab" aria-selected="false" aria-controls="panel-analysis" id="tab-analysis">Analysis</button>
     </div>
 
@@ -567,6 +661,37 @@
         <div style="font-family:var(--mono)">HTML + CSS + vanilla JS</div>
       </div>
     </section>
+
+
+    <!-- ===================== RUNNING ORDER ===================== -->
+    <section class="tabPanel" id="panel-running" role="tabpanel" aria-labelledby="tab-running">
+      <div class="card">
+        <div class="runTop">
+          <div>
+            <div class="runTitle">Fantasy Selections — Live Running Order</div>
+            <div class="sub" style="margin-top:6px">
+              <span class="pill"><span class="dot"></span> Sorted by live race position</span>
+              <span class="pill" id="runningLabel">Current Race: —</span>
+            </div>
+          </div>
+          <div class="miniHint">Shows only the drivers selected by fantasy players.</div>
+        </div>
+
+        <div class="runHeader" aria-hidden="true">
+          <div>Pos</div>
+          <div>Fantasy</div>
+          <div>Driver</div>
+          <div style="text-align:right">Race</div>
+        </div>
+        <div id="runningList"></div>
+      </div>
+
+      <div class="foot">
+        <div>Live order comes from NASCAR live feed matched to fantasy selections.</div>
+        <div style="font-family:var(--mono)">Generated JSON</div>
+      </div>
+    </section>
+
 
     <!-- ===================== ANALYSIS ===================== -->
     <section class="tabPanel" id="panel-analysis" role="tabpanel" aria-labelledby="tab-analysis">
@@ -616,227 +741,11 @@
 /** =========================
  *  DATA
  *  ========================= */
-const standings = [
-  { RANK:1, FANTASY_NAME:"Tayhan", STARTS:17, TOTAL_POINTS_INCLUDING_BONUS:689, POINTS_BEHIND:"-", WINS:2, TOP_5s:5, TOP_10s:14, LED_AT_LEAST_ONE_LAP_IN_RACE:9, LED_MOST_LAPS_IN_A_RACE:1 },
-  { RANK:2, FANTASY_NAME:"Chase", STARTS:17, TOTAL_POINTS_INCLUDING_BONUS:685, POINTS_BEHIND:"-4", WINS:4, TOP_5s:9, TOP_10s:12, LED_AT_LEAST_ONE_LAP_IN_RACE:11, LED_MOST_LAPS_IN_A_RACE:2 },
-  { RANK:3, FANTASY_NAME:"Dylan", STARTS:17, TOTAL_POINTS_INCLUDING_BONUS:674, POINTS_BEHIND:"-15", WINS:3, TOP_5s:11, TOP_10s:12, LED_AT_LEAST_ONE_LAP_IN_RACE:12, LED_MOST_LAPS_IN_A_RACE:0 },
-  { RANK:4, FANTASY_NAME:"JT", STARTS:17, TOTAL_POINTS_INCLUDING_BONUS:665, POINTS_BEHIND:"-24", WINS:4, TOP_5s:10, TOP_10s:12, LED_AT_LEAST_ONE_LAP_IN_RACE:12, LED_MOST_LAPS_IN_A_RACE:0 },
-  { RANK:5, FANTASY_NAME:"Conlan", STARTS:17, TOTAL_POINTS_INCLUDING_BONUS:644, POINTS_BEHIND:"-45", WINS:1, TOP_5s:9, TOP_10s:12, LED_AT_LEAST_ONE_LAP_IN_RACE:12, LED_MOST_LAPS_IN_A_RACE:2 },
-  { RANK:6, FANTASY_NAME:"Hunter", STARTS:17, TOTAL_POINTS_INCLUDING_BONUS:636, POINTS_BEHIND:"-53", WINS:2, TOP_5s:5, TOP_10s:10, LED_AT_LEAST_ONE_LAP_IN_RACE:10, LED_MOST_LAPS_IN_A_RACE:2 },
-  { RANK:7, FANTASY_NAME:"Lawson", STARTS:17, TOTAL_POINTS_INCLUDING_BONUS:625, POINTS_BEHIND:"-64", WINS:2, TOP_5s:5, TOP_10s:9, LED_AT_LEAST_ONE_LAP_IN_RACE:8, LED_MOST_LAPS_IN_A_RACE:0 },
-  { RANK:8, FANTASY_NAME:"Bill", STARTS:17, TOTAL_POINTS_INCLUDING_BONUS:608, POINTS_BEHIND:"-81", WINS:3, TOP_5s:6, TOP_10s:9, LED_AT_LEAST_ONE_LAP_IN_RACE:12, LED_MOST_LAPS_IN_A_RACE:4 },
-  { RANK:9, FANTASY_NAME:"Ryan", STARTS:17, TOTAL_POINTS_INCLUDING_BONUS:576, POINTS_BEHIND:"-113", WINS:2, TOP_5s:4, TOP_10s:8, LED_AT_LEAST_ONE_LAP_IN_RACE:11, LED_MOST_LAPS_IN_A_RACE:2 },
-  { RANK:10, FANTASY_NAME:"Kevin", STARTS:17, TOTAL_POINTS_INCLUDING_BONUS:437, POINTS_BEHIND:"-252", WINS:0, TOP_5s:2, TOP_10s:5, LED_AT_LEAST_ONE_LAP_IN_RACE:6, LED_MOST_LAPS_IN_A_RACE:0 },
-];
-
-const detailsRaw = [
-  ["Bill",   5596, "Daytona International Speedway", "Brad Keselowski",        5, 33, 0, 1, 1, 0, 0],
-  ["Chase",  5596, "Daytona International Speedway", "Chase Briscoe",          36, 2, 0, 0, 0, 1, 0],
-  ["Conlan", 5596, "Daytona International Speedway", "Joey Logano",            3, 38, 0, 1, 1, 1, 0],
-  ["Dylan",  5596, "Daytona International Speedway", "Chase Elliott",          4, 35, 0, 1, 1, 1, 0],
-  ["Hunter", 5596, "Daytona International Speedway", "Michael McDowell",       22, 20, 0, 0, 0, 1, 0],
-  ["JT",     5596, "Daytona International Speedway", "Austin Dillon",          37, 1, 0, 0, 0, 0, 0],
-  ["Kevin",  5596, "Daytona International Speedway", "Kyle Larson",            16, 22, 0, 0, 0, 1, 0],
-  ["Lawson", 5596, "Daytona International Speedway", "William Byron",          12, 25, 0, 0, 0, 0, 0],
-  ["Ryan",   5596, "Daytona International Speedway", "Todd Gilliland",         39, 2, 0, 0, 0, 1, 0],
-  ["Tayhan", 5596, "Daytona International Speedway", "Ricky Stenhouse Jr.",    2, 37, 0, 1, 1, 1, 0],
-
-  ["Bill",   5597, "Atlanta Motor Speedway",         "Tyler Reddick",          1, 74, 1, 1, 1, 1, 1],
-  ["Chase",  5597, "Atlanta Motor Speedway",         "Christopher Bell",       21, 17, 0, 0, 0, 1, 0],
-  ["Conlan", 5597, "Atlanta Motor Speedway",         "Ricky Stenhouse Jr.",    36, 1, 0, 0, 0, 0, 0],
-  ["Dylan",  5597, "Atlanta Motor Speedway",         "Carson Hocevar",         4, 40, 0, 1, 1, 1, 0],
-  ["Hunter", 5597, "Atlanta Motor Speedway",         "Ryan Blaney",            10, 32, 0, 0, 0, 1, 0],
-  ["JT",     5597, "Atlanta Motor Speedway",         "Brad Keselowski",        17, 23, 0, 0, 0, 1, 0],
-  ["Kevin",  5597, "Atlanta Motor Speedway",         "Josh Berry",             38, 1, 0, 0, 0, 0, 0],
-  ["Lawson", 5597, "Atlanta Motor Speedway",         "Brad Keselowski",        17, 23, 0, 0, 0, 1, 0],
-  ["Ryan",   5597, "Atlanta Motor Speedway",         "Chris Buescher",         15, 22, 0, 0, 0, 0, 0],
-  ["Tayhan", 5597, "Atlanta Motor Speedway",         "Bubba Wallace",          8, 49, 0, 0, 0, 1, 0],
-
-  ["Ryan",   5598, "Circuit of The Americas",        "AJ Allmendinger",        9, 44, 0, 0, 0, 1, 0],
-  ["JT",     5598, "Circuit of The Americas",        "Michael McDowell",       5, 42, 0, 1, 1, 1, 0],
-  ["Chase",  5598, "Circuit of The Americas",        "Ross Chastain",          35, 14, 0, 0, 0, 1, 0],
-  ["Dylan",  5598, "Circuit of The Americas",        "Ryan Blaney",            8, 34, 0, 0, 0, 1, 0],
-  ["Bill",   5598, "Circuit of The Americas",        "Ryan Blaney",            8, 34, 0, 0, 0, 1, 0],
-  ["Lawson", 5598, "Circuit of The Americas",        "Chase Elliott",          7, 33, 0, 0, 0, 0, 0],
-  ["Tayhan", 5598, "Circuit of The Americas",        "Chase Elliott",          7, 33, 0, 0, 0, 0, 0],
-  ["Kevin",  5598, "Circuit of The Americas",        "William Byron",          13, 27, 0, 0, 0, 1, 0],
-  ["Conlan", 5598, "Circuit of The Americas",        "Shane van Gisbergen",    2, 47, 0, 1, 1, 1, 0],
-  ["Hunter", 5598, "Circuit of The Americas",        "Connor Zilisch",         14, 23, 0, 0, 0, 0, 0],
-
-  ["Conlan", 5599, "Phoenix Raceway",                "Kyle Busch",             17, 20, 0, 0, 0, 0, 0],
-  ["Ryan",   5599, "Phoenix Raceway",                "Joey Logano",            31, 24, 0, 0, 0, 1, 0],
-  ["Tayhan", 5599, "Phoenix Raceway",                "Chris Buescher",         14, 30, 0, 0, 0, 0, 0],
-  ["JT",     5599, "Phoenix Raceway",                "Ryan Blaney",            1, 71, 1, 1, 1, 1, 0],
-  ["Chase",  5599, "Phoenix Raceway",                "Ryan Blaney",            1, 71, 1, 1, 1, 1, 0],
-  ["Lawson", 5599, "Phoenix Raceway",                "Ryan Blaney",            1, 71, 1, 1, 1, 1, 0],
-  ["Kevin",  5599, "Phoenix Raceway",                "Tyler Reddick",          8, 39, 0, 0, 0, 0, 0],
-  ["Dylan",  5599, "Phoenix Raceway",                "Daniel Suárez",          30, 11, 0, 0, 0, 0, 0],
-  ["Hunter", 5599, "Phoenix Raceway",                "Josh Berry",             32, 6, 0, 0, 0, 1, 0],
-  ["Bill",   5599, "Phoenix Raceway",                "Austin Cindric",         34, 13, 0, 0, 0, 0, 0],
-
-  ["Hunter", 5600, "Las Vegas Motor Speedway",       "Denny Hamlin",           1, 77, 1, 1, 1, 1, 1],
-  ["Kevin",  5600, "Las Vegas Motor Speedway",       "Erik Jones",             20, 17, 0, 0, 0, 0, 0],
-  ["Lawson", 5600, "Las Vegas Motor Speedway",       "Bubba Wallace",          9, 41, 0, 0, 0, 0, 0],
-  ["JT",     5600, "Las Vegas Motor Speedway",       "Ty Gibbs",               5, 40, 0, 1, 1, 0, 0],
-  ["Ryan",   5600, "Las Vegas Motor Speedway",       "Chase Briscoe",          8, 29, 0, 0, 0, 0, 0],
-  ["Chase",  5600, "Las Vegas Motor Speedway",       "Kyle Larson",            7, 49, 0, 0, 0, 1, 0],
-  ["Tayhan", 5600, "Las Vegas Motor Speedway",       "Kyle Larson",            7, 49, 0, 0, 0, 1, 0],
-  ["Dylan",  5600, "Las Vegas Motor Speedway",       "Christopher Bell",       4, 53, 0, 1, 1, 1, 0],
-  ["Conlan", 5600, "Las Vegas Motor Speedway",       "Christopher Bell",       4, 53, 0, 1, 1, 1, 0],
-  ["Bill",   5600, "Las Vegas Motor Speedway",       "Christopher Bell",       4, 53, 0, 1, 1, 1, 0],
-
-  ["Kevin",  5603, "Darlington Raceway", "Daniel Suárez", 7,  33, 0, 0, 0, 0, 0],
-  ["JT",     5603, "Darlington Raceway", "Chris Buescher", 9,  43, 0, 0, 0, 1, 0],
-  ["Chase",  5603, "Darlington Raceway", "Tyler Reddick", 1,  76, 1, 1, 1, 1, 0],
-  ["Lawson", 5603, "Darlington Raceway", "Tyler Reddick", 1,  76, 1, 1, 1, 1, 0],
-  ["Tayhan", 5603, "Darlington Raceway", "Tyler Reddick", 1,  76, 1, 1, 1, 1, 0],
-  ["Conlan", 5603, "Darlington Raceway", "Ryan Blaney (Backup) ", 3, 43, 0, 1, 1, 0, 0],
-  ["Ryan",   5603, "Darlington Raceway", "Kyle Busch",    21, 16, 0, 0, 0, 0, 0],
-  ["Hunter", 5603, "Darlington Raceway", "Chase Elliott", 15, 27, 0, 0, 0, 1, 0],
-  ["Dylan",  5603, "Darlington Raceway", "Tyler Reddick (Backup)",   1, 76, 1, 1, 1, 1, 0],
-  ["Bill",   5603, "Darlington Raceway", "Kyle Larson",   32, 20, 0, 0, 0, 1, 0],
-  
-  ["Chase",  5602, "Martinsville Speedway", "Denny Hamlin",     2, 59, 0, 1, 1, 1, 1],
-  ["Bill",   5602, "Martinsville Speedway", "Denny Hamlin",     2, 59, 0, 1, 1, 1, 1],
-  ["Tayhan", 5602, "Martinsville Speedway", "Ryan Blaney",      6, 42, 0, 0, 0, 1, 0],
-  ["Ryan",   5602, "Martinsville Speedway", "Chase Elliott",    1, 61, 1, 1, 1, 1, 0],
-  ["JT",     5602, "Martinsville Speedway", "Josh Berry",       10, 37, 0, 0, 0, 1, 0],
-  ["Conlan", 5602, "Martinsville Speedway", "Josh Berry",       10, 37, 0, 0, 0, 1, 0],
-  ["Hunter", 5602, "Martinsville Speedway", "Austin Cindric",   8, 40, 0, 0, 0, 0, 0],
-  ["Dylan",  5602, "Martinsville Speedway", "William Byron",    5, 49, 0, 1, 1, 1, 0],
-  ["Kevin",  5602, "Martinsville Speedway", "Carson Hocevar",   17, 20, 0, 0, 0, 0, 0],
-  ["Lawson", 5602, "Martinsville Speedway", "Ty Gibbs",         4, 50, 0, 1, 1, 0, 0],
-
-  ["Ryan",   5604, "Bristol Motor Speedway", "Austin Cindric", 16, 23, 0, 0, 0, 0, 0],
-  ["JT",     5604, "Bristol Motor Speedway", "Chase Briscoe", 5, 46, 0, 1, 1, 0, 0],
-  ["Chase",  5604, "Bristol Motor Speedway", "Ty Gibbs", 1, 65, 1, 1, 1, 1, 0],
-  ["Kevin",  5604, "Bristol Motor Speedway", "Chris Buescher", 13, 24, 0, 0, 0, 0, 0],
-  ["Dylan",  5604, "Bristol Motor Speedway", "Ty Gibbs", 1, 65, 1, 1, 1, 1, 0],
-  ["Conlan", 5604, "Bristol Motor Speedway", "Ty Gibbs", 1, 65, 1, 1, 1, 1, 0],
-  ["Hunter", 5604, "Bristol Motor Speedway", "Tyler Reddick", 4, 34, 0, 1, 1, 0, 0],
-  ["Lawson", 5604, "Bristol Motor Speedway", "Chris Buescher", 13, 24, 0, 0, 0, 0, 0],
-  ["Bill",   5604, "Bristol Motor Speedway", "Ty Gibbs", 1, 65, 1, 1, 1, 1, 0],
-  ["Tayhan", 5604, "Bristol Motor Speedway", "Denny Hamlin", 9, 41, 0, 0, 0, 0, 0],
-
-  ["Bill",   5607, "Kansas Speedway", "Chris Buescher",    10, 30, 0, 0, 0, 1, 0],
-  ["Chase",  5607, "Kansas Speedway", "Bubba Wallace",      5, 40, 0, 1, 1, 0, 0],
-  ["Kevin",  5607, "Kansas Speedway", "Bubba Wallace",      5, 40, 0, 1, 1, 0, 0],
-  ["Ryan",   5607, "Kansas Speedway", "Kyle Larson",        2, 56, 0, 1, 1, 1, 0],
-  ["Hunter", 5607, "Kansas Speedway", "Kyle Larson",        2, 56, 0, 1, 1, 1, 0],
-  ["JT",     5607, "Kansas Speedway", "Tyler Reddick",      1, 77, 1, 1, 1, 1, 0],
-  ["Tayhan", 5607, "Kansas Speedway", "Christopher Bell",  20, 31, 0, 0, 0, 1, 0],
-  ["Dylan",  5607, "Kansas Speedway", "Chase Briscoe",      3, 39, 0, 1, 1, 0, 0],
-  ["Conlan", 5607, "Kansas Speedway", "Carson Hocevar",    13, 29, 0, 0, 0, 1, 0],
-  ["Lawson", 5607, "Kansas Speedway", "Carson Hocevar",    13, 29, 0, 0, 0, 1, 0],
-
-  ["Ryan",   5605, "Talladega Superspeedway", "Brad Keselowski", 31, 15, 0, 0, 0, 0, 0],
-  ["JT",     5605, "Talladega Superspeedway", "Carson Hocevar", 1, 61, 1, 1, 1, 1, 0],
-  ["Chase",  5605, "Talladega Superspeedway", "Alex Bowman", 3, 38, 0, 1, 1, 0, 0],
-  ["Kevin",  5605, "Talladega Superspeedway", "Austin Cindric", 8, 29, 0, 0, 0, 0, 0],
-  ["Dylan",  5605, "Talladega Superspeedway", "Bubba Wallace", 36, 2, 0, 0, 0, 1, 0],
-  ["Conlan", 5605, "Talladega Superspeedway", "Ryan Preece", 18, 35, 0, 0, 0, 1, 0],
-  ["Hunter", 5605, "Talladega Superspeedway", "Chris Buescher", 2, 52, 0, 1, 1, 1, 0],
-  ["Lawson", 5605, "Talladega Superspeedway", "Austin Cindric", 8, 29, 0, 0, 0, 0, 0],
-  ["Bill",   5605, "Talladega Superspeedway", "Bubba Wallace", 36, 2, 0, 0, 0, 1, 0],
-  ["Tayhan", 5605, "Talladega Superspeedway", "Brad Keselowski", 31, 15, 0, 0, 0, 0, 0],
-
-  ["Ryan",   5606, "Texas Motor Speedway", "Carson Hocevar", 7, 42, 0, 0, 0, 1, 0],
-  ["JT",     5606, "Texas Motor Speedway", "Alex Bowman", 3, 36, 0, 1, 1, 0, 0],
-  ["Chase",  5606, "Texas Motor Speedway", "Daniel Suárez", 6, 36, 0, 0, 0, 0, 0],
-  ["Kevin",  5606, "Texas Motor Speedway", "Riley Herbst", 11, 30, 0, 0, 0, 1, 0],
-  ["Dylan",  5606, "Texas Motor Speedway", "Chris Buescher", 5, 37, 0, 1, 1, 0, 0],
-  ["Conlan", 5606, "Texas Motor Speedway", "Denny Hamlin", 2, 45, 0, 1, 1, 1, 0],
-  ["Hunter", 5606, "Texas Motor Speedway", "Carson Hocevar", 7, 42, 0, 0, 0, 1, 0],
-  ["Lawson", 5606, "Texas Motor Speedway", "Christopher Bell", 38, 2, 0, 0, 0, 1, 0],
-  ["Bill",   5606, "Texas Motor Speedway", "Daniel Suárez", 6, 36, 0, 0, 0, 0, 0],
-  ["Tayhan", 5606, "Texas Motor Speedway", "William Byron", 8, 31, 0, 0, 0, 0, 0],
-
-  ["Conlan", 5621, "Watkins Glen International", "AJ Allmendinger", 7, 36, 0, 0, 0, 0, 0],
-  ["Lawson", 5621, "Watkins Glen International", "AJ Allmendinger", 7, 36, 0, 0, 0, 0, 0],
-  ["Kevin",  5621, "Watkins Glen International", "Denny Hamlin", 16, 21, 0, 0, 0, 0, 0],
-  ["JT",     5621, "Watkins Glen International", "Ross Chastain", 27, 21, 0, 0, 0, 1, 0],
-  ["Dylan",  5621, "Watkins Glen International", "Ross Chastain", 27, 21, 0, 0, 0, 1, 0],
-  ["Chase",  5621, "Watkins Glen International", "Shane van Gisbergen", 1, 75, 1, 1, 1, 1, 1],
-  ["Hunter", 5621, "Watkins Glen International", "Shane van Gisbergen", 1, 75, 1, 1, 1, 1, 1],
-  ["Bill",   5621, "Watkins Glen International", "Shane van Gisbergen", 1, 75, 1, 1, 1, 1, 1],
-  ["Tayhan", 5621, "Watkins Glen International", "Shane van Gisbergen (backup)", 1, 75, 1, 1, 1, 1, 1],
-  ["Ryan",   5621, "Watkins Glen International", "Connor Zilisch", 20, 21, 0, 0, 0, 0, 0],
-
-   ["Bill",   5610, "Charlotte Motor Speedway", "Austin Dillon", 32, 5, 0, 0, 0, 0, 0],
-  ["Chase",  5610, "Charlotte Motor Speedway", "Austin Dillon", 32, 5, 0, 0, 0, 0, 0],
-  ["Conlan", 5610, "Charlotte Motor Speedway", "Tyler Reddick", 4, 56, 0, 1, 1, 1, 1],
-  ["Dylan",  5610, "Charlotte Motor Speedway", "Michael McDowell", 14, 24, 0, 0, 0, 1, 0],
-  ["Hunter", 5610, "Charlotte Motor Speedway", "Ty Gibbs (backup)", 6, 54, 0, 0, 0, 1, 0],
-  ["JT",     5610, "Charlotte Motor Speedway", "Kyle Larson", 5, 56, 0, 1, 1, 1, 0],
-  ["Kevin",  5610, "Charlotte Motor Speedway", "Cole Custer", 16, 21, 0, 0, 0, 0, 0],
-  ["Lawson", 5610, "Charlotte Motor Speedway", "Denny Hamlin", 3, 62, 0, 1, 1, 1, 0],
-  ["Ryan",   5610, "Charlotte Motor Speedway", "Tyler Reddick", 4, 56, 0, 1, 1, 1, 1],
-  ["Tayhan", 5610, "Charlotte Motor Speedway", "Joey Logano", 8, 29, 0, 0, 0, 0, 0],
-
-  ["Ryan",   5611, "Nashville Superspeedway", "Denny Hamlin", 1, 69, 1, 1, 1, 1, 1],
-  ["Chase",  5611, "Nashville Superspeedway", "Joey Logano", 14, 24, 0, 0, 0, 1, 0],
-  ["Lawson", 5611, "Nashville Superspeedway", "Ross Chastain", 37, 1,  0, 0, 0, 0, 0],
-  ["Dylan",  5611, "Nashville Superspeedway", "Kyle Larson", 23, 24, 0, 0, 0, 1, 0],
-  ["JT",     5611, "Nashville Superspeedway", "Christopher Bell", 2, 40, 0, 1, 1, 1, 0],
-  ["Kevin",  5611, "Nashville Superspeedway", "Christopher Bell", 2, 40, 0, 1, 1, 1, 0],
-  ["Hunter", 5611, "Nashville Superspeedway", "William Byron", 30, 15, 0, 0, 0, 0, 0],
-  ["Bill",   5611, "Nashville Superspeedway", "William Byron", 30, 15, 0, 0, 0, 0, 0],
-  ["Conlan", 5611, "Nashville Superspeedway", "Chase Briscoe", 3, 41, 0, 1, 1, 1, 0],
-  ["Tayhan", 5611, "Nashville Superspeedway", "Chase Briscoe", 3, 41, 0, 1, 1, 1, 0],
-
-  ["Lawson", 5612, "Michigan International Speedway", "Kyle Larson", 4, 46, 0, 1, 1, 1, 0],
-  ["Dylan",  5612, "Michigan International Speedway", "Erik Jones", 2, 45, 0, 1, 1, 0, 0],
-  ["JT",     5612, "Michigan International Speedway", "Denny Hamlin (Backup)", 1, 64, 1, 1, 1, 1, 0],
-  ["Conlan", 5612, "Michigan International Speedway", "Chase Elliott", 32, 24, 0, 0, 0, 1, 1],
-  ["Bill",   5612, "Michigan International Speedway", "Chase Elliott", 32, 24, 0, 0, 0, 1, 1],
-  ["Hunter", 5612, "Michigan International Speedway", "Chase Briscoe", 10, 27, 0, 0, 0, 0, 0],
-  ["Chase",  5612, "Michigan International Speedway", "Carson Hocevar", 5, 47, 0, 1, 1, 1, 0],
-  ["Tayhan", 5612, "Michigan International Speedway", "Carson Hocevar", 5, 47, 0, 1, 1, 1, 0],
-  ["Ryan",   5612, "Michigan International Speedway", "Ty Gibbs", 25, 22, 0, 0, 0, 1, 0],
-  ["Kevin",  5612, "Michigan International Speedway", "Ty Gibbs", 25, 22, 0, 0, 0, 1, 0],
-
-  ["Ryan",   5614, "Pocono Raceway", "Ryan Blaney",     10, 28, 0, 0, 0, 1, 0],
-  ["JT",     5614, "Pocono Raceway", "Joey Logano",     34, 5,  0, 0, 0, 0, 0],
-  ["Chase",  5614, "Pocono Raceway", "William Byron",    3, 39, 0, 1, 1, 0, 0],
-  ["Kevin",  5614, "Pocono Raceway", "Chase Elliott",   11, 28, 0, 0, 0, 1, 0],
-  ["Dylan",  5614, "Pocono Raceway", "Denny Hamlin",     1, 73, 1, 1, 1, 1, 0],
-  ["Conlan", 5614, "Pocono Raceway", "Chris Buescher",   7, 37, 0, 0, 0, 0, 0],
-  ["Hunter", 5614, "Pocono Raceway", "Daniel Suárez",   13, 32, 0, 0, 0, 0, 0],
-  ["Lawson", 5614, "Pocono Raceway", "Chase Briscoe",   12, 42, 0, 0, 0, 1, 0],
-  ["Bill",   5614, "Pocono Raceway", "Chase Briscoe",   12, 42, 0, 0, 0, 1, 0],
-  ["Tayhan", 5614, "Pocono Raceway", "Ty Gibbs",         9, 36, 0, 0, 0, 0, 0],
-
-  ["Ryan",   5613, "San Diego Street Course", "Ryan Preece",          11, 46, 0, 0, 0, 1, 0],
-  ["JT",     5613, "San Diego Street Course", "Shane van Gisbergen",  38, 2,  0, 0, 0, 1, 0],
-  ["Chase",  5613, "San Diego Street Course", "Michael McDowell",     10, 27, 0, 0, 0, 0, 0],
-  ["Kevin",  5613, "San Diego Street Course", "Joey Logano",          18, 23, 0, 0, 0, 0, 0],
-  ["Dylan",  5613, "San Diego Street Course", "AJ Allmendinger",       5, 46, 0, 1, 1, 0, 0],
-  ["Conlan", 5613, "San Diego Street Course", "Bubba Wallace",         2, 37, 0, 1, 1, 1, 0],
-  ["Hunter", 5613, "San Diego Street Course", "Todd Gilliland",       21, 23, 0, 0, 0, 0, 0],
-  ["Lawson", 5613, "San Diego Street Course", "Daniel Suárez (Backup)",        13, 28, 0, 0, 0, 0, 0],
-  ["Bill",   5613, "San Diego Street Course", "Carson Hocevar",       19, 28, 0, 0, 0, 1, 0],
-  ["Tayhan", 5613, "San Diego Street Course", "Michael McDowell",     10, 27, 0, 0, 0, 0, 0],
-  
-];
-
-const details = detailsRaw.map(r => ({
-  FANTASY_NAME: r[0],
-  TRACK_ID: r[1],
-  TRACK_NAME: r[2],
-  SELECTION: r[3],
-  FINISH_POSITION: r[4],
-  POINTS_EARNED: r[5],
-  WIN: r[6],
-  TOP5: r[7],
-  TOP10: r[8],
-  LED_LAP: r[9],
-  LED_MOST: r[10],
-}));
-
-const detailByName = details.reduce((acc, row) => {
-  (acc[row.FANTASY_NAME] ||= []).push(row);
-  return acc;
-}, {});
+let standings = [];
+let details = [];
+let runningOrder = [];
+let detailByName = {};
+let siteMeta = {};
 
 /** =========================
  *  HELPERS
@@ -871,8 +780,12 @@ const list = $("list");
 const q = $("q");
 const sortSel = $("sort");
 const lastUpdated = $("lastUpdated");
+const raceProgress = $("raceProgress");
+const runningList = $("runningList");
+const runningLabel = $("runningLabel");
 
-lastUpdated.textContent = "Updated: " + new Date().toLocaleString();
+lastUpdated.textContent = "Updated: loading...";
+raceProgress.textContent = "Race Status: loading...";
 
 let state = {
   open: new Set(),
@@ -884,23 +797,25 @@ let state = {
 /** =========================
  *  TABS
  *  ========================= */
-const tabStandings = $("tab-standings");
-const tabAnalysis  = $("tab-analysis");
-const panelStandings = $("panel-standings");
-const panelAnalysis  = $("panel-analysis");
+const tabs = {
+  standings: { tab: $("tab-standings"), panel: $("panel-standings") },
+  running:   { tab: $("tab-running"),   panel: $("panel-running") },
+  analysis:  { tab: $("tab-analysis"),  panel: $("panel-analysis") },
+};
 
 function setTab(which){
-  const standingsOn = which === "standings";
-  tabStandings.classList.toggle("active", standingsOn);
-  tabStandings.setAttribute("aria-selected", standingsOn ? "true" : "false");
-  tabAnalysis.classList.toggle("active", !standingsOn);
-  tabAnalysis.setAttribute("aria-selected", !standingsOn ? "true" : "false");
-  panelStandings.classList.toggle("active", standingsOn);
-  panelAnalysis.classList.toggle("active", !standingsOn);
+  for (const [name, item] of Object.entries(tabs)){
+    const on = name === which;
+    item.tab.classList.toggle("active", on);
+    item.tab.setAttribute("aria-selected", on ? "true" : "false");
+    item.panel.classList.toggle("active", on);
+  }
+  if (which === "running") renderRunningOrder();
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
-tabStandings.addEventListener("click", () => setTab("standings"));
-tabAnalysis.addEventListener("click", () => setTab("analysis"));
+tabs.standings.tab.addEventListener("click", () => setTab("standings"));
+tabs.running.tab.addEventListener("click", () => setTab("running"));
+tabs.analysis.tab.addEventListener("click", () => setTab("analysis"));
 
 /** =========================
  *  SORT / FILTER
@@ -1038,6 +953,7 @@ function render(){
   }
 
   renderAnalysisKPIs();
+  renderRunningOrder();
 }
 
 function renderAnalysisKPIs(){
@@ -1055,6 +971,56 @@ function renderAnalysisKPIs(){
 
   const led = standings.slice().sort((a,b)=>(b.LED_AT_LEAST_ONE_LAP_IN_RACE||0)-(a.LED_AT_LEAST_ONE_LAP_IN_RACE||0))[0];
   $("kpiLedLap").textContent = led ? `${led.FANTASY_NAME} (${led.LED_AT_LEAST_ONE_LAP_IN_RACE})` : "—";
+}
+
+function renderRunningOrder(){
+  if (!runningList) return;
+
+  runningLabel.textContent = siteMeta.runningOrderLabel || "Current Race: —";
+
+  const rows = runningOrder.slice().sort((a,b) => {
+    const pa = a.RUNNING_POSITION === null || a.RUNNING_POSITION === undefined ? 9999 : Number(a.RUNNING_POSITION);
+    const pb = b.RUNNING_POSITION === null || b.RUNNING_POSITION === undefined ? 9999 : Number(b.RUNNING_POSITION);
+    if (pa !== pb) return pa - pb;
+    return String(a.FANTASY_NAME || "").localeCompare(String(b.FANTASY_NAME || ""));
+  });
+
+  if (!rows.length){
+    runningList.innerHTML = `
+      <div style="padding:14px;color:var(--muted);line-height:1.5">
+        No live fantasy running-order rows are available yet. This will populate when the Python script can match
+        current race selections to the NASCAR live feed.
+      </div>
+    `;
+    return;
+  }
+
+  runningList.innerHTML = rows.map(r => {
+    const pos = r.RUNNING_POSITION === null || r.RUNNING_POSITION === undefined ? "—" : r.RUNNING_POSITION;
+    const car = r.CAR_NUMBER && r.CAR_NUMBER !== "-" ? `#${escapeHtml(r.CAR_NUMBER)}` : "#—";
+    const status = r.STATUS && r.STATUS !== "-" ? r.STATUS : "Running";
+    const laps = r.LAPS_COMPLETED && r.LAPS_COMPLETED !== "-" ? `Lap ${escapeHtml(r.LAPS_COMPLETED)}` : "Lap —";
+    const delta = r.DELTA && r.DELTA !== "-" ? ` • ${escapeHtml(r.DELTA)}` : "";
+    const points = r.POINTS_EARNED && r.POINTS_EARNED !== "-" ? `Pts ${escapeHtml(r.POINTS_EARNED)}` : "Pts —";
+
+    return `
+      <div class="runRow">
+        <div class="runPos">${escapeHtml(pos)}</div>
+        <div class="runBlock">
+          <div class="main">${escapeHtml(r.FANTASY_NAME || "—")}</div>
+          <div class="small">${points}</div>
+        </div>
+        <div class="runBlock">
+          <div class="main">${escapeHtml(r.SELECTION || r.LIVE_DRIVER_NAME || "—")}</div>
+          <div class="small">${car} • ${escapeHtml(r.MANUFACTURER || "—")}</div>
+        </div>
+        <div class="runRight">
+          <div>${laps}${delta}</div>
+          <div style="margin-top:5px"><span class="statusBadge">${escapeHtml(status)}</span></div>
+        </div>
+      </div>
+    `;
+  }).join("");
 }
 
 /** =========================
@@ -1084,10 +1050,56 @@ $("expandTop3").addEventListener("click", () => {
 });
 
 /** =========================
- *  INIT
+ *  INIT / DATA LOAD
  *  ========================= */
-$("lastUpdated").textContent = "Updated: " + new Date().toLocaleString();
-render();
+function buildDetailIndex(){
+  detailByName = details.reduce((acc, row) => {
+    (acc[row.FANTASY_NAME] ||= []).push(row);
+    return acc;
+  }, {});
+}
+
+async function loadLeagueData(){
+  lastUpdated.textContent = "Updated: loading...";
+  raceProgress.textContent = "Race Status: loading...";
+
+  const res = await fetch(`data/league-data.json?v=${Date.now()}`, {
+    cache: "no-store"
+  });
+
+  if (!res.ok) {
+    throw new Error(`Could not load data/league-data.json. HTTP status: ${res.status}`);
+  }
+
+  const data = await res.json();
+  siteMeta = data || {};
+  standings = Array.isArray(data.standings) ? data.standings : [];
+  details = Array.isArray(data.details) ? data.details : [];
+  runningOrder = Array.isArray(data.runningOrder) ? data.runningOrder : [];
+  buildDetailIndex();
+
+  lastUpdated.textContent = "Updated: " + (data.lastUpdated || "—");
+  raceProgress.textContent = "Race Status: " + (data.raceProgress || "—");
+  runningLabel.textContent = data.runningOrderLabel || "Current Race: —";
+  render();
+}
+
+loadLeagueData().catch(err => {
+  console.error(err);
+  lastUpdated.textContent = "Updated: data load failed";
+  raceProgress.textContent = "Race Status: data load failed";
+  list.innerHTML = `
+    <div class="row">
+      <div style="padding:14px;color:#fca5a5;line-height:1.5">
+        Could not load <strong>data/league-data.json</strong>.
+        Make sure your Python script generated it and pushed it to GitHub.
+      </div>
+    </div>
+  `;
+  if (runningList){
+    runningList.innerHTML = `<div style="padding:14px;color:#fca5a5;line-height:1.5">Could not load running order data.</div>`;
+  }
+});
 </script>
 </body>
 </html>
