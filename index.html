@@ -514,7 +514,8 @@
       color: var(--text);
       font: inherit;
       font-weight: 900;
-      padding: 7px 10px;
+      padding: 8px 12px;
+      min-width: 64px;
       cursor: pointer;
       touch-action: manipulation;
       white-space: nowrap;
@@ -1034,6 +1035,27 @@
       .detail-panel { padding: 12px !important; }
     }
 
+  
+
+    /* v8: Details are collapsed unless the row explicitly has is-open.
+       This prevents mobile table/scroll CSS from accidentally displaying all detail rows. */
+    #standingsBody tr.detail-row { display: none !important; }
+    #standingsBody tr.detail-row.is-open { display: table-row !important; }
+    #standingsBody .standing-row { cursor: default; }
+    #standingsBody .toggle-action { position: relative; z-index: 5; }
+
+    @media (max-width: 760px) {
+      #standingsBody tr.detail-row { display: none !important; }
+      #standingsBody tr.detail-row.is-open { display: table-row !important; }
+      .standings-table-wrap,
+      .selection-table-wrap,
+      .live-table-wrap,
+      .track-map {
+        overscroll-behavior-x: contain;
+      }
+      .selection-table { min-width: 760px !important; }
+    }
+
   </style>
 </head>
 <body>
@@ -1055,7 +1077,7 @@
           <div class="eyebrow">🏁 Fantasy NASCAR League</div>
           <h1>Points Standings</h1>
           <p class="subtitle">
-            Click any owner row to expand race-by-race picks, finishes, points, and bonus stats.
+            Use the View button to expand race-by-race picks, finishes, points, and bonus stats.
             The page reads from <strong>data/league-data.json</strong>, so your Python updater can refresh it automatically.
           </p>
         </div>
@@ -1446,7 +1468,7 @@ function makeDetailPanel(name) {
           <strong>Selections</strong>
           <div class="hint">Exact race points are loaded from dbo.MOBILE TOTAL_POINTS_INCLUDING_BONUS.</div>
         </div>
-        <div class="hint">Tap owner row again to collapse</div>
+        <div class="hint">Use View/Hide to expand or collapse</div>
       </div>
 
       ${rows.length ? `
@@ -1551,12 +1573,9 @@ function renderStandings() {
     });
   });
 
-  tbody.querySelectorAll(".standing-row").forEach(row => {
-    row.addEventListener("click", (event) => {
-      if (event.target.closest("button, a, input, select, label")) return;
-      toggleOwner(row.getAttribute("data-owner"));
-    });
-  });
+  // v8: Do not toggle from the whole row. On mobile, horizontal scrolling can
+  // fire a click when the user was only trying to pan. Only the View/Hide
+  // button toggles expansion.
 }
 
 function calcPoints(car) {
