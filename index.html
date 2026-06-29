@@ -609,6 +609,33 @@
       .detail-cell { display: block; padding: 0; background: transparent; }
       .detail-panel { border-radius: 18px; background: var(--panel-2); }
       .toggle { text-align: left; }
+      .detail-panel { padding: 14px; }
+      .detail-stat-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .race-table-wrap { overflow: visible; border: 0; }
+      .race-table, .race-table thead, .race-table tbody, .race-table tr, .race-table td { display: block; width: 100%; }
+      .race-table thead { display: none; }
+      .race-table tr {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 10px;
+        margin-bottom: 10px;
+        background: rgba(255,255,255,.045);
+      }
+      .race-table td { border: 0; padding: 6px 4px; }
+      .race-table td::before {
+        display: block;
+        color: var(--muted);
+        font-size: .68rem;
+        text-transform: uppercase;
+        letter-spacing: .08em;
+        margin-bottom: 2px;
+      }
+      .race-table td:nth-child(1)::before { content: "Race"; }
+      .race-table td:nth-child(2)::before { content: "Selection"; }
+      .race-table td:nth-child(3)::before { content: "Finish"; }
+      .race-table td:nth-child(4)::before { content: "Points"; }
+      .race-table td:nth-child(5)::before { content: "Bonus / Stats"; }
+
     }
 
 
@@ -770,7 +797,7 @@
           </div>
 
           <div class="card race-leader-card">
-            <div class="label">Race Leader</div>
+            <div class="label">Race Winner / Leader</div>
             <div class="race-leader-name" id="raceLeader">—</div>
             <div class="race-leader-meta" id="raceLeaderMeta">—</div>
             <div class="mini-row"><span>Best fantasy score</span><strong id="bestScore">—</strong></div>
@@ -1246,18 +1273,25 @@ function renderPositionLine(cars) {
 }
 
 function renderRaceLeader(cars) {
+  const officialLeader = appData.raceLeader || {};
   const sortedByPos = [...cars].filter(c => c.position).sort((a,b) => a.position - b.position || calcPoints(b) - calcPoints(a));
-  const raceLeader = sortedByPos[0];
-  const leaderOwners = raceLeader ? sortedByPos.filter(c => c.position === raceLeader.position && c.driver === raceLeader.driver).map(c => c.owner) : [];
+  const selectedLeader = sortedByPos[0];
   const sortedByPts = [...cars].sort((a,b) => calcPoints(b) - calcPoints(a) || (a.position || 999) - (b.position || 999));
   const best = sortedByPts[0];
   const closest = sortedByPos.find(c => c.position !== 1);
   const progress = parseRaceProgress(appData.raceProgress || appData.raceStatus);
 
-  $("raceLeader").textContent = raceLeader ? raceLeader.driver : "—";
-  $("raceLeaderMeta").textContent = raceLeader
-    ? `P${raceLeader.position} · Selected by ${leaderOwners.join(", ") || raceLeader.owner}`
-    : "No matched fantasy driver in live feed/results";
+  const leaderDriver = hasValue(officialLeader.driver) ? officialLeader.driver : (selectedLeader ? selectedLeader.driver : "—");
+  const leaderPosition = hasValue(officialLeader.position) ? officialLeader.position : (selectedLeader ? selectedLeader.position : null);
+  const selectedBy = Array.isArray(officialLeader.selectedBy) ? officialLeader.selectedBy.filter(Boolean) : [];
+  const selectedText = selectedBy.length
+    ? `Selected by ${selectedBy.join(", ")}`
+    : (selectedLeader && selectedLeader.driver === leaderDriver ? `Selected by ${selectedLeader.owner}` : "Not selected in fantasy");
+
+  $("raceLeader").textContent = leaderDriver;
+  $("raceLeaderMeta").textContent = leaderDriver !== "—"
+    ? `${leaderPosition ? `P${leaderPosition}` : "Leader"} · ${selectedText}`
+    : "No race leader found in scoring/live data";
   $("bestScore").textContent = best ? `${calcPoints(best)} pts` : "—";
   $("topOwner").textContent = best ? best.owner : "—";
   $("closestDriver").textContent = closest ? `${closest.driver}, ${formatGap(closest.gap, closest.position)}` : "—";
