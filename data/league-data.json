@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-28 09:15 PM ET",
+  "lastUpdated": "2026-06-28 10:38 PM ET",
   "raceProgress": "Race Completed",
   "raceProgressLabel": "Race Status",
   "runningOrderLabel": "Fantasy running order — Toyota / Save Mart 350",
@@ -136,7 +136,7 @@
       "TRACK_NAME": "Toyota / Save Mart 350",
       "RACE_DATE": "2026-06-28T15:30:00",
       "SELECTION": "AJ Allmendinger",
-      "FINISH_POSITION": 16.0,
+      "FINISH_POSITION": null,
       "TOTAL_POINTS_INCLUDING_BONUS": null,
       "WINS": null,
       "TOP_5s": null,
@@ -145,7 +145,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5617",
+      "_driver_key": "ajallmendinger"
     },
     {
       "FANTASY_NAME": "Chase",
@@ -153,7 +155,7 @@
       "TRACK_NAME": "Toyota / Save Mart 350",
       "RACE_DATE": "2026-06-28T15:30:00",
       "SELECTION": "Chris Buescher",
-      "FINISH_POSITION": 19.0,
+      "FINISH_POSITION": null,
       "TOTAL_POINTS_INCLUDING_BONUS": null,
       "WINS": null,
       "TOP_5s": null,
@@ -162,7 +164,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5617",
+      "_driver_key": "chrisbuescher"
     },
     {
       "FANTASY_NAME": "Conlan",
@@ -170,7 +174,7 @@
       "TRACK_NAME": "Toyota / Save Mart 350",
       "RACE_DATE": "2026-06-28T15:30:00",
       "SELECTION": "Ross Chastain",
-      "FINISH_POSITION": 14.0,
+      "FINISH_POSITION": null,
       "TOTAL_POINTS_INCLUDING_BONUS": null,
       "WINS": null,
       "TOP_5s": null,
@@ -179,7 +183,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5617",
+      "_driver_key": "rosschastain"
     },
     {
       "FANTASY_NAME": "Dylan",
@@ -187,7 +193,7 @@
       "TRACK_NAME": "Toyota / Save Mart 350",
       "RACE_DATE": "2026-06-28T15:30:00",
       "SELECTION": "Shane van Gisbergen",
-      "FINISH_POSITION": 1.0,
+      "FINISH_POSITION": null,
       "TOTAL_POINTS_INCLUDING_BONUS": null,
       "WINS": null,
       "TOP_5s": null,
@@ -196,7 +202,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5617",
+      "_driver_key": "shanevangisbergen"
     },
     {
       "FANTASY_NAME": "Hunter",
@@ -204,7 +212,7 @@
       "TRACK_NAME": "Toyota / Save Mart 350",
       "RACE_DATE": "2026-06-28T15:30:00",
       "SELECTION": "AJ Allmendinger",
-      "FINISH_POSITION": 16.0,
+      "FINISH_POSITION": null,
       "TOTAL_POINTS_INCLUDING_BONUS": null,
       "WINS": null,
       "TOP_5s": null,
@@ -213,7 +221,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5617",
+      "_driver_key": "ajallmendinger"
     },
     {
       "FANTASY_NAME": "JT",
@@ -221,7 +231,7 @@
       "TRACK_NAME": "Toyota / Save Mart 350",
       "RACE_DATE": "2026-06-28T15:30:00",
       "SELECTION": "William Byron",
-      "FINISH_POSITION": 12.0,
+      "FINISH_POSITION": null,
       "TOTAL_POINTS_INCLUDING_BONUS": null,
       "WINS": null,
       "TOP_5s": null,
@@ -230,7 +240,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5617",
+      "_driver_key": "williambyron"
     },
     {
       "FANTASY_NAME": "Kevin",
@@ -238,7 +250,7 @@
       "TRACK_NAME": "Toyota / Save Mart 350",
       "RACE_DATE": "2026-06-28T15:30:00",
       "SELECTION": "Austin Dillon",
-      "FINISH_POSITION": 27.0,
+      "FINISH_POSITION": null,
       "TOTAL_POINTS_INCLUDING_BONUS": null,
       "WINS": null,
       "TOP_5s": null,
@@ -247,7 +259,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5617",
+      "_driver_key": "austindillon"
     },
     {
       "FANTASY_NAME": "Lawson",
@@ -255,7 +269,7 @@
       "TRACK_NAME": "Toyota / Save Mart 350",
       "RACE_DATE": "2026-06-28T15:30:00",
       "SELECTION": "Shane van Gisbergen",
-      "FINISH_POSITION": 1.0,
+      "FINISH_POSITION": null,
       "TOTAL_POINTS_INCLUDING_BONUS": null,
       "WINS": null,
       "TOP_5s": null,
@@ -264,7 +278,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5617",
+      "_driver_key": "shanevangisbergen"
     },
     {
       "FANTASY_NAME": "Ryan",
@@ -281,7 +297,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5617",
+      "_driver_key": "borissaid"
     },
     {
       "FANTASY_NAME": "Tayhan",
@@ -289,7 +307,7 @@
       "TRACK_NAME": "Toyota / Save Mart 350",
       "RACE_DATE": "2026-06-28T15:30:00",
       "SELECTION": "AJ Allmendinger",
-      "FINISH_POSITION": 16.0,
+      "FINISH_POSITION": null,
       "TOTAL_POINTS_INCLUDING_BONUS": null,
       "WINS": null,
       "TOP_5s": null,
@@ -298,7 +316,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5617",
+      "_driver_key": "ajallmendinger"
     },
     {
       "FANTASY_NAME": "Bill",
@@ -315,7 +335,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5613",
+      "_driver_key": "carsonhocevar"
     },
     {
       "FANTASY_NAME": "Chase",
@@ -332,7 +354,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5613",
+      "_driver_key": "michaelmcdowell"
     },
     {
       "FANTASY_NAME": "Conlan",
@@ -349,7 +373,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5613",
+      "_driver_key": "bubbawallace"
     },
     {
       "FANTASY_NAME": "Dylan",
@@ -366,7 +392,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5613",
+      "_driver_key": "ajallmendinger"
     },
     {
       "FANTASY_NAME": "Hunter",
@@ -383,7 +411,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5613",
+      "_driver_key": "toddgilliland"
     },
     {
       "FANTASY_NAME": "JT",
@@ -400,7 +430,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5613",
+      "_driver_key": "shanevangisbergen"
     },
     {
       "FANTASY_NAME": "Kevin",
@@ -417,7 +449,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5613",
+      "_driver_key": "joeylogano"
     },
     {
       "FANTASY_NAME": "Lawson",
@@ -434,7 +468,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5613",
+      "_driver_key": "danielsurez"
     },
     {
       "FANTASY_NAME": "Ryan",
@@ -451,7 +487,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5613",
+      "_driver_key": "ryanpreece"
     },
     {
       "FANTASY_NAME": "Tayhan",
@@ -468,7 +506,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5613",
+      "_driver_key": "michaelmcdowell"
     },
     {
       "FANTASY_NAME": "Bill",
@@ -485,7 +525,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5614",
+      "_driver_key": "chasebriscoe"
     },
     {
       "FANTASY_NAME": "Chase",
@@ -502,7 +544,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5614",
+      "_driver_key": "williambyron"
     },
     {
       "FANTASY_NAME": "Conlan",
@@ -519,7 +563,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5614",
+      "_driver_key": "chrisbuescher"
     },
     {
       "FANTASY_NAME": "Dylan",
@@ -536,7 +582,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5614",
+      "_driver_key": "dennyhamlin"
     },
     {
       "FANTASY_NAME": "Hunter",
@@ -553,7 +601,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5614",
+      "_driver_key": "danielsurez"
     },
     {
       "FANTASY_NAME": "JT",
@@ -570,7 +620,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5614",
+      "_driver_key": "joeylogano"
     },
     {
       "FANTASY_NAME": "Kevin",
@@ -587,7 +639,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5614",
+      "_driver_key": "chaseelliott"
     },
     {
       "FANTASY_NAME": "Lawson",
@@ -604,7 +658,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5614",
+      "_driver_key": "chasebriscoe"
     },
     {
       "FANTASY_NAME": "Ryan",
@@ -621,7 +677,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5614",
+      "_driver_key": "ryanblaney"
     },
     {
       "FANTASY_NAME": "Tayhan",
@@ -638,7 +696,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5614",
+      "_driver_key": "tygibbs"
     },
     {
       "FANTASY_NAME": "Bill",
@@ -655,7 +715,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5612",
+      "_driver_key": "chaseelliott"
     },
     {
       "FANTASY_NAME": "Chase",
@@ -672,7 +734,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5612",
+      "_driver_key": "carsonhocevar"
     },
     {
       "FANTASY_NAME": "Conlan",
@@ -689,7 +753,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5612",
+      "_driver_key": "chaseelliott"
     },
     {
       "FANTASY_NAME": "Dylan",
@@ -706,7 +772,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5612",
+      "_driver_key": "erikjones"
     },
     {
       "FANTASY_NAME": "Hunter",
@@ -723,7 +791,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5612",
+      "_driver_key": "chasebriscoe"
     },
     {
       "FANTASY_NAME": "JT",
@@ -740,7 +810,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5612",
+      "_driver_key": "dennyhamlin"
     },
     {
       "FANTASY_NAME": "Kevin",
@@ -757,7 +829,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5612",
+      "_driver_key": "tygibbs"
     },
     {
       "FANTASY_NAME": "Lawson",
@@ -774,7 +848,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5612",
+      "_driver_key": "kylelarson"
     },
     {
       "FANTASY_NAME": "Ryan",
@@ -791,7 +867,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5612",
+      "_driver_key": "tygibbs"
     },
     {
       "FANTASY_NAME": "Tayhan",
@@ -808,7 +886,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5612",
+      "_driver_key": "carsonhocevar"
     },
     {
       "FANTASY_NAME": "Bill",
@@ -825,7 +905,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5611",
+      "_driver_key": "williambyron"
     },
     {
       "FANTASY_NAME": "Chase",
@@ -842,7 +924,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5611",
+      "_driver_key": "joeylogano"
     },
     {
       "FANTASY_NAME": "Conlan",
@@ -859,7 +943,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5611",
+      "_driver_key": "chasebriscoe"
     },
     {
       "FANTASY_NAME": "Dylan",
@@ -876,7 +962,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5611",
+      "_driver_key": "kylelarson"
     },
     {
       "FANTASY_NAME": "Hunter",
@@ -893,7 +981,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5611",
+      "_driver_key": "williambyron"
     },
     {
       "FANTASY_NAME": "JT",
@@ -910,7 +1000,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5611",
+      "_driver_key": "christopherbell"
     },
     {
       "FANTASY_NAME": "Kevin",
@@ -927,7 +1019,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5611",
+      "_driver_key": "christopherbell"
     },
     {
       "FANTASY_NAME": "Lawson",
@@ -944,7 +1038,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5611",
+      "_driver_key": "rosschastain"
     },
     {
       "FANTASY_NAME": "Ryan",
@@ -961,7 +1057,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5611",
+      "_driver_key": "dennyhamlin"
     },
     {
       "FANTASY_NAME": "Tayhan",
@@ -978,7 +1076,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5611",
+      "_driver_key": "chasebriscoe"
     },
     {
       "FANTASY_NAME": "Bill",
@@ -995,7 +1095,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5610",
+      "_driver_key": "austindillon"
     },
     {
       "FANTASY_NAME": "Chase",
@@ -1012,7 +1114,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5610",
+      "_driver_key": "austindillon"
     },
     {
       "FANTASY_NAME": "Conlan",
@@ -1029,7 +1133,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5610",
+      "_driver_key": "tylerreddick"
     },
     {
       "FANTASY_NAME": "Dylan",
@@ -1046,7 +1152,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5610",
+      "_driver_key": "michaelmcdowell"
     },
     {
       "FANTASY_NAME": "Hunter",
@@ -1063,7 +1171,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5610",
+      "_driver_key": "tygibbs"
     },
     {
       "FANTASY_NAME": "JT",
@@ -1080,7 +1190,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5610",
+      "_driver_key": "kylelarson"
     },
     {
       "FANTASY_NAME": "Kevin",
@@ -1097,7 +1209,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5610",
+      "_driver_key": "colecuster"
     },
     {
       "FANTASY_NAME": "Lawson",
@@ -1114,7 +1228,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5610",
+      "_driver_key": "dennyhamlin"
     },
     {
       "FANTASY_NAME": "Ryan",
@@ -1131,7 +1247,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5610",
+      "_driver_key": "tylerreddick"
     },
     {
       "FANTASY_NAME": "Tayhan",
@@ -1148,7 +1266,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5610",
+      "_driver_key": "joeylogano"
     },
     {
       "FANTASY_NAME": "Bill",
@@ -1165,7 +1285,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5621",
+      "_driver_key": "shanevangisbergen"
     },
     {
       "FANTASY_NAME": "Chase",
@@ -1182,7 +1304,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5621",
+      "_driver_key": "shanevangisbergen"
     },
     {
       "FANTASY_NAME": "Conlan",
@@ -1199,7 +1323,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5621",
+      "_driver_key": "ajallmendinger"
     },
     {
       "FANTASY_NAME": "Dylan",
@@ -1216,7 +1342,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5621",
+      "_driver_key": "rosschastain"
     },
     {
       "FANTASY_NAME": "Hunter",
@@ -1233,7 +1361,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5621",
+      "_driver_key": "shanevangisbergen"
     },
     {
       "FANTASY_NAME": "JT",
@@ -1250,7 +1380,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5621",
+      "_driver_key": "rosschastain"
     },
     {
       "FANTASY_NAME": "Kevin",
@@ -1267,7 +1399,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5621",
+      "_driver_key": "dennyhamlin"
     },
     {
       "FANTASY_NAME": "Lawson",
@@ -1284,7 +1418,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5621",
+      "_driver_key": "ajallmendinger"
     },
     {
       "FANTASY_NAME": "Ryan",
@@ -1301,7 +1437,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5621",
+      "_driver_key": "connorzilisch"
     },
     {
       "FANTASY_NAME": "Tayhan",
@@ -1318,7 +1456,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5621",
+      "_driver_key": "shanevangisbergen"
     },
     {
       "FANTASY_NAME": "Bill",
@@ -1335,7 +1475,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5606",
+      "_driver_key": "danielsurez"
     },
     {
       "FANTASY_NAME": "Chase",
@@ -1352,7 +1494,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5606",
+      "_driver_key": "danielsurez"
     },
     {
       "FANTASY_NAME": "Conlan",
@@ -1369,7 +1513,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5606",
+      "_driver_key": "dennyhamlin"
     },
     {
       "FANTASY_NAME": "Dylan",
@@ -1386,7 +1532,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5606",
+      "_driver_key": "chrisbuescher"
     },
     {
       "FANTASY_NAME": "Hunter",
@@ -1403,7 +1551,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5606",
+      "_driver_key": "carsonhocevar"
     },
     {
       "FANTASY_NAME": "JT",
@@ -1420,7 +1570,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5606",
+      "_driver_key": "alexbowman"
     },
     {
       "FANTASY_NAME": "Kevin",
@@ -1437,7 +1589,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5606",
+      "_driver_key": "rileyherbst"
     },
     {
       "FANTASY_NAME": "Lawson",
@@ -1454,7 +1608,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5606",
+      "_driver_key": "christopherbell"
     },
     {
       "FANTASY_NAME": "Ryan",
@@ -1471,7 +1627,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5606",
+      "_driver_key": "carsonhocevar"
     },
     {
       "FANTASY_NAME": "Tayhan",
@@ -1488,7 +1646,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5606",
+      "_driver_key": "williambyron"
     },
     {
       "FANTASY_NAME": "Bill",
@@ -1505,7 +1665,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5605",
+      "_driver_key": "bubbawallace"
     },
     {
       "FANTASY_NAME": "Chase",
@@ -1522,7 +1684,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5605",
+      "_driver_key": "alexbowman"
     },
     {
       "FANTASY_NAME": "Conlan",
@@ -1539,7 +1703,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5605",
+      "_driver_key": "ryanpreece"
     },
     {
       "FANTASY_NAME": "Dylan",
@@ -1556,7 +1722,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5605",
+      "_driver_key": "bubbawallace"
     },
     {
       "FANTASY_NAME": "Hunter",
@@ -1573,7 +1741,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5605",
+      "_driver_key": "chrisbuescher"
     },
     {
       "FANTASY_NAME": "JT",
@@ -1590,7 +1760,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5605",
+      "_driver_key": "carsonhocevar"
     },
     {
       "FANTASY_NAME": "Kevin",
@@ -1607,7 +1779,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5605",
+      "_driver_key": "austincindric"
     },
     {
       "FANTASY_NAME": "Lawson",
@@ -1624,7 +1798,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5605",
+      "_driver_key": "austincindric"
     },
     {
       "FANTASY_NAME": "Ryan",
@@ -1641,7 +1817,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5605",
+      "_driver_key": "bradkeselowski"
     },
     {
       "FANTASY_NAME": "Tayhan",
@@ -1658,7 +1836,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5605",
+      "_driver_key": "bradkeselowski"
     },
     {
       "FANTASY_NAME": "Bill",
@@ -1675,7 +1855,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5607",
+      "_driver_key": "chrisbuescher"
     },
     {
       "FANTASY_NAME": "Chase",
@@ -1692,7 +1874,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5607",
+      "_driver_key": "bubbawallace"
     },
     {
       "FANTASY_NAME": "Conlan",
@@ -1709,7 +1893,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5607",
+      "_driver_key": "carsonhocevar"
     },
     {
       "FANTASY_NAME": "Dylan",
@@ -1726,7 +1912,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5607",
+      "_driver_key": "chasebriscoe"
     },
     {
       "FANTASY_NAME": "Hunter",
@@ -1743,7 +1931,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5607",
+      "_driver_key": "kylelarson"
     },
     {
       "FANTASY_NAME": "JT",
@@ -1760,7 +1950,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5607",
+      "_driver_key": "tylerreddick"
     },
     {
       "FANTASY_NAME": "Kevin",
@@ -1777,7 +1969,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5607",
+      "_driver_key": "bubbawallace"
     },
     {
       "FANTASY_NAME": "Lawson",
@@ -1794,7 +1988,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5607",
+      "_driver_key": "carsonhocevar"
     },
     {
       "FANTASY_NAME": "Ryan",
@@ -1811,7 +2007,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5607",
+      "_driver_key": "kylelarson"
     },
     {
       "FANTASY_NAME": "Tayhan",
@@ -1828,7 +2026,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5607",
+      "_driver_key": "christopherbell"
     },
     {
       "FANTASY_NAME": "Bill",
@@ -1845,7 +2045,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5604",
+      "_driver_key": "tygibbs"
     },
     {
       "FANTASY_NAME": "Chase",
@@ -1862,7 +2064,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5604",
+      "_driver_key": "tygibbs"
     },
     {
       "FANTASY_NAME": "Conlan",
@@ -1879,7 +2083,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5604",
+      "_driver_key": "tygibbs"
     },
     {
       "FANTASY_NAME": "Dylan",
@@ -1896,7 +2102,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5604",
+      "_driver_key": "tygibbs"
     },
     {
       "FANTASY_NAME": "Hunter",
@@ -1913,7 +2121,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5604",
+      "_driver_key": "tylerreddick"
     },
     {
       "FANTASY_NAME": "JT",
@@ -1930,7 +2140,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5604",
+      "_driver_key": "chasebriscoe"
     },
     {
       "FANTASY_NAME": "Kevin",
@@ -1947,7 +2159,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5604",
+      "_driver_key": "chrisbuescher"
     },
     {
       "FANTASY_NAME": "Lawson",
@@ -1964,7 +2178,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5604",
+      "_driver_key": "chrisbuescher"
     },
     {
       "FANTASY_NAME": "Ryan",
@@ -1981,7 +2197,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5604",
+      "_driver_key": "austincindric"
     },
     {
       "FANTASY_NAME": "Tayhan",
@@ -1998,7 +2216,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5604",
+      "_driver_key": "dennyhamlin"
     },
     {
       "FANTASY_NAME": "Bill",
@@ -2015,7 +2235,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5602",
+      "_driver_key": "dennyhamlin"
     },
     {
       "FANTASY_NAME": "Chase",
@@ -2032,7 +2254,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5602",
+      "_driver_key": "dennyhamlin"
     },
     {
       "FANTASY_NAME": "Conlan",
@@ -2049,7 +2273,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5602",
+      "_driver_key": "joshberry"
     },
     {
       "FANTASY_NAME": "Dylan",
@@ -2066,7 +2292,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5602",
+      "_driver_key": "williambyron"
     },
     {
       "FANTASY_NAME": "Hunter",
@@ -2083,7 +2311,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5602",
+      "_driver_key": "austincindric"
     },
     {
       "FANTASY_NAME": "JT",
@@ -2100,7 +2330,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5602",
+      "_driver_key": "joshberry"
     },
     {
       "FANTASY_NAME": "Kevin",
@@ -2117,7 +2349,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5602",
+      "_driver_key": "carsonhocevar"
     },
     {
       "FANTASY_NAME": "Lawson",
@@ -2134,7 +2368,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5602",
+      "_driver_key": "tygibbs"
     },
     {
       "FANTASY_NAME": "Ryan",
@@ -2151,7 +2387,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5602",
+      "_driver_key": "chaseelliott"
     },
     {
       "FANTASY_NAME": "Tayhan",
@@ -2168,7 +2406,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5602",
+      "_driver_key": "ryanblaney"
     },
     {
       "FANTASY_NAME": "Bill",
@@ -2185,7 +2425,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5603",
+      "_driver_key": "kylelarson"
     },
     {
       "FANTASY_NAME": "Chase",
@@ -2202,7 +2444,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5603",
+      "_driver_key": "tylerreddick"
     },
     {
       "FANTASY_NAME": "Conlan",
@@ -2219,7 +2463,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5603",
+      "_driver_key": "ryanblaney"
     },
     {
       "FANTASY_NAME": "Dylan",
@@ -2236,7 +2482,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5603",
+      "_driver_key": "tylerreddick"
     },
     {
       "FANTASY_NAME": "Hunter",
@@ -2253,7 +2501,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5603",
+      "_driver_key": "chaseelliott"
     },
     {
       "FANTASY_NAME": "JT",
@@ -2270,7 +2520,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5603",
+      "_driver_key": "chrisbuescher"
     },
     {
       "FANTASY_NAME": "Kevin",
@@ -2287,7 +2539,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5603",
+      "_driver_key": "danielsurez"
     },
     {
       "FANTASY_NAME": "Lawson",
@@ -2304,7 +2558,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5603",
+      "_driver_key": "tylerreddick"
     },
     {
       "FANTASY_NAME": "Ryan",
@@ -2321,7 +2577,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5603",
+      "_driver_key": "kylebusch"
     },
     {
       "FANTASY_NAME": "Tayhan",
@@ -2338,7 +2596,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5603",
+      "_driver_key": "tylerreddick"
     },
     {
       "FANTASY_NAME": "Bill",
@@ -2355,7 +2615,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5600",
+      "_driver_key": "christopherbell"
     },
     {
       "FANTASY_NAME": "Chase",
@@ -2372,7 +2634,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5600",
+      "_driver_key": "kylelarson"
     },
     {
       "FANTASY_NAME": "Conlan",
@@ -2389,7 +2653,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5600",
+      "_driver_key": "christopherbell"
     },
     {
       "FANTASY_NAME": "Dylan",
@@ -2406,7 +2672,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5600",
+      "_driver_key": "christopherbell"
     },
     {
       "FANTASY_NAME": "Hunter",
@@ -2423,7 +2691,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5600",
+      "_driver_key": "dennyhamlin"
     },
     {
       "FANTASY_NAME": "JT",
@@ -2440,7 +2710,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5600",
+      "_driver_key": "tygibbs"
     },
     {
       "FANTASY_NAME": "Kevin",
@@ -2457,7 +2729,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5600",
+      "_driver_key": "erikjones"
     },
     {
       "FANTASY_NAME": "Lawson",
@@ -2474,7 +2748,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5600",
+      "_driver_key": "bubbawallace"
     },
     {
       "FANTASY_NAME": "Ryan",
@@ -2491,7 +2767,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5600",
+      "_driver_key": "chasebriscoe"
     },
     {
       "FANTASY_NAME": "Tayhan",
@@ -2508,7 +2786,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5600",
+      "_driver_key": "kylelarson"
     },
     {
       "FANTASY_NAME": "Bill",
@@ -2525,7 +2805,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5599",
+      "_driver_key": "austincindric"
     },
     {
       "FANTASY_NAME": "Chase",
@@ -2542,7 +2824,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5599",
+      "_driver_key": "ryanblaney"
     },
     {
       "FANTASY_NAME": "Conlan",
@@ -2559,7 +2843,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5599",
+      "_driver_key": "kylebusch"
     },
     {
       "FANTASY_NAME": "Dylan",
@@ -2576,7 +2862,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5599",
+      "_driver_key": "danielsurez"
     },
     {
       "FANTASY_NAME": "Hunter",
@@ -2593,7 +2881,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5599",
+      "_driver_key": "joshberry"
     },
     {
       "FANTASY_NAME": "JT",
@@ -2610,7 +2900,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5599",
+      "_driver_key": "ryanblaney"
     },
     {
       "FANTASY_NAME": "Kevin",
@@ -2627,7 +2919,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5599",
+      "_driver_key": "tylerreddick"
     },
     {
       "FANTASY_NAME": "Lawson",
@@ -2644,7 +2938,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5599",
+      "_driver_key": "ryanblaney"
     },
     {
       "FANTASY_NAME": "Ryan",
@@ -2661,7 +2957,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5599",
+      "_driver_key": "joeylogano"
     },
     {
       "FANTASY_NAME": "Tayhan",
@@ -2678,7 +2976,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5599",
+      "_driver_key": "chrisbuescher"
     },
     {
       "FANTASY_NAME": "Bill",
@@ -2695,7 +2995,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5598",
+      "_driver_key": "ryanblaney"
     },
     {
       "FANTASY_NAME": "Chase",
@@ -2712,7 +3014,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5598",
+      "_driver_key": "rosschastain"
     },
     {
       "FANTASY_NAME": "Conlan",
@@ -2729,7 +3033,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5598",
+      "_driver_key": "shanevangisbergen"
     },
     {
       "FANTASY_NAME": "Dylan",
@@ -2746,7 +3052,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5598",
+      "_driver_key": "ryanblaney"
     },
     {
       "FANTASY_NAME": "Hunter",
@@ -2763,7 +3071,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5598",
+      "_driver_key": "connorzilisch"
     },
     {
       "FANTASY_NAME": "JT",
@@ -2780,7 +3090,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5598",
+      "_driver_key": "michaelmcdowell"
     },
     {
       "FANTASY_NAME": "Kevin",
@@ -2797,7 +3109,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5598",
+      "_driver_key": "williambyron"
     },
     {
       "FANTASY_NAME": "Lawson",
@@ -2814,7 +3128,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5598",
+      "_driver_key": "chaseelliott"
     },
     {
       "FANTASY_NAME": "Ryan",
@@ -2831,7 +3147,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5598",
+      "_driver_key": "ajallmendinger"
     },
     {
       "FANTASY_NAME": "Tayhan",
@@ -2848,7 +3166,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5598",
+      "_driver_key": "chaseelliott"
     },
     {
       "FANTASY_NAME": "Bill",
@@ -2865,7 +3185,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5597",
+      "_driver_key": "tylerreddick"
     },
     {
       "FANTASY_NAME": "Chase",
@@ -2882,7 +3204,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5597",
+      "_driver_key": "christopherbell"
     },
     {
       "FANTASY_NAME": "Conlan",
@@ -2899,7 +3223,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5597",
+      "_driver_key": "rickystenhousejr"
     },
     {
       "FANTASY_NAME": "Dylan",
@@ -2916,7 +3242,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5597",
+      "_driver_key": "carsonhocevar"
     },
     {
       "FANTASY_NAME": "Hunter",
@@ -2933,7 +3261,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5597",
+      "_driver_key": "ryanblaney"
     },
     {
       "FANTASY_NAME": "JT",
@@ -2950,7 +3280,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5597",
+      "_driver_key": "bradkeselowski"
     },
     {
       "FANTASY_NAME": "Kevin",
@@ -2967,7 +3299,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5597",
+      "_driver_key": "joshberry"
     },
     {
       "FANTASY_NAME": "Lawson",
@@ -2984,7 +3318,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5597",
+      "_driver_key": "bradkeselowski"
     },
     {
       "FANTASY_NAME": "Ryan",
@@ -3001,7 +3337,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5597",
+      "_driver_key": "chrisbuescher"
     },
     {
       "FANTASY_NAME": "Tayhan",
@@ -3018,7 +3356,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5597",
+      "_driver_key": "bubbawallace"
     },
     {
       "FANTASY_NAME": "Bill",
@@ -3035,7 +3375,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5596",
+      "_driver_key": "bradkeselowski"
     },
     {
       "FANTASY_NAME": "Chase",
@@ -3052,7 +3394,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5596",
+      "_driver_key": "chasebriscoe"
     },
     {
       "FANTASY_NAME": "Conlan",
@@ -3069,7 +3413,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5596",
+      "_driver_key": "joeylogano"
     },
     {
       "FANTASY_NAME": "Dylan",
@@ -3086,7 +3432,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5596",
+      "_driver_key": "chaseelliott"
     },
     {
       "FANTASY_NAME": "Hunter",
@@ -3103,7 +3451,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5596",
+      "_driver_key": "michaelmcdowell"
     },
     {
       "FANTASY_NAME": "JT",
@@ -3120,7 +3470,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5596",
+      "_driver_key": "austindillon"
     },
     {
       "FANTASY_NAME": "Kevin",
@@ -3137,7 +3489,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5596",
+      "_driver_key": "kylelarson"
     },
     {
       "FANTASY_NAME": "Lawson",
@@ -3154,7 +3508,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5596",
+      "_driver_key": "williambyron"
     },
     {
       "FANTASY_NAME": "Ryan",
@@ -3171,7 +3527,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5596",
+      "_driver_key": "toddgilliland"
     },
     {
       "FANTASY_NAME": "Tayhan",
@@ -3188,7 +3546,9 @@
       "LED_MOST_LAPS_IN_A_RACE": null,
       "STAGE_POINTS": null,
       "BONUS_POINTS": null,
-      "BONUS_SUMMARY": ""
+      "BONUS_SUMMARY": "",
+      "_race_key": "5596",
+      "_driver_key": "rickystenhousejr"
     }
   ],
   "raceDetails": {
@@ -3199,7 +3559,7 @@
         "TRACK_NAME": "Toyota / Save Mart 350",
         "RACE_DATE": "2026-06-28T15:30:00",
         "SELECTION": "AJ Allmendinger",
-        "FINISH_POSITION": 16.0,
+        "FINISH_POSITION": null,
         "TOTAL_POINTS_INCLUDING_BONUS": null,
         "WINS": null,
         "TOP_5s": null,
@@ -3208,7 +3568,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5617",
+        "_driver_key": "ajallmendinger"
       },
       {
         "FANTASY_NAME": "Bill",
@@ -3225,7 +3587,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5613",
+        "_driver_key": "carsonhocevar"
       },
       {
         "FANTASY_NAME": "Bill",
@@ -3242,7 +3606,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5614",
+        "_driver_key": "chasebriscoe"
       },
       {
         "FANTASY_NAME": "Bill",
@@ -3259,7 +3625,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5612",
+        "_driver_key": "chaseelliott"
       },
       {
         "FANTASY_NAME": "Bill",
@@ -3276,7 +3644,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5611",
+        "_driver_key": "williambyron"
       },
       {
         "FANTASY_NAME": "Bill",
@@ -3293,7 +3663,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5610",
+        "_driver_key": "austindillon"
       },
       {
         "FANTASY_NAME": "Bill",
@@ -3310,7 +3682,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5621",
+        "_driver_key": "shanevangisbergen"
       },
       {
         "FANTASY_NAME": "Bill",
@@ -3327,7 +3701,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5606",
+        "_driver_key": "danielsurez"
       },
       {
         "FANTASY_NAME": "Bill",
@@ -3344,7 +3720,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5605",
+        "_driver_key": "bubbawallace"
       },
       {
         "FANTASY_NAME": "Bill",
@@ -3361,7 +3739,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5607",
+        "_driver_key": "chrisbuescher"
       },
       {
         "FANTASY_NAME": "Bill",
@@ -3378,7 +3758,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5604",
+        "_driver_key": "tygibbs"
       },
       {
         "FANTASY_NAME": "Bill",
@@ -3395,7 +3777,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5602",
+        "_driver_key": "dennyhamlin"
       },
       {
         "FANTASY_NAME": "Bill",
@@ -3412,7 +3796,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5603",
+        "_driver_key": "kylelarson"
       },
       {
         "FANTASY_NAME": "Bill",
@@ -3429,7 +3815,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5600",
+        "_driver_key": "christopherbell"
       },
       {
         "FANTASY_NAME": "Bill",
@@ -3446,7 +3834,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5599",
+        "_driver_key": "austincindric"
       },
       {
         "FANTASY_NAME": "Bill",
@@ -3463,7 +3853,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5598",
+        "_driver_key": "ryanblaney"
       },
       {
         "FANTASY_NAME": "Bill",
@@ -3480,7 +3872,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5597",
+        "_driver_key": "tylerreddick"
       },
       {
         "FANTASY_NAME": "Bill",
@@ -3497,7 +3891,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5596",
+        "_driver_key": "bradkeselowski"
       }
     ],
     "Chase": [
@@ -3507,7 +3903,7 @@
         "TRACK_NAME": "Toyota / Save Mart 350",
         "RACE_DATE": "2026-06-28T15:30:00",
         "SELECTION": "Chris Buescher",
-        "FINISH_POSITION": 19.0,
+        "FINISH_POSITION": null,
         "TOTAL_POINTS_INCLUDING_BONUS": null,
         "WINS": null,
         "TOP_5s": null,
@@ -3516,7 +3912,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5617",
+        "_driver_key": "chrisbuescher"
       },
       {
         "FANTASY_NAME": "Chase",
@@ -3533,7 +3931,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5613",
+        "_driver_key": "michaelmcdowell"
       },
       {
         "FANTASY_NAME": "Chase",
@@ -3550,7 +3950,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5614",
+        "_driver_key": "williambyron"
       },
       {
         "FANTASY_NAME": "Chase",
@@ -3567,7 +3969,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5612",
+        "_driver_key": "carsonhocevar"
       },
       {
         "FANTASY_NAME": "Chase",
@@ -3584,7 +3988,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5611",
+        "_driver_key": "joeylogano"
       },
       {
         "FANTASY_NAME": "Chase",
@@ -3601,7 +4007,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5610",
+        "_driver_key": "austindillon"
       },
       {
         "FANTASY_NAME": "Chase",
@@ -3618,7 +4026,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5621",
+        "_driver_key": "shanevangisbergen"
       },
       {
         "FANTASY_NAME": "Chase",
@@ -3635,7 +4045,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5606",
+        "_driver_key": "danielsurez"
       },
       {
         "FANTASY_NAME": "Chase",
@@ -3652,7 +4064,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5605",
+        "_driver_key": "alexbowman"
       },
       {
         "FANTASY_NAME": "Chase",
@@ -3669,7 +4083,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5607",
+        "_driver_key": "bubbawallace"
       },
       {
         "FANTASY_NAME": "Chase",
@@ -3686,7 +4102,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5604",
+        "_driver_key": "tygibbs"
       },
       {
         "FANTASY_NAME": "Chase",
@@ -3703,7 +4121,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5602",
+        "_driver_key": "dennyhamlin"
       },
       {
         "FANTASY_NAME": "Chase",
@@ -3720,7 +4140,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5603",
+        "_driver_key": "tylerreddick"
       },
       {
         "FANTASY_NAME": "Chase",
@@ -3737,7 +4159,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5600",
+        "_driver_key": "kylelarson"
       },
       {
         "FANTASY_NAME": "Chase",
@@ -3754,7 +4178,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5599",
+        "_driver_key": "ryanblaney"
       },
       {
         "FANTASY_NAME": "Chase",
@@ -3771,7 +4197,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5598",
+        "_driver_key": "rosschastain"
       },
       {
         "FANTASY_NAME": "Chase",
@@ -3788,7 +4216,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5597",
+        "_driver_key": "christopherbell"
       },
       {
         "FANTASY_NAME": "Chase",
@@ -3805,7 +4235,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5596",
+        "_driver_key": "chasebriscoe"
       }
     ],
     "Conlan": [
@@ -3815,7 +4247,7 @@
         "TRACK_NAME": "Toyota / Save Mart 350",
         "RACE_DATE": "2026-06-28T15:30:00",
         "SELECTION": "Ross Chastain",
-        "FINISH_POSITION": 14.0,
+        "FINISH_POSITION": null,
         "TOTAL_POINTS_INCLUDING_BONUS": null,
         "WINS": null,
         "TOP_5s": null,
@@ -3824,7 +4256,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5617",
+        "_driver_key": "rosschastain"
       },
       {
         "FANTASY_NAME": "Conlan",
@@ -3841,7 +4275,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5613",
+        "_driver_key": "bubbawallace"
       },
       {
         "FANTASY_NAME": "Conlan",
@@ -3858,7 +4294,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5614",
+        "_driver_key": "chrisbuescher"
       },
       {
         "FANTASY_NAME": "Conlan",
@@ -3875,7 +4313,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5612",
+        "_driver_key": "chaseelliott"
       },
       {
         "FANTASY_NAME": "Conlan",
@@ -3892,7 +4332,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5611",
+        "_driver_key": "chasebriscoe"
       },
       {
         "FANTASY_NAME": "Conlan",
@@ -3909,7 +4351,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5610",
+        "_driver_key": "tylerreddick"
       },
       {
         "FANTASY_NAME": "Conlan",
@@ -3926,7 +4370,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5621",
+        "_driver_key": "ajallmendinger"
       },
       {
         "FANTASY_NAME": "Conlan",
@@ -3943,7 +4389,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5606",
+        "_driver_key": "dennyhamlin"
       },
       {
         "FANTASY_NAME": "Conlan",
@@ -3960,7 +4408,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5605",
+        "_driver_key": "ryanpreece"
       },
       {
         "FANTASY_NAME": "Conlan",
@@ -3977,7 +4427,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5607",
+        "_driver_key": "carsonhocevar"
       },
       {
         "FANTASY_NAME": "Conlan",
@@ -3994,7 +4446,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5604",
+        "_driver_key": "tygibbs"
       },
       {
         "FANTASY_NAME": "Conlan",
@@ -4011,7 +4465,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5602",
+        "_driver_key": "joshberry"
       },
       {
         "FANTASY_NAME": "Conlan",
@@ -4028,7 +4484,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5603",
+        "_driver_key": "ryanblaney"
       },
       {
         "FANTASY_NAME": "Conlan",
@@ -4045,7 +4503,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5600",
+        "_driver_key": "christopherbell"
       },
       {
         "FANTASY_NAME": "Conlan",
@@ -4062,7 +4522,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5599",
+        "_driver_key": "kylebusch"
       },
       {
         "FANTASY_NAME": "Conlan",
@@ -4079,7 +4541,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5598",
+        "_driver_key": "shanevangisbergen"
       },
       {
         "FANTASY_NAME": "Conlan",
@@ -4096,7 +4560,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5597",
+        "_driver_key": "rickystenhousejr"
       },
       {
         "FANTASY_NAME": "Conlan",
@@ -4113,7 +4579,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5596",
+        "_driver_key": "joeylogano"
       }
     ],
     "Dylan": [
@@ -4123,7 +4591,7 @@
         "TRACK_NAME": "Toyota / Save Mart 350",
         "RACE_DATE": "2026-06-28T15:30:00",
         "SELECTION": "Shane van Gisbergen",
-        "FINISH_POSITION": 1.0,
+        "FINISH_POSITION": null,
         "TOTAL_POINTS_INCLUDING_BONUS": null,
         "WINS": null,
         "TOP_5s": null,
@@ -4132,7 +4600,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5617",
+        "_driver_key": "shanevangisbergen"
       },
       {
         "FANTASY_NAME": "Dylan",
@@ -4149,7 +4619,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5613",
+        "_driver_key": "ajallmendinger"
       },
       {
         "FANTASY_NAME": "Dylan",
@@ -4166,7 +4638,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5614",
+        "_driver_key": "dennyhamlin"
       },
       {
         "FANTASY_NAME": "Dylan",
@@ -4183,7 +4657,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5612",
+        "_driver_key": "erikjones"
       },
       {
         "FANTASY_NAME": "Dylan",
@@ -4200,7 +4676,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5611",
+        "_driver_key": "kylelarson"
       },
       {
         "FANTASY_NAME": "Dylan",
@@ -4217,7 +4695,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5610",
+        "_driver_key": "michaelmcdowell"
       },
       {
         "FANTASY_NAME": "Dylan",
@@ -4234,7 +4714,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5621",
+        "_driver_key": "rosschastain"
       },
       {
         "FANTASY_NAME": "Dylan",
@@ -4251,7 +4733,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5606",
+        "_driver_key": "chrisbuescher"
       },
       {
         "FANTASY_NAME": "Dylan",
@@ -4268,7 +4752,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5605",
+        "_driver_key": "bubbawallace"
       },
       {
         "FANTASY_NAME": "Dylan",
@@ -4285,7 +4771,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5607",
+        "_driver_key": "chasebriscoe"
       },
       {
         "FANTASY_NAME": "Dylan",
@@ -4302,7 +4790,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5604",
+        "_driver_key": "tygibbs"
       },
       {
         "FANTASY_NAME": "Dylan",
@@ -4319,7 +4809,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5602",
+        "_driver_key": "williambyron"
       },
       {
         "FANTASY_NAME": "Dylan",
@@ -4336,7 +4828,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5603",
+        "_driver_key": "tylerreddick"
       },
       {
         "FANTASY_NAME": "Dylan",
@@ -4353,7 +4847,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5600",
+        "_driver_key": "christopherbell"
       },
       {
         "FANTASY_NAME": "Dylan",
@@ -4370,7 +4866,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5599",
+        "_driver_key": "danielsurez"
       },
       {
         "FANTASY_NAME": "Dylan",
@@ -4387,7 +4885,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5598",
+        "_driver_key": "ryanblaney"
       },
       {
         "FANTASY_NAME": "Dylan",
@@ -4404,7 +4904,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5597",
+        "_driver_key": "carsonhocevar"
       },
       {
         "FANTASY_NAME": "Dylan",
@@ -4421,7 +4923,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5596",
+        "_driver_key": "chaseelliott"
       }
     ],
     "Hunter": [
@@ -4431,7 +4935,7 @@
         "TRACK_NAME": "Toyota / Save Mart 350",
         "RACE_DATE": "2026-06-28T15:30:00",
         "SELECTION": "AJ Allmendinger",
-        "FINISH_POSITION": 16.0,
+        "FINISH_POSITION": null,
         "TOTAL_POINTS_INCLUDING_BONUS": null,
         "WINS": null,
         "TOP_5s": null,
@@ -4440,7 +4944,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5617",
+        "_driver_key": "ajallmendinger"
       },
       {
         "FANTASY_NAME": "Hunter",
@@ -4457,7 +4963,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5613",
+        "_driver_key": "toddgilliland"
       },
       {
         "FANTASY_NAME": "Hunter",
@@ -4474,7 +4982,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5614",
+        "_driver_key": "danielsurez"
       },
       {
         "FANTASY_NAME": "Hunter",
@@ -4491,7 +5001,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5612",
+        "_driver_key": "chasebriscoe"
       },
       {
         "FANTASY_NAME": "Hunter",
@@ -4508,7 +5020,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5611",
+        "_driver_key": "williambyron"
       },
       {
         "FANTASY_NAME": "Hunter",
@@ -4525,7 +5039,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5610",
+        "_driver_key": "tygibbs"
       },
       {
         "FANTASY_NAME": "Hunter",
@@ -4542,7 +5058,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5621",
+        "_driver_key": "shanevangisbergen"
       },
       {
         "FANTASY_NAME": "Hunter",
@@ -4559,7 +5077,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5606",
+        "_driver_key": "carsonhocevar"
       },
       {
         "FANTASY_NAME": "Hunter",
@@ -4576,7 +5096,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5605",
+        "_driver_key": "chrisbuescher"
       },
       {
         "FANTASY_NAME": "Hunter",
@@ -4593,7 +5115,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5607",
+        "_driver_key": "kylelarson"
       },
       {
         "FANTASY_NAME": "Hunter",
@@ -4610,7 +5134,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5604",
+        "_driver_key": "tylerreddick"
       },
       {
         "FANTASY_NAME": "Hunter",
@@ -4627,7 +5153,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5602",
+        "_driver_key": "austincindric"
       },
       {
         "FANTASY_NAME": "Hunter",
@@ -4644,7 +5172,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5603",
+        "_driver_key": "chaseelliott"
       },
       {
         "FANTASY_NAME": "Hunter",
@@ -4661,7 +5191,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5600",
+        "_driver_key": "dennyhamlin"
       },
       {
         "FANTASY_NAME": "Hunter",
@@ -4678,7 +5210,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5599",
+        "_driver_key": "joshberry"
       },
       {
         "FANTASY_NAME": "Hunter",
@@ -4695,7 +5229,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5598",
+        "_driver_key": "connorzilisch"
       },
       {
         "FANTASY_NAME": "Hunter",
@@ -4712,7 +5248,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5597",
+        "_driver_key": "ryanblaney"
       },
       {
         "FANTASY_NAME": "Hunter",
@@ -4729,7 +5267,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5596",
+        "_driver_key": "michaelmcdowell"
       }
     ],
     "JT": [
@@ -4739,7 +5279,7 @@
         "TRACK_NAME": "Toyota / Save Mart 350",
         "RACE_DATE": "2026-06-28T15:30:00",
         "SELECTION": "William Byron",
-        "FINISH_POSITION": 12.0,
+        "FINISH_POSITION": null,
         "TOTAL_POINTS_INCLUDING_BONUS": null,
         "WINS": null,
         "TOP_5s": null,
@@ -4748,7 +5288,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5617",
+        "_driver_key": "williambyron"
       },
       {
         "FANTASY_NAME": "JT",
@@ -4765,7 +5307,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5613",
+        "_driver_key": "shanevangisbergen"
       },
       {
         "FANTASY_NAME": "JT",
@@ -4782,7 +5326,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5614",
+        "_driver_key": "joeylogano"
       },
       {
         "FANTASY_NAME": "JT",
@@ -4799,7 +5345,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5612",
+        "_driver_key": "dennyhamlin"
       },
       {
         "FANTASY_NAME": "JT",
@@ -4816,7 +5364,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5611",
+        "_driver_key": "christopherbell"
       },
       {
         "FANTASY_NAME": "JT",
@@ -4833,7 +5383,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5610",
+        "_driver_key": "kylelarson"
       },
       {
         "FANTASY_NAME": "JT",
@@ -4850,7 +5402,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5621",
+        "_driver_key": "rosschastain"
       },
       {
         "FANTASY_NAME": "JT",
@@ -4867,7 +5421,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5606",
+        "_driver_key": "alexbowman"
       },
       {
         "FANTASY_NAME": "JT",
@@ -4884,7 +5440,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5605",
+        "_driver_key": "carsonhocevar"
       },
       {
         "FANTASY_NAME": "JT",
@@ -4901,7 +5459,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5607",
+        "_driver_key": "tylerreddick"
       },
       {
         "FANTASY_NAME": "JT",
@@ -4918,7 +5478,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5604",
+        "_driver_key": "chasebriscoe"
       },
       {
         "FANTASY_NAME": "JT",
@@ -4935,7 +5497,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5602",
+        "_driver_key": "joshberry"
       },
       {
         "FANTASY_NAME": "JT",
@@ -4952,7 +5516,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5603",
+        "_driver_key": "chrisbuescher"
       },
       {
         "FANTASY_NAME": "JT",
@@ -4969,7 +5535,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5600",
+        "_driver_key": "tygibbs"
       },
       {
         "FANTASY_NAME": "JT",
@@ -4986,7 +5554,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5599",
+        "_driver_key": "ryanblaney"
       },
       {
         "FANTASY_NAME": "JT",
@@ -5003,7 +5573,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5598",
+        "_driver_key": "michaelmcdowell"
       },
       {
         "FANTASY_NAME": "JT",
@@ -5020,7 +5592,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5597",
+        "_driver_key": "bradkeselowski"
       },
       {
         "FANTASY_NAME": "JT",
@@ -5037,7 +5611,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5596",
+        "_driver_key": "austindillon"
       }
     ],
     "Kevin": [
@@ -5047,7 +5623,7 @@
         "TRACK_NAME": "Toyota / Save Mart 350",
         "RACE_DATE": "2026-06-28T15:30:00",
         "SELECTION": "Austin Dillon",
-        "FINISH_POSITION": 27.0,
+        "FINISH_POSITION": null,
         "TOTAL_POINTS_INCLUDING_BONUS": null,
         "WINS": null,
         "TOP_5s": null,
@@ -5056,7 +5632,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5617",
+        "_driver_key": "austindillon"
       },
       {
         "FANTASY_NAME": "Kevin",
@@ -5073,7 +5651,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5613",
+        "_driver_key": "joeylogano"
       },
       {
         "FANTASY_NAME": "Kevin",
@@ -5090,7 +5670,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5614",
+        "_driver_key": "chaseelliott"
       },
       {
         "FANTASY_NAME": "Kevin",
@@ -5107,7 +5689,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5612",
+        "_driver_key": "tygibbs"
       },
       {
         "FANTASY_NAME": "Kevin",
@@ -5124,7 +5708,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5611",
+        "_driver_key": "christopherbell"
       },
       {
         "FANTASY_NAME": "Kevin",
@@ -5141,7 +5727,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5610",
+        "_driver_key": "colecuster"
       },
       {
         "FANTASY_NAME": "Kevin",
@@ -5158,7 +5746,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5621",
+        "_driver_key": "dennyhamlin"
       },
       {
         "FANTASY_NAME": "Kevin",
@@ -5175,7 +5765,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5606",
+        "_driver_key": "rileyherbst"
       },
       {
         "FANTASY_NAME": "Kevin",
@@ -5192,7 +5784,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5605",
+        "_driver_key": "austincindric"
       },
       {
         "FANTASY_NAME": "Kevin",
@@ -5209,7 +5803,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5607",
+        "_driver_key": "bubbawallace"
       },
       {
         "FANTASY_NAME": "Kevin",
@@ -5226,7 +5822,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5604",
+        "_driver_key": "chrisbuescher"
       },
       {
         "FANTASY_NAME": "Kevin",
@@ -5243,7 +5841,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5602",
+        "_driver_key": "carsonhocevar"
       },
       {
         "FANTASY_NAME": "Kevin",
@@ -5260,7 +5860,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5603",
+        "_driver_key": "danielsurez"
       },
       {
         "FANTASY_NAME": "Kevin",
@@ -5277,7 +5879,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5600",
+        "_driver_key": "erikjones"
       },
       {
         "FANTASY_NAME": "Kevin",
@@ -5294,7 +5898,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5599",
+        "_driver_key": "tylerreddick"
       },
       {
         "FANTASY_NAME": "Kevin",
@@ -5311,7 +5917,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5598",
+        "_driver_key": "williambyron"
       },
       {
         "FANTASY_NAME": "Kevin",
@@ -5328,7 +5936,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5597",
+        "_driver_key": "joshberry"
       },
       {
         "FANTASY_NAME": "Kevin",
@@ -5345,7 +5955,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5596",
+        "_driver_key": "kylelarson"
       }
     ],
     "Lawson": [
@@ -5355,7 +5967,7 @@
         "TRACK_NAME": "Toyota / Save Mart 350",
         "RACE_DATE": "2026-06-28T15:30:00",
         "SELECTION": "Shane van Gisbergen",
-        "FINISH_POSITION": 1.0,
+        "FINISH_POSITION": null,
         "TOTAL_POINTS_INCLUDING_BONUS": null,
         "WINS": null,
         "TOP_5s": null,
@@ -5364,7 +5976,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5617",
+        "_driver_key": "shanevangisbergen"
       },
       {
         "FANTASY_NAME": "Lawson",
@@ -5381,7 +5995,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5613",
+        "_driver_key": "danielsurez"
       },
       {
         "FANTASY_NAME": "Lawson",
@@ -5398,7 +6014,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5614",
+        "_driver_key": "chasebriscoe"
       },
       {
         "FANTASY_NAME": "Lawson",
@@ -5415,7 +6033,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5612",
+        "_driver_key": "kylelarson"
       },
       {
         "FANTASY_NAME": "Lawson",
@@ -5432,7 +6052,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5611",
+        "_driver_key": "rosschastain"
       },
       {
         "FANTASY_NAME": "Lawson",
@@ -5449,7 +6071,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5610",
+        "_driver_key": "dennyhamlin"
       },
       {
         "FANTASY_NAME": "Lawson",
@@ -5466,7 +6090,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5621",
+        "_driver_key": "ajallmendinger"
       },
       {
         "FANTASY_NAME": "Lawson",
@@ -5483,7 +6109,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5606",
+        "_driver_key": "christopherbell"
       },
       {
         "FANTASY_NAME": "Lawson",
@@ -5500,7 +6128,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5605",
+        "_driver_key": "austincindric"
       },
       {
         "FANTASY_NAME": "Lawson",
@@ -5517,7 +6147,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5607",
+        "_driver_key": "carsonhocevar"
       },
       {
         "FANTASY_NAME": "Lawson",
@@ -5534,7 +6166,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5604",
+        "_driver_key": "chrisbuescher"
       },
       {
         "FANTASY_NAME": "Lawson",
@@ -5551,7 +6185,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5602",
+        "_driver_key": "tygibbs"
       },
       {
         "FANTASY_NAME": "Lawson",
@@ -5568,7 +6204,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5603",
+        "_driver_key": "tylerreddick"
       },
       {
         "FANTASY_NAME": "Lawson",
@@ -5585,7 +6223,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5600",
+        "_driver_key": "bubbawallace"
       },
       {
         "FANTASY_NAME": "Lawson",
@@ -5602,7 +6242,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5599",
+        "_driver_key": "ryanblaney"
       },
       {
         "FANTASY_NAME": "Lawson",
@@ -5619,7 +6261,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5598",
+        "_driver_key": "chaseelliott"
       },
       {
         "FANTASY_NAME": "Lawson",
@@ -5636,7 +6280,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5597",
+        "_driver_key": "bradkeselowski"
       },
       {
         "FANTASY_NAME": "Lawson",
@@ -5653,7 +6299,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5596",
+        "_driver_key": "williambyron"
       }
     ],
     "Ryan": [
@@ -5672,7 +6320,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5617",
+        "_driver_key": "borissaid"
       },
       {
         "FANTASY_NAME": "Ryan",
@@ -5689,7 +6339,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5613",
+        "_driver_key": "ryanpreece"
       },
       {
         "FANTASY_NAME": "Ryan",
@@ -5706,7 +6358,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5614",
+        "_driver_key": "ryanblaney"
       },
       {
         "FANTASY_NAME": "Ryan",
@@ -5723,7 +6377,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5612",
+        "_driver_key": "tygibbs"
       },
       {
         "FANTASY_NAME": "Ryan",
@@ -5740,7 +6396,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5611",
+        "_driver_key": "dennyhamlin"
       },
       {
         "FANTASY_NAME": "Ryan",
@@ -5757,7 +6415,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5610",
+        "_driver_key": "tylerreddick"
       },
       {
         "FANTASY_NAME": "Ryan",
@@ -5774,7 +6434,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5621",
+        "_driver_key": "connorzilisch"
       },
       {
         "FANTASY_NAME": "Ryan",
@@ -5791,7 +6453,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5606",
+        "_driver_key": "carsonhocevar"
       },
       {
         "FANTASY_NAME": "Ryan",
@@ -5808,7 +6472,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5605",
+        "_driver_key": "bradkeselowski"
       },
       {
         "FANTASY_NAME": "Ryan",
@@ -5825,7 +6491,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5607",
+        "_driver_key": "kylelarson"
       },
       {
         "FANTASY_NAME": "Ryan",
@@ -5842,7 +6510,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5604",
+        "_driver_key": "austincindric"
       },
       {
         "FANTASY_NAME": "Ryan",
@@ -5859,7 +6529,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5602",
+        "_driver_key": "chaseelliott"
       },
       {
         "FANTASY_NAME": "Ryan",
@@ -5876,7 +6548,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5603",
+        "_driver_key": "kylebusch"
       },
       {
         "FANTASY_NAME": "Ryan",
@@ -5893,7 +6567,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5600",
+        "_driver_key": "chasebriscoe"
       },
       {
         "FANTASY_NAME": "Ryan",
@@ -5910,7 +6586,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5599",
+        "_driver_key": "joeylogano"
       },
       {
         "FANTASY_NAME": "Ryan",
@@ -5927,7 +6605,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5598",
+        "_driver_key": "ajallmendinger"
       },
       {
         "FANTASY_NAME": "Ryan",
@@ -5944,7 +6624,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5597",
+        "_driver_key": "chrisbuescher"
       },
       {
         "FANTASY_NAME": "Ryan",
@@ -5961,7 +6643,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5596",
+        "_driver_key": "toddgilliland"
       }
     ],
     "Tayhan": [
@@ -5971,7 +6655,7 @@
         "TRACK_NAME": "Toyota / Save Mart 350",
         "RACE_DATE": "2026-06-28T15:30:00",
         "SELECTION": "AJ Allmendinger",
-        "FINISH_POSITION": 16.0,
+        "FINISH_POSITION": null,
         "TOTAL_POINTS_INCLUDING_BONUS": null,
         "WINS": null,
         "TOP_5s": null,
@@ -5980,7 +6664,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5617",
+        "_driver_key": "ajallmendinger"
       },
       {
         "FANTASY_NAME": "Tayhan",
@@ -5997,7 +6683,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5613",
+        "_driver_key": "michaelmcdowell"
       },
       {
         "FANTASY_NAME": "Tayhan",
@@ -6014,7 +6702,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5614",
+        "_driver_key": "tygibbs"
       },
       {
         "FANTASY_NAME": "Tayhan",
@@ -6031,7 +6721,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5612",
+        "_driver_key": "carsonhocevar"
       },
       {
         "FANTASY_NAME": "Tayhan",
@@ -6048,7 +6740,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5611",
+        "_driver_key": "chasebriscoe"
       },
       {
         "FANTASY_NAME": "Tayhan",
@@ -6065,7 +6759,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5610",
+        "_driver_key": "joeylogano"
       },
       {
         "FANTASY_NAME": "Tayhan",
@@ -6082,7 +6778,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5621",
+        "_driver_key": "shanevangisbergen"
       },
       {
         "FANTASY_NAME": "Tayhan",
@@ -6099,7 +6797,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5606",
+        "_driver_key": "williambyron"
       },
       {
         "FANTASY_NAME": "Tayhan",
@@ -6116,7 +6816,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5605",
+        "_driver_key": "bradkeselowski"
       },
       {
         "FANTASY_NAME": "Tayhan",
@@ -6133,7 +6835,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5607",
+        "_driver_key": "christopherbell"
       },
       {
         "FANTASY_NAME": "Tayhan",
@@ -6150,7 +6854,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5604",
+        "_driver_key": "dennyhamlin"
       },
       {
         "FANTASY_NAME": "Tayhan",
@@ -6167,7 +6873,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5602",
+        "_driver_key": "ryanblaney"
       },
       {
         "FANTASY_NAME": "Tayhan",
@@ -6184,7 +6892,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5603",
+        "_driver_key": "tylerreddick"
       },
       {
         "FANTASY_NAME": "Tayhan",
@@ -6201,7 +6911,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5600",
+        "_driver_key": "kylelarson"
       },
       {
         "FANTASY_NAME": "Tayhan",
@@ -6218,7 +6930,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5599",
+        "_driver_key": "chrisbuescher"
       },
       {
         "FANTASY_NAME": "Tayhan",
@@ -6235,7 +6949,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5598",
+        "_driver_key": "chaseelliott"
       },
       {
         "FANTASY_NAME": "Tayhan",
@@ -6252,7 +6968,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5597",
+        "_driver_key": "bubbawallace"
       },
       {
         "FANTASY_NAME": "Tayhan",
@@ -6269,7 +6987,9 @@
         "LED_MOST_LAPS_IN_A_RACE": null,
         "STAGE_POINTS": null,
         "BONUS_POINTS": null,
-        "BONUS_SUMMARY": ""
+        "BONUS_SUMMARY": "",
+        "_race_key": "5596",
+        "_driver_key": "rickystenhousejr"
       }
     ]
   },
@@ -6279,7 +6999,7 @@
       "FINISH_POSITION": 1,
       "FANTASY_NAME": "Dylan",
       "SELECTION": "Shane van Gisbergen",
-      "LIVE_DRIVER_NAME": "Shane Van Gisbergen",
+      "LIVE_DRIVER_NAME": "Shane van Gisbergen",
       "CURRENT_RACE_POINTS": 40,
       "TOTAL_POINTS_INCLUDING_BONUS": 40,
       "STAGE_POINTS": null,
@@ -6292,14 +7012,14 @@
       "STATUS": "Live",
       "DELTA": "Leader",
       "MATCHED_LIVE_FEED": true,
-      "SOURCE": "score_snapshot"
+      "SOURCE": "SILVER.LIVE_FEED"
     },
     {
       "RUNNING_POSITION": 1,
       "FINISH_POSITION": 1,
       "FANTASY_NAME": "Lawson",
       "SELECTION": "Shane van Gisbergen",
-      "LIVE_DRIVER_NAME": "Shane Van Gisbergen",
+      "LIVE_DRIVER_NAME": "Shane van Gisbergen",
       "CURRENT_RACE_POINTS": 40,
       "TOTAL_POINTS_INCLUDING_BONUS": 40,
       "STAGE_POINTS": null,
@@ -6312,7 +7032,7 @@
       "STATUS": "Live",
       "DELTA": "Leader",
       "MATCHED_LIVE_FEED": true,
-      "SOURCE": "score_snapshot"
+      "SOURCE": "SILVER.LIVE_FEED"
     },
     {
       "RUNNING_POSITION": 12,
@@ -6332,7 +7052,7 @@
       "STATUS": "Live",
       "DELTA": "-",
       "MATCHED_LIVE_FEED": true,
-      "SOURCE": "score_snapshot"
+      "SOURCE": "SILVER.LIVE_FEED"
     },
     {
       "RUNNING_POSITION": 14,
@@ -6352,7 +7072,7 @@
       "STATUS": "Live",
       "DELTA": "-",
       "MATCHED_LIVE_FEED": true,
-      "SOURCE": "score_snapshot"
+      "SOURCE": "SILVER.LIVE_FEED"
     },
     {
       "RUNNING_POSITION": 16,
@@ -6372,7 +7092,7 @@
       "STATUS": "Live",
       "DELTA": "-",
       "MATCHED_LIVE_FEED": true,
-      "SOURCE": "score_snapshot"
+      "SOURCE": "SILVER.LIVE_FEED"
     },
     {
       "RUNNING_POSITION": 16,
@@ -6392,7 +7112,7 @@
       "STATUS": "Live",
       "DELTA": "-",
       "MATCHED_LIVE_FEED": true,
-      "SOURCE": "score_snapshot"
+      "SOURCE": "SILVER.LIVE_FEED"
     },
     {
       "RUNNING_POSITION": 16,
@@ -6412,7 +7132,7 @@
       "STATUS": "Live",
       "DELTA": "-",
       "MATCHED_LIVE_FEED": true,
-      "SOURCE": "score_snapshot"
+      "SOURCE": "SILVER.LIVE_FEED"
     },
     {
       "RUNNING_POSITION": 19,
@@ -6432,7 +7152,7 @@
       "STATUS": "Live",
       "DELTA": "-",
       "MATCHED_LIVE_FEED": true,
-      "SOURCE": "score_snapshot"
+      "SOURCE": "SILVER.LIVE_FEED"
     },
     {
       "RUNNING_POSITION": 27,
@@ -6452,7 +7172,7 @@
       "STATUS": "Live",
       "DELTA": "-",
       "MATCHED_LIVE_FEED": true,
-      "SOURCE": "score_snapshot"
+      "SOURCE": "SILVER.LIVE_FEED"
     },
     {
       "RUNNING_POSITION": null,
@@ -6476,9 +7196,9 @@
     }
   ],
   "raceLeader": {
-    "driver": "Shane Van Gisbergen",
+    "driver": "Shane van Gisbergen",
     "position": 1,
-    "points": null,
+    "points": 40,
     "selectedBy": [
       "Dylan",
       "Lawson"
