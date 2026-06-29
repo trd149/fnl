@@ -1010,8 +1010,16 @@ function renderRaceLeader(cars) {
   $("closestDriver").textContent = closest ? `${closest.driver}, ${formatGap(closest.gap, closest.position)}` : "—";
   $("raceStateMini").textContent = progress.complete ? "Checkered flag" : (appData.raceProgress || "Live feed");
 }
+function livePositionValue(car) {
+  const p = Number(car.position);
+  return Number.isFinite(p) && p > 0 ? p : 9999;
+}
 function liveRows(cars) {
-  return [...cars].sort((a,b) => sortPointValue(b) - sortPointValue(a) || (a.position || 999) - (b.position || 999));
+  return [...cars].sort((a,b) => {
+    const posDiff = livePositionValue(a) - livePositionValue(b);
+    if (posDiff !== 0) return posDiff;
+    return sortPointValue(b) - sortPointValue(a);
+  });
 }
 function renderLeaderboard(cars) {
   const sorted = liveRows(cars);
