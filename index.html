@@ -418,40 +418,52 @@
       justify-content: space-between;
       align-items: flex-end;
       gap: 12px;
-      margin: 4px 0 12px;
+      margin: 4px 0 10px;
       flex-wrap: wrap;
     }
 
-    .selection-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .selection-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
+    .selection-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.045);
-      border-radius: 16px;
-      padding: 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.035);
     }
 
-    .selection-main { min-width: 0; }
+    .selection-table {
+      width: 100%;
+      min-width: 860px;
+      border-collapse: collapse;
+      table-layout: auto;
+    }
 
-    .selection-race {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
+    .selection-table th {
+      text-align: left;
       color: var(--muted);
-      font-size: .78rem;
-      margin-bottom: 5px;
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      background: rgba(0,0,0,.18);
+      border-bottom: 1px solid var(--line);
+      padding: 9px 10px;
+      white-space: nowrap;
     }
 
-    .selection-race small { color: var(--muted); }
+    .selection-table td {
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      padding: 9px 10px;
+      vertical-align: middle;
+      font-size: .84rem;
+      white-space: nowrap;
+    }
+
+    .selection-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .selection-table tbody tr:hover td {
+      background: rgba(255,255,255,.035);
+    }
 
     .selection-track-id {
       color: var(--accent);
@@ -459,52 +471,59 @@
       font-weight: 900;
     }
 
+    .selection-race-name {
+      color: var(--text);
+      font-weight: 800;
+      max-width: 260px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     .selection-driver {
       font-weight: 950;
-      font-size: 1rem;
-      overflow-wrap: anywhere;
+      color: var(--text);
+      max-width: 250px;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    .selection-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      color: var(--muted);
-      font-size: .78rem;
-      margin-top: 5px;
-    }
-
-    .selection-points {
-      min-width: 78px;
+    .selection-points-compact {
       text-align: right;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    }
-
-    .selection-points span {
-      display: block;
-      color: var(--muted);
-      font-size: .7rem;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-
-    .selection-points strong {
-      display: block;
       color: var(--accent);
-      font-size: 1.35rem;
-      line-height: 1.1;
+      font-size: 1rem;
+      font-weight: 950;
     }
 
-    .selection-points em {
+    .selection-win-badge {
       display: inline-flex;
-      margin-top: 5px;
       padding: 4px 7px;
       border-radius: 999px;
       background: linear-gradient(135deg, #ffdf61, #ff9f1c);
       color: #111827;
-      font-style: normal;
       font-size: .65rem;
       font-weight: 950;
+      line-height: 1;
+    }
+
+    .toggle-action {
+      appearance: none;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      font: inherit;
+      font-weight: 900;
+      padding: 7px 10px;
+      cursor: pointer;
+      touch-action: manipulation;
+      white-space: nowrap;
+    }
+
+    .toggle-action:hover,
+    .toggle-action:focus {
+      border-color: rgba(255,207,51,.52);
+      outline: none;
     }
 
     .driver { font-weight: 850; }
@@ -1005,6 +1024,16 @@
       }
     }
 
+
+    @media (max-width: 720px) {
+      .toggle-action { padding: 8px 12px; min-width: 62px; }
+      .selection-table { min-width: 820px; }
+      .selection-table th, .selection-table td { padding: 8px 9px; font-size: .8rem; }
+      .selection-race-name { max-width: 230px; }
+      .selection-driver { max-width: 220px; }
+      .detail-panel { padding: 12px !important; }
+    }
+
   </style>
 </head>
 <body>
@@ -1420,29 +1449,38 @@ function makeDetailPanel(name) {
         <div class="hint">Tap owner row again to collapse</div>
       </div>
 
-      <div class="selection-list">
-        ${rows.length ? rows.map(r => `
-          <article class="selection-item">
-            <div class="selection-main">
-              <div class="selection-race">
-                <span class="selection-track-id">${display(r.trackId)}</span>
-                <span>${display(r.trackName || r.trackId)}</span>
-                ${hasValue(r.raceDate) ? `<small>${escapeHtml(fmtDate(r.raceDate))}</small>` : ``}
-              </div>
-              <div class="selection-driver">${display(r.selection)}</div>
-              <div class="selection-meta">
-                <span class="finish ${finishClass(r.finish)}">${hasValue(r.finish) ? `P${display(r.finish)}` : "Finish —"}</span>
-                <span>${bonusText(r)}</span>
-              </div>
-            </div>
-            <div class="selection-points">
-              <span>Pts</span>
-              <strong>${display(r.points)}</strong>
-              ${num(r.win) === 1 ? `<em>WIN</em>` : ``}
-            </div>
-          </article>
-        `).join("") : `<div class="empty">No selection rows available.</div>`}
-      </div>
+      ${rows.length ? `
+        <div class="selection-table-wrap">
+          <table class="selection-table" aria-label="${escapeHtml(name)} selections">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Race</th>
+                <th>Date</th>
+                <th>Selection</th>
+                <th>Finish</th>
+                <th>Points</th>
+                <th>Bonus / Race Stats</th>
+                <th>Win</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rows.map(r => `
+                <tr>
+                  <td><span class="selection-track-id">${display(r.trackId)}</span></td>
+                  <td><div class="selection-race-name">${display(r.trackName || r.trackId)}</div></td>
+                  <td>${hasValue(r.raceDate) ? escapeHtml(fmtDate(r.raceDate)) : "—"}</td>
+                  <td><div class="selection-driver">${display(r.selection)}</div></td>
+                  <td><span class="finish ${finishClass(r.finish)}">${hasValue(r.finish) ? `P${display(r.finish)}` : "—"}</span></td>
+                  <td class="selection-points-compact">${display(r.points)}</td>
+                  <td>${bonusText(r)}</td>
+                  <td>${num(r.win) === 1 ? `<span class="selection-win-badge">WIN</span>` : "—"}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+        </div>
+      ` : `<div class="empty">No selection rows available.</div>`}
     </div>
   `;
 }
@@ -1470,7 +1508,7 @@ function makeStandingRow(r) {
       <td><span class="mobile-label">Top 10</span><span class="pill top-pill">${num(r.TOP_10s)}</span></td>
       <td class="hide-md"><span class="pill">${num(r.LED_AT_LEAST_ONE_LAP_IN_RACE)}</span></td>
       <td class="hide-md"><span class="pill">${num(r.LED_MOST_LAPS_IN_A_RACE)}</span></td>
-      <td class="toggle">${isOpen ? "Hide" : "View"}</td>
+      <td class="toggle"><button class="toggle-action" type="button" data-owner="${escapeHtml(name)}" aria-expanded="${isOpen ? "true" : "false"}">${isOpen ? "Hide" : "View"}</button></td>
     </tr>
     <tr class="detail-row ${isOpen ? "is-open" : ""}">
       <td class="detail-cell" colspan="11">${makeDetailPanel(name)}</td>
@@ -1496,12 +1534,27 @@ function renderStandings() {
     ? filtered.map(makeStandingRow).join("")
     : `<tr><td colspan="11" class="empty">No owners match your search.</td></tr>`;
 
-  document.querySelectorAll(".standing-row").forEach(row => {
-    row.addEventListener("click", () => {
-      const name = row.getAttribute("data-owner");
-      if (openOwners.has(name)) openOwners.delete(name);
-      else openOwners.add(name);
-      renderStandings();
+  const tbody = $("standingsBody");
+
+  function toggleOwner(name) {
+    if (!name) return;
+    if (openOwners.has(name)) openOwners.delete(name);
+    else openOwners.add(name);
+    renderStandings();
+  }
+
+  tbody.querySelectorAll(".toggle-action").forEach(btn => {
+    btn.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      toggleOwner(btn.getAttribute("data-owner"));
+    });
+  });
+
+  tbody.querySelectorAll(".standing-row").forEach(row => {
+    row.addEventListener("click", (event) => {
+      if (event.target.closest("button, a, input, select, label")) return;
+      toggleOwner(row.getAttribute("data-owner"));
     });
   });
 }
