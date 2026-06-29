@@ -327,7 +327,7 @@
     }
 
     .stat-strip { min-width: 620px; }
-    .selection-table { min-width: 920px; }
+    .selection-table { min-width: 1040px; }
 
     .stat-strip th,
     .selection-table th,
@@ -366,6 +366,15 @@
 
     .selection-driver { font-weight: 950; }
     .selection-points, .live-points { color: var(--accent); font-weight: 950; font-family: var(--mono); }
+    .selection-date,
+    .selection-stats {
+      white-space: nowrap;
+      overflow: visible;
+      text-overflow: clip;
+      font-family: var(--mono);
+    }
+    .selection-date { min-width: 112px; }
+    .selection-stats { min-width: 260px; }
     .finish { font-weight: 950; }
     .finish-good { color: var(--good); }
     .finish-mid { color: var(--accent); }
@@ -566,7 +575,7 @@
       .detail-panel { margin: 0 8px 12px; padding: 10px; }
       .scroll-hint { display: block; }
       .stat-strip { min-width: 560px; }
-      .selection-table { min-width: 860px; }
+      .selection-table { min-width: 1040px; }
       .race-title { font-size: 25px; }
       .position-line { grid-auto-columns: minmax(88px, 88px); }
       .live-table-wrap {
@@ -686,7 +695,7 @@
               <th>Selection</th>
               <th>Running / Finish Pos.</th>
               <th>Gap to Race Leader</th>
-              <th>Bonus / Race Stats</th>
+              <th>Stats</th>
               <th>League Race Pts</th>
             </tr>
           </thead>
@@ -745,8 +754,12 @@ function finishClass(v) {
   return "finish-bad";
 }
 function bonusText(r) {
-  if (hasValue(r.bonusSummary)) return display(r.bonusSummary);
-  return [num(r.win) ? "Win" : "", num(r.top5) ? "Top 5" : "", num(r.top10) ? "Top 10" : "", num(r.ledLap) ? "Led Lap" : "", num(r.ledMost) ? "Most Led" : ""].filter(Boolean).join(" · ") || "—";
+  return [
+    num(r.win) ? "Win" : "",
+    num(r.top5) ? "Top 5" : "",
+    num(r.ledLap) ? "Led Lap" : "",
+    num(r.ledMost) ? "Led Most Laps" : ""
+  ].filter(Boolean).join(" · ") || "—";
 }
 function normalizeDetail(row) {
   return {
@@ -821,25 +834,25 @@ function makeDetailPanel(name, standingRow) {
       <div class="scroll-hint">Swipe left/right to view all expanded stats.</div>
 
       <div class="detail-title-row" style="margin-top:14px;">
-        <div><strong>Selections</strong><div class="hint">Date, race, selection, finish, points, bonus/race stats, and win flag.</div></div>
+        <div><strong>Selections</strong><div class="hint">Date, race, selection, finish, points, stats, and win flag.</div></div>
       </div>
       ${rows.length ? `
         <div class="scroll-window">
           <table class="selection-table" aria-label="${escapeHtml(name)} selections">
             <thead>
               <tr>
-                <th>Date</th><th>Race</th><th>Selection</th><th>Finish</th><th>Points</th><th>Bonus / Race Stats</th><th>Win</th>
+                <th>Date</th><th>Race</th><th>Selection</th><th>Finish</th><th>Points</th><th>Stats</th><th>Win</th>
               </tr>
             </thead>
             <tbody>
               ${rows.map(r => `
                 <tr>
-                  <td>${hasValue(r.raceDate) ? escapeHtml(fmtDate(r.raceDate)) : "—"}</td>
+                  <td class="selection-date">${hasValue(r.raceDate) ? escapeHtml(fmtDate(r.raceDate)) : "—"}</td>
                   <td><div class="selection-race">${display(r.trackName || r.trackId)}</div></td>
                   <td><div class="selection-driver">${display(r.selection)}</div></td>
                   <td><span class="finish ${finishClass(r.finish)}">${hasValue(r.finish) ? `P${display(r.finish)}` : "—"}</span></td>
                   <td class="selection-points">${display(r.points)}</td>
-                  <td>${bonusText(r)}</td>
+                  <td class="selection-stats">${bonusText(r)}</td>
                   <td>${num(r.win) === 1 ? `<span class="win-badge">WIN</span>` : "—"}</td>
                 </tr>
               `).join("")}
@@ -1014,7 +1027,7 @@ function renderLeaderboard(cars) {
       <td><span class="pill">${display(car.driver)}</span></td>
       <td>${car.position ? `P${car.position}` : "—"}</td>
       <td class="behind">${formatGap(car.gap, car.position)}</td>
-      <td>${bonusText(car)}</td>
+      <td class="selection-stats">${bonusText(car)}</td>
       <td class="live-points">${calcPoints(car) === null ? "—" : display(calcPoints(car))}</td>
     </tr>
   `).join("");
