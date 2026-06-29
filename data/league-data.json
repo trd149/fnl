@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-28 10:50 PM ET",
+  "lastUpdated": "2026-06-28 11:18 PM ET",
   "raceProgress": "Race Completed",
   "raceProgressLabel": "Race Status",
   "runningOrderLabel": "Fantasy race leaderboard — Toyota / Save Mart 350",
@@ -9133,7 +9133,7 @@
       "STATUS": "Final",
       "DELTA": "Leader",
       "MATCHED_LIVE_FEED": true,
-      "SOURCE": "dbo.MOBILE"
+      "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
     {
       "RUNNING_POSITION": 1,
@@ -9164,7 +9164,7 @@
       "STATUS": "Final",
       "DELTA": "Leader",
       "MATCHED_LIVE_FEED": true,
-      "SOURCE": "dbo.MOBILE"
+      "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
     {
       "RUNNING_POSITION": 14,
@@ -9193,9 +9193,9 @@
       "TRACK_NAME": "Toyota / Save Mart 350",
       "RACE_DATE": "2026-06-28T15:30:00",
       "STATUS": "Final",
-      "DELTA": "-",
+      "DELTA": "+33.742 sec",
       "MATCHED_LIVE_FEED": true,
-      "SOURCE": "dbo.MOBILE"
+      "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
     {
       "RUNNING_POSITION": 16,
@@ -9224,9 +9224,9 @@
       "TRACK_NAME": "Toyota / Save Mart 350",
       "RACE_DATE": "2026-06-28T15:30:00",
       "STATUS": "Final",
-      "DELTA": "-",
+      "DELTA": "+38.128 sec",
       "MATCHED_LIVE_FEED": true,
-      "SOURCE": "dbo.MOBILE"
+      "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
     {
       "RUNNING_POSITION": 16,
@@ -9255,9 +9255,9 @@
       "TRACK_NAME": "Toyota / Save Mart 350",
       "RACE_DATE": "2026-06-28T15:30:00",
       "STATUS": "Final",
-      "DELTA": "-",
+      "DELTA": "+38.128 sec",
       "MATCHED_LIVE_FEED": true,
-      "SOURCE": "dbo.MOBILE"
+      "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
     {
       "RUNNING_POSITION": 16,
@@ -9286,9 +9286,9 @@
       "TRACK_NAME": "Toyota / Save Mart 350",
       "RACE_DATE": "2026-06-28T15:30:00",
       "STATUS": "Final",
-      "DELTA": "-",
+      "DELTA": "+38.128 sec",
       "MATCHED_LIVE_FEED": true,
-      "SOURCE": "dbo.MOBILE"
+      "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
     {
       "RUNNING_POSITION": 12,
@@ -9317,9 +9317,9 @@
       "TRACK_NAME": "Toyota / Save Mart 350",
       "RACE_DATE": "2026-06-28T15:30:00",
       "STATUS": "Final",
-      "DELTA": "-",
+      "DELTA": "+24.762 sec",
       "MATCHED_LIVE_FEED": true,
-      "SOURCE": "dbo.MOBILE"
+      "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
     {
       "RUNNING_POSITION": 19,
@@ -9348,9 +9348,9 @@
       "TRACK_NAME": "Toyota / Save Mart 350",
       "RACE_DATE": "2026-06-28T15:30:00",
       "STATUS": "Final",
-      "DELTA": "-",
+      "DELTA": "+47.776 sec",
       "MATCHED_LIVE_FEED": true,
-      "SOURCE": "dbo.MOBILE"
+      "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
     {
       "RUNNING_POSITION": 27,
@@ -9379,9 +9379,9 @@
       "TRACK_NAME": "Toyota / Save Mart 350",
       "RACE_DATE": "2026-06-28T15:30:00",
       "STATUS": "Final",
-      "DELTA": "-",
+      "DELTA": "+1:03.79",
       "MATCHED_LIVE_FEED": true,
-      "SOURCE": "dbo.MOBILE"
+      "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     }
   ],
   "raceLeader": {
