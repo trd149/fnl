@@ -1056,6 +1056,277 @@
       .selection-table { min-width: 760px !important; }
     }
 
+
+    /* =========================================================
+       v9 mobile-first standings: no sideways scrolling needed.
+       Main standings show only Rank / Owner / Starts / Total Points / Behind.
+       Tap the whole owner row to expand/collapse extra stats and selections.
+       ========================================================= */
+    .chevron-inline {
+      float: right;
+      color: var(--muted);
+      font-size: 1.25rem;
+      line-height: 1;
+      margin-left: 10px;
+    }
+
+    .standing-row {
+      cursor: pointer !important;
+      user-select: none;
+    }
+
+    .standing-row:focus {
+      outline: 2px solid rgba(255,207,51,.55);
+      outline-offset: -2px;
+    }
+
+    .compact-detail-top {
+      display: block !important;
+      margin-bottom: 12px !important;
+    }
+
+    .compact-stat-grid {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .compact-selection-table {
+      min-width: 0 !important;
+      table-layout: auto;
+    }
+
+    .compact-selection-table th:nth-child(1),
+    .compact-selection-table td:nth-child(1) { width: 105px; }
+    .compact-selection-table th:nth-child(4),
+    .compact-selection-table td:nth-child(4) { width: 76px; }
+    .compact-selection-table th:nth-child(5),
+    .compact-selection-table td:nth-child(5) { width: 82px; text-align: right; }
+    .compact-selection-table th:nth-child(7),
+    .compact-selection-table td:nth-child(7) { width: 70px; text-align: center; }
+
+    .selection-table-wrap::after,
+    .standings-table-wrap::after,
+    .live-table-wrap::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    @media (max-width: 760px) {
+      html, body { overflow-x: hidden !important; }
+      body { padding: 12px !important; }
+      .page { padding: 0 !important; }
+      .hero-card, .leader-card, .card, .table-wrap { border-radius: 16px !important; }
+      .hero-card { padding: 18px !important; }
+      .leader-card { padding: 16px !important; }
+      .subtitle { font-size: .9rem; }
+      .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px; }
+      .metric-card { padding: 12px; }
+      .metric-value { font-size: 1.35rem; }
+
+      .standings-table-wrap {
+        overflow: visible !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+      }
+
+      .standings-table,
+      .standings-table thead,
+      .standings-table tbody,
+      .standings-table tr,
+      .standings-table td {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+
+      .standings-table thead { display: none !important; }
+
+      .standing-row {
+        border: 1px solid var(--line) !important;
+        border-radius: 16px !important;
+        margin-bottom: 8px !important;
+        background: var(--panel) !important;
+        overflow: hidden !important;
+        padding: 8px 0 !important;
+      }
+
+      .standing-row.is-open {
+        margin-bottom: 0 !important;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        background: rgba(255,207,51,.075) !important;
+      }
+
+      .standing-row td {
+        display: grid !important;
+        grid-template-columns: 104px 1fr;
+        gap: 10px;
+        align-items: center;
+        border: 0 !important;
+        padding: 7px 12px !important;
+        white-space: normal !important;
+      }
+
+      .standing-row td:nth-child(1),
+      .standing-row td:nth-child(2) {
+        grid-template-columns: 1fr;
+      }
+
+      .standing-row td:nth-child(2) {
+        padding-top: 3px !important;
+      }
+
+      .mobile-label {
+        display: block !important;
+        color: var(--muted);
+        font-size: .68rem;
+        text-transform: uppercase;
+        letter-spacing: .08em;
+        font-weight: 850;
+      }
+
+      .owner-block { min-width: 0; }
+      .name { font-size: 1.08rem; }
+      .points { font-size: 1.18rem; }
+      .chevron-inline { float: none; display: inline-block; }
+
+      #standingsBody tr.detail-row { display: none !important; }
+      #standingsBody tr.detail-row.is-open {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 0 12px !important;
+      }
+
+      .detail-cell {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+        background: transparent !important;
+        white-space: normal !important;
+      }
+
+      .detail-panel {
+        min-width: 0 !important;
+        width: 100% !important;
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+        padding: 12px !important;
+        background: var(--panel-2) !important;
+      }
+
+      .compact-stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px;
+      }
+
+      .mini-stat { padding: 10px !important; }
+      .mini-stat strong { font-size: 1.1rem !important; }
+
+      .selection-table-wrap {
+        overflow: visible !important;
+        border: 0 !important;
+        background: transparent !important;
+      }
+
+      .selection-table,
+      .selection-table thead,
+      .selection-table tbody,
+      .selection-table tr,
+      .selection-table td {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+
+      .selection-table thead { display: none !important; }
+
+      .selection-table tr {
+        border: 1px solid var(--line) !important;
+        border-radius: 14px !important;
+        margin-bottom: 10px !important;
+        padding: 8px 10px !important;
+        background: rgba(255,255,255,.045) !important;
+      }
+
+      .selection-table td {
+        display: grid !important;
+        grid-template-columns: 110px 1fr;
+        gap: 10px;
+        align-items: start;
+        border: 0 !important;
+        padding: 5px 0 !important;
+        white-space: normal !important;
+        text-align: left !important;
+      }
+
+      .selection-table td::before {
+        content: attr(data-label);
+        color: var(--muted);
+        font-size: .68rem;
+        text-transform: uppercase;
+        letter-spacing: .08em;
+        font-weight: 850;
+      }
+
+      .selection-race-name,
+      .selection-driver {
+        max-width: none !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+      }
+
+      .selection-points-compact {
+        text-align: left !important;
+      }
+
+      .live-table-wrap {
+        overflow: visible !important;
+      }
+
+      .leaderboard,
+      .leaderboard thead,
+      .leaderboard tbody,
+      .leaderboard tr,
+      .leaderboard td {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+
+      .leaderboard thead { display: none !important; }
+
+      .leaderboard tr {
+        border: 1px solid var(--line) !important;
+        border-radius: 16px !important;
+        background: rgba(255,255,255,.045) !important;
+        margin: 10px !important;
+        padding: 10px !important;
+      }
+
+      .leaderboard td {
+        border: 0 !important;
+        padding: 7px 6px !important;
+        display: grid !important;
+        grid-template-columns: 130px 1fr;
+        gap: 10px;
+        align-items: center;
+        white-space: normal !important;
+      }
+
+      .leaderboard td::before {
+        content: attr(data-label) !important;
+        color: var(--muted);
+        font-size: .68rem;
+        text-transform: uppercase;
+        letter-spacing: .08em;
+        font-weight: 850;
+        display: block !important;
+      }
+
+      .live-table-wrap::after { display: none !important; content: none !important; }
+    }
+
   </style>
 </head>
 <body>
@@ -1077,8 +1348,8 @@
           <div class="eyebrow">🏁 Fantasy NASCAR League</div>
           <h1>Points Standings</h1>
           <p class="subtitle">
-            Use the View button to expand race-by-race picks, finishes, points, and bonus stats.
-            The page reads from <strong>data/league-data.json</strong>, so your Python updater can refresh it automatically.
+            Tap or click any owner row to expand race-by-race picks, finishes, points, and bonus stats.
+            The main standings stay minimal until you open a row.
           </p>
         </div>
         <aside class="leader-card" id="leaderCard"></aside>
@@ -1106,12 +1377,6 @@
               <th>Starts</th>
               <th>Total Points</th>
               <th>Behind</th>
-              <th>Wins</th>
-              <th>Top 5</th>
-              <th>Top 10</th>
-              <th class="hide-md">Led Lap</th>
-              <th class="hide-md">Most Laps</th>
-              <th></th>
             </tr>
           </thead>
           <tbody id="standingsBody"></tbody>
@@ -1440,45 +1705,51 @@ function bonusText(r) {
   return [num(r.win) ? "Win" : "", num(r.top5) ? "Top 5" : "", num(r.top10) ? "Top 10" : "", num(r.ledLap) ? "Led Lap" : "", num(r.ledMost) ? "Most Led" : ""].filter(Boolean).join(" · ") || "—";
 }
 
-function makeDetailPanel(name) {
+function makeDetailPanel(name, standingRow) {
   const stats = detailStats(name);
   const rows = stats.rows;
-  const avgPointsText = stats.avgPoints === null ? "—" : stats.avgPoints.toFixed(1);
-  const avgFinishText = stats.avgFinish === null ? "—" : stats.avgFinish.toFixed(1);
-  const bestFinishText = stats.bestFinish === null ? "—" : `P${stats.bestFinish}`;
+  const seasonStats = [
+    ["Wins", num(standingRow?.WINS)],
+    ["Top 5", num(standingRow?.TOP_5s)],
+    ["Top 10", num(standingRow?.TOP_10s)],
+    ["Led Lap", num(standingRow?.LED_AT_LEAST_ONE_LAP_IN_RACE)],
+    ["Most Laps", num(standingRow?.LED_MOST_LAPS_IN_A_RACE)],
+    ["Races Logged", rows.length],
+  ];
 
   return `
-    <div class="detail-panel">
-      <div class="detail-top">
-        <div class="detail-stat-grid">
-          <div class="mini-stat"><strong>${stats.starts}</strong><span>Races Logged</span></div>
-          <div class="mini-stat"><strong>${fmt.format(stats.points)}</strong><span>Detail Points</span></div>
-          <div class="mini-stat"><strong>${avgPointsText}</strong><span>Avg Points</span></div>
-          <div class="mini-stat"><strong>${avgFinishText}</strong><span>Avg Finish</span></div>
-          <div class="mini-stat"><strong>${bestFinishText}</strong><span>Best Finish</span></div>
-          <div class="mini-stat"><strong>${rows.reduce((s,r) => s + num(r.win), 0)}</strong><span>Wins</span></div>
-          <div class="mini-stat"><strong>${rows.reduce((s,r) => s + num(r.top5), 0)}</strong><span>Top 5</span></div>
-          <div class="mini-stat"><strong>${rows.reduce((s,r) => s + num(r.top10), 0)}</strong><span>Top 10</span></div>
+    <div class="detail-panel compact-detail-panel">
+      <div class="detail-top compact-detail-top">
+        <div>
+          <div class="selection-title-row compact-selection-title">
+            <div>
+              <strong>Expanded Stats</strong>
+              <div class="hint">Season stats plus exact race points from dbo.MOBILE.</div>
+            </div>
+            <div class="hint">Tap owner row again to collapse</div>
+          </div>
+          <div class="detail-stat-grid compact-stat-grid">
+            ${seasonStats.map(([label, value]) => `
+              <div class="mini-stat"><strong>${display(value)}</strong><span>${escapeHtml(label)}</span></div>
+            `).join("")}
+          </div>
         </div>
-        ${makeSpark(rows)}
       </div>
 
-      <div class="selection-title-row">
+      <div class="selection-title-row compact-selection-title">
         <div>
           <strong>Selections</strong>
-          <div class="hint">Exact race points are loaded from dbo.MOBILE TOTAL_POINTS_INCLUDING_BONUS.</div>
+          <div class="hint">Date, race, selection, finish, points, bonus/race stats, and win flag.</div>
         </div>
-        <div class="hint">Use View/Hide to expand or collapse</div>
       </div>
 
       ${rows.length ? `
-        <div class="selection-table-wrap">
-          <table class="selection-table" aria-label="${escapeHtml(name)} selections">
+        <div class="selection-table-wrap compact-selection-wrap">
+          <table class="selection-table compact-selection-table" aria-label="${escapeHtml(name)} selections">
             <thead>
               <tr>
-                <th>ID</th>
-                <th>Race</th>
                 <th>Date</th>
+                <th>Race</th>
                 <th>Selection</th>
                 <th>Finish</th>
                 <th>Points</th>
@@ -1489,14 +1760,13 @@ function makeDetailPanel(name) {
             <tbody>
               ${rows.map(r => `
                 <tr>
-                  <td><span class="selection-track-id">${display(r.trackId)}</span></td>
-                  <td><div class="selection-race-name">${display(r.trackName || r.trackId)}</div></td>
-                  <td>${hasValue(r.raceDate) ? escapeHtml(fmtDate(r.raceDate)) : "—"}</td>
-                  <td><div class="selection-driver">${display(r.selection)}</div></td>
-                  <td><span class="finish ${finishClass(r.finish)}">${hasValue(r.finish) ? `P${display(r.finish)}` : "—"}</span></td>
-                  <td class="selection-points-compact">${display(r.points)}</td>
-                  <td>${bonusText(r)}</td>
-                  <td>${num(r.win) === 1 ? `<span class="selection-win-badge">WIN</span>` : "—"}</td>
+                  <td data-label="Date">${hasValue(r.raceDate) ? escapeHtml(fmtDate(r.raceDate)) : "—"}</td>
+                  <td data-label="Race"><div class="selection-race-name">${display(r.trackName || r.trackId)}</div></td>
+                  <td data-label="Selection"><div class="selection-driver">${display(r.selection)}</div></td>
+                  <td data-label="Finish"><span class="finish ${finishClass(r.finish)}">${hasValue(r.finish) ? `P${display(r.finish)}` : "—"}</span></td>
+                  <td data-label="Points" class="selection-points-compact">${display(r.points)}</td>
+                  <td data-label="Bonus / Race Stats">${bonusText(r)}</td>
+                  <td data-label="Win">${num(r.win) === 1 ? `<span class="selection-win-badge">WIN</span>` : "—"}</td>
                 </tr>
               `).join("")}
             </tbody>
@@ -1511,29 +1781,23 @@ function makeStandingRow(r) {
   const name = r.FANTASY_NAME;
   const isOpen = openOwners.has(name);
   return `
-    <tr class="standing-row ${isOpen ? "is-open" : ""}" data-owner="${escapeHtml(name)}">
+    <tr class="standing-row ${isOpen ? "is-open" : ""}" data-owner="${escapeHtml(name)}" tabindex="0" role="button" aria-expanded="${isOpen ? "true" : "false"}">
       <td><span class="mobile-label">Rank</span><span class="rank-badge ${num(r.RANK) === 1 ? "rank-1" : ""}">${display(r.RANK)}</span></td>
       <td>
         <span class="mobile-label">Owner</span>
         <div class="owner-block">
           <div>
             <div class="name">${display(name)}</div>
-            <div class="hint">${num(r.WINS)} wins · ${num(r.TOP_10s)} top 10s</div>
+            <div class="hint">${isOpen ? "Tap to collapse" : "Tap to expand"}</div>
           </div>
         </div>
       </td>
       <td><span class="mobile-label">Starts</span>${display(r.STARTS)}</td>
       <td><span class="mobile-label">Total Points</span><span class="points">${fmt.format(num(r.TOTAL_POINTS_INCLUDING_BONUS))}</span></td>
-      <td><span class="mobile-label">Behind</span><span class="gap">${display(r.POINTS_BEHIND)}</span></td>
-      <td><span class="mobile-label">Wins</span><span class="pill win-pill">${num(r.WINS)}</span></td>
-      <td><span class="mobile-label">Top 5</span><span class="pill top-pill">${num(r.TOP_5s)}</span></td>
-      <td><span class="mobile-label">Top 10</span><span class="pill top-pill">${num(r.TOP_10s)}</span></td>
-      <td class="hide-md"><span class="pill">${num(r.LED_AT_LEAST_ONE_LAP_IN_RACE)}</span></td>
-      <td class="hide-md"><span class="pill">${num(r.LED_MOST_LAPS_IN_A_RACE)}</span></td>
-      <td class="toggle"><button class="toggle-action" type="button" data-owner="${escapeHtml(name)}" aria-expanded="${isOpen ? "true" : "false"}">${isOpen ? "Hide" : "View"}</button></td>
+      <td><span class="mobile-label">Behind</span><span class="gap">${display(r.POINTS_BEHIND)}</span><span class="chevron-inline">${isOpen ? "⌃" : "⌄"}</span></td>
     </tr>
     <tr class="detail-row ${isOpen ? "is-open" : ""}">
-      <td class="detail-cell" colspan="11">${makeDetailPanel(name)}</td>
+      <td class="detail-cell" colspan="5">${makeDetailPanel(name, r)}</td>
     </tr>
   `;
 }
@@ -1554,7 +1818,7 @@ function renderStandings() {
 
   $("standingsBody").innerHTML = filtered.length
     ? filtered.map(makeStandingRow).join("")
-    : `<tr><td colspan="11" class="empty">No owners match your search.</td></tr>`;
+    : `<tr><td colspan="5" class="empty">No owners match your search.</td></tr>`;
 
   const tbody = $("standingsBody");
 
@@ -1565,17 +1829,15 @@ function renderStandings() {
     renderStandings();
   }
 
-  tbody.querySelectorAll(".toggle-action").forEach(btn => {
-    btn.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      toggleOwner(btn.getAttribute("data-owner"));
+  tbody.querySelectorAll(".standing-row").forEach(row => {
+    row.addEventListener("click", () => toggleOwner(row.getAttribute("data-owner")));
+    row.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleOwner(row.getAttribute("data-owner"));
+      }
     });
   });
-
-  // v8: Do not toggle from the whole row. On mobile, horizontal scrolling can
-  // fire a click when the user was only trying to pan. Only the View/Hide
-  // button toggles expansion.
 }
 
 function calcPoints(car) {
@@ -1743,7 +2005,7 @@ async function loadData() {
     $("globalRaceProgress").textContent = "Race Status: unavailable";
     $("leaderCard").innerHTML = `<div class="leader-label">Error</div><div class="leader-name">Could not load data</div><div class="subtitle">Check that data/league-data.json exists.</div>`;
     $("metricGrid").innerHTML = `<article class="metric-card"><div class="metric-value">!</div><div class="metric-label">Data Load Failed</div></article>`;
-    $("standingsBody").innerHTML = `<tr><td colspan="11" class="empty">Could not load data/league-data.json.</td></tr>`;
+    $("standingsBody").innerHTML = `<tr><td colspan="5" class="empty">Could not load data/league-data.json.</td></tr>`;
     $("leaderboardBody").innerHTML = `<tr><td colspan="7" class="empty">Could not load data/league-data.json.</td></tr>`;
   }
 }
