@@ -527,8 +527,11 @@
       box-shadow: 0 6px 14px rgba(0,0,0,0.3);
     }
 
-    .live-table { min-width: 860px; }
+    .live-table { min-width: 980px; table-layout: auto; }
     .live-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .live-table th,
+    .live-table td { white-space: nowrap; }
+    .live-table .pill { white-space: nowrap; max-width: none; }
     .rank { font-size: 18px; font-weight: 900; color: var(--accent); }
     .live-card-list { display: none; }
 
@@ -566,43 +569,23 @@
       .selection-table { min-width: 860px; }
       .race-title { font-size: 25px; }
       .position-line { grid-auto-columns: minmax(88px, 88px); }
-      .live-table-wrap { display: none; }
-      .live-card-list { display: grid; gap: 10px; }
-      .live-card {
-        border: 1px solid var(--line);
-        background: var(--panel);
-        border-radius: 16px;
-        padding: 11px;
-      }
-      .live-card-top {
-        display: grid;
-        grid-template-columns: 36px 1fr 60px;
-        gap: 9px;
-        align-items: center;
-      }
-      .live-card .driver-name { font-weight: 950; }
-      .live-card .owner-line { color: var(--blue); font-size: .8rem; font-weight: 850; margin-top: 2px; }
-      .live-card-grid {
-        margin-top: 10px;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
-      }
-      .live-card-stat {
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,.045);
-        border-radius: 12px;
-        padding: 8px;
-      }
-      .live-card-stat span {
+      .live-table-wrap {
         display: block;
-        color: var(--muted);
-        font-size: .64rem;
-        text-transform: uppercase;
-        letter-spacing: .08em;
-        margin-bottom: 3px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 16px;
       }
-      .live-card-stat strong { font-size: .86rem; }
+      .live-table {
+        min-width: 980px;
+        font-size: .82rem;
+      }
+      .live-table th,
+      .live-table td {
+        padding: 10px 11px;
+        white-space: nowrap;
+      }
+      .live-table th { font-size: .62rem; }
+      .live-card-list { display: none !important; }
     }
   </style>
 </head>
@@ -691,7 +674,7 @@
       <div class="section-title">
         <div>
           <h2>Fantasy Race Leaderboard</h2>
-          <p>Sorted by exact league race points from dbo.MOBILE when available.</p>
+          <p>Sorted by exact league race points from dbo.MOBILE when available. On mobile, swipe the table left/right to see all columns.</p>
         </div>
       </div>
       <section class="card live-table-wrap">
