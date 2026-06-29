@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-28 07:51 PM ET",
+  "lastUpdated": "2026-06-28 08:04 PM ET",
   "raceProgress": "Race Completed",
   "raceProgressLabel": "Race Status",
   "runningOrderLabel": "Fantasy running order — Toyota / Save Mart 350",
@@ -131,2341 +131,1081 @@
       "FANTASY_NAME": "Bill",
       "TRACK_ID": 5596,
       "TRACK_NAME": "DAYTONA 500",
-      "SELECTION": "Brad Keselowski",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Brad Keselowski"
     },
     {
       "FANTASY_NAME": "Chase",
       "TRACK_ID": 5596,
       "TRACK_NAME": "DAYTONA 500",
-      "SELECTION": "Chase Briscoe",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chase Briscoe"
     },
     {
       "FANTASY_NAME": "Conlan",
       "TRACK_ID": 5596,
       "TRACK_NAME": "DAYTONA 500",
-      "SELECTION": "Joey Logano",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Joey Logano"
     },
     {
       "FANTASY_NAME": "Dylan",
       "TRACK_ID": 5596,
       "TRACK_NAME": "DAYTONA 500",
-      "SELECTION": "Chase Elliott",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chase Elliott"
     },
     {
       "FANTASY_NAME": "Hunter",
       "TRACK_ID": 5596,
       "TRACK_NAME": "DAYTONA 500",
-      "SELECTION": "Michael McDowell",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Michael McDowell"
     },
     {
       "FANTASY_NAME": "JT",
       "TRACK_ID": 5596,
       "TRACK_NAME": "DAYTONA 500",
-      "SELECTION": "Austin Dillon",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Austin Dillon"
     },
     {
       "FANTASY_NAME": "Kevin",
       "TRACK_ID": 5596,
       "TRACK_NAME": "DAYTONA 500",
-      "SELECTION": "Kyle Larson",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Kyle Larson"
     },
     {
       "FANTASY_NAME": "Lawson",
       "TRACK_ID": 5596,
       "TRACK_NAME": "DAYTONA 500",
-      "SELECTION": "William Byron",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "William Byron"
     },
     {
       "FANTASY_NAME": "Ryan",
       "TRACK_ID": 5596,
       "TRACK_NAME": "DAYTONA 500",
-      "SELECTION": "Todd Gilliland",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Todd Gilliland"
     },
     {
       "FANTASY_NAME": "Tayhan",
       "TRACK_ID": 5596,
       "TRACK_NAME": "DAYTONA 500",
-      "SELECTION": "Ricky Stenhouse Jr.",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ricky Stenhouse Jr."
     },
     {
       "FANTASY_NAME": "Bill",
       "TRACK_ID": 5597,
       "TRACK_NAME": "Autotrader 400",
-      "SELECTION": "Tyler Reddick",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Tyler Reddick"
     },
     {
       "FANTASY_NAME": "Chase",
       "TRACK_ID": 5597,
       "TRACK_NAME": "Autotrader 400",
-      "SELECTION": "Christopher Bell",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Christopher Bell"
     },
     {
       "FANTASY_NAME": "Conlan",
       "TRACK_ID": 5597,
       "TRACK_NAME": "Autotrader 400",
-      "SELECTION": "Ricky Stenhouse Jr.",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ricky Stenhouse Jr."
     },
     {
       "FANTASY_NAME": "Dylan",
       "TRACK_ID": 5597,
       "TRACK_NAME": "Autotrader 400",
-      "SELECTION": "Carson Hocevar",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Carson Hocevar"
     },
     {
       "FANTASY_NAME": "Hunter",
       "TRACK_ID": 5597,
       "TRACK_NAME": "Autotrader 400",
-      "SELECTION": "Ryan Blaney",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ryan Blaney"
     },
     {
       "FANTASY_NAME": "JT",
       "TRACK_ID": 5597,
       "TRACK_NAME": "Autotrader 400",
-      "SELECTION": "Brad Keselowski",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Brad Keselowski"
     },
     {
       "FANTASY_NAME": "Kevin",
       "TRACK_ID": 5597,
       "TRACK_NAME": "Autotrader 400",
-      "SELECTION": "Josh Berry",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Josh Berry"
     },
     {
       "FANTASY_NAME": "Lawson",
       "TRACK_ID": 5597,
       "TRACK_NAME": "Autotrader 400",
-      "SELECTION": "Brad Keselowski",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Brad Keselowski"
     },
     {
       "FANTASY_NAME": "Ryan",
       "TRACK_ID": 5597,
       "TRACK_NAME": "Autotrader 400",
-      "SELECTION": "Chris Buescher",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chris Buescher"
     },
     {
       "FANTASY_NAME": "Tayhan",
       "TRACK_ID": 5597,
       "TRACK_NAME": "Autotrader 400",
-      "SELECTION": "Bubba Wallace",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Bubba Wallace"
     },
     {
       "FANTASY_NAME": "Bill",
       "TRACK_ID": 5598,
       "TRACK_NAME": "DuraMAX Texas Grand Prix Powered by RelaDyne",
-      "SELECTION": "Ryan Blaney",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ryan Blaney"
     },
     {
       "FANTASY_NAME": "Chase",
       "TRACK_ID": 5598,
       "TRACK_NAME": "DuraMAX Texas Grand Prix Powered by RelaDyne",
-      "SELECTION": "Ross Chastain",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ross Chastain"
     },
     {
       "FANTASY_NAME": "Conlan",
       "TRACK_ID": 5598,
       "TRACK_NAME": "DuraMAX Texas Grand Prix Powered by RelaDyne",
-      "SELECTION": "Shane van Gisbergen",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Shane van Gisbergen"
     },
     {
       "FANTASY_NAME": "Dylan",
       "TRACK_ID": 5598,
       "TRACK_NAME": "DuraMAX Texas Grand Prix Powered by RelaDyne",
-      "SELECTION": "Ryan Blaney",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ryan Blaney"
     },
     {
       "FANTASY_NAME": "Hunter",
       "TRACK_ID": 5598,
       "TRACK_NAME": "DuraMAX Texas Grand Prix Powered by RelaDyne",
-      "SELECTION": "Connor Zilisch",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Connor Zilisch"
     },
     {
       "FANTASY_NAME": "JT",
       "TRACK_ID": 5598,
       "TRACK_NAME": "DuraMAX Texas Grand Prix Powered by RelaDyne",
-      "SELECTION": "Michael McDowell",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Michael McDowell"
     },
     {
       "FANTASY_NAME": "Kevin",
       "TRACK_ID": 5598,
       "TRACK_NAME": "DuraMAX Texas Grand Prix Powered by RelaDyne",
-      "SELECTION": "William Byron",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "William Byron"
     },
     {
       "FANTASY_NAME": "Lawson",
       "TRACK_ID": 5598,
       "TRACK_NAME": "DuraMAX Texas Grand Prix Powered by RelaDyne",
-      "SELECTION": "Chase Elliott",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chase Elliott"
     },
     {
       "FANTASY_NAME": "Ryan",
       "TRACK_ID": 5598,
       "TRACK_NAME": "DuraMAX Texas Grand Prix Powered by RelaDyne",
-      "SELECTION": "AJ Allmendinger",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "AJ Allmendinger"
     },
     {
       "FANTASY_NAME": "Tayhan",
       "TRACK_ID": 5598,
       "TRACK_NAME": "DuraMAX Texas Grand Prix Powered by RelaDyne",
-      "SELECTION": "Chase Elliott",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chase Elliott"
     },
     {
       "FANTASY_NAME": "Bill",
       "TRACK_ID": 5599,
       "TRACK_NAME": "Straight Talk Wireless 500",
-      "SELECTION": "Austin Cindric",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Austin Cindric"
     },
     {
       "FANTASY_NAME": "Chase",
       "TRACK_ID": 5599,
       "TRACK_NAME": "Straight Talk Wireless 500",
-      "SELECTION": "Ryan Blaney",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ryan Blaney"
     },
     {
       "FANTASY_NAME": "Conlan",
       "TRACK_ID": 5599,
       "TRACK_NAME": "Straight Talk Wireless 500",
-      "SELECTION": "Kyle Busch",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Kyle Busch"
     },
     {
       "FANTASY_NAME": "Dylan",
       "TRACK_ID": 5599,
       "TRACK_NAME": "Straight Talk Wireless 500",
-      "SELECTION": "Daniel Suárez",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Daniel Suárez"
     },
     {
       "FANTASY_NAME": "Hunter",
       "TRACK_ID": 5599,
       "TRACK_NAME": "Straight Talk Wireless 500",
-      "SELECTION": "Josh Berry",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Josh Berry"
     },
     {
       "FANTASY_NAME": "JT",
       "TRACK_ID": 5599,
       "TRACK_NAME": "Straight Talk Wireless 500",
-      "SELECTION": "Ryan Blaney",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ryan Blaney"
     },
     {
       "FANTASY_NAME": "Kevin",
       "TRACK_ID": 5599,
       "TRACK_NAME": "Straight Talk Wireless 500",
-      "SELECTION": "Tyler Reddick",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Tyler Reddick"
     },
     {
       "FANTASY_NAME": "Lawson",
       "TRACK_ID": 5599,
       "TRACK_NAME": "Straight Talk Wireless 500",
-      "SELECTION": "Ryan Blaney",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ryan Blaney"
     },
     {
       "FANTASY_NAME": "Ryan",
       "TRACK_ID": 5599,
       "TRACK_NAME": "Straight Talk Wireless 500",
-      "SELECTION": "Joey Logano",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Joey Logano"
     },
     {
       "FANTASY_NAME": "Tayhan",
       "TRACK_ID": 5599,
       "TRACK_NAME": "Straight Talk Wireless 500",
-      "SELECTION": "Chris Buescher",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chris Buescher"
     },
     {
       "FANTASY_NAME": "Bill",
       "TRACK_ID": 5600,
       "TRACK_NAME": "Pennzoil 400 presented by Jiffy Lube",
-      "SELECTION": "Christopher Bell",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Christopher Bell"
     },
     {
       "FANTASY_NAME": "Chase",
       "TRACK_ID": 5600,
       "TRACK_NAME": "Pennzoil 400 presented by Jiffy Lube",
-      "SELECTION": "Kyle Larson",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Kyle Larson"
     },
     {
       "FANTASY_NAME": "Conlan",
       "TRACK_ID": 5600,
       "TRACK_NAME": "Pennzoil 400 presented by Jiffy Lube",
-      "SELECTION": "Christopher Bell",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Christopher Bell"
     },
     {
       "FANTASY_NAME": "Dylan",
       "TRACK_ID": 5600,
       "TRACK_NAME": "Pennzoil 400 presented by Jiffy Lube",
-      "SELECTION": "Christopher Bell",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Christopher Bell"
     },
     {
       "FANTASY_NAME": "Hunter",
       "TRACK_ID": 5600,
       "TRACK_NAME": "Pennzoil 400 presented by Jiffy Lube",
-      "SELECTION": "Denny Hamlin",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Denny Hamlin"
     },
     {
       "FANTASY_NAME": "JT",
       "TRACK_ID": 5600,
       "TRACK_NAME": "Pennzoil 400 presented by Jiffy Lube",
-      "SELECTION": "Ty Gibbs",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ty Gibbs"
     },
     {
       "FANTASY_NAME": "Kevin",
       "TRACK_ID": 5600,
       "TRACK_NAME": "Pennzoil 400 presented by Jiffy Lube",
-      "SELECTION": "Erik Jones",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Erik Jones"
     },
     {
       "FANTASY_NAME": "Lawson",
       "TRACK_ID": 5600,
       "TRACK_NAME": "Pennzoil 400 presented by Jiffy Lube",
-      "SELECTION": "Bubba Wallace",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Bubba Wallace"
     },
     {
       "FANTASY_NAME": "Ryan",
       "TRACK_ID": 5600,
       "TRACK_NAME": "Pennzoil 400 presented by Jiffy Lube",
-      "SELECTION": "Chase Briscoe",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chase Briscoe"
     },
     {
       "FANTASY_NAME": "Tayhan",
       "TRACK_ID": 5600,
       "TRACK_NAME": "Pennzoil 400 presented by Jiffy Lube",
-      "SELECTION": "Kyle Larson",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Kyle Larson"
     },
     {
       "FANTASY_NAME": "Bill",
       "TRACK_ID": 5602,
       "TRACK_NAME": "Cook Out 400",
-      "SELECTION": "Denny Hamlin",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Denny Hamlin"
     },
     {
       "FANTASY_NAME": "Chase",
       "TRACK_ID": 5602,
       "TRACK_NAME": "Cook Out 400",
-      "SELECTION": "Denny Hamlin",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Denny Hamlin"
     },
     {
       "FANTASY_NAME": "Conlan",
       "TRACK_ID": 5602,
       "TRACK_NAME": "Cook Out 400",
-      "SELECTION": "Josh Berry",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Josh Berry"
     },
     {
       "FANTASY_NAME": "Dylan",
       "TRACK_ID": 5602,
       "TRACK_NAME": "Cook Out 400",
-      "SELECTION": "William Byron",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "William Byron"
     },
     {
       "FANTASY_NAME": "Hunter",
       "TRACK_ID": 5602,
       "TRACK_NAME": "Cook Out 400",
-      "SELECTION": "Austin Cindric",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Austin Cindric"
     },
     {
       "FANTASY_NAME": "JT",
       "TRACK_ID": 5602,
       "TRACK_NAME": "Cook Out 400",
-      "SELECTION": "Josh Berry",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Josh Berry"
     },
     {
       "FANTASY_NAME": "Kevin",
       "TRACK_ID": 5602,
       "TRACK_NAME": "Cook Out 400",
-      "SELECTION": "Carson Hocevar",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Carson Hocevar"
     },
     {
       "FANTASY_NAME": "Lawson",
       "TRACK_ID": 5602,
       "TRACK_NAME": "Cook Out 400",
-      "SELECTION": "Ty Gibbs",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ty Gibbs"
     },
     {
       "FANTASY_NAME": "Ryan",
       "TRACK_ID": 5602,
       "TRACK_NAME": "Cook Out 400",
-      "SELECTION": "Chase Elliott",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chase Elliott"
     },
     {
       "FANTASY_NAME": "Tayhan",
       "TRACK_ID": 5602,
       "TRACK_NAME": "Cook Out 400",
-      "SELECTION": "Ryan Blaney",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ryan Blaney"
     },
     {
       "FANTASY_NAME": "Bill",
       "TRACK_ID": 5603,
       "TRACK_NAME": "Goodyear 400",
-      "SELECTION": "Kyle Larson",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Kyle Larson"
     },
     {
       "FANTASY_NAME": "Chase",
       "TRACK_ID": 5603,
       "TRACK_NAME": "Goodyear 400",
-      "SELECTION": "Tyler Reddick",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Tyler Reddick"
     },
     {
       "FANTASY_NAME": "Conlan",
       "TRACK_ID": 5603,
       "TRACK_NAME": "Goodyear 400",
-      "SELECTION": "Ryan Blaney",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ryan Blaney"
     },
     {
       "FANTASY_NAME": "Dylan",
       "TRACK_ID": 5603,
       "TRACK_NAME": "Goodyear 400",
-      "SELECTION": "Tyler Reddick",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Tyler Reddick"
     },
     {
       "FANTASY_NAME": "Hunter",
       "TRACK_ID": 5603,
       "TRACK_NAME": "Goodyear 400",
-      "SELECTION": "Chase Elliott",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chase Elliott"
     },
     {
       "FANTASY_NAME": "JT",
       "TRACK_ID": 5603,
       "TRACK_NAME": "Goodyear 400",
-      "SELECTION": "Chris Buescher",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chris Buescher"
     },
     {
       "FANTASY_NAME": "Kevin",
       "TRACK_ID": 5603,
       "TRACK_NAME": "Goodyear 400",
-      "SELECTION": "Daniel Suárez",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Daniel Suárez"
     },
     {
       "FANTASY_NAME": "Lawson",
       "TRACK_ID": 5603,
       "TRACK_NAME": "Goodyear 400",
-      "SELECTION": "Tyler Reddick",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Tyler Reddick"
     },
     {
       "FANTASY_NAME": "Ryan",
       "TRACK_ID": 5603,
       "TRACK_NAME": "Goodyear 400",
-      "SELECTION": "Kyle Busch",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Kyle Busch"
     },
     {
       "FANTASY_NAME": "Tayhan",
       "TRACK_ID": 5603,
       "TRACK_NAME": "Goodyear 400",
-      "SELECTION": "Tyler Reddick",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Tyler Reddick"
     },
     {
       "FANTASY_NAME": "Bill",
       "TRACK_ID": 5604,
       "TRACK_NAME": "Food City 500",
-      "SELECTION": "Ty Gibbs",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ty Gibbs"
     },
     {
       "FANTASY_NAME": "Chase",
       "TRACK_ID": 5604,
       "TRACK_NAME": "Food City 500",
-      "SELECTION": "Ty Gibbs",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ty Gibbs"
     },
     {
       "FANTASY_NAME": "Conlan",
       "TRACK_ID": 5604,
       "TRACK_NAME": "Food City 500",
-      "SELECTION": "Ty Gibbs",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ty Gibbs"
     },
     {
       "FANTASY_NAME": "Dylan",
       "TRACK_ID": 5604,
       "TRACK_NAME": "Food City 500",
-      "SELECTION": "Ty Gibbs",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ty Gibbs"
     },
     {
       "FANTASY_NAME": "Hunter",
       "TRACK_ID": 5604,
       "TRACK_NAME": "Food City 500",
-      "SELECTION": "Tyler Reddick",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Tyler Reddick"
     },
     {
       "FANTASY_NAME": "JT",
       "TRACK_ID": 5604,
       "TRACK_NAME": "Food City 500",
-      "SELECTION": "Chase Briscoe",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chase Briscoe"
     },
     {
       "FANTASY_NAME": "Kevin",
       "TRACK_ID": 5604,
       "TRACK_NAME": "Food City 500",
-      "SELECTION": "Chris Buescher",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chris Buescher"
     },
     {
       "FANTASY_NAME": "Lawson",
       "TRACK_ID": 5604,
       "TRACK_NAME": "Food City 500",
-      "SELECTION": "Chris Buescher",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chris Buescher"
     },
     {
       "FANTASY_NAME": "Ryan",
       "TRACK_ID": 5604,
       "TRACK_NAME": "Food City 500",
-      "SELECTION": "Austin Cindric",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Austin Cindric"
     },
     {
       "FANTASY_NAME": "Tayhan",
       "TRACK_ID": 5604,
       "TRACK_NAME": "Food City 500",
-      "SELECTION": "Denny Hamlin",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Denny Hamlin"
     },
     {
       "FANTASY_NAME": "Bill",
       "TRACK_ID": 5605,
       "TRACK_NAME": "Jack Link's 500",
-      "SELECTION": "Bubba Wallace",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Bubba Wallace"
     },
     {
       "FANTASY_NAME": "Chase",
       "TRACK_ID": 5605,
       "TRACK_NAME": "Jack Link's 500",
-      "SELECTION": "Alex Bowman",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Alex Bowman"
     },
     {
       "FANTASY_NAME": "Conlan",
       "TRACK_ID": 5605,
       "TRACK_NAME": "Jack Link's 500",
-      "SELECTION": "Ryan Preece",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ryan Preece"
     },
     {
       "FANTASY_NAME": "Dylan",
       "TRACK_ID": 5605,
       "TRACK_NAME": "Jack Link's 500",
-      "SELECTION": "Bubba Wallace",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Bubba Wallace"
     },
     {
       "FANTASY_NAME": "Hunter",
       "TRACK_ID": 5605,
       "TRACK_NAME": "Jack Link's 500",
-      "SELECTION": "Chris Buescher",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chris Buescher"
     },
     {
       "FANTASY_NAME": "JT",
       "TRACK_ID": 5605,
       "TRACK_NAME": "Jack Link's 500",
-      "SELECTION": "Carson Hocevar",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Carson Hocevar"
     },
     {
       "FANTASY_NAME": "Kevin",
       "TRACK_ID": 5605,
       "TRACK_NAME": "Jack Link's 500",
-      "SELECTION": "Austin Cindric",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Austin Cindric"
     },
     {
       "FANTASY_NAME": "Lawson",
       "TRACK_ID": 5605,
       "TRACK_NAME": "Jack Link's 500",
-      "SELECTION": "Austin Cindric",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Austin Cindric"
     },
     {
       "FANTASY_NAME": "Ryan",
       "TRACK_ID": 5605,
       "TRACK_NAME": "Jack Link's 500",
-      "SELECTION": "Brad Keselowski",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Brad Keselowski"
     },
     {
       "FANTASY_NAME": "Tayhan",
       "TRACK_ID": 5605,
       "TRACK_NAME": "Jack Link's 500",
-      "SELECTION": "Brad Keselowski",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Brad Keselowski"
     },
     {
       "FANTASY_NAME": "Bill",
       "TRACK_ID": 5606,
       "TRACK_NAME": "Würth 400 presented by LIQUI MOLY",
-      "SELECTION": "Daniel Suárez",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Daniel Suárez"
     },
     {
       "FANTASY_NAME": "Chase",
       "TRACK_ID": 5606,
       "TRACK_NAME": "Würth 400 presented by LIQUI MOLY",
-      "SELECTION": "Daniel Suárez",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Daniel Suárez"
     },
     {
       "FANTASY_NAME": "Conlan",
       "TRACK_ID": 5606,
       "TRACK_NAME": "Würth 400 presented by LIQUI MOLY",
-      "SELECTION": "Denny Hamlin",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Denny Hamlin"
     },
     {
       "FANTASY_NAME": "Dylan",
       "TRACK_ID": 5606,
       "TRACK_NAME": "Würth 400 presented by LIQUI MOLY",
-      "SELECTION": "Chris Buescher",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chris Buescher"
     },
     {
       "FANTASY_NAME": "Hunter",
       "TRACK_ID": 5606,
       "TRACK_NAME": "Würth 400 presented by LIQUI MOLY",
-      "SELECTION": "Carson Hocevar",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Carson Hocevar"
     },
     {
       "FANTASY_NAME": "JT",
       "TRACK_ID": 5606,
       "TRACK_NAME": "Würth 400 presented by LIQUI MOLY",
-      "SELECTION": "Alex Bowman",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Alex Bowman"
     },
     {
       "FANTASY_NAME": "Kevin",
       "TRACK_ID": 5606,
       "TRACK_NAME": "Würth 400 presented by LIQUI MOLY",
-      "SELECTION": "Riley Herbst",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Riley Herbst"
     },
     {
       "FANTASY_NAME": "Lawson",
       "TRACK_ID": 5606,
       "TRACK_NAME": "Würth 400 presented by LIQUI MOLY",
-      "SELECTION": "Christopher Bell",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Christopher Bell"
     },
     {
       "FANTASY_NAME": "Ryan",
       "TRACK_ID": 5606,
       "TRACK_NAME": "Würth 400 presented by LIQUI MOLY",
-      "SELECTION": "Carson Hocevar",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Carson Hocevar"
     },
     {
       "FANTASY_NAME": "Tayhan",
       "TRACK_ID": 5606,
       "TRACK_NAME": "Würth 400 presented by LIQUI MOLY",
-      "SELECTION": "William Byron",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "William Byron"
     },
     {
       "FANTASY_NAME": "Bill",
       "TRACK_ID": 5607,
       "TRACK_NAME": "AdventHealth 400",
-      "SELECTION": "Chris Buescher",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chris Buescher"
     },
     {
       "FANTASY_NAME": "Chase",
       "TRACK_ID": 5607,
       "TRACK_NAME": "AdventHealth 400",
-      "SELECTION": "Bubba Wallace",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Bubba Wallace"
     },
     {
       "FANTASY_NAME": "Conlan",
       "TRACK_ID": 5607,
       "TRACK_NAME": "AdventHealth 400",
-      "SELECTION": "Carson Hocevar",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Carson Hocevar"
     },
     {
       "FANTASY_NAME": "Dylan",
       "TRACK_ID": 5607,
       "TRACK_NAME": "AdventHealth 400",
-      "SELECTION": "Chase Briscoe",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chase Briscoe"
     },
     {
       "FANTASY_NAME": "Hunter",
       "TRACK_ID": 5607,
       "TRACK_NAME": "AdventHealth 400",
-      "SELECTION": "Kyle Larson",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Kyle Larson"
     },
     {
       "FANTASY_NAME": "JT",
       "TRACK_ID": 5607,
       "TRACK_NAME": "AdventHealth 400",
-      "SELECTION": "Tyler Reddick",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Tyler Reddick"
     },
     {
       "FANTASY_NAME": "Kevin",
       "TRACK_ID": 5607,
       "TRACK_NAME": "AdventHealth 400",
-      "SELECTION": "Bubba Wallace",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Bubba Wallace"
     },
     {
       "FANTASY_NAME": "Lawson",
       "TRACK_ID": 5607,
       "TRACK_NAME": "AdventHealth 400",
-      "SELECTION": "Carson Hocevar",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Carson Hocevar"
     },
     {
       "FANTASY_NAME": "Ryan",
       "TRACK_ID": 5607,
       "TRACK_NAME": "AdventHealth 400",
-      "SELECTION": "Kyle Larson",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Kyle Larson"
     },
     {
       "FANTASY_NAME": "Tayhan",
       "TRACK_ID": 5607,
       "TRACK_NAME": "AdventHealth 400",
-      "SELECTION": "Christopher Bell",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Christopher Bell"
     },
     {
       "FANTASY_NAME": "Bill",
       "TRACK_ID": 5610,
       "TRACK_NAME": "Coca-Cola 600",
-      "SELECTION": "Austin Dillon",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Austin Dillon"
     },
     {
       "FANTASY_NAME": "Chase",
       "TRACK_ID": 5610,
       "TRACK_NAME": "Coca-Cola 600",
-      "SELECTION": "Austin Dillon",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Austin Dillon"
     },
     {
       "FANTASY_NAME": "Conlan",
       "TRACK_ID": 5610,
       "TRACK_NAME": "Coca-Cola 600",
-      "SELECTION": "Tyler Reddick",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Tyler Reddick"
     },
     {
       "FANTASY_NAME": "Dylan",
       "TRACK_ID": 5610,
       "TRACK_NAME": "Coca-Cola 600",
-      "SELECTION": "Michael McDowell",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Michael McDowell"
     },
     {
       "FANTASY_NAME": "Hunter",
       "TRACK_ID": 5610,
       "TRACK_NAME": "Coca-Cola 600",
-      "SELECTION": "Ty Gibbs",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ty Gibbs"
     },
     {
       "FANTASY_NAME": "JT",
       "TRACK_ID": 5610,
       "TRACK_NAME": "Coca-Cola 600",
-      "SELECTION": "Kyle Larson",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Kyle Larson"
     },
     {
       "FANTASY_NAME": "Kevin",
       "TRACK_ID": 5610,
       "TRACK_NAME": "Coca-Cola 600",
-      "SELECTION": "Cole Custer",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Cole Custer"
     },
     {
       "FANTASY_NAME": "Lawson",
       "TRACK_ID": 5610,
       "TRACK_NAME": "Coca-Cola 600",
-      "SELECTION": "Denny Hamlin",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Denny Hamlin"
     },
     {
       "FANTASY_NAME": "Ryan",
       "TRACK_ID": 5610,
       "TRACK_NAME": "Coca-Cola 600",
-      "SELECTION": "Tyler Reddick",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Tyler Reddick"
     },
     {
       "FANTASY_NAME": "Tayhan",
       "TRACK_ID": 5610,
       "TRACK_NAME": "Coca-Cola 600",
-      "SELECTION": "Joey Logano",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Joey Logano"
     },
     {
       "FANTASY_NAME": "Bill",
       "TRACK_ID": 5611,
       "TRACK_NAME": "Cracker Barrel 400",
-      "SELECTION": "William Byron",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "William Byron"
     },
     {
       "FANTASY_NAME": "Chase",
       "TRACK_ID": 5611,
       "TRACK_NAME": "Cracker Barrel 400",
-      "SELECTION": "Joey Logano",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Joey Logano"
     },
     {
       "FANTASY_NAME": "Conlan",
       "TRACK_ID": 5611,
       "TRACK_NAME": "Cracker Barrel 400",
-      "SELECTION": "Chase Briscoe",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chase Briscoe"
     },
     {
       "FANTASY_NAME": "Dylan",
       "TRACK_ID": 5611,
       "TRACK_NAME": "Cracker Barrel 400",
-      "SELECTION": "Kyle Larson",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Kyle Larson"
     },
     {
       "FANTASY_NAME": "Hunter",
       "TRACK_ID": 5611,
       "TRACK_NAME": "Cracker Barrel 400",
-      "SELECTION": "William Byron",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "William Byron"
     },
     {
       "FANTASY_NAME": "JT",
       "TRACK_ID": 5611,
       "TRACK_NAME": "Cracker Barrel 400",
-      "SELECTION": "Christopher Bell",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Christopher Bell"
     },
     {
       "FANTASY_NAME": "Kevin",
       "TRACK_ID": 5611,
       "TRACK_NAME": "Cracker Barrel 400",
-      "SELECTION": "Christopher Bell",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Christopher Bell"
     },
     {
       "FANTASY_NAME": "Lawson",
       "TRACK_ID": 5611,
       "TRACK_NAME": "Cracker Barrel 400",
-      "SELECTION": "Ross Chastain",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ross Chastain"
     },
     {
       "FANTASY_NAME": "Ryan",
       "TRACK_ID": 5611,
       "TRACK_NAME": "Cracker Barrel 400",
-      "SELECTION": "Denny Hamlin",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Denny Hamlin"
     },
     {
       "FANTASY_NAME": "Tayhan",
       "TRACK_ID": 5611,
       "TRACK_NAME": "Cracker Barrel 400",
-      "SELECTION": "Chase Briscoe",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chase Briscoe"
     },
     {
       "FANTASY_NAME": "Bill",
       "TRACK_ID": 5612,
       "TRACK_NAME": "FireKeepers Casino 400",
-      "SELECTION": "Chase Elliott",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chase Elliott"
     },
     {
       "FANTASY_NAME": "Chase",
       "TRACK_ID": 5612,
       "TRACK_NAME": "FireKeepers Casino 400",
-      "SELECTION": "Carson Hocevar",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Carson Hocevar"
     },
     {
       "FANTASY_NAME": "Conlan",
       "TRACK_ID": 5612,
       "TRACK_NAME": "FireKeepers Casino 400",
-      "SELECTION": "Chase Elliott",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chase Elliott"
     },
     {
       "FANTASY_NAME": "Dylan",
       "TRACK_ID": 5612,
       "TRACK_NAME": "FireKeepers Casino 400",
-      "SELECTION": "Erik Jones",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Erik Jones"
     },
     {
       "FANTASY_NAME": "Hunter",
       "TRACK_ID": 5612,
       "TRACK_NAME": "FireKeepers Casino 400",
-      "SELECTION": "Chase Briscoe",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chase Briscoe"
     },
     {
       "FANTASY_NAME": "JT",
       "TRACK_ID": 5612,
       "TRACK_NAME": "FireKeepers Casino 400",
-      "SELECTION": "Denny Hamlin",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Denny Hamlin"
     },
     {
       "FANTASY_NAME": "Kevin",
       "TRACK_ID": 5612,
       "TRACK_NAME": "FireKeepers Casino 400",
-      "SELECTION": "Ty Gibbs",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ty Gibbs"
     },
     {
       "FANTASY_NAME": "Lawson",
       "TRACK_ID": 5612,
       "TRACK_NAME": "FireKeepers Casino 400",
-      "SELECTION": "Kyle Larson",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Kyle Larson"
     },
     {
       "FANTASY_NAME": "Ryan",
       "TRACK_ID": 5612,
       "TRACK_NAME": "FireKeepers Casino 400",
-      "SELECTION": "Ty Gibbs",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ty Gibbs"
     },
     {
       "FANTASY_NAME": "Tayhan",
       "TRACK_ID": 5612,
       "TRACK_NAME": "FireKeepers Casino 400",
-      "SELECTION": "Carson Hocevar",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Carson Hocevar"
     },
     {
       "FANTASY_NAME": "Bill",
       "TRACK_ID": 5613,
       "TRACK_NAME": "Anduril 250",
-      "SELECTION": "Carson Hocevar",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Carson Hocevar"
     },
     {
       "FANTASY_NAME": "Chase",
       "TRACK_ID": 5613,
       "TRACK_NAME": "Anduril 250",
-      "SELECTION": "Michael McDowell",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Michael McDowell"
     },
     {
       "FANTASY_NAME": "Conlan",
       "TRACK_ID": 5613,
       "TRACK_NAME": "Anduril 250",
-      "SELECTION": "Bubba Wallace",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Bubba Wallace"
     },
     {
       "FANTASY_NAME": "Dylan",
       "TRACK_ID": 5613,
       "TRACK_NAME": "Anduril 250",
-      "SELECTION": "AJ Allmendinger",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "AJ Allmendinger"
     },
     {
       "FANTASY_NAME": "Hunter",
       "TRACK_ID": 5613,
       "TRACK_NAME": "Anduril 250",
-      "SELECTION": "Todd Gilliland",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Todd Gilliland"
     },
     {
       "FANTASY_NAME": "JT",
       "TRACK_ID": 5613,
       "TRACK_NAME": "Anduril 250",
-      "SELECTION": "Shane van Gisbergen",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Shane van Gisbergen"
     },
     {
       "FANTASY_NAME": "Kevin",
       "TRACK_ID": 5613,
       "TRACK_NAME": "Anduril 250",
-      "SELECTION": "Joey Logano",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Joey Logano"
     },
     {
       "FANTASY_NAME": "Lawson",
       "TRACK_ID": 5613,
       "TRACK_NAME": "Anduril 250",
-      "SELECTION": "Daniel Suárez",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Daniel Suárez"
     },
     {
       "FANTASY_NAME": "Ryan",
       "TRACK_ID": 5613,
       "TRACK_NAME": "Anduril 250",
-      "SELECTION": "Ryan Preece",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ryan Preece"
     },
     {
       "FANTASY_NAME": "Tayhan",
       "TRACK_ID": 5613,
       "TRACK_NAME": "Anduril 250",
-      "SELECTION": "Michael McDowell",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Michael McDowell"
     },
     {
       "FANTASY_NAME": "Bill",
       "TRACK_ID": 5614,
       "TRACK_NAME": "Great American Getaway 400 presented by VISITPA",
-      "SELECTION": "Chase Briscoe",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chase Briscoe"
     },
     {
       "FANTASY_NAME": "Chase",
       "TRACK_ID": 5614,
       "TRACK_NAME": "Great American Getaway 400 presented by VISITPA",
-      "SELECTION": "William Byron",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "William Byron"
     },
     {
       "FANTASY_NAME": "Conlan",
       "TRACK_ID": 5614,
       "TRACK_NAME": "Great American Getaway 400 presented by VISITPA",
-      "SELECTION": "Chris Buescher",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chris Buescher"
     },
     {
       "FANTASY_NAME": "Dylan",
       "TRACK_ID": 5614,
       "TRACK_NAME": "Great American Getaway 400 presented by VISITPA",
-      "SELECTION": "Denny Hamlin",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Denny Hamlin"
     },
     {
       "FANTASY_NAME": "Hunter",
       "TRACK_ID": 5614,
       "TRACK_NAME": "Great American Getaway 400 presented by VISITPA",
-      "SELECTION": "Daniel Suárez",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Daniel Suárez"
     },
     {
       "FANTASY_NAME": "JT",
       "TRACK_ID": 5614,
       "TRACK_NAME": "Great American Getaway 400 presented by VISITPA",
-      "SELECTION": "Joey Logano",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Joey Logano"
     },
     {
       "FANTASY_NAME": "Kevin",
       "TRACK_ID": 5614,
       "TRACK_NAME": "Great American Getaway 400 presented by VISITPA",
-      "SELECTION": "Chase Elliott",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chase Elliott"
     },
     {
       "FANTASY_NAME": "Lawson",
       "TRACK_ID": 5614,
       "TRACK_NAME": "Great American Getaway 400 presented by VISITPA",
-      "SELECTION": "Chase Briscoe",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chase Briscoe"
     },
     {
       "FANTASY_NAME": "Ryan",
       "TRACK_ID": 5614,
       "TRACK_NAME": "Great American Getaway 400 presented by VISITPA",
-      "SELECTION": "Ryan Blaney",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ryan Blaney"
     },
     {
       "FANTASY_NAME": "Tayhan",
       "TRACK_ID": 5614,
       "TRACK_NAME": "Great American Getaway 400 presented by VISITPA",
-      "SELECTION": "Ty Gibbs",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ty Gibbs"
     },
     {
       "FANTASY_NAME": "Bill",
       "TRACK_ID": 5617,
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "SELECTION": "AJ Allmendinger",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "AJ Allmendinger"
     },
     {
       "FANTASY_NAME": "Chase",
       "TRACK_ID": 5617,
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "SELECTION": "Chris Buescher",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Chris Buescher"
     },
     {
       "FANTASY_NAME": "Conlan",
       "TRACK_ID": 5617,
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "SELECTION": "Ross Chastain",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ross Chastain"
     },
     {
       "FANTASY_NAME": "Dylan",
       "TRACK_ID": 5617,
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "SELECTION": "Shane van Gisbergen",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Shane van Gisbergen"
     },
     {
       "FANTASY_NAME": "Hunter",
       "TRACK_ID": 5617,
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "SELECTION": "AJ Allmendinger",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "AJ Allmendinger"
     },
     {
       "FANTASY_NAME": "JT",
       "TRACK_ID": 5617,
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "SELECTION": "William Byron",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "William Byron"
     },
     {
       "FANTASY_NAME": "Kevin",
       "TRACK_ID": 5617,
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "SELECTION": "Austin Dillon",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Austin Dillon"
     },
     {
       "FANTASY_NAME": "Lawson",
       "TRACK_ID": 5617,
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "SELECTION": "Shane van Gisbergen",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Shane van Gisbergen"
     },
     {
       "FANTASY_NAME": "Ryan",
       "TRACK_ID": 5617,
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "SELECTION": "Boris Said",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Boris Said"
     },
     {
       "FANTASY_NAME": "Tayhan",
       "TRACK_ID": 5617,
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "SELECTION": "AJ Allmendinger",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "AJ Allmendinger"
     },
     {
       "FANTASY_NAME": "Bill",
       "TRACK_ID": 5621,
       "TRACK_NAME": "Go Bowling at The Glen",
-      "SELECTION": "Shane van Gisbergen",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Shane van Gisbergen"
     },
     {
       "FANTASY_NAME": "Chase",
       "TRACK_ID": 5621,
       "TRACK_NAME": "Go Bowling at The Glen",
-      "SELECTION": "Shane van Gisbergen",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Shane van Gisbergen"
     },
     {
       "FANTASY_NAME": "Conlan",
       "TRACK_ID": 5621,
       "TRACK_NAME": "Go Bowling at The Glen",
-      "SELECTION": "AJ Allmendinger",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "AJ Allmendinger"
     },
     {
       "FANTASY_NAME": "Dylan",
       "TRACK_ID": 5621,
       "TRACK_NAME": "Go Bowling at The Glen",
-      "SELECTION": "Ross Chastain",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ross Chastain"
     },
     {
       "FANTASY_NAME": "Hunter",
       "TRACK_ID": 5621,
       "TRACK_NAME": "Go Bowling at The Glen",
-      "SELECTION": "Shane van Gisbergen",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Shane van Gisbergen"
     },
     {
       "FANTASY_NAME": "JT",
       "TRACK_ID": 5621,
       "TRACK_NAME": "Go Bowling at The Glen",
-      "SELECTION": "Ross Chastain",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Ross Chastain"
     },
     {
       "FANTASY_NAME": "Kevin",
       "TRACK_ID": 5621,
       "TRACK_NAME": "Go Bowling at The Glen",
-      "SELECTION": "Denny Hamlin",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Denny Hamlin"
     },
     {
       "FANTASY_NAME": "Lawson",
       "TRACK_ID": 5621,
       "TRACK_NAME": "Go Bowling at The Glen",
-      "SELECTION": "AJ Allmendinger",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "AJ Allmendinger"
     },
     {
       "FANTASY_NAME": "Ryan",
       "TRACK_ID": 5621,
       "TRACK_NAME": "Go Bowling at The Glen",
-      "SELECTION": "Connor Zilisch",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Connor Zilisch"
     },
     {
       "FANTASY_NAME": "Tayhan",
       "TRACK_ID": 5621,
       "TRACK_NAME": "Go Bowling at The Glen",
-      "SELECTION": "Shane van Gisbergen",
-      "FINISH_POSITION": null,
-      "POINTS_EARNED": null,
-      "WIN": 0,
-      "TOP5": 0,
-      "TOP10": 0,
-      "LED_LAP": 0,
-      "LED_MOST": 0
+      "SELECTION": "Shane van Gisbergen"
     }
   ],
   "runningOrder": [
@@ -2483,7 +1223,6 @@
       "MANUFACTURER": "Chevrolet",
       "TRACK_ID": "5617",
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "POINTS_EARNED": "-",
       "MATCHED_LIVE_FEED": true
     },
     {
@@ -2500,7 +1239,6 @@
       "MANUFACTURER": "Chevrolet",
       "TRACK_ID": "5617",
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "POINTS_EARNED": "-",
       "MATCHED_LIVE_FEED": true
     },
     {
@@ -2517,7 +1255,6 @@
       "MANUFACTURER": "Chevrolet",
       "TRACK_ID": "5617",
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "POINTS_EARNED": "-",
       "MATCHED_LIVE_FEED": true
     },
     {
@@ -2534,7 +1271,6 @@
       "MANUFACTURER": "Chevrolet",
       "TRACK_ID": "5617",
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "POINTS_EARNED": "-",
       "MATCHED_LIVE_FEED": true
     },
     {
@@ -2551,7 +1287,6 @@
       "MANUFACTURER": "Chevrolet",
       "TRACK_ID": "5617",
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "POINTS_EARNED": "-",
       "MATCHED_LIVE_FEED": true
     },
     {
@@ -2568,7 +1303,6 @@
       "MANUFACTURER": "Chevrolet",
       "TRACK_ID": "5617",
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "POINTS_EARNED": "-",
       "MATCHED_LIVE_FEED": true
     },
     {
@@ -2585,7 +1319,6 @@
       "MANUFACTURER": "Chevrolet",
       "TRACK_ID": "5617",
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "POINTS_EARNED": "-",
       "MATCHED_LIVE_FEED": true
     },
     {
@@ -2602,7 +1335,6 @@
       "MANUFACTURER": "Ford",
       "TRACK_ID": "5617",
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "POINTS_EARNED": "-",
       "MATCHED_LIVE_FEED": true
     },
     {
@@ -2619,7 +1351,6 @@
       "MANUFACTURER": "Chevrolet",
       "TRACK_ID": "5617",
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "POINTS_EARNED": "-",
       "MATCHED_LIVE_FEED": true
     },
     {
@@ -2636,7 +1367,6 @@
       "MANUFACTURER": "-",
       "TRACK_ID": "5617",
       "TRACK_NAME": "Toyota / Save Mart 350",
-      "POINTS_EARNED": "-",
       "MATCHED_LIVE_FEED": false
     }
   ]
