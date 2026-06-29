@@ -766,6 +766,16 @@ function toNum(v){
   const n = Number(String(v).trim());
   return Number.isFinite(n) ? n : Number.NEGATIVE_INFINITY;
 }
+function hasRealValue(v){
+  if (v === null || v === undefined) return false;
+  const s = String(v).trim().toLowerCase();
+  return s !== "" && s !== "-" && s !== "null" && s !== "undefined";
+}
+function trackLabel(row){
+  const id = hasRealValue(row.TRACK_ID) ? String(row.TRACK_ID) : "Race";
+  const nm = hasRealValue(row.TRACK_NAME) ? String(row.TRACK_NAME) : "";
+  return nm ? `${id} • ${nm}` : id;
+}
 function formatBehind(v){
   if (v === "-") return { text:"LEADER", cls:"leader" };
   const n = Math.abs(Number(v));
@@ -915,9 +925,7 @@ function render(){
             <div class="selTitle">
               <div class="t">Selections</div>
               <div class="chips">
-                <span class="chip">Points (logged): <strong>${sums.points}</strong></span>
-                <span class="chip">Wins (logged): <strong>${sums.wins}</strong></span>
-                <span class="chip">Top10 (logged): <strong>${sums.top10}</strong></span>
+                <span class="chip">Selections logged: <strong>${sums.races}</strong></span>
               </div>
             </div>
 
@@ -928,11 +936,9 @@ function render(){
                     ${d.slice().reverse().map(x => `
                       <div class="selItem">
                         <div class="selLeft">
-                          <span class="id">${x.TRACK_ID}</span>
+                          <span class="id">${escapeHtml(trackLabel(x))}</span>
                           <span>•</span>
                           <span class="driver">${escapeHtml(x.SELECTION)}</span>
-                          <span>•</span>
-                          <span>Pts ${x.POINTS_EARNED}</span>
                         </div>
                         <div class="selRight">
                           ${Number(x.WIN) === 1 ? `<span class="winGold">🏆 WIN</span>` : ``}
@@ -1001,14 +1007,14 @@ function renderRunningOrder(){
     const status = r.STATUS && r.STATUS !== "-" ? r.STATUS : "Running";
     const laps = r.LAPS_COMPLETED && r.LAPS_COMPLETED !== "-" ? `Lap ${escapeHtml(r.LAPS_COMPLETED)}` : "Lap —";
     const delta = r.DELTA && r.DELTA !== "-" ? ` • ${escapeHtml(r.DELTA)}` : "";
-    const points = r.POINTS_EARNED && r.POINTS_EARNED !== "-" ? `Pts ${escapeHtml(r.POINTS_EARNED)}` : "Pts —";
+    const fantasySub = hasRealValue(r.TRACK_NAME) ? escapeHtml(r.TRACK_NAME) : "Fantasy pick";
 
     return `
       <div class="runRow">
         <div class="runPos">${escapeHtml(pos)}</div>
         <div class="runBlock">
           <div class="main">${escapeHtml(r.FANTASY_NAME || "—")}</div>
-          <div class="small">${points}</div>
+          <div class="small">${fantasySub}</div>
         </div>
         <div class="runBlock">
           <div class="main">${escapeHtml(r.SELECTION || r.LIVE_DRIVER_NAME || "—")}</div>
