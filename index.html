@@ -798,6 +798,213 @@
       .live-table-wrap { overflow: visible; }
     }
 
+
+    /* =========================================================
+       Mobile scroll mode
+       Keep the desktop/table layout on phones, but place wide
+       standings and live tables inside horizontal scroll windows.
+       This preserves expand/collapse rows and keeps all columns visible.
+       ========================================================= */
+    @media (max-width: 760px) {
+      html, body {
+        overflow-x: hidden;
+      }
+
+      .page {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .toolbar {
+        gap: 10px;
+      }
+
+      .search {
+        min-width: 100%;
+      }
+
+      .button-row {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .button-row button {
+        flex: 1 1 0;
+      }
+
+      .standings-table-wrap,
+      .live-table-wrap,
+      .track-map {
+        overflow-x: auto !important;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        background: var(--panel) !important;
+        border: 1px solid var(--line) !important;
+        box-shadow: var(--shadow) !important;
+      }
+
+      .standings-table-wrap::after,
+      .live-table-wrap::after,
+      .track-map::after {
+        content: "Swipe left/right to see more →";
+        display: block;
+        position: sticky;
+        left: 0;
+        padding: 8px 12px 10px;
+        color: var(--muted);
+        font-size: .76rem;
+        background: rgba(3, 8, 18, .42);
+        border-top: 1px solid var(--line);
+      }
+
+      .standings-table,
+      .standings-table thead,
+      .standings-table tbody,
+      .standings-table tr,
+      .standings-table th,
+      .standings-table td,
+      .leaderboard,
+      .leaderboard thead,
+      .leaderboard tbody,
+      .leaderboard tr,
+      .leaderboard th,
+      .leaderboard td,
+      .race-table,
+      .race-table thead,
+      .race-table tbody,
+      .race-table tr,
+      .race-table th,
+      .race-table td {
+        display: revert !important;
+        width: auto !important;
+        min-width: 0 !important;
+      }
+
+      .standings-table,
+      .leaderboard,
+      .race-table {
+        display: table !important;
+        table-layout: auto;
+        border-collapse: collapse;
+        width: 100% !important;
+      }
+
+      .standings-table {
+        min-width: 1040px !important;
+      }
+
+      .leaderboard {
+        min-width: 940px !important;
+      }
+
+      .race-table {
+        min-width: 760px !important;
+      }
+
+      .standings-table thead,
+      .leaderboard thead,
+      .race-table thead {
+        display: table-header-group !important;
+      }
+
+      .standings-table tbody,
+      .leaderboard tbody,
+      .race-table tbody {
+        display: table-row-group !important;
+      }
+
+      .standings-table tr,
+      .leaderboard tr,
+      .race-table tr {
+        display: table-row !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+      }
+
+      .standings-table th,
+      .standings-table td,
+      .leaderboard th,
+      .leaderboard td,
+      .race-table th,
+      .race-table td {
+        display: table-cell !important;
+        vertical-align: middle;
+        white-space: nowrap;
+      }
+
+      .standing-row {
+        cursor: pointer;
+        background: transparent !important;
+        border: 0 !important;
+      }
+
+      .standing-row.is-open {
+        background: rgba(255,207,51,.075) !important;
+      }
+
+      .detail-row {
+        display: none !important;
+      }
+
+      .detail-row.is-open {
+        display: table-row !important;
+      }
+
+      .detail-cell {
+        display: table-cell !important;
+        padding: 0 16px 18px 16px !important;
+        background: rgba(3, 8, 18, .32) !important;
+        white-space: normal !important;
+      }
+
+      .detail-panel {
+        min-width: 980px;
+        border-radius: 18px !important;
+      }
+
+      .detail-top {
+        grid-template-columns: 1.05fr .95fr !important;
+      }
+
+      .detail-stat-grid {
+        grid-template-columns: repeat(4, minmax(0,1fr)) !important;
+      }
+
+      .mobile-label,
+      .live-mobile-label,
+      .leaderboard td::before,
+      .race-table td::before {
+        display: none !important;
+        content: none !important;
+      }
+
+      .hide-md {
+        display: table-cell !important;
+      }
+
+      .leaderboard tr:hover td,
+      .standing-row:hover td {
+        background: rgba(255,255,255,0.04);
+      }
+
+      .position-line {
+        grid-auto-columns: minmax(92px, 92px) !important;
+      }
+
+      .selection-item {
+        flex-wrap: nowrap;
+      }
+
+      .selection-main {
+        min-width: 0;
+      }
+
+      .selection-driver {
+        white-space: normal;
+      }
+    }
+
   </style>
 </head>
 <body>
