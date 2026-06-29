@@ -610,6 +610,70 @@
       .detail-panel { border-radius: 18px; background: var(--panel-2); }
       .toggle { text-align: left; }
     }
+
+
+    .live-owner-line {
+      font-size: 10px;
+      color: var(--blue);
+      font-weight: 850;
+      line-height: 1.25;
+      margin-top: 3px;
+      word-break: break-word;
+    }
+
+    .pos.multi-selected {
+      min-height: 180px;
+    }
+
+    .race-date {
+      color: var(--muted);
+      font-size: .74rem;
+      margin-top: 2px;
+    }
+
+    .live-mobile-label { display: none; }
+
+    .live-table-wrap { overflow-x: auto; }
+
+    @media (max-width: 760px) {
+      .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .leader-card, .hero-card, .card { border-radius: 18px; }
+      .status-card, .race-leader-card { padding: 18px; }
+      .race-leader-name { font-size: 1.7rem; }
+      .leader-points { font-size: 2.6rem; }
+      .detail-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .race-table, .race-table thead, .race-table tbody, .race-table tr, .race-table td { display: block; width: 100%; }
+      .race-table thead { display: none; }
+      .race-table tr { border-bottom: 1px solid var(--line); padding: 10px 0; }
+      .race-table td { border: 0; padding: 5px 8px; }
+      .leaderboard, .leaderboard thead, .leaderboard tbody, .leaderboard tr, .leaderboard td { display: block; width: 100%; min-width: 0; }
+      .leaderboard thead { display: none; }
+      .leaderboard tr {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: rgba(255,255,255,.045);
+        margin: 10px;
+        padding: 10px;
+      }
+      .leaderboard td {
+        border: 0;
+        padding: 7px 6px;
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 10px;
+        align-items: center;
+      }
+      .leaderboard td::before {
+        content: attr(data-label);
+        color: var(--muted);
+        font-size: .68rem;
+        text-transform: uppercase;
+        letter-spacing: .08em;
+        font-weight: 850;
+      }
+      .live-table-wrap { overflow: visible; }
+    }
+
   </style>
 </head>
 <body>
@@ -719,7 +783,7 @@
         <div class="section-title">
           <div>
             <h2>Running Order Map</h2>
-            <p>Positions 1–40 are shown in a horizontal scroll map. Selected fantasy drivers display owner, gap, and current projected race points.</p>
+            <p>Positions 1–40 are shown in a horizontal scroll map. Selected fantasy drivers display owner, finish/running position, and current official or projected race points.</p>
           </div>
         </div>
 
@@ -730,7 +794,7 @@
         <div class="section-title">
           <div>
             <h2>Fantasy Race Leaderboard</h2>
-            <p>Sorted by current race points when available, then live running position.</p>
+            <p>Sorted by official race points when the race is complete, otherwise projected live points.</p>
           </div>
         </div>
 
@@ -821,31 +885,34 @@ function normalizeDetail(row) {
     fantasyName: keyOf(row, ["FANTASY_NAME", "owner"]),
     trackId: keyOf(row, ["TRACK_ID", "RACE_ID", "race_id"]),
     trackName: keyOf(row, ["TRACK_NAME", "RACE_NAME", "race_name"]),
+    raceDate: keyOf(row, ["RACE_DATE", "race_date", "SCHEDULED_DATE", "scheduled_date", "DATE_SCHEDULED"]),
     selection: keyOf(row, ["SELECTION", "DRIVER", "driver"]),
     finish: keyOf(row, ["FINISH_POSITION", "finish_position", "FINISH", "finish"]),
-    points: keyOf(row, ["TOTAL_POINTS_INCLUDING_BONUS", "POINTS_EARNED", "points", "POINTS"]),
+    points: keyOf(row, ["TOTAL_POINTS_INCLUDING_BONUS", "POINTS_EARNED", "CURRENT_RACE_POINTS", "points", "POINTS"]),
     win: keyOf(row, ["WINS", "WIN", "win"]),
     top5: keyOf(row, ["TOP_5s", "TOP5", "top5"]),
     top10: keyOf(row, ["TOP_10s", "TOP10", "top10"]),
     ledLap: keyOf(row, ["LED_AT_LEAST_ONE_LAP_IN_RACE", "LED_LAP", "ledLap"]),
     ledMost: keyOf(row, ["LED_MOST_LAPS_IN_A_RACE", "LED_MOST", "ledMost"]),
+    bonusSummary: keyOf(row, ["BONUS_SUMMARY", "bonusSummary", "bonus_summary"]),
   };
 }
 
 function normalizeRunning(row) {
-  const position = keyOf(row, ["RUNNING_POSITION", "runningPosition", "POSITION", "position", "POS"]);
+  const position = keyOf(row, ["RUNNING_POSITION", "FINISH_POSITION", "runningPosition", "POSITION", "position", "POS"]);
   const finishPtsRaw = keyOf(row, ["FINISH_POINTS", "finishPts", "FINISH_PTS"]);
   const stagePtsRaw = keyOf(row, ["STAGE_POINTS", "stagePts", "STAGE_PTS"]);
-  const bonusRaw = keyOf(row, ["BONUS", "BONUS_POINTS", "bonus"]);
-  const currentPtsRaw = keyOf(row, ["CURRENT_RACE_POINTS", "RACE_POINTS", "racePoints", "PROJECTED_POINTS"]);
+  const bonusRaw = keyOf(row, ["BONUS_POINTS", "BONUS", "bonus"]);
+  const bonusSummary = keyOf(row, ["BONUS_SUMMARY", "bonusSummary", "bonus_summary"]);
+  const currentPtsRaw = keyOf(row, ["CURRENT_RACE_POINTS", "TOTAL_POINTS_INCLUDING_BONUS", "RACE_POINTS", "racePoints", "PROJECTED_POINTS", "POINTS_EARNED"]);
   const pos = num(position, null);
   const computedFinish = pos ? Math.max(1, 41 - pos) : null;
-  const finishPts = hasValue(finishPtsRaw) ? num(finishPtsRaw) : computedFinish;
+  const finishPts = hasValue(finishPtsRaw) ? num(finishPtsRaw) : null;
   const stagePts = hasValue(stagePtsRaw) ? num(stagePtsRaw) : null;
   const bonus = hasValue(bonusRaw) ? num(bonusRaw) : null;
   const racePoints = hasValue(currentPtsRaw)
     ? num(currentPtsRaw)
-    : (finishPts !== null ? finishPts + (stagePts || 0) + (bonus || 0) : null);
+    : (finishPts !== null ? finishPts + (stagePts || 0) + (bonus || 0) : computedFinish);
 
   return {
     owner: keyOf(row, ["FANTASY_NAME", "fantasyName", "OWNER", "owner"]),
@@ -853,13 +920,37 @@ function normalizeRunning(row) {
     carNumber: keyOf(row, ["CAR_NUMBER", "VEHICLE_NUMBER", "carNumber"]),
     position: pos,
     gap: keyOf(row, ["DELTA", "GAP", "GAP_TO_LEADER", "TIME_BEHIND_LEADER", "gap"]),
-    status: keyOf(row, ["STATUS", "status"]),
+    status: keyOf(row, ["STATUS", "status", "SOURCE"]),
     stagePts,
     finishPts,
     bonus,
+    bonusSummary,
     racePoints,
     matched: keyOf(row, ["MATCHED_LIVE_FEED", "matched"]),
   };
+}
+
+function raceSortValue(row) {
+  const raw = row?.raceDate;
+  if (hasValue(raw)) {
+    const t = Date.parse(raw);
+    if (Number.isFinite(t)) return t;
+  }
+  return num(row?.trackId, 0);
+}
+
+function sortRaceRows(rows, newestFirst = true) {
+  return [...rows].sort((a,b) => newestFirst
+    ? raceSortValue(b) - raceSortValue(a)
+    : raceSortValue(a) - raceSortValue(b)
+  );
+}
+
+function fmtDate(value) {
+  if (!hasValue(value)) return "";
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) return String(value);
+  return d.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
 }
 
 function parseRaceProgress(text) {
@@ -884,7 +975,7 @@ function finishClass(pos) {
 }
 
 function detailStats(name) {
-  const rows = (raceDetails[name] || []).map(normalizeDetail);
+  const rows = sortRaceRows((raceDetails[name] || []).map(normalizeDetail), true);
   const scoredRows = rows.filter(r => hasValue(r.points));
   const finishRows = rows.filter(r => hasValue(r.finish));
   const starts = rows.length;
@@ -892,7 +983,7 @@ function detailStats(name) {
   const avgPoints = scoredRows.length ? points / scoredRows.length : null;
   const avgFinish = finishRows.length ? finishRows.reduce((sum, r) => sum + num(r.finish), 0) / finishRows.length : null;
   const bestFinish = finishRows.length ? Math.min(...finishRows.map(r => num(r.finish, 99))) : null;
-  const lastFive = [...rows].sort((a,b) => num(b.trackId) - num(a.trackId)).slice(0, 5);
+  const lastFive = rows.slice(0, 5);
   return { rows, starts, scoredRows, finishRows, points, avgPoints, avgFinish, bestFinish, lastFive };
 }
 
@@ -952,7 +1043,7 @@ function makeSpark(rows) {
       </div>
     `;
   }
-  const recent = [...scored].sort((a,b) => num(a.trackId) - num(b.trackId)).slice(-6);
+  const recent = sortRaceRows(scored, false).slice(-6);
   const max = Math.max(1, ...recent.map(r => num(r.points)));
   return `
     <div class="spark">
@@ -968,9 +1059,14 @@ function makeSpark(rows) {
   `;
 }
 
+function bonusText(r) {
+  if (hasValue(r.bonusSummary)) return display(r.bonusSummary);
+  return [num(r.win) ? "Win" : "", num(r.top5) ? "Top 5" : "", num(r.top10) ? "Top 10" : "", num(r.ledLap) ? "Led Lap" : "", num(r.ledMost) ? "Most Led" : ""].filter(Boolean).join(" · ") || "—";
+}
+
 function makeDetailPanel(name) {
   const stats = detailStats(name);
-  const rows = [...stats.rows].sort((a,b) => num(b.trackId) - num(a.trackId));
+  const rows = stats.rows;
   const hasScoring = rows.some(r => hasValue(r.points) || hasValue(r.finish) || hasValue(r.win) || hasValue(r.top5) || hasValue(r.top10));
 
   const avgPointsText = stats.avgPoints === null ? "—" : stats.avgPoints.toFixed(1);
@@ -998,18 +1094,21 @@ function makeDetailPanel(name) {
             <tr>
               <th>Race</th>
               <th>Selection</th>
-              ${hasScoring ? `<th>Finish</th><th>Points</th><th>Bonus</th>` : ``}
+              ${hasScoring ? `<th>Finish</th><th>Points</th><th>Bonus / Race Stats</th>` : ``}
             </tr>
           </thead>
           <tbody>
             ${rows.length ? rows.map(r => `
               <tr>
-                <td>${display(r.trackName || r.trackId)}</td>
+                <td>
+                  ${display(r.trackName || r.trackId)}
+                  ${hasValue(r.raceDate) ? `<div class="race-date">${escapeHtml(fmtDate(r.raceDate))}</div>` : ``}
+                </td>
                 <td class="driver">${display(r.selection)}</td>
                 ${hasScoring ? `
                   <td class="${finishClass(r.finish)}">${hasValue(r.finish) ? `P${escapeHtml(r.finish)}` : "—"}</td>
                   <td>${display(r.points)}</td>
-                  <td>${[num(r.win) ? "Win" : "", num(r.top5) ? "Top 5" : "", num(r.top10) ? "Top 10" : "", num(r.ledLap) ? "Led Lap" : "", num(r.ledMost) ? "Most Led" : ""].filter(Boolean).join(" · ") || "—"}</td>
+                  <td>${bonusText(r)}</td>
                 ` : ``}
               </tr>
             `).join("") : `<tr><td colspan="${hasScoring ? 5 : 2}" class="empty">No selection rows available.</td></tr>`}
@@ -1117,23 +1216,27 @@ function renderPositionLine(cars) {
   line.innerHTML = "";
   const byPos = new Map();
   cars.forEach(car => {
-    if (car.position && !byPos.has(car.position)) byPos.set(car.position, car);
+    if (!car.position) return;
+    if (!byPos.has(car.position)) byPos.set(car.position, []);
+    byPos.get(car.position).push(car);
   });
 
   for (let pos = 1; pos <= 40; pos++) {
-    const selected = byPos.get(pos);
+    const selected = byPos.get(pos) || [];
     const cell = document.createElement("div");
-    cell.className = selected ? "pos selected" : "pos";
+    cell.className = selected.length ? `pos selected ${selected.length > 1 ? "multi-selected" : ""}` : "pos";
 
-    if (selected) {
-      const isLeader = selected.position === 1;
+    if (selected.length) {
+      const isLeader = pos === 1;
       cell.innerHTML = `
         ${isLeader ? `<div class="leader-badge">P1</div>` : ""}
         <div class="pos-number">P${pos}</div>
-        <div class="live-driver">${display(selected.driver)}</div>
-        <div class="live-owner">${display(selected.owner)}</div>
-        <div class="live-gap">${formatGap(selected.gap, selected.position)}</div>
-        <div class="race-points"><strong>${display(calcPoints(selected))}</strong> pts</div>
+        ${selected.map(car => `
+          <div class="live-driver">${display(car.driver)}</div>
+          <div class="live-owner-line">${display(car.owner)}</div>
+          <div class="live-gap">${formatGap(car.gap, car.position)}</div>
+          <div class="race-points"><strong>${display(calcPoints(car))}</strong> pts</div>
+        `).join(`<div style="height:1px;background:rgba(255,255,255,.12);width:100%;margin:6px 0;"></div>`)}
       `;
     } else {
       cell.innerHTML = `<div class="pos-number">P${pos}</div>`;
@@ -1143,8 +1246,9 @@ function renderPositionLine(cars) {
 }
 
 function renderRaceLeader(cars) {
-  const sortedByPos = [...cars].filter(c => c.position).sort((a,b) => a.position - b.position);
+  const sortedByPos = [...cars].filter(c => c.position).sort((a,b) => a.position - b.position || calcPoints(b) - calcPoints(a));
   const raceLeader = sortedByPos[0];
+  const leaderOwners = raceLeader ? sortedByPos.filter(c => c.position === raceLeader.position && c.driver === raceLeader.driver).map(c => c.owner) : [];
   const sortedByPts = [...cars].sort((a,b) => calcPoints(b) - calcPoints(a) || (a.position || 999) - (b.position || 999));
   const best = sortedByPts[0];
   const closest = sortedByPos.find(c => c.position !== 1);
@@ -1152,8 +1256,8 @@ function renderRaceLeader(cars) {
 
   $("raceLeader").textContent = raceLeader ? raceLeader.driver : "—";
   $("raceLeaderMeta").textContent = raceLeader
-    ? `Running P${raceLeader.position} · Selected by ${raceLeader.owner}`
-    : "No matched fantasy driver in live feed";
+    ? `P${raceLeader.position} · Selected by ${leaderOwners.join(", ") || raceLeader.owner}`
+    : "No matched fantasy driver in live feed/results";
   $("bestScore").textContent = best ? `${calcPoints(best)} pts` : "—";
   $("topOwner").textContent = best ? best.owner : "—";
   $("closestDriver").textContent = closest ? `${closest.driver}, ${formatGap(closest.gap, closest.position)}` : "—";
@@ -1171,15 +1275,15 @@ function renderLeaderboard(cars) {
 
   body.innerHTML = sorted.map((car, index) => `
     <tr>
-      <td class="rank">${index + 1}</td>
-      <td><strong>${display(car.owner)}</strong></td>
-      <td><span class="pill">${display(car.driver)}</span></td>
-      <td>${car.position ? `P${car.position}` : "—"}</td>
-      <td class="behind">${formatGap(car.gap, car.position)}</td>
-      <td>${car.stagePts === null ? "—" : display(car.stagePts)}</td>
-      <td>${car.finishPts === null ? "—" : display(car.finishPts)}</td>
-      <td>${car.bonus === null ? "—" : display(car.bonus)}</td>
-      <td class="live-points">${display(calcPoints(car))}</td>
+      <td data-label="Rank" class="rank">${index + 1}</td>
+      <td data-label="Fantasy Owner"><strong>${display(car.owner)}</strong></td>
+      <td data-label="Selection"><span class="pill">${display(car.driver)}</span></td>
+      <td data-label="Running Pos.">${car.position ? `P${car.position}` : "—"}</td>
+      <td data-label="Gap" class="behind">${formatGap(car.gap, car.position)}</td>
+      <td data-label="Stage Pts">${car.stagePts === null ? "—" : display(car.stagePts)}</td>
+      <td data-label="Finish Pts">${car.finishPts === null ? "—" : display(car.finishPts)}</td>
+      <td data-label="Bonus">${hasValue(car.bonusSummary) ? display(car.bonusSummary) : (car.bonus === null ? "—" : display(car.bonus))}</td>
+      <td data-label="Race Pts" class="live-points">${display(calcPoints(car))}</td>
     </tr>
   `).join("");
 }
