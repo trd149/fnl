@@ -2,24 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>Fantasy NASCAR League</title>
   <style>
     :root {
       --bg: #070b14;
-      --panel: rgba(17, 25, 43, 0.86);
-      --panel-2: rgba(23, 36, 61, 0.88);
+      --panel: rgba(17, 25, 43, 0.88);
+      --panel-2: rgba(23, 36, 61, 0.92);
       --text: #eef4ff;
       --muted: #97a7c0;
       --line: rgba(255,255,255,0.11);
       --accent: #ffcf33;
       --accent-2: #65e4ff;
       --good: #41df8f;
-      --warn: #ff8a4b;
       --bad: #ff5b7c;
       --blue: #4da3ff;
       --shadow: 0 24px 80px rgba(0,0,0,0.38);
-      --radius: 20px;
+      --radius: 18px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -28,12 +29,12 @@
       margin: 0;
       min-height: 100vh;
       color: var(--text);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-family: var(--sans);
       background:
-        radial-gradient(circle at 15% 0%, rgba(255, 207, 51, 0.22), transparent 28%),
-        radial-gradient(circle at 85% 10%, rgba(101, 228, 255, 0.18), transparent 31%),
+        radial-gradient(circle at 15% 0%, rgba(255, 207, 51, 0.20), transparent 28%),
+        radial-gradient(circle at 85% 10%, rgba(101, 228, 255, 0.16), transparent 31%),
         linear-gradient(135deg, #070b14 0%, #0a1325 48%, #101827 100%);
-      padding: 32px;
+      padding: 28px;
     }
 
     .page { max-width: 1400px; margin: 0 auto; }
@@ -49,27 +50,20 @@
 
     .tabs { display: flex; gap: 10px; flex-wrap: wrap; }
 
-    .tab-btn, button {
+    button, .tab-btn {
       border: 1px solid var(--line);
       background: rgba(255,255,255,.08);
       color: var(--text);
-      padding: 11px 14px;
+      padding: 10px 13px;
       border-radius: 999px;
       cursor: pointer;
       font-weight: 850;
-      transition: transform .15s ease, border-color .15s ease, background .15s ease;
-    }
-
-    .tab-btn:hover, button:hover {
-      transform: translateY(-1px);
-      border-color: rgba(255,207,51,.52);
-      background: rgba(255,255,255,.12);
+      font-family: inherit;
     }
 
     .tab-btn.active {
       background: linear-gradient(135deg, rgba(255,207,51,.24), rgba(101,228,255,.12));
       border-color: rgba(255,207,51,.46);
-      color: #fff;
     }
 
     .site-meta {
@@ -85,7 +79,7 @@
       border: 1px solid var(--line);
       background: rgba(255,255,255,.06);
       border-radius: 999px;
-      padding: 8px 11px;
+      padding: 7px 10px;
       white-space: nowrap;
     }
 
@@ -95,12 +89,12 @@
     .hero {
       display: grid;
       grid-template-columns: 1.4fr 0.8fr;
-      gap: 20px;
+      gap: 18px;
       align-items: stretch;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
-    .hero-card, .metric-card, .table-wrap, .card {
+    .hero-card, .leader-card, .card, .table-card {
       background: var(--panel);
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
@@ -108,8 +102,8 @@
     }
 
     .hero-card {
-      border-radius: 28px;
-      padding: 30px;
+      border-radius: 26px;
+      padding: 28px;
       position: relative;
       overflow: hidden;
     }
@@ -124,7 +118,7 @@
       background: conic-gradient(from 120deg, transparent, rgba(255,207,51,.34), transparent, rgba(101,228,255,.25), transparent);
       border-radius: 999px;
       filter: blur(4px);
-      opacity: .8;
+      opacity: .75;
     }
 
     .eyebrow, .label {
@@ -133,7 +127,7 @@
       align-items: center;
       color: var(--accent);
       font-weight: 850;
-      font-size: 0.78rem;
+      font-size: .76rem;
       letter-spacing: .12em;
       text-transform: uppercase;
       margin-bottom: 12px;
@@ -141,73 +135,46 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(2rem, 5vw, 4.8rem);
-      letter-spacing: -0.07em;
-      line-height: .92;
+      font-size: clamp(2rem, 5vw, 4.4rem);
+      letter-spacing: -0.06em;
+      line-height: .94;
     }
 
     .subtitle {
-      margin: 18px 0 0;
+      margin: 16px 0 0;
       color: var(--muted);
-      font-size: 1.02rem;
+      font-size: 1rem;
       max-width: 760px;
       line-height: 1.5;
     }
 
     .leader-card {
-      border-radius: 28px;
-      padding: 24px;
+      border-radius: 26px;
+      padding: 22px;
       background: linear-gradient(145deg, rgba(255,207,51,.18), rgba(17,25,43,.78));
       border: 1px solid rgba(255,207,51,.28);
-      box-shadow: var(--shadow);
     }
 
     .leader-label {
       color: var(--muted);
-      font-size: .84rem;
+      font-size: .82rem;
       text-transform: uppercase;
       letter-spacing: .1em;
       margin-bottom: 8px;
     }
 
     .leader-name {
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 900;
       letter-spacing: -0.04em;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .leader-points {
-      font-size: 3.2rem;
+      font-size: 3rem;
       font-weight: 950;
       color: var(--accent);
       line-height: 1;
-    }
-
-    .metric-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 14px;
-      margin-bottom: 20px;
-    }
-
-    .metric-card {
-      border-radius: 18px;
-      padding: 18px;
-    }
-
-    .metric-value {
-      font-size: 1.9rem;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-    }
-
-    .metric-label {
-      color: var(--muted);
-      font-size: .78rem;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      margin-top: 5px;
     }
 
     .toolbar {
@@ -220,14 +187,14 @@
     }
 
     .search {
-      flex: 1 1 300px;
+      flex: 1 1 280px;
       display: flex;
       align-items: center;
       gap: 10px;
       background: rgba(255,255,255,.08);
       border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 12px 16px;
+      padding: 11px 15px;
     }
 
     .search input {
@@ -236,51 +203,66 @@
       outline: 0;
       background: transparent;
       color: var(--text);
-      font-size: .96rem;
+      font-size: .95rem;
     }
 
     .button-row { display: flex; gap: 10px; flex-wrap: wrap; }
 
-    .table-wrap { border-radius: var(--radius); overflow: hidden; }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: .94rem;
+    /* Standings one-line layout */
+    .standings-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
     }
 
-    thead th {
-      background: rgba(255,255,255,.07);
+    .standings-header,
+    .standing-main {
+      display: grid;
+      grid-template-columns: 78px minmax(120px, 1fr) 82px 130px 110px 28px;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .standings-header {
+      padding: 13px 16px;
       color: var(--muted);
-      font-size: .74rem;
+      font-size: .72rem;
       text-transform: uppercase;
       letter-spacing: .08em;
-      text-align: left;
-      padding: 14px 16px;
+      background: rgba(255,255,255,.07);
       border-bottom: 1px solid var(--line);
-      white-space: nowrap;
-    }
-
-    tbody td {
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--line);
-      vertical-align: middle;
+      font-weight: 850;
     }
 
     .standing-row {
-      cursor: pointer;
-      transition: background .15s ease;
+      border-bottom: 1px solid var(--line);
+      background: rgba(0,0,0,.05);
     }
 
-    .standing-row:hover { background: rgba(255,255,255,.055); }
     .standing-row.is-open { background: rgba(255,207,51,.075); }
+
+    .standing-main {
+      width: 100%;
+      padding: 13px 16px;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: inherit;
+      text-align: left;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .standing-main:hover { background: rgba(255,255,255,.045); }
 
     .rank-badge {
       display: inline-grid;
       place-items: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 11px;
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
       background: rgba(255,255,255,.1);
       font-weight: 950;
     }
@@ -290,139 +272,37 @@
       color: #111827;
     }
 
-    .owner-block {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      min-width: 150px;
-    }
+    .owner-name { font-weight: 950; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .owner-sub { color: var(--muted); font-size: .74rem; margin-top: 2px; }
+    .points { color: var(--accent); font-weight: 950; font-size: 1.08rem; }
+    .behind { color: var(--muted); font-weight: 850; }
+    .chev { color: var(--muted); font-size: 1.1rem; justify-self: end; }
+    .standing-row.is-open .chev { transform: rotate(180deg); }
 
-    .name { font-weight: 900; }
-    .hint { color: var(--muted); font-size: .78rem; margin-top: 1px; }
-    .points { font-size: 1.25rem; font-weight: 950; color: var(--accent); }
-    .gap { color: var(--muted); font-weight: 800; }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 32px;
-      padding: 5px 9px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid var(--line);
-      font-weight: 850;
-    }
-
-    .win-pill { color: var(--good); }
-    .top-pill { color: var(--accent-2); }
-    .toggle { text-align: right; color: var(--muted); font-weight: 900; }
     .detail-row { display: none; }
-    .detail-row.is-open { display: table-row; }
-
-    .detail-cell {
-      padding: 0 16px 18px 16px;
-      background: rgba(3, 8, 18, .32);
-    }
+    .detail-row.is-open { display: block; }
 
     .detail-panel {
+      margin: 0 12px 14px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.045);
-      border-radius: 18px;
-      padding: 18px;
+      background: rgba(3, 8, 18, .32);
+      border-radius: 16px;
+      padding: 14px;
     }
 
-    .detail-top {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    .detail-stat-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap: 10px;
-    }
-
-    .mini-stat {
-      background: rgba(255,255,255,.065);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 12px;
-    }
-
-    .mini-stat strong {
-      display: block;
-      font-size: 1.35rem;
-      letter-spacing: -0.04em;
-    }
-
-    .mini-stat span {
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      font-size: .68rem;
-    }
-
-    .spark {
-      background: rgba(255,255,255,.045);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 12px;
-      min-height: 128px;
-    }
-
-    .spark-title {
-      color: var(--muted);
-      font-size: .75rem;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      margin-bottom: 10px;
-    }
-
-    .bar-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin: 6px 0;
-      font-size: .74rem;
-      color: var(--muted);
-    }
-
-    .bar-track {
-      height: 9px;
-      flex: 1;
-      background: rgba(255,255,255,.08);
-      border-radius: 99px;
-      overflow: hidden;
-    }
-
-    .bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      border-radius: 99px;
-    }
-
-    .race-table-wrap {
-      overflow-x: auto;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-    }
-
-    .race-table thead th { background: rgba(0,0,0,.18); font-size: .68rem; }
-    .race-table tbody td { padding: 10px 12px; font-size: .84rem; }
-
-    .selection-title-row {
+    .detail-title-row {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
       gap: 12px;
-      margin: 4px 0 10px;
       flex-wrap: wrap;
+      margin-bottom: 10px;
     }
 
-    .selection-table-wrap {
+    .detail-title-row strong { font-size: 1rem; }
+    .hint { color: var(--muted); font-size: .78rem; line-height: 1.35; }
+
+    .scroll-window {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       border: 1px solid var(--line);
@@ -430,112 +310,81 @@
       background: rgba(255,255,255,.035);
     }
 
-    .selection-table {
-      width: 100%;
-      min-width: 860px;
-      border-collapse: collapse;
-      table-layout: auto;
+    .scroll-window + .scroll-window { margin-top: 12px; }
+
+    .scroll-hint {
+      display: none;
+      color: var(--muted);
+      font-size: .72rem;
+      margin: 7px 1px 0;
     }
 
-    .selection-table th {
-      text-align: left;
+    .stat-strip,
+    .selection-table,
+    .live-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .stat-strip { min-width: 620px; }
+    .selection-table { min-width: 920px; }
+
+    .stat-strip th,
+    .selection-table th,
+    .live-table th {
+      background: rgba(0,0,0,.20);
       color: var(--muted);
-      font-size: .68rem;
       text-transform: uppercase;
       letter-spacing: .08em;
-      background: rgba(0,0,0,.18);
+      font-size: .68rem;
+      text-align: left;
+      padding: 11px 12px;
+      white-space: nowrap;
       border-bottom: 1px solid var(--line);
-      padding: 9px 10px;
-      white-space: nowrap;
     }
 
-    .selection-table td {
-      border-bottom: 1px solid rgba(255,255,255,.07);
-      padding: 9px 10px;
+    .stat-strip td,
+    .selection-table td,
+    .live-table td {
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--line);
       vertical-align: middle;
-      font-size: .84rem;
-      white-space: nowrap;
     }
 
-    .selection-table tbody tr:last-child td {
-      border-bottom: 0;
-    }
+    .stat-strip tr:last-child td,
+    .selection-table tr:last-child td,
+    .live-table tr:last-child td { border-bottom: 0; }
 
-    .selection-table tbody tr:hover td {
-      background: rgba(255,255,255,.035);
-    }
-
-    .selection-track-id {
-      color: var(--accent);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-weight: 900;
-    }
-
-    .selection-race-name {
-      color: var(--text);
-      font-weight: 800;
+    .selection-race,
+    .selection-driver {
+      font-weight: 850;
       max-width: 260px;
       overflow: hidden;
       text-overflow: ellipsis;
-    }
-
-    .selection-driver {
-      font-weight: 950;
-      color: var(--text);
-      max-width: 250px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .selection-points-compact {
-      text-align: right;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      color: var(--accent);
-      font-size: 1rem;
-      font-weight: 950;
-    }
-
-    .selection-win-badge {
-      display: inline-flex;
-      padding: 4px 7px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #ffdf61, #ff9f1c);
-      color: #111827;
-      font-size: .65rem;
-      font-weight: 950;
-      line-height: 1;
-    }
-
-    .toggle-action {
-      appearance: none;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255,255,255,.08);
-      color: var(--text);
-      font: inherit;
-      font-weight: 900;
-      padding: 8px 12px;
-      min-width: 64px;
-      cursor: pointer;
-      touch-action: manipulation;
       white-space: nowrap;
     }
 
-    .toggle-action:hover,
-    .toggle-action:focus {
-      border-color: rgba(255,207,51,.52);
-      outline: none;
+    .selection-driver { font-weight: 950; }
+    .selection-points, .live-points { color: var(--accent); font-weight: 950; font-family: var(--mono); }
+    .finish { font-weight: 950; }
+    .finish-good { color: var(--good); }
+    .finish-mid { color: var(--accent); }
+    .finish-bad { color: var(--bad); }
+
+    .win-badge {
+      display: inline-flex;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ffdf61, #ff9f1c);
+      color: #111827;
+      font-size: .68rem;
+      font-weight: 950;
+      white-space: nowrap;
     }
 
-    .driver { font-weight: 850; }
-    .finish-good { color: var(--good); font-weight: 900; }
-    .finish-mid { color: var(--accent); font-weight: 900; }
-    .finish-bad { color: var(--bad); font-weight: 900; }
-    .mobile-label { display: none; color: var(--muted); font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 2px; }
-    .footnote { color: var(--muted); font-size: .8rem; margin: 14px 2px 0; }
+    .empty { padding: 18px; color: var(--muted); text-align: center; }
 
-    /* Live leaderboard design */
-    .live-page { max-width: 1400px; margin: 0 auto; }
+    /* Live leaderboard */
     .live-hero {
       display: grid;
       grid-template-columns: 1.4fr 1fr;
@@ -543,13 +392,8 @@
       margin-bottom: 20px;
     }
 
-    .card {
-      border-radius: 20px;
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
-    }
-
-    .status-card, .race-leader-card { padding: 24px; position: relative; }
+    .card { border-radius: 20px; overflow: hidden; }
+    .status-card, .race-leader-card { padding: 22px; position: relative; }
     .race-title { font-size: 34px; font-weight: 900; line-height: 1.05; margin-bottom: 14px; letter-spacing: -0.04em; }
 
     .status-grid {
@@ -683,679 +527,107 @@
       box-shadow: 0 6px 14px rgba(0,0,0,0.3);
     }
 
-    .leaderboard { width: 100%; border-collapse: collapse; }
-    .leaderboard th { text-align: left; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.07em; background: rgba(0,0,0,0.2); padding: 14px 16px; border-bottom: 1px solid var(--line); }
-    .leaderboard td { padding: 14px 16px; border-bottom: 1px solid var(--line); font-size: 14px; }
-    .leaderboard tr:hover td { background: rgba(255,255,255,0.04); }
+    .live-table { min-width: 860px; }
+    .live-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .rank { font-size: 18px; font-weight: 900; color: var(--accent); }
-    .live-points { font-size: 18px; font-weight: 900; color: var(--good); }
-    .behind { color: var(--muted); }
-    .empty { padding: 22px; color: var(--muted); text-align: center; }
+    .live-card-list { display: none; }
 
     @media (max-width: 980px) {
       body { padding: 18px; }
       .hero, .live-hero { grid-template-columns: 1fr; }
-      .metric-grid { grid-template-columns: repeat(2, 1fr); }
-      .detail-top { grid-template-columns: 1fr; }
-      .detail-stat-grid { grid-template-columns: repeat(2, 1fr); }
-      .hide-md { display: none; }
-    }
-
-    @media (max-width: 760px) {
-      body { padding: 14px; }
-      .race-title { font-size: 26px; }
       .status-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .position-line { grid-auto-columns: minmax(88px, 88px); }
-      .leaderboard { min-width: 900px; }
-      .live-table-wrap { overflow-x: auto; }
     }
 
     @media (max-width: 720px) {
-      .standings-table-wrap { background: transparent; border: 0; box-shadow: none; }
-      .standings-table, .standings-table thead, .standings-table tbody, .standings-table tr, .standings-table td { display: block; width: 100%; }
-      .standings-table thead { display: none; }
-      .standing-row { border: 1px solid var(--line); border-radius: 18px; margin-bottom: 10px; background: var(--panel); overflow: hidden; }
-      .standing-row td { border: 0; padding: 10px 14px; }
-      .standing-row td:first-child { padding-top: 14px; }
-      .standing-row td:last-child { padding-bottom: 14px; }
-      .mobile-label { display: block; }
-      .detail-row { margin: -2px 0 14px; }
-      .detail-row.is-open { display: block; }
-      .detail-cell { display: block; padding: 0; background: transparent; }
-      .detail-panel { border-radius: 18px; background: var(--panel-2); }
-      .toggle { text-align: left; }
-      .detail-panel { padding: 14px; }
-      .detail-stat-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .race-table-wrap { overflow: visible; border: 0; }
-      .race-table, .race-table thead, .race-table tbody, .race-table tr, .race-table td { display: block; width: 100%; }
-      .race-table thead { display: none; }
-      .race-table tr {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 10px;
-        margin-bottom: 10px;
-        background: rgba(255,255,255,.045);
-      }
-      .race-table td { border: 0; padding: 6px 4px; }
-      .race-table td::before {
-        display: block;
-        color: var(--muted);
-        font-size: .68rem;
-        text-transform: uppercase;
-        letter-spacing: .08em;
-        margin-bottom: 2px;
-      }
-      .race-table td:nth-child(1)::before { content: "Race"; }
-      .race-table td:nth-child(2)::before { content: "Selection"; }
-      .race-table td:nth-child(3)::before { content: "Finish"; }
-      .race-table td:nth-child(4)::before { content: "Points"; }
-      .race-table td:nth-child(5)::before { content: "Bonus / Stats"; }
-      .selection-item { align-items: flex-start; }
-      .selection-points { min-width: 64px; }
-
-    }
-
-
-    .live-owner-line {
-      font-size: 10px;
-      color: var(--blue);
-      font-weight: 850;
-      line-height: 1.25;
-      margin-top: 3px;
-      word-break: break-word;
-    }
-
-    .pos.multi-selected {
-      min-height: 180px;
-    }
-
-    .race-date {
-      color: var(--muted);
-      font-size: .74rem;
-      margin-top: 2px;
-    }
-
-    .live-mobile-label { display: none; }
-
-    .live-table-wrap { overflow-x: auto; }
-
-    @media (max-width: 760px) {
-      .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .leader-card, .hero-card, .card { border-radius: 18px; }
-      .status-card, .race-leader-card { padding: 18px; }
-      .race-leader-name { font-size: 1.7rem; }
-      .leader-points { font-size: 2.6rem; }
-      .detail-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .race-table, .race-table thead, .race-table tbody, .race-table tr, .race-table td { display: block; width: 100%; }
-      .race-table thead { display: none; }
-      .race-table tr { border-bottom: 1px solid var(--line); padding: 10px 0; }
-      .race-table td { border: 0; padding: 5px 8px; }
-      .leaderboard, .leaderboard thead, .leaderboard tbody, .leaderboard tr, .leaderboard td { display: block; width: 100%; min-width: 0; }
-      .leaderboard thead { display: none; }
-      .leaderboard tr {
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        background: rgba(255,255,255,.045);
-        margin: 10px;
-        padding: 10px;
-      }
-      .leaderboard td {
-        border: 0;
-        padding: 7px 6px;
-        display: grid;
-        grid-template-columns: 120px 1fr;
-        gap: 10px;
-        align-items: center;
-      }
-      .leaderboard td::before {
-        content: attr(data-label);
-        color: var(--muted);
-        font-size: .68rem;
-        text-transform: uppercase;
-        letter-spacing: .08em;
-        font-weight: 850;
-      }
-      .live-table-wrap { overflow: visible; }
-    }
-
-
-    /* =========================================================
-       Mobile scroll mode
-       Keep the desktop/table layout on phones, but place wide
-       standings and live tables inside horizontal scroll windows.
-       This preserves expand/collapse rows and keeps all columns visible.
-       ========================================================= */
-    @media (max-width: 760px) {
-      html, body {
-        overflow-x: hidden;
-      }
-
-      .page {
+      body { padding: 12px; }
+      .top-nav { gap: 10px; }
+      .hero-card, .leader-card { display: none; }
+      .toolbar { gap: 10px; }
+      .search { flex-basis: 100%; }
+      .button-row { width: 100%; }
+      .button-row button { flex: 1 1 auto; }
+      .standings-header,
+      .standing-main {
+        grid-template-columns: 38px minmax(84px, 1fr) 42px 66px 50px 18px;
+        gap: 7px;
         padding-left: 10px;
         padding-right: 10px;
       }
-
-      .toolbar {
-        gap: 10px;
+      .standings-header { font-size: .58rem; }
+      .standing-main { min-height: 56px; }
+      .rank-badge { width: 28px; height: 28px; border-radius: 10px; }
+      .owner-name { font-size: .95rem; }
+      .owner-sub { display: none; }
+      .points { font-size: .98rem; }
+      .standing-main > div { min-width: 0; }
+      .detail-panel { margin: 0 8px 12px; padding: 10px; }
+      .scroll-hint { display: block; }
+      .stat-strip { min-width: 560px; }
+      .selection-table { min-width: 860px; }
+      .race-title { font-size: 25px; }
+      .position-line { grid-auto-columns: minmax(88px, 88px); }
+      .live-table-wrap { display: none; }
+      .live-card-list { display: grid; gap: 10px; }
+      .live-card {
+        border: 1px solid var(--line);
+        background: var(--panel);
+        border-radius: 16px;
+        padding: 11px;
       }
-
-      .search {
-        min-width: 100%;
-      }
-
-      .button-row {
-        width: 100%;
-        justify-content: space-between;
-      }
-
-      .button-row button {
-        flex: 1 1 0;
-      }
-
-      .standings-table-wrap,
-      .live-table-wrap,
-      .track-map {
-        overflow-x: auto !important;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        background: var(--panel) !important;
-        border: 1px solid var(--line) !important;
-        box-shadow: var(--shadow) !important;
-      }
-
-      .standings-table-wrap::after,
-      .live-table-wrap::after,
-      .track-map::after {
-        content: "Swipe left/right to see more →";
-        display: block;
-        position: sticky;
-        left: 0;
-        padding: 8px 12px 10px;
-        color: var(--muted);
-        font-size: .76rem;
-        background: rgba(3, 8, 18, .42);
-        border-top: 1px solid var(--line);
-      }
-
-      .standings-table,
-      .standings-table thead,
-      .standings-table tbody,
-      .standings-table tr,
-      .standings-table th,
-      .standings-table td,
-      .leaderboard,
-      .leaderboard thead,
-      .leaderboard tbody,
-      .leaderboard tr,
-      .leaderboard th,
-      .leaderboard td,
-      .race-table,
-      .race-table thead,
-      .race-table tbody,
-      .race-table tr,
-      .race-table th,
-      .race-table td {
-        display: revert !important;
-        width: auto !important;
-        min-width: 0 !important;
-      }
-
-      .standings-table,
-      .leaderboard,
-      .race-table {
-        display: table !important;
-        table-layout: auto;
-        border-collapse: collapse;
-        width: 100% !important;
-      }
-
-      .standings-table {
-        min-width: 1040px !important;
-      }
-
-      .leaderboard {
-        min-width: 940px !important;
-      }
-
-      .race-table {
-        min-width: 760px !important;
-      }
-
-      .standings-table thead,
-      .leaderboard thead,
-      .race-table thead {
-        display: table-header-group !important;
-      }
-
-      .standings-table tbody,
-      .leaderboard tbody,
-      .race-table tbody {
-        display: table-row-group !important;
-      }
-
-      .standings-table tr,
-      .leaderboard tr,
-      .race-table tr {
-        display: table-row !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        border-radius: 0 !important;
-      }
-
-      .standings-table th,
-      .standings-table td,
-      .leaderboard th,
-      .leaderboard td,
-      .race-table th,
-      .race-table td {
-        display: table-cell !important;
-        vertical-align: middle;
-        white-space: nowrap;
-      }
-
-      .standing-row {
-        cursor: pointer;
-        background: transparent !important;
-        border: 0 !important;
-      }
-
-      .standing-row.is-open {
-        background: rgba(255,207,51,.075) !important;
-      }
-
-      .detail-row {
-        display: none !important;
-      }
-
-      .detail-row.is-open {
-        display: table-row !important;
-      }
-
-      .detail-cell {
-        display: table-cell !important;
-        padding: 0 16px 18px 16px !important;
-        background: rgba(3, 8, 18, .32) !important;
-        white-space: normal !important;
-      }
-
-      .detail-panel {
-        min-width: 980px;
-        border-radius: 18px !important;
-      }
-
-      .detail-top {
-        grid-template-columns: 1.05fr .95fr !important;
-      }
-
-      .detail-stat-grid {
-        grid-template-columns: repeat(4, minmax(0,1fr)) !important;
-      }
-
-      .mobile-label,
-      .live-mobile-label,
-      .leaderboard td::before,
-      .race-table td::before {
-        display: none !important;
-        content: none !important;
-      }
-
-      .hide-md {
-        display: table-cell !important;
-      }
-
-      .leaderboard tr:hover td,
-      .standing-row:hover td {
-        background: rgba(255,255,255,0.04);
-      }
-
-      .position-line {
-        grid-auto-columns: minmax(92px, 92px) !important;
-      }
-
-      .selection-item {
-        flex-wrap: nowrap;
-      }
-
-      .selection-main {
-        min-width: 0;
-      }
-
-      .selection-driver {
-        white-space: normal;
-      }
-    }
-
-
-    @media (max-width: 720px) {
-      .toggle-action { padding: 8px 12px; min-width: 62px; }
-      .selection-table { min-width: 820px; }
-      .selection-table th, .selection-table td { padding: 8px 9px; font-size: .8rem; }
-      .selection-race-name { max-width: 230px; }
-      .selection-driver { max-width: 220px; }
-      .detail-panel { padding: 12px !important; }
-    }
-
-  
-
-    /* v8: Details are collapsed unless the row explicitly has is-open.
-       This prevents mobile table/scroll CSS from accidentally displaying all detail rows. */
-    #standingsBody tr.detail-row { display: none !important; }
-    #standingsBody tr.detail-row.is-open { display: table-row !important; }
-    #standingsBody .standing-row { cursor: default; }
-    #standingsBody .toggle-action { position: relative; z-index: 5; }
-
-    @media (max-width: 760px) {
-      #standingsBody tr.detail-row { display: none !important; }
-      #standingsBody tr.detail-row.is-open { display: table-row !important; }
-      .standings-table-wrap,
-      .selection-table-wrap,
-      .live-table-wrap,
-      .track-map {
-        overscroll-behavior-x: contain;
-      }
-      .selection-table { min-width: 760px !important; }
-    }
-
-
-    /* =========================================================
-       v9 mobile-first standings: no sideways scrolling needed.
-       Main standings show only Rank / Owner / Starts / Total Points / Behind.
-       Tap the whole owner row to expand/collapse extra stats and selections.
-       ========================================================= */
-    .chevron-inline {
-      float: right;
-      color: var(--muted);
-      font-size: 1.25rem;
-      line-height: 1;
-      margin-left: 10px;
-    }
-
-    .standing-row {
-      cursor: pointer !important;
-      user-select: none;
-    }
-
-    .standing-row:focus {
-      outline: 2px solid rgba(255,207,51,.55);
-      outline-offset: -2px;
-    }
-
-    .compact-detail-top {
-      display: block !important;
-      margin-bottom: 12px !important;
-    }
-
-    .compact-stat-grid {
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-    }
-
-    .compact-selection-table {
-      min-width: 0 !important;
-      table-layout: auto;
-    }
-
-    .compact-selection-table th:nth-child(1),
-    .compact-selection-table td:nth-child(1) { width: 105px; }
-    .compact-selection-table th:nth-child(4),
-    .compact-selection-table td:nth-child(4) { width: 76px; }
-    .compact-selection-table th:nth-child(5),
-    .compact-selection-table td:nth-child(5) { width: 82px; text-align: right; }
-    .compact-selection-table th:nth-child(7),
-    .compact-selection-table td:nth-child(7) { width: 70px; text-align: center; }
-
-    .selection-table-wrap::after,
-    .standings-table-wrap::after,
-    .live-table-wrap::after {
-      display: none !important;
-      content: none !important;
-    }
-
-    @media (max-width: 760px) {
-      html, body { overflow-x: hidden !important; }
-      body { padding: 12px !important; }
-      .page { padding: 0 !important; }
-      .hero-card, .leader-card, .card, .table-wrap { border-radius: 16px !important; }
-      .hero-card { padding: 18px !important; }
-      .leader-card { padding: 16px !important; }
-      .subtitle { font-size: .9rem; }
-      .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px; }
-      .metric-card { padding: 12px; }
-      .metric-value { font-size: 1.35rem; }
-
-      .standings-table-wrap {
-        overflow: visible !important;
-        background: transparent !important;
-        border: 0 !important;
-        box-shadow: none !important;
-      }
-
-      .standings-table,
-      .standings-table thead,
-      .standings-table tbody,
-      .standings-table tr,
-      .standings-table td {
-        display: block !important;
-        width: 100% !important;
-        min-width: 0 !important;
-      }
-
-      .standings-table thead { display: none !important; }
-
-      .standing-row {
-        border: 1px solid var(--line) !important;
-        border-radius: 16px !important;
-        margin-bottom: 8px !important;
-        background: var(--panel) !important;
-        overflow: hidden !important;
-        padding: 8px 0 !important;
-      }
-
-      .standing-row.is-open {
-        margin-bottom: 0 !important;
-        border-bottom-left-radius: 0 !important;
-        border-bottom-right-radius: 0 !important;
-        background: rgba(255,207,51,.075) !important;
-      }
-
-      .standing-row td {
-        display: grid !important;
-        grid-template-columns: 104px 1fr;
-        gap: 10px;
+      .live-card-top {
+        display: grid;
+        grid-template-columns: 36px 1fr 60px;
+        gap: 9px;
         align-items: center;
-        border: 0 !important;
-        padding: 7px 12px !important;
-        white-space: normal !important;
       }
-
-      .standing-row td:nth-child(1),
-      .standing-row td:nth-child(2) {
-        grid-template-columns: 1fr;
-      }
-
-      .standing-row td:nth-child(2) {
-        padding-top: 3px !important;
-      }
-
-      .mobile-label {
-        display: block !important;
-        color: var(--muted);
-        font-size: .68rem;
-        text-transform: uppercase;
-        letter-spacing: .08em;
-        font-weight: 850;
-      }
-
-      .owner-block { min-width: 0; }
-      .name { font-size: 1.08rem; }
-      .points { font-size: 1.18rem; }
-      .chevron-inline { float: none; display: inline-block; }
-
-      #standingsBody tr.detail-row { display: none !important; }
-      #standingsBody tr.detail-row.is-open {
-        display: block !important;
-        width: 100% !important;
-        margin: 0 0 12px !important;
-      }
-
-      .detail-cell {
-        display: block !important;
-        width: 100% !important;
-        padding: 0 !important;
-        background: transparent !important;
-        white-space: normal !important;
-      }
-
-      .detail-panel {
-        min-width: 0 !important;
-        width: 100% !important;
-        border-top-left-radius: 0 !important;
-        border-top-right-radius: 0 !important;
-        padding: 12px !important;
-        background: var(--panel-2) !important;
-      }
-
-      .compact-stat-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      .live-card .driver-name { font-weight: 950; }
+      .live-card .owner-line { color: var(--blue); font-size: .8rem; font-weight: 850; margin-top: 2px; }
+      .live-card-grid {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 8px;
       }
-
-      .mini-stat { padding: 10px !important; }
-      .mini-stat strong { font-size: 1.1rem !important; }
-
-      .selection-table-wrap {
-        overflow: visible !important;
-        border: 0 !important;
-        background: transparent !important;
+      .live-card-stat {
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,.045);
+        border-radius: 12px;
+        padding: 8px;
       }
-
-      .selection-table,
-      .selection-table thead,
-      .selection-table tbody,
-      .selection-table tr,
-      .selection-table td {
-        display: block !important;
-        width: 100% !important;
-        min-width: 0 !important;
-      }
-
-      .selection-table thead { display: none !important; }
-
-      .selection-table tr {
-        border: 1px solid var(--line) !important;
-        border-radius: 14px !important;
-        margin-bottom: 10px !important;
-        padding: 8px 10px !important;
-        background: rgba(255,255,255,.045) !important;
-      }
-
-      .selection-table td {
-        display: grid !important;
-        grid-template-columns: 110px 1fr;
-        gap: 10px;
-        align-items: start;
-        border: 0 !important;
-        padding: 5px 0 !important;
-        white-space: normal !important;
-        text-align: left !important;
-      }
-
-      .selection-table td::before {
-        content: attr(data-label);
+      .live-card-stat span {
+        display: block;
         color: var(--muted);
-        font-size: .68rem;
+        font-size: .64rem;
         text-transform: uppercase;
         letter-spacing: .08em;
-        font-weight: 850;
+        margin-bottom: 3px;
       }
-
-      .selection-race-name,
-      .selection-driver {
-        max-width: none !important;
-        white-space: normal !important;
-        overflow: visible !important;
-        text-overflow: clip !important;
-      }
-
-      .selection-points-compact {
-        text-align: left !important;
-      }
-
-      .live-table-wrap {
-        overflow: visible !important;
-      }
-
-      .leaderboard,
-      .leaderboard thead,
-      .leaderboard tbody,
-      .leaderboard tr,
-      .leaderboard td {
-        display: block !important;
-        width: 100% !important;
-        min-width: 0 !important;
-      }
-
-      .leaderboard thead { display: none !important; }
-
-      .leaderboard tr {
-        border: 1px solid var(--line) !important;
-        border-radius: 16px !important;
-        background: rgba(255,255,255,.045) !important;
-        margin: 10px !important;
-        padding: 10px !important;
-      }
-
-      .leaderboard td {
-        border: 0 !important;
-        padding: 7px 6px !important;
-        display: grid !important;
-        grid-template-columns: 130px 1fr;
-        gap: 10px;
-        align-items: center;
-        white-space: normal !important;
-      }
-
-      .leaderboard td::before {
-        content: attr(data-label) !important;
-        color: var(--muted);
-        font-size: .68rem;
-        text-transform: uppercase;
-        letter-spacing: .08em;
-        font-weight: 850;
-        display: block !important;
-      }
-
-      .live-table-wrap::after { display: none !important; content: none !important; }
+      .live-card-stat strong { font-size: .86rem; }
     }
-
   </style>
 </head>
 <body>
   <main class="page">
-    <nav class="top-nav">
-      <div class="tabs" role="tablist" aria-label="Fantasy NASCAR pages">
-        <button class="tab-btn active" id="tabStandings" type="button">Points Standings</button>
+    <div class="top-nav">
+      <div class="tabs" role="tablist" aria-label="Page tabs">
+        <button class="tab-btn active" id="tabStandings" type="button">Standings</button>
         <button class="tab-btn" id="tabLive" type="button">Live Leaderboard</button>
       </div>
       <div class="site-meta">
-        <span class="meta-pill" id="globalUpdated">Updated: loading...</span>
-        <span class="meta-pill" id="globalRaceProgress">Race Status: loading...</span>
+        <span class="meta-pill" id="globalUpdated">Updated: —</span>
+        <span class="meta-pill" id="globalRaceProgress">Race Status: —</span>
       </div>
-    </nav>
+    </div>
 
     <section class="view active" id="standingsView">
       <section class="hero">
         <div class="hero-card">
           <div class="eyebrow">🏁 Fantasy NASCAR League</div>
           <h1>Points Standings</h1>
-          <p class="subtitle">
-            Tap or click any owner row to expand race-by-race picks, finishes, points, and bonus stats.
-            The main standings stay minimal until you open a row.
-          </p>
+          <p class="subtitle">Tap any owner row to expand season stats and race-by-race selections. The main list stays minimal for phone viewing.</p>
         </div>
         <aside class="leader-card" id="leaderCard"></aside>
       </section>
-
-      <section class="metric-grid" id="metricGrid"></section>
 
       <section class="toolbar">
         <label class="search" aria-label="Search standings">
@@ -1368,266 +640,168 @@
         </div>
       </section>
 
-      <section class="table-wrap standings-table-wrap">
-        <table class="standings-table" aria-label="Fantasy standings">
-          <thead>
-            <tr>
-              <th>Rank</th>
-              <th>Owner</th>
-              <th>Starts</th>
-              <th>Total Points</th>
-              <th>Behind</th>
-            </tr>
-          </thead>
-          <tbody id="standingsBody"></tbody>
-        </table>
+      <section class="standings-card" aria-label="Fantasy standings">
+        <div class="standings-header" aria-hidden="true">
+          <div>Rank</div>
+          <div>Owner</div>
+          <div>Starts</div>
+          <div>Total Points</div>
+          <div>Behind</div>
+          <div></div>
+        </div>
+        <div id="standingsBody"></div>
       </section>
 
-      <p class="footnote" id="standingsFootnote">
-        Main leaderboard totals use the generated standings data. Expanded rows use the generated selection/race detail data when available.
-      </p>
+      <p class="subtitle" style="font-size:.82rem;margin:12px 2px 0;">Selection points and bonus flags are loaded from dbo.MOBILE.</p>
     </section>
 
     <section class="view" id="liveView">
-      <div class="live-page">
-        <section class="live-hero">
-          <div class="card status-card">
-            <div class="label">Fantasy NASCAR Live</div>
-            <div class="race-title" id="raceTitle">Current Race</div>
-            <div class="live-dot" id="raceStatus">Loading</div>
-
-            <div class="status-grid">
-              <div class="stat">
-                <div class="value" id="lapStatus">—</div>
-                <div class="caption">Current Lap</div>
-              </div>
-              <div class="stat">
-                <div class="value" id="lapsLeft">—</div>
-                <div class="caption">Laps Left</div>
-              </div>
-              <div class="stat">
-                <div class="value" id="carsShown">—</div>
-                <div class="caption">Fantasy Drivers Shown</div>
-              </div>
-              <div class="stat">
-                <div class="value" id="liveLastUpdated">—</div>
-                <div class="caption">Last Updated</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card race-leader-card">
-            <div class="label">Race Winner / Leader</div>
-            <div class="race-leader-name" id="raceLeader">—</div>
-            <div class="race-leader-meta" id="raceLeaderMeta">—</div>
-            <div class="mini-row"><span>Best fantasy score</span><strong id="bestScore">—</strong></div>
-            <div class="mini-row"><span>Top fantasy owner</span><strong id="topOwner">—</strong></div>
-            <div class="mini-row"><span>Closest selected driver</span><strong id="closestDriver">—</strong></div>
-            <div class="mini-row"><span>Race state</span><strong id="raceStateMini">—</strong></div>
-          </div>
-        </section>
-
-        <div class="section-title">
-          <div>
-            <h2>Running Order Map</h2>
-            <p>Positions 1–40 are shown in a horizontal scroll map. Selected fantasy drivers display owner, finish/running position, and current official or projected race points.</p>
+      <section class="live-hero">
+        <div class="card status-card">
+          <div class="label">Fantasy NASCAR Live</div>
+          <div class="race-title" id="raceTitle">—</div>
+          <div class="live-dot" id="raceStatus">Race Status</div>
+          <div class="status-grid">
+            <div class="stat"><div class="value" id="lapStatus">—</div><div class="caption">Current Lap</div></div>
+            <div class="stat"><div class="value" id="lapsLeft">—</div><div class="caption">Laps Left</div></div>
+            <div class="stat"><div class="value" id="carsShown">—</div><div class="caption">Fantasy Drivers Shown</div></div>
+            <div class="stat"><div class="value" id="liveLastUpdated">—</div><div class="caption">Last Updated</div></div>
           </div>
         </div>
 
-        <section class="card track-map">
-          <div class="position-line" id="positionLine"></div>
-        </section>
-
-        <div class="section-title">
-          <div>
-            <h2>Fantasy Race Leaderboard</h2>
-            <p>Sorted by official race points when the race is complete, otherwise projected live points.</p>
-          </div>
+        <div class="card race-leader-card">
+          <div class="label">Race Leader</div>
+          <div class="race-leader-name" id="raceLeader">—</div>
+          <div class="race-leader-meta" id="raceLeaderMeta">—</div>
+          <div class="mini-row"><span>Best fantasy score</span><strong id="bestScore">—</strong></div>
+          <div class="mini-row"><span>Top fantasy owner</span><strong id="topOwner">—</strong></div>
+          <div class="mini-row"><span>Closest selected driver</span><strong id="closestDriver">—</strong></div>
+          <div class="mini-row"><span>Race state</span><strong id="raceStateMini">—</strong></div>
         </div>
+      </section>
 
-        <section class="card table-wrap live-table-wrap">
-          <table class="leaderboard">
-            <thead>
-              <tr>
-                <th>Rank</th>
-                <th>Fantasy Owner</th>
-                <th>Selection</th>
-                <th>Running Pos.</th>
-                <th>Gap to Leader</th>
-                <th>Bonus / Race Stats</th>
-                <th>League Race Pts</th>
-              </tr>
-            </thead>
-            <tbody id="leaderboardBody"></tbody>
-          </table>
-        </section>
-
-        <div class="footer-note" id="liveFooter">Loading generated data...</div>
+      <div class="section-title">
+        <div>
+          <h2>Running Order Map</h2>
+          <p>Positions 1–40 are shown in a horizontal scroll map.</p>
+        </div>
       </div>
+      <section class="card track-map"><div class="position-line" id="positionLine"></div></section>
+
+      <div class="section-title">
+        <div>
+          <h2>Fantasy Race Leaderboard</h2>
+          <p>Sorted by exact league race points from dbo.MOBILE when available.</p>
+        </div>
+      </div>
+      <section class="card live-table-wrap">
+        <table class="live-table" aria-label="Fantasy race leaderboard">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Fantasy Owner</th>
+              <th>Selection</th>
+              <th>Running / Finish Pos.</th>
+              <th>Gap to Race Leader</th>
+              <th>Bonus / Race Stats</th>
+              <th>League Race Pts</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboardBody"></tbody>
+        </table>
+      </section>
+      <section class="live-card-list" id="leaderboardCards" aria-label="Fantasy race leaderboard cards"></section>
+      <p class="subtitle" id="liveFooter" style="font-size:.82rem;margin:12px 2px 0;">Loaded from data/league-data.json</p>
     </section>
   </main>
 
 <script>
-const DATA_URL = `data/league-data.json?v=${Date.now()}`;
-const fmt = new Intl.NumberFormat("en-US");
-
+const DATA_URL = "data/league-data.json";
 let appData = {};
 let standings = [];
 let details = [];
-let runningOrder = [];
 let raceDetails = {};
+let runningOrder = [];
 let openOwners = new Set();
 let filterText = "";
+const fmt = new Intl.NumberFormat("en-US");
 
 const $ = (id) => document.getElementById(id);
-
-function escapeHtml(value) {
-  return String(value ?? "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
-function num(value, fallback = 0) {
-  if (value === null || value === undefined || value === "" || value === "-") return fallback;
-  const n = Number(String(value).replace(/,/g, "").trim());
+const hasValue = (v) => v !== null && v !== undefined && String(v).trim() !== "" && String(v).trim().toLowerCase() !== "null";
+const escapeHtml = (str) => String(str ?? "")
+  .replaceAll("&", "&amp;")
+  .replaceAll("<", "&lt;")
+  .replaceAll(">", "&gt;")
+  .replaceAll('"', "&quot;")
+  .replaceAll("'", "&#039;");
+const display = (v) => hasValue(v) ? escapeHtml(v) : "—";
+function num(v, fallback = 0) {
+  if (!hasValue(v) || v === "-") return fallback;
+  const n = Number(String(v).replace(/,/g, ""));
   return Number.isFinite(n) ? n : fallback;
 }
-
-function hasValue(value) {
-  return value !== null && value !== undefined && String(value).trim() !== "" && String(value).trim().toLowerCase() !== "null";
-}
-
-function display(value, fallback = "—") {
-  return hasValue(value) ? escapeHtml(value) : fallback;
-}
-
-function keyOf(row, possibleNames) {
-  if (!row) return undefined;
-  const map = Object.keys(row).reduce((acc, k) => {
-    acc[k.toLowerCase()] = k;
-    return acc;
-  }, {});
-  for (const name of possibleNames) {
-    const found = map[String(name).toLowerCase()];
-    if (found !== undefined) return row[found];
+function keyOf(row, keys) {
+  for (const key of keys) {
+    if (row && Object.prototype.hasOwnProperty.call(row, key) && hasValue(row[key])) return row[key];
   }
-  return undefined;
+  return null;
 }
-
-function groupDetails(rows) {
-  return rows.reduce((acc, row) => {
-    const name = keyOf(row, ["FANTASY_NAME", "fantasy_name", "owner", "OWNER"]);
-    if (hasValue(name)) (acc[String(name)] ||= []).push(row);
-    return acc;
-  }, {});
-}
-
-function normalizeDetail(row) {
-  return {
-    fantasyName: keyOf(row, ["FANTASY_NAME", "owner"]),
-    trackId: keyOf(row, ["TRACK_ID", "RACE_ID", "race_id"]),
-    trackName: keyOf(row, ["TRACK_NAME", "RACE_NAME", "race_name"]),
-    raceDate: keyOf(row, ["RACE_DATE", "race_date", "SCHEDULED_DATE", "scheduled_date", "DATE_SCHEDULED"]),
-    selection: keyOf(row, ["SELECTION", "DRIVER", "driver"]),
-    finish: keyOf(row, ["FINISH_POSITION", "finish_position", "FINISH", "finish"]),
-    points: keyOf(row, ["TOTAL_POINTS_INCLUDING_BONUS", "POINTS_EARNED", "CURRENT_RACE_POINTS", "points", "POINTS"]),
-    win: keyOf(row, ["WINS", "WIN", "win"]),
-    top5: keyOf(row, ["TOP_5s", "TOP5", "top5"]),
-    top10: keyOf(row, ["TOP_10s", "TOP10", "top10"]),
-    ledLap: keyOf(row, ["LED_AT_LEAST_ONE_LAP_IN_RACE", "LED_LAP", "ledLap"]),
-    ledMost: keyOf(row, ["LED_MOST_LAPS_IN_A_RACE", "LED_MOST", "ledMost"]),
-    bonusSummary: keyOf(row, ["BONUS_SUMMARY", "bonusSummary", "bonus_summary"]),
-  };
-}
-
-function normalizeRunning(row) {
-  const position = keyOf(row, ["RUNNING_POSITION", "FINISH_POSITION", "runningPosition", "POSITION", "position", "POS"]);
-  const currentPtsRaw = keyOf(row, ["CURRENT_RACE_POINTS", "TOTAL_POINTS_INCLUDING_BONUS", "POINTS_EARNED", "RACE_POINTS", "racePoints"]);
-  const bonusSummary = keyOf(row, ["BONUS_SUMMARY", "bonusSummary", "bonus_summary"]);
-  const pos = num(position, null);
-
-  // Do not calculate/guess league points in JavaScript. Your league points,
-  // including bonuses, come from dbo.MOBILE -> TOTAL_POINTS_INCLUDING_BONUS.
-  const racePoints = hasValue(currentPtsRaw) ? num(currentPtsRaw) : null;
-
-  return {
-    owner: keyOf(row, ["FANTASY_NAME", "fantasyName", "OWNER", "owner"]),
-    driver: keyOf(row, ["SELECTION", "LIVE_DRIVER_NAME", "DRIVER", "driver", "FULL_NAME"]),
-    carNumber: keyOf(row, ["CAR_NUMBER", "VEHICLE_NUMBER", "carNumber"]),
-    position: pos,
-    gap: keyOf(row, ["DELTA", "GAP", "GAP_TO_LEADER", "TIME_BEHIND_LEADER", "gap"]),
-    status: keyOf(row, ["STATUS", "status", "SOURCE"]),
-    win: keyOf(row, ["WINS", "WIN", "win"]),
-    top5: keyOf(row, ["TOP_5s", "TOP5", "top5"]),
-    top10: keyOf(row, ["TOP_10s", "TOP10", "top10"]),
-    ledLap: keyOf(row, ["LED_AT_LEAST_ONE_LAP_IN_RACE", "LED_LAP", "ledLap"]),
-    ledMost: keyOf(row, ["LED_MOST_LAPS_IN_A_RACE", "LED_MOST", "ledMost"]),
-    bonusSummary,
-    racePoints,
-    matched: keyOf(row, ["MATCHED_LIVE_FEED", "matched"]),
-  };
-}
-
-function raceSortValue(row) {
-  const raw = row?.raceDate;
-  if (hasValue(raw)) {
-    const t = Date.parse(raw);
-    if (Number.isFinite(t)) return t;
+function fmtDate(v) {
+  if (!hasValue(v)) return "—";
+  const d = new Date(v);
+  if (!Number.isNaN(d.getTime())) {
+    return d.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
   }
-  return num(row?.trackId, 0);
+  return String(v).slice(0, 10);
 }
-
-function sortRaceRows(rows, newestFirst = true) {
-  return [...rows].sort((a,b) => newestFirst
-    ? raceSortValue(b) - raceSortValue(a)
-    : raceSortValue(a) - raceSortValue(b)
-  );
-}
-
-function fmtDate(value) {
-  if (!hasValue(value)) return "";
-  const d = new Date(value);
-  if (Number.isNaN(d.getTime())) return String(value);
-  return d.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
-}
-
-function parseRaceProgress(text) {
-  const raw = String(text || "").trim();
-  const complete = /complete|completed|checkered/i.test(raw);
-  const match = raw.match(/(\d+)\s+out\s+of\s+(\d+)/i);
-  const leftMatch = raw.match(/(\d+)\s+Laps?\s+Remaining/i);
-  return {
-    raw: raw || "—",
-    complete,
-    lap: match ? Number(match[1]) : null,
-    total: match ? Number(match[2]) : null,
-    left: leftMatch ? Number(leftMatch[1]) : null,
-  };
-}
-
-function finishClass(pos) {
-  const n = num(pos, 999);
+function finishClass(v) {
+  const n = num(v, null);
+  if (n === null) return "";
   if (n <= 5) return "finish-good";
-  if (n <= 10) return "finish-mid";
+  if (n <= 15) return "finish-mid";
   return "finish-bad";
 }
-
-function detailStats(name) {
-  const rows = sortRaceRows((raceDetails[name] || []).map(normalizeDetail), true);
-  const scoredRows = rows.filter(r => hasValue(r.points));
-  const finishRows = rows.filter(r => hasValue(r.finish));
-  const starts = rows.length;
-  const points = scoredRows.reduce((sum, r) => sum + num(r.points), 0);
-  const avgPoints = scoredRows.length ? points / scoredRows.length : null;
-  const avgFinish = finishRows.length ? finishRows.reduce((sum, r) => sum + num(r.finish), 0) / finishRows.length : null;
-  const bestFinish = finishRows.length ? Math.min(...finishRows.map(r => num(r.finish, 99))) : null;
-  const lastFive = rows.slice(0, 5);
-  return { rows, starts, scoredRows, finishRows, points, avgPoints, avgFinish, bestFinish, lastFive };
+function bonusText(r) {
+  if (hasValue(r.bonusSummary)) return display(r.bonusSummary);
+  return [num(r.win) ? "Win" : "", num(r.top5) ? "Top 5" : "", num(r.top10) ? "Top 10" : "", num(r.ledLap) ? "Led Lap" : "", num(r.ledMost) ? "Most Led" : ""].filter(Boolean).join(" · ") || "—";
 }
-
+function normalizeDetail(row) {
+  return {
+    fantasyName: keyOf(row, ["FANTASY_NAME", "fantasyName", "OWNER", "owner"]),
+    trackId: keyOf(row, ["TRACK_ID", "trackId", "raceId"]),
+    trackName: keyOf(row, ["TRACK_NAME", "trackName", "RACE_NAME", "raceName"]),
+    raceDate: keyOf(row, ["RACE_DATE", "raceDate", "race_date", "scheduledDate"]),
+    selection: keyOf(row, ["SELECTION", "selection", "driver", "DRIVER"]),
+    finish: keyOf(row, ["FINISH_POSITION", "finish", "position"]),
+    points: keyOf(row, ["TOTAL_POINTS_INCLUDING_BONUS", "POINTS_EARNED", "racePoints", "points"]),
+    win: keyOf(row, ["WINS", "WIN", "win"]),
+    top5: keyOf(row, ["TOP_5s", "TOP5", "top5"]),
+    top10: keyOf(row, ["TOP_10s", "TOP10", "top10"]),
+    ledLap: keyOf(row, ["LED_AT_LEAST_ONE_LAP_IN_RACE", "LED_LAP", "ledLap"]),
+    ledMost: keyOf(row, ["LED_MOST_LAPS_IN_A_RACE", "LED_MOST", "ledMost"]),
+    bonusSummary: keyOf(row, ["BONUS_SUMMARY", "bonusSummary"])
+  };
+}
+function groupDetails(rows) {
+  return rows.reduce((acc, row) => {
+    const d = normalizeDetail(row);
+    if (!hasValue(d.fantasyName)) return acc;
+    (acc[d.fantasyName] ||= []).push(row);
+    return acc;
+  }, {});
+}
+function sortRaceRows(rows) {
+  return [...rows].sort((a, b) => {
+    const da = new Date(a.raceDate || 0).getTime();
+    const db = new Date(b.raceDate || 0).getTime();
+    if (!Number.isNaN(da) && !Number.isNaN(db) && da !== db) return db - da;
+    return num(b.trackId, 0) - num(a.trackId, 0);
+  });
+}
+function ownerRows(name) {
+  const raw = raceDetails[name] || details.filter(r => String(keyOf(r, ["FANTASY_NAME", "fantasyName", "OWNER", "owner"])) === String(name));
+  return sortRaceRows(raw.map(normalizeDetail));
+}
 function makeLeader() {
   const leader = [...standings].sort((a,b) => num(a.RANK, 999) - num(b.RANK, 999))[0];
   if (!leader) {
@@ -1636,239 +810,152 @@ function makeLeader() {
   }
   $("leaderCard").innerHTML = `
     <div class="leader-label">Current leader</div>
-    <div class="leader-name">${escapeHtml(leader.FANTASY_NAME)}</div>
+    <div class="leader-name">${display(leader.FANTASY_NAME)}</div>
     <div class="leader-points">${fmt.format(num(leader.TOTAL_POINTS_INCLUDING_BONUS))}</div>
     <div class="subtitle">points after ${display(leader.STARTS)} starts</div>
   `;
 }
-
-function makeMetrics() {
-  if (!standings.length) {
-    $("metricGrid").innerHTML = `<article class="metric-card"><div class="metric-value">—</div><div class="metric-label">No Data</div></article>`;
-    return;
-  }
-  const totalStarts = standings.reduce((sum, r) => sum + num(r.STARTS), 0);
-  const totalWins = standings.reduce((sum, r) => sum + num(r.WINS), 0);
-  const closestGap = standings.find(r => num(r.RANK) === 2)?.POINTS_BEHIND || "—";
-  const mostTop10 = standings.reduce((best, r) => num(r.TOP_10s) > num(best.TOP_10s) ? r : best, standings[0]);
-  const leader = standings.find(r => num(r.RANK) === 1) || standings[0];
-
-  const metrics = [
-    [standings.length, "Owners"],
-    [fmt.format(totalStarts), "Total Starts"],
-    [fmt.format(totalWins), "League Wins"],
-    [closestGap, "2nd Place Gap"],
-    [mostTop10?.FANTASY_NAME || "—", "Most Top 10s"]
-  ];
-
-  $("metricGrid").innerHTML = metrics.map(([value, label]) => `
-    <article class="metric-card">
-      <div class="metric-value">${escapeHtml(value)}</div>
-      <div class="metric-label">${escapeHtml(label)}</div>
-    </article>
-  `).join("");
-}
-
-function makeSpark(rows) {
-  const scored = rows.filter(r => hasValue(r.points));
-  if (!scored.length) {
-    return `
-      <div class="spark">
-        <div class="spark-title">Recent selections</div>
-        ${rows.slice(0, 6).map(r => `
-          <div class="bar-row">
-            <span style="width: 92px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${display(r.trackName || r.trackId)}</span>
-            <strong>${display(r.selection)}</strong>
-          </div>
-        `).join("") || `<div class="hint">No selection rows available.</div>`}
-      </div>
-    `;
-  }
-  const recent = sortRaceRows(scored, false).slice(-6);
-  const max = Math.max(1, ...recent.map(r => num(r.points)));
-  return `
-    <div class="spark">
-      <div class="spark-title">Recent points trend</div>
-      ${recent.map(r => `
-        <div class="bar-row">
-          <span style="width: 92px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${display(r.trackName || r.trackId)}</span>
-          <div class="bar-track"><div class="bar-fill" style="width:${Math.max(5, num(r.points) / max * 100)}%"></div></div>
-          <strong>${display(r.points)}</strong>
-        </div>
-      `).join("")}
-    </div>
-  `;
-}
-
-function bonusText(r) {
-  if (hasValue(r.bonusSummary)) return display(r.bonusSummary);
-  return [num(r.win) ? "Win" : "", num(r.top5) ? "Top 5" : "", num(r.top10) ? "Top 10" : "", num(r.ledLap) ? "Led Lap" : "", num(r.ledMost) ? "Most Led" : ""].filter(Boolean).join(" · ") || "—";
-}
-
 function makeDetailPanel(name, standingRow) {
-  const stats = detailStats(name);
-  const rows = stats.rows;
+  const rows = ownerRows(name);
   const seasonStats = [
-    ["Wins", num(standingRow?.WINS)],
-    ["Top 5", num(standingRow?.TOP_5s)],
-    ["Top 10", num(standingRow?.TOP_10s)],
-    ["Led Lap", num(standingRow?.LED_AT_LEAST_ONE_LAP_IN_RACE)],
-    ["Most Laps", num(standingRow?.LED_MOST_LAPS_IN_A_RACE)],
-    ["Races Logged", rows.length],
+    ["Wins", standingRow?.WINS],
+    ["Top 5", standingRow?.TOP_5s],
+    ["Top 10", standingRow?.TOP_10s],
+    ["Led Lap", standingRow?.LED_AT_LEAST_ONE_LAP_IN_RACE],
+    ["Most Laps", standingRow?.LED_MOST_LAPS_IN_A_RACE]
   ];
-
   return `
-    <div class="detail-panel compact-detail-panel">
-      <div class="detail-top compact-detail-top">
-        <div>
-          <div class="selection-title-row compact-selection-title">
-            <div>
-              <strong>Expanded Stats</strong>
-              <div class="hint">Season stats plus exact race points from dbo.MOBILE.</div>
-            </div>
-            <div class="hint">Tap owner row again to collapse</div>
-          </div>
-          <div class="detail-stat-grid compact-stat-grid">
-            ${seasonStats.map(([label, value]) => `
-              <div class="mini-stat"><strong>${display(value)}</strong><span>${escapeHtml(label)}</span></div>
-            `).join("")}
-          </div>
-        </div>
+    <div class="detail-panel">
+      <div class="detail-title-row">
+        <div><strong>Expanded Stats</strong><div class="hint">Tap owner row again to collapse.</div></div>
       </div>
-
-      <div class="selection-title-row compact-selection-title">
-        <div>
-          <strong>Selections</strong>
-          <div class="hint">Date, race, selection, finish, points, bonus/race stats, and win flag.</div>
-        </div>
+      <div class="scroll-window">
+        <table class="stat-strip" aria-label="${escapeHtml(name)} expanded season stats">
+          <thead><tr>${seasonStats.map(([label]) => `<th>${escapeHtml(label)}</th>`).join("")}</tr></thead>
+          <tbody><tr>${seasonStats.map(([, value]) => `<td><strong>${display(value)}</strong></td>`).join("")}</tr></tbody>
+        </table>
       </div>
+      <div class="scroll-hint">Swipe left/right to view all expanded stats.</div>
 
+      <div class="detail-title-row" style="margin-top:14px;">
+        <div><strong>Selections</strong><div class="hint">Date, race, selection, finish, points, bonus/race stats, and win flag.</div></div>
+      </div>
       ${rows.length ? `
-        <div class="selection-table-wrap compact-selection-wrap">
-          <table class="selection-table compact-selection-table" aria-label="${escapeHtml(name)} selections">
+        <div class="scroll-window">
+          <table class="selection-table" aria-label="${escapeHtml(name)} selections">
             <thead>
               <tr>
-                <th>Date</th>
-                <th>Race</th>
-                <th>Selection</th>
-                <th>Finish</th>
-                <th>Points</th>
-                <th>Bonus / Race Stats</th>
-                <th>Win</th>
+                <th>Date</th><th>Race</th><th>Selection</th><th>Finish</th><th>Points</th><th>Bonus / Race Stats</th><th>Win</th>
               </tr>
             </thead>
             <tbody>
               ${rows.map(r => `
                 <tr>
-                  <td data-label="Date">${hasValue(r.raceDate) ? escapeHtml(fmtDate(r.raceDate)) : "—"}</td>
-                  <td data-label="Race"><div class="selection-race-name">${display(r.trackName || r.trackId)}</div></td>
-                  <td data-label="Selection"><div class="selection-driver">${display(r.selection)}</div></td>
-                  <td data-label="Finish"><span class="finish ${finishClass(r.finish)}">${hasValue(r.finish) ? `P${display(r.finish)}` : "—"}</span></td>
-                  <td data-label="Points" class="selection-points-compact">${display(r.points)}</td>
-                  <td data-label="Bonus / Race Stats">${bonusText(r)}</td>
-                  <td data-label="Win">${num(r.win) === 1 ? `<span class="selection-win-badge">WIN</span>` : "—"}</td>
+                  <td>${hasValue(r.raceDate) ? escapeHtml(fmtDate(r.raceDate)) : "—"}</td>
+                  <td><div class="selection-race">${display(r.trackName || r.trackId)}</div></td>
+                  <td><div class="selection-driver">${display(r.selection)}</div></td>
+                  <td><span class="finish ${finishClass(r.finish)}">${hasValue(r.finish) ? `P${display(r.finish)}` : "—"}</span></td>
+                  <td class="selection-points">${display(r.points)}</td>
+                  <td>${bonusText(r)}</td>
+                  <td>${num(r.win) === 1 ? `<span class="win-badge">WIN</span>` : "—"}</td>
                 </tr>
               `).join("")}
             </tbody>
           </table>
         </div>
+        <div class="scroll-hint">Swipe left/right to view all selection columns.</div>
       ` : `<div class="empty">No selection rows available.</div>`}
     </div>
   `;
 }
-
 function makeStandingRow(r) {
   const name = r.FANTASY_NAME;
   const isOpen = openOwners.has(name);
   return `
-    <tr class="standing-row ${isOpen ? "is-open" : ""}" data-owner="${escapeHtml(name)}" tabindex="0" role="button" aria-expanded="${isOpen ? "true" : "false"}">
-      <td><span class="mobile-label">Rank</span><span class="rank-badge ${num(r.RANK) === 1 ? "rank-1" : ""}">${display(r.RANK)}</span></td>
-      <td>
-        <span class="mobile-label">Owner</span>
-        <div class="owner-block">
-          <div>
-            <div class="name">${display(name)}</div>
-            <div class="hint">${isOpen ? "Tap to collapse" : "Tap to expand"}</div>
-          </div>
-        </div>
-      </td>
-      <td><span class="mobile-label">Starts</span>${display(r.STARTS)}</td>
-      <td><span class="mobile-label">Total Points</span><span class="points">${fmt.format(num(r.TOTAL_POINTS_INCLUDING_BONUS))}</span></td>
-      <td><span class="mobile-label">Behind</span><span class="gap">${display(r.POINTS_BEHIND)}</span><span class="chevron-inline">${isOpen ? "⌃" : "⌄"}</span></td>
-    </tr>
-    <tr class="detail-row ${isOpen ? "is-open" : ""}">
-      <td class="detail-cell" colspan="5">${makeDetailPanel(name, r)}</td>
-    </tr>
+    <div class="standing-row ${isOpen ? "is-open" : ""}" data-owner="${escapeHtml(name)}">
+      <button class="standing-main" type="button" aria-expanded="${isOpen ? "true" : "false"}">
+        <div><span class="rank-badge ${num(r.RANK) === 1 ? "rank-1" : ""}">${display(r.RANK)}</span></div>
+        <div><div class="owner-name">${display(name)}</div><div class="owner-sub">Tap to ${isOpen ? "collapse" : "expand"}</div></div>
+        <div>${display(r.STARTS)}</div>
+        <div><span class="points">${fmt.format(num(r.TOTAL_POINTS_INCLUDING_BONUS))}</span></div>
+        <div><span class="behind">${display(r.POINTS_BEHIND)}</span></div>
+        <div class="chev">⌄</div>
+      </button>
+      <div class="detail-row ${isOpen ? "is-open" : ""}">${makeDetailPanel(name, r)}</div>
+    </div>
   `;
 }
-
 function renderStandings() {
   makeLeader();
-  makeMetrics();
-
   const q = filterText.trim().toLowerCase();
   const filtered = [...standings]
     .sort((a,b) => num(a.RANK, 999) - num(b.RANK, 999))
     .filter(r => {
       if (!q) return true;
       const owner = String(r.FANTASY_NAME || "").toLowerCase();
-      const detailText = (raceDetails[r.FANTASY_NAME] || []).map(row => Object.values(row).join(" ")).join(" ").toLowerCase();
+      const detailText = ownerRows(r.FANTASY_NAME).map(row => Object.values(row).join(" ")).join(" ").toLowerCase();
       return owner.includes(q) || detailText.includes(q);
     });
-
-  $("standingsBody").innerHTML = filtered.length
-    ? filtered.map(makeStandingRow).join("")
-    : `<tr><td colspan="5" class="empty">No owners match your search.</td></tr>`;
-
-  const tbody = $("standingsBody");
-
-  function toggleOwner(name) {
-    if (!name) return;
-    if (openOwners.has(name)) openOwners.delete(name);
-    else openOwners.add(name);
-    renderStandings();
-  }
-
-  tbody.querySelectorAll(".standing-row").forEach(row => {
-    row.addEventListener("click", () => toggleOwner(row.getAttribute("data-owner")));
-    row.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        toggleOwner(row.getAttribute("data-owner"));
-      }
+  $("standingsBody").innerHTML = filtered.length ? filtered.map(makeStandingRow).join("") : `<div class="empty">No owners match your search.</div>`;
+  $("standingsBody").querySelectorAll(".standing-main").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const name = btn.closest(".standing-row")?.getAttribute("data-owner");
+      if (!name) return;
+      if (openOwners.has(name)) openOwners.delete(name);
+      else openOwners.add(name);
+      renderStandings();
     });
   });
 }
-
 function calcPoints(car) {
-  // Exact league race points only. Do not estimate from running position or
-  // add stage/finish/bonus columns in the browser.
   return hasValue(car.racePoints) ? num(car.racePoints) : null;
 }
-
 function sortPointValue(car) {
   const pts = calcPoints(car);
   return pts === null ? Number.NEGATIVE_INFINITY : pts;
 }
-
+function parseRaceProgress(value) {
+  const raw = hasValue(value) ? String(value) : "";
+  const complete = /complete|completed|checkered/i.test(raw);
+  const match = raw.match(/(\d+)\s*out of\s*(\d+)/i) || raw.match(/lap\s*(\d+)\s*\/\s*(\d+)/i);
+  const lap = match ? Number(match[1]) : null;
+  const total = match ? Number(match[2]) : null;
+  const leftMatch = raw.match(/(\d+)\s*laps?\s*remaining/i);
+  const left = leftMatch ? Number(leftMatch[1]) : (lap !== null && total !== null ? Math.max(total - lap, 0) : null);
+  return { raw, complete, lap, total, left };
+}
+function normalizeRunning(row) {
+  return {
+    owner: keyOf(row, ["owner", "fantasyName", "FANTASY_NAME", "OWNER"]),
+    driver: keyOf(row, ["driver", "selection", "SELECTION", "DRIVER"]),
+    position: num(keyOf(row, ["position", "runningPosition", "RUNNING_POSITION", "FINISH_POSITION", "finish"]), null),
+    gap: keyOf(row, ["gap", "delta", "DELTA", "GAP", "gapToLeader"]),
+    racePoints: keyOf(row, ["racePoints", "TOTAL_POINTS_INCLUDING_BONUS", "POINTS_EARNED", "points"]),
+    win: keyOf(row, ["win", "WIN", "WINS"]),
+    top5: keyOf(row, ["top5", "TOP5", "TOP_5s"]),
+    top10: keyOf(row, ["top10", "TOP10", "TOP_10s"]),
+    ledLap: keyOf(row, ["ledLap", "LED_LAP", "LED_AT_LEAST_ONE_LAP_IN_RACE"]),
+    ledMost: keyOf(row, ["ledMost", "LED_MOST", "LED_MOST_LAPS_IN_A_RACE"]),
+    bonusSummary: keyOf(row, ["bonusSummary", "BONUS_SUMMARY"])
+  };
+}
 function formatGap(gap, position) {
   if (position === 1) return "Leader";
   if (!hasValue(gap) || gap === "-") return "—";
-  const g = Number(gap);
+  const raw = String(gap).trim();
+  const g = Number(raw);
   if (Number.isFinite(g)) {
-    if (g >= 60) return "+" + Math.floor(g / 60) + " lap";
-    return "+" + g.toFixed(1) + " sec";
+    if (g === 0) return "Leader";
+    if (Math.abs(g) >= 60) return "+" + Math.floor(Math.abs(g) / 60) + " lap";
+    return "+" + Math.abs(g).toFixed(1) + " sec";
   }
-  const s = String(gap).trim();
-  return s.startsWith("+") || /leader/i.test(s) ? escapeHtml(s) : `+${escapeHtml(s)}`;
+  return raw.startsWith("+") || /leader/i.test(raw) ? escapeHtml(raw) : `+${escapeHtml(raw)}`;
 }
-
 function renderLiveStatus(cars) {
   const progress = parseRaceProgress(appData.raceProgress || appData.raceStatus);
   const label = appData.runningOrderLabel || appData.raceName || "Current Race";
   const isComplete = progress.complete;
   const last = appData.lastUpdated || new Date().toLocaleString();
-
   $("raceTitle").textContent = String(label).replace(/^Fantasy running order\s*[—-]\s*/i, "");
   $("raceStatus").textContent = isComplete ? "Race Completed" : (progress.raw && progress.raw !== "—" ? "Race Live" : "Race Status Unknown");
   $("raceStatus").classList.toggle("complete", isComplete);
@@ -1878,7 +965,6 @@ function renderLiveStatus(cars) {
   $("liveLastUpdated").textContent = last;
   $("liveFooter").textContent = `Loaded from data/league-data.json · ${last}`;
 }
-
 function renderPositionLine(cars) {
   const line = $("positionLine");
   line.innerHTML = "";
@@ -1888,20 +974,17 @@ function renderPositionLine(cars) {
     if (!byPos.has(car.position)) byPos.set(car.position, []);
     byPos.get(car.position).push(car);
   });
-
   for (let pos = 1; pos <= 40; pos++) {
     const selected = byPos.get(pos) || [];
     const cell = document.createElement("div");
-    cell.className = selected.length ? `pos selected ${selected.length > 1 ? "multi-selected" : ""}` : "pos";
-
+    cell.className = selected.length ? "pos selected" : "pos";
     if (selected.length) {
-      const isLeader = pos === 1;
       cell.innerHTML = `
-        ${isLeader ? `<div class="leader-badge">P1</div>` : ""}
+        ${pos === 1 ? `<div class="leader-badge">P1</div>` : ""}
         <div class="pos-number">P${pos}</div>
         ${selected.map(car => `
           <div class="live-driver">${display(car.driver)}</div>
-          <div class="live-owner-line">${display(car.owner)}</div>
+          <div class="live-owner">${display(car.owner)}</div>
           <div class="live-gap">${formatGap(car.gap, car.position)}</div>
           <div class="race-points"><strong>${calcPoints(car) === null ? "—" : display(calcPoints(car))}</strong> pts</div>
         `).join(`<div style="height:1px;background:rgba(255,255,255,.12);width:100%;margin:6px 0;"></div>`)}
@@ -1912,7 +995,6 @@ function renderPositionLine(cars) {
     line.appendChild(cell);
   }
 }
-
 function renderRaceLeader(cars) {
   const officialLeader = appData.raceLeader || {};
   const sortedByPos = [...cars].filter(c => c.position).sort((a,b) => a.position - b.position || sortPointValue(b) - sortPointValue(a));
@@ -1921,46 +1003,53 @@ function renderRaceLeader(cars) {
   const best = sortedByPts.find(c => calcPoints(c) !== null) || sortedByPts[0];
   const closest = sortedByPos.find(c => c.position !== 1);
   const progress = parseRaceProgress(appData.raceProgress || appData.raceStatus);
-
   const leaderDriver = hasValue(officialLeader.driver) ? officialLeader.driver : (selectedLeader ? selectedLeader.driver : "—");
   const leaderPosition = hasValue(officialLeader.position) ? officialLeader.position : (selectedLeader ? selectedLeader.position : null);
   const selectedBy = Array.isArray(officialLeader.selectedBy) ? officialLeader.selectedBy.filter(Boolean) : [];
-  const selectedText = selectedBy.length
-    ? `Selected by ${selectedBy.join(", ")}`
-    : (selectedLeader && selectedLeader.driver === leaderDriver ? `Selected by ${selectedLeader.owner}` : "Not selected in fantasy");
-
+  const selectedText = selectedBy.length ? `Selected by ${selectedBy.join(", ")}` : (selectedLeader && selectedLeader.driver === leaderDriver ? `Selected by ${selectedLeader.owner}` : "Not selected in fantasy");
   $("raceLeader").textContent = leaderDriver;
-  $("raceLeaderMeta").textContent = leaderDriver !== "—"
-    ? `${leaderPosition ? `P${leaderPosition}` : "Leader"} · ${selectedText}`
-    : "No race leader found in scoring/live data";
+  $("raceLeaderMeta").textContent = leaderDriver !== "—" ? `${leaderPosition ? `P${leaderPosition}` : "Leader"} · ${selectedText}` : "No race leader found";
   $("bestScore").textContent = best ? `${calcPoints(best) === null ? "—" : calcPoints(best)} pts` : "—";
   $("topOwner").textContent = best ? best.owner : "—";
   $("closestDriver").textContent = closest ? `${closest.driver}, ${formatGap(closest.gap, closest.position)}` : "—";
   $("raceStateMini").textContent = progress.complete ? "Checkered flag" : (appData.raceProgress || "Live feed");
 }
-
+function liveRows(cars) {
+  return [...cars].sort((a,b) => sortPointValue(b) - sortPointValue(a) || (a.position || 999) - (b.position || 999));
+}
 function renderLeaderboard(cars) {
-  const body = $("leaderboardBody");
-  const sorted = [...cars].sort((a,b) => sortPointValue(b) - sortPointValue(a) || (a.position || 999) - (b.position || 999));
-
+  const sorted = liveRows(cars);
   if (!sorted.length) {
-    body.innerHTML = `<tr><td colspan="7" class="empty">No live race leaderboard rows available yet.</td></tr>`;
+    $("leaderboardBody").innerHTML = `<tr><td colspan="7" class="empty">No live race leaderboard rows available yet.</td></tr>`;
+    $("leaderboardCards").innerHTML = `<div class="empty">No live race leaderboard rows available yet.</div>`;
     return;
   }
-
-  body.innerHTML = sorted.map((car, index) => `
+  $("leaderboardBody").innerHTML = sorted.map((car, index) => `
     <tr>
-      <td data-label="Rank" class="rank">${index + 1}</td>
-      <td data-label="Fantasy Owner"><strong>${display(car.owner)}</strong></td>
-      <td data-label="Selection"><span class="pill">${display(car.driver)}</span></td>
-      <td data-label="Running/Finish Pos.">${car.position ? `P${car.position}` : "—"}</td>
-      <td data-label="Gap" class="behind">${formatGap(car.gap, car.position)}</td>
-      <td data-label="Bonus / Race Stats">${bonusText(car)}</td>
-      <td data-label="League Race Pts" class="live-points">${calcPoints(car) === null ? "—" : display(calcPoints(car))}</td>
+      <td class="rank">${index + 1}</td>
+      <td><strong>${display(car.owner)}</strong></td>
+      <td><span class="pill">${display(car.driver)}</span></td>
+      <td>${car.position ? `P${car.position}` : "—"}</td>
+      <td class="behind">${formatGap(car.gap, car.position)}</td>
+      <td>${bonusText(car)}</td>
+      <td class="live-points">${calcPoints(car) === null ? "—" : display(calcPoints(car))}</td>
     </tr>
   `).join("");
+  $("leaderboardCards").innerHTML = sorted.map((car, index) => `
+    <article class="live-card">
+      <div class="live-card-top">
+        <div class="rank">${index + 1}</div>
+        <div><div class="driver-name">${display(car.driver)}</div><div class="owner-line">${display(car.owner)}</div></div>
+        <div class="live-points">${calcPoints(car) === null ? "—" : display(calcPoints(car))}</div>
+      </div>
+      <div class="live-card-grid">
+        <div class="live-card-stat"><span>Running / Finish Pos.</span><strong>${car.position ? `P${car.position}` : "—"}</strong></div>
+        <div class="live-card-stat"><span>Gap to Race Leader</span><strong>${formatGap(car.gap, car.position)}</strong></div>
+        <div class="live-card-stat" style="grid-column:1 / -1;"><span>Bonus / Race Stats</span><strong>${bonusText(car)}</strong></div>
+      </div>
+    </article>
+  `).join("");
 }
-
 function renderLive() {
   const cars = runningOrder.map(normalizeRunning).filter(c => hasValue(c.owner) || hasValue(c.driver));
   renderLiveStatus(cars);
@@ -1968,7 +1057,6 @@ function renderLive() {
   renderRaceLeader(cars);
   renderLeaderboard(cars);
 }
-
 function setTab(tab) {
   const standingsOn = tab === "standings";
   $("tabStandings").classList.toggle("active", standingsOn);
@@ -1977,25 +1065,19 @@ function setTab(tab) {
   $("liveView").classList.toggle("active", !standingsOn);
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
-
 function renderAll() {
   renderStandings();
   renderLive();
 }
-
 async function loadData() {
   try {
     const res = await fetch(DATA_URL, { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     appData = await res.json();
-
     standings = Array.isArray(appData.standings) ? appData.standings : [];
     details = Array.isArray(appData.details) ? appData.details : [];
-    raceDetails = appData.raceDetails && typeof appData.raceDetails === "object"
-      ? appData.raceDetails
-      : groupDetails(details);
+    raceDetails = appData.raceDetails && typeof appData.raceDetails === "object" ? appData.raceDetails : groupDetails(details);
     runningOrder = Array.isArray(appData.runningOrder) ? appData.runningOrder : [];
-
     $("globalUpdated").textContent = `Updated: ${appData.lastUpdated || "—"}`;
     $("globalRaceProgress").textContent = `Race Status: ${appData.raceProgress || "—"}`;
     renderAll();
@@ -2004,18 +1086,16 @@ async function loadData() {
     $("globalUpdated").textContent = "Updated: data load failed";
     $("globalRaceProgress").textContent = "Race Status: unavailable";
     $("leaderCard").innerHTML = `<div class="leader-label">Error</div><div class="leader-name">Could not load data</div><div class="subtitle">Check that data/league-data.json exists.</div>`;
-    $("metricGrid").innerHTML = `<article class="metric-card"><div class="metric-value">!</div><div class="metric-label">Data Load Failed</div></article>`;
-    $("standingsBody").innerHTML = `<tr><td colspan="5" class="empty">Could not load data/league-data.json.</td></tr>`;
+    $("standingsBody").innerHTML = `<div class="empty">Could not load data/league-data.json.</div>`;
     $("leaderboardBody").innerHTML = `<tr><td colspan="7" class="empty">Could not load data/league-data.json.</td></tr>`;
+    $("leaderboardCards").innerHTML = `<div class="empty">Could not load data/league-data.json.</div>`;
   }
 }
-
 $("tabStandings").addEventListener("click", () => setTab("standings"));
 $("tabLive").addEventListener("click", () => setTab("live"));
 $("searchInput").addEventListener("input", (e) => { filterText = e.target.value || ""; renderStandings(); });
 $("expandAll").addEventListener("click", () => { standings.forEach(r => openOwners.add(r.FANTASY_NAME)); renderStandings(); });
 $("collapseAll").addEventListener("click", () => { openOwners.clear(); renderStandings(); });
-
 loadData();
 </script>
 </body>
