@@ -910,6 +910,24 @@ function sortPointValue(car) {
   const pts = calcPoints(car);
   return pts === null ? Number.NEGATIVE_INFINITY : pts;
 }
+function parsePositionValue(value) {
+  if (!hasValue(value)) return 9999;
+  if (typeof value === "number") return Number.isFinite(value) && value > 0 ? value : 9999;
+  const raw = String(value).trim();
+  if (!raw || raw === "-" || raw === "—") return 9999;
+  const direct = Number(raw);
+  if (Number.isFinite(direct) && direct > 0) return direct;
+  const match = raw.match(/(?:^|\b)P?\s*(\d{1,2})(?:st|nd|rd|th)?(?:\b|$)/i);
+  if (match) {
+    const n = Number(match[1]);
+    return Number.isFinite(n) && n > 0 ? n : 9999;
+  }
+  return 9999;
+}
+function displayPosition(value) {
+  const p = parsePositionValue(value);
+  return p === 9999 ? "—" : `P${p}`;
+}
 function parseRaceProgress(value) {
   const raw = hasValue(value) ? String(value) : "";
   const complete = /complete|completed|checkered/i.test(raw);
@@ -924,7 +942,7 @@ function normalizeRunning(row) {
   return {
     owner: keyOf(row, ["owner", "fantasyName", "FANTASY_NAME", "OWNER"]),
     driver: keyOf(row, ["driver", "selection", "SELECTION", "DRIVER"]),
-    position: num(keyOf(row, ["position", "runningPosition", "RUNNING_POSITION", "FINISH_POSITION", "finish"]), null),
+    position: parsePositionValue(keyOf(row, ["position", "runningPosition", "RUNNING_POSITION", "FINISH_POSITION", "finish", "RUNNING_FINISH_POSITION", "runningFinishPosition"])),
     gap: keyOf(row, ["gap", "delta", "DELTA", "GAP", "gapToLeader"]),
     racePoints: keyOf(row, ["racePoints", "TOTAL_POINTS_INCLUDING_BONUS", "POINTS_EARNED", "points"]),
     win: keyOf(row, ["win", "WIN", "WINS"]),
@@ -1011,14 +1029,13 @@ function renderRaceLeader(cars) {
   $("raceStateMini").textContent = progress.complete ? "Checkered flag" : (appData.raceProgress || "Live feed");
 }
 function livePositionValue(car) {
-  const p = Number(car.position);
-  return Number.isFinite(p) && p > 0 ? p : 9999;
+  return parsePositionValue(car.position);
 }
 function liveRows(cars) {
   return [...cars].sort((a,b) => {
     const posDiff = livePositionValue(a) - livePositionValue(b);
     if (posDiff !== 0) return posDiff;
-    return sortPointValue(b) - sortPointValue(a);
+    return String(a.owner || "").localeCompare(String(b.owner || ""), undefined, {numeric:true, sensitivity:"base"});
   });
 }
 function renderLeaderboard(cars) {
@@ -1033,7 +1050,7 @@ function renderLeaderboard(cars) {
       <td class="rank">${index + 1}</td>
       <td><strong>${display(car.owner)}</strong></td>
       <td><span class="pill">${display(car.driver)}</span></td>
-      <td>${car.position ? `P${car.position}` : "—"}</td>
+      <td>${displayPosition(car.position)}</td>
       <td class="behind">${formatGap(car.gap, car.position)}</td>
       <td class="selection-stats">${bonusText(car)}</td>
       <td class="live-points">${calcPoints(car) === null ? "—" : display(calcPoints(car))}</td>
@@ -1047,7 +1064,7 @@ function renderLeaderboard(cars) {
         <div class="live-points">${calcPoints(car) === null ? "—" : display(calcPoints(car))}</div>
       </div>
       <div class="live-card-grid">
-        <div class="live-card-stat"><span>Running / Finish Pos.</span><strong>${car.position ? `P${car.position}` : "—"}</strong></div>
+        <div class="live-card-stat"><span>Running / Finish Pos.</span><strong>${displayPosition(car.position)}</strong></div>
         <div class="live-card-stat"><span>Gap to Race Leader</span><strong>${formatGap(car.gap, car.position)}</strong></div>
         <div class="live-card-stat" style="grid-column:1 / -1;"><span>Bonus / Race Stats</span><strong>${bonusText(car)}</strong></div>
       </div>
