@@ -544,10 +544,78 @@
     .rank { font-size: 18px; font-weight: 900; color: var(--accent); }
     .live-card-list { display: none; }
 
+
+    /* Practice / Qualifying Results */
+    .pq-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .pq-card {
+      background: rgba(0,0,0,0.20);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 15px;
+    }
+
+    .pq-card .value {
+      font-size: 1.35rem;
+      font-weight: 950;
+      color: var(--accent);
+      line-height: 1.15;
+    }
+
+    .pq-card .caption {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .76rem;
+      line-height: 1.35;
+    }
+
+    .pq-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 20px;
+    }
+
+    .pq-table {
+      width: 100%;
+      min-width: 980px;
+      border-collapse: collapse;
+    }
+
+    .pq-table th {
+      background: rgba(0,0,0,.20);
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .68rem;
+      text-align: left;
+      padding: 11px 12px;
+      white-space: nowrap;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pq-table td {
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    .pq-table tr:last-child td { border-bottom: 0; }
+    .pq-pos { font-size: 18px; font-weight: 950; color: var(--accent); }
+    .pq-driver { font-weight: 950; }
+    .pq-mono { font-family: var(--mono); }
+    .pq-delta { color: var(--muted); font-family: var(--mono); }
+    .pq-section-spacer { margin-top: 22px; }
+
     @media (max-width: 980px) {
       body { padding: 18px; }
       .hero, .live-hero { grid-template-columns: 1fr; }
-      .status-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .status-grid, .pq-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 720px) {
@@ -595,6 +663,10 @@
       }
       .live-table th { font-size: .62rem; }
       .live-card-list { display: none !important; }
+      .pq-summary-grid { grid-template-columns: 1fr; }
+      .pq-table { min-width: 940px; font-size: .82rem; }
+      .pq-table th, .pq-table td { padding: 10px 11px; }
+      .pq-table th { font-size: .62rem; }
     }
   </style>
 </head>
@@ -604,6 +676,7 @@
       <div class="tabs" role="tablist" aria-label="Page tabs">
         <button class="tab-btn active" id="tabStandings" type="button">Standings</button>
         <button class="tab-btn" id="tabLive" type="button">Live Leaderboard</button>
+        <button class="tab-btn" id="tabPracticeQualifying" type="button">Practice/Qualifying Results</button>
       </div>
       <div class="site-meta">
         <span class="meta-pill" id="globalUpdated">Updated: —</span>
@@ -705,11 +778,86 @@
       <section class="live-card-list" id="leaderboardCards" aria-label="Fantasy race leaderboard cards"></section>
       <p class="subtitle" id="liveFooter" style="font-size:.82rem;margin:12px 2px 0;">Loaded from data/league-data.json</p>
     </section>
+
+    <section class="view" id="practiceQualifyingView">
+      <section class="hero">
+        <div class="hero-card">
+          <div class="eyebrow">📊 Practice / Qualifying</div>
+          <h1>Practice &amp; Qualifying Results</h1>
+          <p class="subtitle">Full practice and qualifying results loaded from data/practice-qualifying-results.json.</p>
+        </div>
+        <aside class="leader-card" id="pqSummaryCard"></aside>
+      </section>
+
+      <section class="pq-summary-grid" aria-label="Practice and qualifying summary">
+        <div class="pq-card"><div class="value" id="pqRaceName">—</div><div class="caption">Race</div></div>
+        <div class="pq-card"><div class="value" id="pqPracticeLeader">—</div><div class="caption">Fastest in Practice</div></div>
+        <div class="pq-card"><div class="value" id="pqQualifyingLeader">—</div><div class="caption">Pole / Qualifying Leader</div></div>
+        <div class="pq-card"><div class="value" id="pqLastUpdated">—</div><div class="caption">Last Updated</div></div>
+      </section>
+
+      <div class="section-title">
+        <div>
+          <h2>Practice Results</h2>
+          <p id="practiceRunInfo">Sorted by practice position. On mobile, swipe the table left/right to see every column.</p>
+        </div>
+      </div>
+      <section class="card pq-table-wrap">
+        <table class="pq-table" aria-label="Practice results">
+          <thead>
+            <tr>
+              <th>Pos</th>
+              <th>Car</th>
+              <th>Driver</th>
+              <th>Make</th>
+              <th>Best Lap Time</th>
+              <th>Best Speed</th>
+              <th>Best Lap #</th>
+              <th>Laps</th>
+              <th>Delta</th>
+              <th>Run</th>
+            </tr>
+          </thead>
+          <tbody id="practiceResultsBody"></tbody>
+        </table>
+      </section>
+
+      <div class="section-title pq-section-spacer">
+        <div>
+          <h2>Qualifying Results</h2>
+          <p id="qualifyingRunInfo">Sorted by qualifying position. On mobile, swipe the table left/right to see every column.</p>
+        </div>
+      </div>
+      <section class="card pq-table-wrap">
+        <table class="pq-table" aria-label="Qualifying results">
+          <thead>
+            <tr>
+              <th>Pos</th>
+              <th>Car</th>
+              <th>Driver</th>
+              <th>Make</th>
+              <th>Best Lap Time</th>
+              <th>Best Speed</th>
+              <th>Best Lap #</th>
+              <th>Laps</th>
+              <th>Delta</th>
+              <th>Run</th>
+            </tr>
+          </thead>
+          <tbody id="qualifyingResultsBody"></tbody>
+        </table>
+      </section>
+
+      <p class="subtitle" id="pqFooter" style="font-size:.82rem;margin:12px 2px 0;">Loaded from data/practice-qualifying-results.json</p>
+    </section>
+
   </main>
 
 <script>
 const DATA_URL = "data/league-data.json";
+const PRACTICE_QUALIFYING_URL = "data/practice-qualifying-results.json";
 let appData = {};
+let pqData = {};
 let standings = [];
 let details = [];
 let raceDetails = {};
@@ -1078,12 +1226,131 @@ function renderLive() {
   renderRaceLeader(cars);
   renderLeaderboard(cars);
 }
+
+function fmtDecimal(v, digits = 3) {
+  if (!hasValue(v)) return "—";
+  const n = Number(v);
+  return Number.isFinite(n) ? n.toFixed(digits) : display(v);
+}
+function fmtDelta(v) {
+  if (!hasValue(v)) return "—";
+  const n = Number(v);
+  if (!Number.isFinite(n)) return display(v);
+  if (n === 0) return "Leader";
+  return `${n > 0 ? "+" : ""}${n.toFixed(3)}`;
+}
+function normalizePQRow(row) {
+  return {
+    runName: keyOf(row, ["run_name", "runName", "session_name", "sessionName"]),
+    position: parsePositionValue(keyOf(row, ["finishing_position", "position", "rank"])),
+    carNumber: keyOf(row, ["car_number", "carNumber", "vehicle_number", "vehicleNumber"]),
+    driverName: keyOf(row, ["driver_name", "driverName", "driver_fullname", "driverFullname"]),
+    manufacturer: keyOf(row, ["manufacturer", "make", "car_make", "carMake"]),
+    bestLapTime: keyOf(row, ["best_lap_time", "bestLapTime", "lap_time", "lapTime"]),
+    bestLapSpeed: keyOf(row, ["best_lap_speed", "bestLapSpeed", "speed"]),
+    bestLapNumber: keyOf(row, ["best_lap_number", "bestLapNumber"]),
+    lapsCompleted: keyOf(row, ["laps_completed", "lapsCompleted", "laps"]),
+    deltaLeader: keyOf(row, ["delta_leader", "deltaLeader", "delta"])
+  };
+}
+function getPracticeRows() {
+  if (Array.isArray(pqData.practice_results)) return pqData.practice_results;
+  if (pqData.practice && Array.isArray(pqData.practice.results)) return pqData.practice.results;
+  return [];
+}
+function getQualifyingRows() {
+  if (Array.isArray(pqData.qualifying_results)) return pqData.qualifying_results;
+  if (pqData.qualifying && Array.isArray(pqData.qualifying.results)) return pqData.qualifying.results;
+  return [];
+}
+function runNames(rows) {
+  const names = [...new Set(rows.map(r => normalizePQRow(r).runName).filter(hasValue))];
+  return names.length ? names.join(" · ") : "—";
+}
+function renderPQTable(bodyId, rows, emptyMessage) {
+  const normalized = rows.map(normalizePQRow).sort((a,b) => {
+    const posDiff = a.position - b.position;
+    if (posDiff !== 0) return posDiff;
+    return String(a.driverName || "").localeCompare(String(b.driverName || ""), undefined, {numeric:true, sensitivity:"base"});
+  });
+  const body = $(bodyId);
+  if (!normalized.length) {
+    body.innerHTML = `<tr><td colspan="10" class="empty">${escapeHtml(emptyMessage)}</td></tr>`;
+    return;
+  }
+  body.innerHTML = normalized.map(r => `
+    <tr>
+      <td class="pq-pos">${r.position === 9999 ? "—" : r.position}</td>
+      <td class="pq-mono">${display(r.carNumber)}</td>
+      <td class="pq-driver">${display(r.driverName)}</td>
+      <td>${display(r.manufacturer)}</td>
+      <td class="pq-mono">${fmtDecimal(r.bestLapTime)}</td>
+      <td class="pq-mono">${fmtDecimal(r.bestLapSpeed)}</td>
+      <td class="pq-mono">${display(r.bestLapNumber)}</td>
+      <td class="pq-mono">${display(r.lapsCompleted)}</td>
+      <td class="pq-delta">${fmtDelta(r.deltaLeader)}</td>
+      <td>${display(r.runName)}</td>
+    </tr>
+  `).join("");
+}
+function renderPracticeQualifying() {
+  const practiceRows = getPracticeRows();
+  const qualifyingRows = getQualifyingRows();
+  const practice = practiceRows.map(normalizePQRow).sort((a,b) => a.position - b.position)[0];
+  const qualifying = qualifyingRows.map(normalizePQRow).sort((a,b) => a.position - b.position)[0];
+  const race = pqData.race || {};
+  const raceName = race.race_name || race.raceName || pqData.race_name || "—";
+  const trackName = race.track_name || race.trackName || pqData.track_name || "—";
+  const generatedAt = pqData.generated_at || pqData.generatedAt || "—";
+
+  $("pqRaceName").textContent = raceName !== "—" ? raceName : "—";
+  $("pqPracticeLeader").textContent = practice ? `${practice.driverName || "—"} (${fmtDecimal(practice.bestLapSpeed)} mph)` : "—";
+  $("pqQualifyingLeader").textContent = qualifying ? `${qualifying.driverName || "—"} (${fmtDecimal(qualifying.bestLapSpeed)} mph)` : "—";
+  $("pqLastUpdated").textContent = generatedAt;
+  $("practiceRunInfo").textContent = `${runNames(practiceRows)} · ${practiceRows.length} cars`;
+  $("qualifyingRunInfo").textContent = `${runNames(qualifyingRows)} · ${qualifyingRows.length} cars`;
+  $("pqFooter").textContent = `Loaded from data/practice-qualifying-results.json · ${generatedAt}`;
+  $("pqSummaryCard").innerHTML = `
+    <div class="leader-label">Current weekend</div>
+    <div class="leader-name">${display(trackName)}</div>
+    <div class="subtitle">Practice cars: ${practiceRows.length} · Qualifying cars: ${qualifyingRows.length}</div>
+  `;
+
+  renderPQTable("practiceResultsBody", practiceRows, "No practice results available yet.");
+  renderPQTable("qualifyingResultsBody", qualifyingRows, "No qualifying results available yet.");
+}
+async function loadPracticeQualifyingData() {
+  try {
+    const res = await fetch(PRACTICE_QUALIFYING_URL, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    pqData = await res.json();
+    renderPracticeQualifying();
+  } catch (err) {
+    console.error(err);
+    pqData = {};
+    $("pqRaceName").textContent = "Data unavailable";
+    $("pqPracticeLeader").textContent = "—";
+    $("pqQualifyingLeader").textContent = "—";
+    $("pqLastUpdated").textContent = "—";
+    $("pqSummaryCard").innerHTML = `<div class="leader-label">Error</div><div class="leader-name">Could not load results</div><div class="subtitle">Check that data/practice-qualifying-results.json exists.</div>`;
+    $("practiceRunInfo").textContent = "No practice data loaded.";
+    $("qualifyingRunInfo").textContent = "No qualifying data loaded.";
+    $("practiceResultsBody").innerHTML = `<tr><td colspan="10" class="empty">Could not load data/practice-qualifying-results.json.</td></tr>`;
+    $("qualifyingResultsBody").innerHTML = `<tr><td colspan="10" class="empty">Could not load data/practice-qualifying-results.json.</td></tr>`;
+    $("pqFooter").textContent = "Could not load data/practice-qualifying-results.json.";
+  }
+}
+
 function setTab(tab) {
   const standingsOn = tab === "standings";
+  const liveOn = tab === "live";
+  const practiceQualifyingOn = tab === "practiceQualifying";
   $("tabStandings").classList.toggle("active", standingsOn);
-  $("tabLive").classList.toggle("active", !standingsOn);
+  $("tabLive").classList.toggle("active", liveOn);
+  $("tabPracticeQualifying").classList.toggle("active", practiceQualifyingOn);
   $("standingsView").classList.toggle("active", standingsOn);
-  $("liveView").classList.toggle("active", !standingsOn);
+  $("liveView").classList.toggle("active", liveOn);
+  $("practiceQualifyingView").classList.toggle("active", practiceQualifyingOn);
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 function renderAll() {
@@ -1114,10 +1381,12 @@ async function loadData() {
 }
 $("tabStandings").addEventListener("click", () => setTab("standings"));
 $("tabLive").addEventListener("click", () => setTab("live"));
+$("tabPracticeQualifying").addEventListener("click", () => setTab("practiceQualifying"));
 $("searchInput").addEventListener("input", (e) => { filterText = e.target.value || ""; renderStandings(); });
 $("expandAll").addEventListener("click", () => { standings.forEach(r => openOwners.add(r.FANTASY_NAME)); renderStandings(); });
 $("collapseAll").addEventListener("click", () => { openOwners.clear(); renderStandings(); });
 loadData();
+loadPracticeQualifyingData();
 </script>
 </body>
 </html>
