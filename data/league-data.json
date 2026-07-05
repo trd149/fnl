@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-07-05 07:45 PM ET",
-  "raceProgress": "95 out of 267 Laps Complete | 172 Laps Remaining",
+  "lastUpdated": "2026-07-05 07:50 PM ET",
+  "raceProgress": "98 out of 267 Laps Complete | 169 Laps Remaining",
   "raceProgressLabel": "Race Status",
   "runningOrderLabel": "Fantasy race leaderboard — eero 400",
   "raceName": "eero 400",
@@ -743,7 +743,7 @@
       "TRACK_NAME": "eero 400",
       "RACE_DATE": "2026-07-05T18:00:00",
       "STATUS": "Final",
-      "DELTA": "+1.588 sec",
+      "DELTA": "+1.820 sec",
       "MATCHED_LIVE_FEED": true,
       "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
@@ -774,7 +774,7 @@
       "TRACK_NAME": "eero 400",
       "RACE_DATE": "2026-07-05T18:00:00",
       "STATUS": "Final",
-      "DELTA": "+2.224 sec",
+      "DELTA": "+2.692 sec",
       "MATCHED_LIVE_FEED": true,
       "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
@@ -805,7 +805,7 @@
       "TRACK_NAME": "eero 400",
       "RACE_DATE": "2026-07-05T18:00:00",
       "STATUS": "Final",
-      "DELTA": "+3.354 sec",
+      "DELTA": "+4.415 sec",
       "MATCHED_LIVE_FEED": true,
       "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
@@ -836,7 +836,7 @@
       "TRACK_NAME": "eero 400",
       "RACE_DATE": "2026-07-05T18:00:00",
       "STATUS": "Final",
-      "DELTA": "+2.641 sec",
+      "DELTA": "+3.525 sec",
       "MATCHED_LIVE_FEED": true,
       "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
@@ -867,7 +867,7 @@
       "TRACK_NAME": "eero 400",
       "RACE_DATE": "2026-07-05T18:00:00",
       "STATUS": "Final",
-      "DELTA": "+4.216 sec",
+      "DELTA": "+5.409 sec",
       "MATCHED_LIVE_FEED": true,
       "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
@@ -898,7 +898,7 @@
       "TRACK_NAME": "eero 400",
       "RACE_DATE": "2026-07-05T18:00:00",
       "STATUS": "Final",
-      "DELTA": "+4.216 sec",
+      "DELTA": "+5.409 sec",
       "MATCHED_LIVE_FEED": true,
       "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
@@ -929,7 +929,7 @@
       "TRACK_NAME": "eero 400",
       "RACE_DATE": "2026-07-05T18:00:00",
       "STATUS": "Final",
-      "DELTA": "+5.422 sec",
+      "DELTA": "+6.937 sec",
       "MATCHED_LIVE_FEED": true,
       "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
@@ -960,7 +960,7 @@
       "TRACK_NAME": "eero 400",
       "RACE_DATE": "2026-07-05T18:00:00",
       "STATUS": "Final",
-      "DELTA": "+9.034 sec",
+      "DELTA": "+11.405 sec",
       "MATCHED_LIVE_FEED": true,
       "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     }
