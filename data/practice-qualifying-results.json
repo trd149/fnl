@@ -1,6 +1,6 @@
 {
   "source_url": "https://cf.nascar.com/cacher/2026/1/5616/weekend-feed.json",
-  "generated_at": "2026-07-04T16:55:03",
+  "generated_at": "2026-07-06T11:25:00",
   "race": {
     "race_id": 5616,
     "series_id": 1,
@@ -9,7 +9,7 @@
     "track_id": 39,
     "track_name": "Chicagoland Speedway",
     "date_scheduled": "2026-07-05T18:00:00",
-    "qualifying_date": "1900-01-01T00:00:00",
+    "qualifying_date": "2026-07-05T17:00:00",
     "scheduled_laps": 267,
     "scheduled_distance": 400
   },
