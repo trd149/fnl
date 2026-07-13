@@ -1,6 +1,6 @@
 {
   "source_url": "https://cf.nascar.com/cacher/2026/1/5615/weekend-feed.json",
-  "generated_at": "2026-07-12T09:00:01",
+  "generated_at": "2026-07-13T08:55:50",
   "race": {
     "race_id": 5615,
     "series_id": 1,
@@ -9,7 +9,7 @@
     "track_id": 111,
     "track_name": "Atlanta Motor Speedway",
     "date_scheduled": "2026-07-12T19:00:00",
-    "qualifying_date": "1900-01-01T00:00:00",
+    "qualifying_date": "2026-07-12T17:00:00",
     "scheduled_laps": 260,
     "scheduled_distance": 400.4
   },
