@@ -1,6 +1,6 @@
 {
   "source_url": "https://cf.nascar.com/cacher/2026/1/5619/weekend-feed.json",
-  "generated_at": "2026-07-26T09:00:01",
+  "generated_at": "2026-07-31T21:00:01",
   "race": {
     "race_id": 5619,
     "series_id": 1,
@@ -9,7 +9,7 @@
     "track_id": 123,
     "track_name": "Indianapolis Motor Speedway",
     "date_scheduled": "2026-07-26T14:00:00",
-    "qualifying_date": "1900-01-01T00:00:00",
+    "qualifying_date": "2026-07-26T14:00:00",
     "scheduled_laps": 160,
     "scheduled_distance": 400
   },
