@@ -1,6 +1,6 @@
 {
   "source_url": "https://cf.nascar.com/cacher/2026/1/5620/weekend-feed.json",
-  "generated_at": "2026-08-09T09:00:01",
+  "generated_at": "2026-08-14T21:00:03",
   "race": {
     "race_id": 5620,
     "series_id": 1,
@@ -9,7 +9,7 @@
     "track_id": 206,
     "track_name": "Iowa Speedway",
     "date_scheduled": "2026-08-09T15:30:00",
-    "qualifying_date": "1900-01-01T00:00:00",
+    "qualifying_date": "2026-08-09T14:30:00",
     "scheduled_laps": 350,
     "scheduled_distance": 306.25
   },
