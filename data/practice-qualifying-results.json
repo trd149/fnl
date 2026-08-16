@@ -1,6 +1,6 @@
 {
   "source_url": "https://cf.nascar.com/cacher/2026/1/5622/weekend-feed.json",
-  "generated_at": "2026-08-15T21:00:02",
+  "generated_at": "2026-08-16T09:00:01",
   "race": {
     "race_id": 5622,
     "series_id": 1,
@@ -9,7 +9,7 @@
     "track_id": 26,
     "track_name": "Richmond Raceway",
     "date_scheduled": "2026-08-15T19:00:00",
-    "qualifying_date": "1900-01-01T00:00:00",
+    "qualifying_date": "2026-08-15T19:00:00",
     "scheduled_laps": 400,
     "scheduled_distance": 300
   },
