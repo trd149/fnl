@@ -1,6 +1,6 @@
 {
   "source_url": "https://cf.nascar.com/cacher/2026/1/5627/weekend-feed.json",
-  "generated_at": "2026-08-23T09:00:01",
+  "generated_at": "2026-08-28T21:00:01",
   "race": {
     "race_id": 5627,
     "series_id": 1,
@@ -9,7 +9,7 @@
     "track_id": 138,
     "track_name": "New Hampshire Motor Speedway",
     "date_scheduled": "2026-08-23T14:00:00",
-    "qualifying_date": "1900-01-01T00:00:00",
+    "qualifying_date": "2026-08-23T15:00:00",
     "scheduled_laps": 301,
     "scheduled_distance": 318.46
   },
