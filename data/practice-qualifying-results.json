@@ -1,6 +1,6 @@
 {
   "source_url": "https://cf.nascar.com/cacher/2026/1/5624/weekend-feed.json",
-  "generated_at": "2026-09-06T09:00:01",
+  "generated_at": "2026-09-11T21:00:03",
   "race": {
     "race_id": 5624,
     "series_id": 1,
@@ -9,7 +9,7 @@
     "track_id": 4,
     "track_name": "Darlington Raceway",
     "date_scheduled": "2026-09-06T17:00:00",
-    "qualifying_date": "1900-01-01T00:00:00",
+    "qualifying_date": "2026-09-05T00:00:00",
     "scheduled_laps": 367,
     "scheduled_distance": 501.32
   },
