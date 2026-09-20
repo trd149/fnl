@@ -1,6 +1,6 @@
 {
   "source_url": "https://cf.nascar.com/cacher/2026/1/5626/weekend-feed.json",
-  "generated_at": "2026-09-19T21:00:02",
+  "generated_at": "2026-09-20T09:00:00",
   "race": {
     "race_id": 5626,
     "series_id": 1,
@@ -9,7 +9,7 @@
     "track_id": 14,
     "track_name": "Bristol Motor Speedway",
     "date_scheduled": "2026-09-19T19:30:00",
-    "qualifying_date": "1900-01-01T00:00:00",
+    "qualifying_date": "2026-09-19T19:30:00",
     "scheduled_laps": 500,
     "scheduled_distance": 266.5
   },
