@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-10-11 07:30 PM ET",
-  "raceProgress": "Race Completed",
+  "lastUpdated": "2026-10-11 07:40 PM ET",
+  "raceProgress": "0 out of 200 Laps Complete | 200 Laps Remaining",
   "raceProgressLabel": "Race Status",
   "runningOrderLabel": "Fantasy race leaderboard — Bank of America 400",
   "raceName": "Bank of America 400",
@@ -6832,8 +6832,8 @@
       "RACE_DATE": "2026-10-11T15:00:00",
       "STATUS": "Final",
       "DELTA": "Leader",
-      "MATCHED_LIVE_FEED": true,
-      "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
+      "MATCHED_LIVE_FEED": false,
+      "SOURCE": "dbo.MOBILE"
     },
     {
       "RUNNING_POSITION": 6,
@@ -6862,9 +6862,9 @@
       "TRACK_NAME": "Bank of America 400",
       "RACE_DATE": "2026-10-11T15:00:00",
       "STATUS": "Final",
-      "DELTA": "+10.133 sec",
-      "MATCHED_LIVE_FEED": true,
-      "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
+      "DELTA": "-",
+      "MATCHED_LIVE_FEED": false,
+      "SOURCE": "dbo.MOBILE"
     },
     {
       "RUNNING_POSITION": 3,
@@ -6893,9 +6893,9 @@
       "TRACK_NAME": "Bank of America 400",
       "RACE_DATE": "2026-10-11T15:00:00",
       "STATUS": "Final",
-      "DELTA": "+4.900 sec",
-      "MATCHED_LIVE_FEED": true,
-      "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
+      "DELTA": "-",
+      "MATCHED_LIVE_FEED": false,
+      "SOURCE": "dbo.MOBILE"
     },
     {
       "RUNNING_POSITION": 5,
@@ -6924,9 +6924,9 @@
       "TRACK_NAME": "Bank of America 400",
       "RACE_DATE": "2026-10-11T15:00:00",
       "STATUS": "Final",
-      "DELTA": "+5.884 sec",
-      "MATCHED_LIVE_FEED": true,
-      "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
+      "DELTA": "-",
+      "MATCHED_LIVE_FEED": false,
+      "SOURCE": "dbo.MOBILE"
     },
     {
       "RUNNING_POSITION": 17,
@@ -6955,9 +6955,9 @@
       "TRACK_NAME": "Bank of America 400",
       "RACE_DATE": "2026-10-11T15:00:00",
       "STATUS": "Final",
-      "DELTA": "+25.707 sec",
-      "MATCHED_LIVE_FEED": true,
-      "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
+      "DELTA": "-",
+      "MATCHED_LIVE_FEED": false,
+      "SOURCE": "dbo.MOBILE"
     },
     {
       "RUNNING_POSITION": 17,
@@ -6986,9 +6986,9 @@
       "TRACK_NAME": "Bank of America 400",
       "RACE_DATE": "2026-10-11T15:00:00",
       "STATUS": "Final",
-      "DELTA": "+25.707 sec",
-      "MATCHED_LIVE_FEED": true,
-      "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
+      "DELTA": "-",
+      "MATCHED_LIVE_FEED": false,
+      "SOURCE": "dbo.MOBILE"
     },
     {
       "RUNNING_POSITION": 38,
@@ -7017,9 +7017,9 @@
       "TRACK_NAME": "Bank of America 400",
       "RACE_DATE": "2026-10-11T15:00:00",
       "STATUS": "Final",
-      "DELTA": "+-191.000 sec",
-      "MATCHED_LIVE_FEED": true,
-      "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
+      "DELTA": "-",
+      "MATCHED_LIVE_FEED": false,
+      "SOURCE": "dbo.MOBILE"
     },
     {
       "RUNNING_POSITION": 39,
@@ -7048,9 +7048,9 @@
       "TRACK_NAME": "Bank of America 400",
       "RACE_DATE": "2026-10-11T15:00:00",
       "STATUS": "Final",
-      "DELTA": "+-191.000 sec",
-      "MATCHED_LIVE_FEED": true,
-      "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
+      "DELTA": "-",
+      "MATCHED_LIVE_FEED": false,
+      "SOURCE": "dbo.MOBILE"
     },
     {
       "RUNNING_POSITION": 39,
@@ -7079,9 +7079,9 @@
       "TRACK_NAME": "Bank of America 400",
       "RACE_DATE": "2026-10-11T15:00:00",
       "STATUS": "Final",
-      "DELTA": "+-191.000 sec",
-      "MATCHED_LIVE_FEED": true,
-      "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
+      "DELTA": "-",
+      "MATCHED_LIVE_FEED": false,
+      "SOURCE": "dbo.MOBILE"
     }
   ],
   "raceLeader": {
