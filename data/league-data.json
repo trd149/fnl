@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-25 05:20 PM ET",
+  "lastUpdated": "2026-10-25 05:30 PM ET",
   "raceProgress": "183 out of 188 Laps Complete | 5 Laps Remaining",
   "raceProgressLabel": "Race Status",
   "runningOrderLabel": "Fantasy race leaderboard — YellaWood 500",
@@ -7731,7 +7731,7 @@
       "TRACK_NAME": "YellaWood 500",
       "RACE_DATE": "2026-10-25T14:00:00",
       "STATUS": "Final",
-      "DELTA": "+0.288 sec",
+      "DELTA": "+175:49.72",
       "MATCHED_LIVE_FEED": true,
       "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
@@ -7762,7 +7762,7 @@
       "TRACK_NAME": "YellaWood 500",
       "RACE_DATE": "2026-10-25T14:00:00",
       "STATUS": "Final",
-      "DELTA": "+1.824 sec",
+      "DELTA": "+175:51.26",
       "MATCHED_LIVE_FEED": true,
       "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
@@ -7793,7 +7793,7 @@
       "TRACK_NAME": "YellaWood 500",
       "RACE_DATE": "2026-10-25T14:00:00",
       "STATUS": "Final",
-      "DELTA": "+1.487 sec",
+      "DELTA": "+175:50.92",
       "MATCHED_LIVE_FEED": true,
       "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
@@ -7824,7 +7824,7 @@
       "TRACK_NAME": "YellaWood 500",
       "RACE_DATE": "2026-10-25T14:00:00",
       "STATUS": "Final",
-      "DELTA": "+1.656 sec",
+      "DELTA": "+175:51.09",
       "MATCHED_LIVE_FEED": true,
       "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
@@ -7855,7 +7855,7 @@
       "TRACK_NAME": "YellaWood 500",
       "RACE_DATE": "2026-10-25T14:00:00",
       "STATUS": "Final",
-      "DELTA": "+1.832 sec",
+      "DELTA": "+175:51.27",
       "MATCHED_LIVE_FEED": true,
       "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
@@ -7886,7 +7886,7 @@
       "TRACK_NAME": "YellaWood 500",
       "RACE_DATE": "2026-10-25T14:00:00",
       "STATUS": "Final",
-      "DELTA": "+1.844 sec",
+      "DELTA": "+175:51.28",
       "MATCHED_LIVE_FEED": true,
       "SOURCE": "dbo.MOBILE + SILVER.LIVE_FEED DELTA"
     },
