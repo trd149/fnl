@@ -1,6 +1,6 @@
 {
   "source_url": "https://cf.nascar.com/cacher/2026/1/5631/weekend-feed.json",
-  "generated_at": "2026-10-25T09:50:28",
+  "generated_at": "2026-10-30T21:00:01",
   "race": {
     "race_id": 5631,
     "series_id": 1,
@@ -9,7 +9,7 @@
     "track_id": 82,
     "track_name": "Talladega Superspeedway",
     "date_scheduled": "2026-10-25T14:00:00",
-    "qualifying_date": "1900-01-01T00:00:00",
+    "qualifying_date": "2026-10-25T13:00:00",
     "scheduled_laps": 188,
     "scheduled_distance": 500.08
   },
