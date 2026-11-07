@@ -1,6 +1,6 @@
 {
   "source_url": "https://cf.nascar.com/cacher/2026/1/5632/weekend-feed.json",
-  "generated_at": "2026-11-01T09:55:33",
+  "generated_at": "2026-11-06T21:00:03",
   "race": {
     "race_id": 5632,
     "series_id": 1,
@@ -9,7 +9,7 @@
     "track_id": 22,
     "track_name": "Martinsville Speedway",
     "date_scheduled": "2026-11-01T14:00:00",
-    "qualifying_date": "1900-01-01T00:00:00",
+    "qualifying_date": "2026-11-01T14:00:00",
     "scheduled_laps": 500,
     "scheduled_distance": 263
   },
